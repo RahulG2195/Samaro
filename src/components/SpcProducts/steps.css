@@ -1,0 +1,21 @@
+.steps {
+    font-size: 70px;
+    /* letter-spacing: 12px; */
+    margin-bottom: -1.5% !important;
+    color: #0A2647;
+    opacity: 25%;
+}
+
+@media (max-width:600px) {
+    .steps {
+        font-size: 20px;
+        margin-bottom: 3.5% !important;
+        line-height: 1.2;
+        padding: 0 1rem !important;
+    }
+    .gallerytext {
+        font-size: 23px !important;
+        letter-spacing: 0px;
+       
+    }
+}

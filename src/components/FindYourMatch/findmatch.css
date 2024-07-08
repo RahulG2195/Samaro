@@ -1,0 +1,184 @@
+.inner_step{
+  background-color: #0A2647;
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  height: 180px;
+}
+
+.steps_name p{
+  color: #fff;
+  padding: 15px 0 0 0;
+}
+
+.steps_img img{
+  height: 80px;
+}
+
+.outer_name{
+  padding: 10px 0 0 0;
+}
+
+.step_button{
+  border: 2px solid #CA373C;
+  color: #CA373C;
+  border-radius: 25px;
+  padding: 10px 35px;
+  display: flex;
+  justify-content: center;
+    text-wrap: nowrap;
+  margin: auto;
+  align-items: center;
+}
+
+.step_button i{
+  padding: 0 0 0 15px;
+}
+
+.step_button:hover{
+  border: none;
+  color: #fff;
+  background-color: #CA373C;
+}
+
+.step_next_button{
+  text-align: center;
+  margin: 20px 0;
+  
+}
+
+.stepslabel{
+  cursor: pointer;
+}
+
+
+/* output page  */
+.prod_pointer ul{
+  padding: 0;
+}
+
+.output-title{
+  margin-bottom: 30px;
+}
+
+.prod_name_and_desc h6{
+  font-size: 18px;
+}
+.prod_pointer ul li i{
+  color: #CA373C;
+}
+
+.discoverBtn{
+  justify-content: start;
+  margin: 0;
+}
+
+.step_form{
+  position: relative;
+}
+
+.prev_step {
+  position: absolute;
+  cursor: pointer;
+  left: 14%;
+  top: 2.4%;
+  background: #DF878A;
+  padding: 14px 18px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+}
+
+.type_img img{
+  height: 225px;
+}
+
+#typeSPC{
+  text-align: right;
+}
+
+.step2 .form-check-input:checked {
+  background-color: #DC3545 !important;
+  color: #DC3545 !important;
+
+}
+
+.clrStepRadioBtn{
+  display: none;
+}
+.check-icon{
+  display: none;
+}
+.clrStepRadioBtn ~ img{
+  cursor: pointer;
+}
+
+.clrStepRadioBtn:checked ~ img {
+  border: 2px solid #DC3545;
+  border-radius: 50%;
+  padding: 4px;
+  /* position: relative; */
+}
+.clrStepRadioBtn:checked ~ .check-icon{
+  display: block;
+  position: absolute;
+    top: 24%;
+    left: 17%;
+    font-size: 43px;
+    color: #DC3545;
+}
+
+.submit_btn_match{
+  padding: 5px 25px;
+  color: #CA373C;
+}
+
+.submit_btn_match:hover{
+  padding: 5px 25px;
+  color: #fff;
+  background-color: #CA373C;
+  border: none;
+}
+
+
+@media (min-width:600px) and (max-width:768px) {
+  .prev_step {
+  
+    left: 2%;
+  
+  }
+}
+
+@media (max-width: 600px) {
+  .discoverBtn{
+    margin: 0 auto;
+  }
+  .prev_step {
+    position: absolute;
+    cursor: pointer;
+    left: 8%;
+    top: auto;
+    bottom: 3%;
+    background: #DF878A;
+    padding: 10px 13px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+}
+
+.finyourMatch_sec, .tepoutput_section{
+  margin-top: 20px !important;
+}
+
+}
+@media (max-width: 480px) {
+  .steps_name p{
+    padding: 9px 0 0 0;
+    font-size: 14px;
+  }
+  .output-title{
+    margin-top: 20px;
+  }
+ 
+}
+

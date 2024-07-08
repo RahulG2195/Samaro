@@ -1,0 +1,52 @@
+.whyBannerTxt{
+    position: absolute;
+    top: 73%;
+    left: 15%;
+}
+.whyBannerTxt p{
+    color: white;
+    font-size: 30px;
+}
+
+
+@media (max-width:768px) {
+    .whyBannerTxt {
+        position: absolute;
+        top: 61%;
+        left: 20%;
+        width: 100% !important;
+        
+    }
+    .whyBannerTxt .text-center{
+        text-align: start !important;
+    }
+    .whyBannerTxt .text-end{
+        text-align: start !important;
+    }
+    .whyBannerTxt p{
+        font-size: 25px;
+    }
+}
+@media (max-width:600px) {
+    .whysamaro_sec{
+        height: 36vh;
+    }
+
+    .whysamaro_sec video{
+        height: 36vh;
+        object-fit: cover;
+    }
+    .whyBannerTxt {
+        left: 0%;
+    }
+    .whyBannerTxt p{
+        font-size: 15px;
+        letter-spacing: 5px;
+    }
+    .whyBannerTxt .text-center{
+        text-align: center !important;
+    }
+    .whyBannerTxt .text-end{
+        text-align: center !important;
+    }
+}

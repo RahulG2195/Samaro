@@ -1,0 +1,39 @@
+
+
+.about .logo {
+  width: 200px;
+}
+
+.about .tagline {
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 4.5px;
+}
+.about .company-history {
+  font-weight: 300;
+}
+
+@media (max-width:768px) {
+  .about .headline, .about .company-history {
+    text-align: center !important;
+  }
+}
+@media (max-width:600px) {
+  .about .row .col-lg-7    {
+    padding: 0 !important;
+  }
+  .company-history{
+    font-size: 10px ;
+  }
+  .about .tagline{
+    letter-spacing: 0 !important;
+    padding: 0 !important;
+  }
+
+  .about .tagline span{
+    color: #fff;
+  }
+  .headline{
+    padding: 0 !important;
+  }
+}

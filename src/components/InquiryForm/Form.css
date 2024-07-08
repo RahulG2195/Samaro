@@ -1,0 +1,58 @@
+
+
+.inquiryformcont{
+    background-color: #0A2647;
+    color: #FFFFFF;
+    height: auto;
+    padding: 50px 10px !important;
+}
+
+.inquiryformcont p{
+    color: #FFFFFF;
+}
+.slct1 label{
+    font-size: 14px;
+
+}
+.guidHeading {
+    letter-spacing: 5px;
+}
+
+.spcformheading p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.popform input, .popform textarea {
+    border-bottom: 2px solid white !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+}
+
+.popform input::placeholder, .popform textarea::placeholder {
+    color: white;
+}
+
+.submitbtn:hover {
+    background-color: #DC3545 !important;
+    color: white !important;
+}
+.slct1 input[type="radio"] {
+    border-radius: 100% !important;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: none !important;
+    border: 1px solid red !important;
+  }
+  
+  .popup input[type="radio"]:checked {
+    background-color: red;
+    outline: none !important;
+  }
+
+  .popup input:focus, textarea:focus{
+    background-color: transparent !important;
+    color: white !important;
+  }

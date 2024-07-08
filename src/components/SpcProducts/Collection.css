@@ -1,0 +1,211 @@
+.woodCollection {
+  position: relative;
+  padding-top: 24.25%;
+  /* Aspect ratio 16:9 for responsiveness */
+}
+
+.marginY {
+  margin: 6rem 0;
+}
+
+.woodText {
+  left: -4vw;
+  bottom: 0;
+}
+
+.background-image1 {
+  background-image: url('/assets/images/products/Rectangle 9638.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: -1%;
+  width: 90%;
+  height: 400px;
+}
+
+.overlay-image {
+  /* height: ;
+    width: ; */
+  position: absolute;
+  top: 9%;
+  left: 1%;
+}
+
+.overlay-image .col {
+  height: auto;
+  width: 20vw;
+}
+
+.overlay-image1 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.image-size {
+  max-width: 100%;
+  /* Ensures the image does not exceed its container width */
+  max-height: 100%;
+  /* Set the maximum height of the image */
+}
+
+.woodimage {
+  position: absolute;
+  top: -13%;
+  right: 10%;
+}
+
+.woodimage img {
+  width: 29vw;
+}
+
+
+
+.background-image2 {
+  background-image: url('/assets/images/products/Rectangle 9637.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 10.3% !important;
+  width: 90%;
+  height: 400px;
+}
+
+.woodimage2 {
+  position: absolute;
+  top: -4%;
+  right: 60%;
+}
+
+.woodimage2 img {
+  width: 30vw;
+}
+
+
+.overlay-image2 {
+  /* height: ;
+    width: ; */
+  position: absolute;
+  top: 9%;
+  left: 40%;
+}
+
+.overlay-image2 .col {
+  height: auto;
+  width: 20vw;
+}
+
+.StoneText {
+  left: 26vw;
+  bottom: 0;
+}
+
+/* Media query for responsiveness */
+
+@media (max-width:600px) {
+  .woodCollection {
+    padding-top: 70% !important;
+  }
+
+  .overlay-image .col {
+    height: auto;
+    width: auto !important;
+  }
+
+  .woodimage img {
+    width: 55vw;
+  }
+
+  .woodimage {
+    position: absolute;
+    top: -5%;
+    right: 27%;
+  }
+
+  .background-image1 {
+    background-size: contain;
+    top: 0;
+    left: -112%;
+    width: 183%;
+    height: 304px;
+  }
+
+  .background-image2 {
+    top: 11px;
+    left:25% !important;
+    width: 183%;
+    height: 400px;
+  }
+
+  .overlay-image {
+    position: absolute;
+    top: 86%;
+    left: 0%;
+  }
+
+  .woodimage2 {
+    position: absolute;
+    top: 4%;
+    right: 15%;
+  }
+
+  .woodimage2 img {
+    width: 55vw;
+  }
+
+  .overlay-image2 {
+    position: absolute;
+    top: 85%;
+    left: 0%;
+  }
+  .overlay-image2 .col {
+    height: auto;
+    width: auto !important;
+  }
+  .woodText {
+    left: -17vw;
+    bottom: 0;
+    font-size: 21px !important;
+}
+.StoneText {
+  left: 52vw;
+  bottom: 25%;
+  font-size: 21px !important;
+}
+.respCont2 {
+  padding-top: 0rem !important;
+  padding-bottom: 3rem !important;
+  margin-top: 0 !important;
+}
+
+.passiontext {
+  padding: 0 !important;
+  font-size: 12px;
+  text-align: right;
+  letter-spacing: 4px;
+  margin: auto;
+}
+.mobileSbmtResp{
+  flex-wrap: wrap !important;
+   /* !important; */
+}
+.submitbtn{
+  margin: 10px auto !important;
+}
+.spcbannertext {
+  left: 10% !important;
+  top: 45%;
+}
+.guidHeading{
+  margin: auto;
+}
+.subH{ font-size: 12px !important;
+  letter-spacing: 4px;
+}
+.spcformheading .txt{
+  font-size: 12px !important;
+}
+}

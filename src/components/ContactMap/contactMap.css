@@ -1,0 +1,11 @@
+@media (max-width:600px) {
+    .inner-head-office{
+            order: 2;
+            margin-top: -37%;
+            padding: 5px !important;   
+    }
+   
+    .inner-head-office .row{
+        padding: 0 10px !important;
+    }
+}

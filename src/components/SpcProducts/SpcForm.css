@@ -1,0 +1,119 @@
+.guidHeading {
+    letter-spacing: 5px;
+}
+
+.hideguide {
+    display: none;
+}
+
+.spcformheading p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.spcform input {
+    border-bottom: 2px solid var(--navy) !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.spcform input::placeholder {
+    color: var(--text);
+}
+
+.submitbtn:hover {
+    background-color: #DC3545 !important;
+    color: #0A2647 !important;
+}
+
+.spcform input,
+.spcform textarea,
+.spcform .countrycode {
+    border-bottom: 2px solid #0A2647 !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    color: #0A2647 !important;
+}
+
+.callBTN:hover {
+    background-color: #0A2647;
+    color: #FFFF !important;
+}
+
+.callBTN {
+    border: 2px solid #0A2647 !important;
+    color: #0A2647 !important;
+}
+
+.spcform .form-check-input:checked {
+    background-color: #DC3545 !important;
+    color: #DC3545 !important;
+
+}
+
+.spcFormCont .form-check-input, .spcFormCont .rdbuttons label{
+    cursor:pointer !important;
+
+}
+
+/* country code dropdown */
+.react-tel-input .form-control {
+    border-bottom: 2px solid #0A2647;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+
+
+}
+
+.react-tel-input .flag-dropdown {
+
+    background-color: transparent !important;
+    border-bottom: 2px solid #0A2647 !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    margin-right: 10px !important;
+}
+
+.getinTouch {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .spcformheading .letsGuideYou {
+        text-align: center !important;
+        margin-bottom: 0px !important;
+    }
+
+    .spcformheading .subH {
+        letter-spacing: 0px !important;
+        text-align: center;
+        font-size: 17px !important;
+    }
+
+    .spcformheading {
+        line-height: 1 !important;
+    }
+
+    .guid-para {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .getinTouch {
+        display: block;
+        padding-top: 0 !important;
+        margin-bottom: 20px;
+    }
+    .spcform .react-tel-input .form-control{
+       width: 100% ;
+    }
+    .getintouchformCont{
+        padding-bottom:0rem !important ;
+    }
+    
+}

@@ -1,0 +1,196 @@
+/* SPC-LVT   */
+.spc-lvt {
+  padding-bottom: 130px !important;
+}
+
+.spc-lvt .sub-heading {
+  position: relative;
+  z-index: 2;
+}
+
+.spc-lvt .content p {
+  font-size: 13px;
+}
+
+.spc-lvt .sub-heading::after {
+  content: "Samaro";
+  position: absolute;
+  top: -110px;
+  left: 0;
+  color: #F3F4F6;
+  z-index: -4;
+  font-size: 160px;
+  font-weight: 800;
+}
+
+.images-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.images-wrapper .img{
+
+  position: relative;
+}
+
+.images-wrapper .img,
+.images-wrapper .img-2 {
+  width: 60%;
+  z-index: 1;
+}
+
+.images-wrapper .img-2 {
+  position: absolute;
+  left: 42%;
+  top: 100px;
+  z-index: 0;
+}
+
+.qualities {
+
+  background-color: var(--primary);
+  border-radius: 30px;
+}
+
+.qualities span {
+  font-size: 16px;
+  font-weight: 300;
+  word-break: keep-all;
+}
+
+.qualities img {
+  width: 30px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.waterDrop img {
+  height: 15px !important;
+}
+
+.qualities .row span {
+  font-size: 12px !important;
+}
+
+.qualities .row img {
+  width: 25px;
+}
+
+.onImgtext {
+  top: 39%;
+  left: 0;
+  /* position: absolute; */
+  right: 0;
+  bottom: 0;
+}
+
+.onImgtext2 {
+  top: 35%;
+  left: 0;
+  /* position: absolute; */
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .spc-lvt .sub-heading::after {
+    font-size: 100px;
+    top: -80px;
+  }
+
+  .content {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .spc-lvt .container .row>* {
+    padding: 0 !important;
+
+  }
+
+  .qualities {
+    background-color: var(--primary);
+    border-radius: 0 !important;
+    width: 100% !important;
+
+  }
+  .spc-lvt .content p {
+    padding: 0 10px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .spc-lvt .sub-heading::after {
+    font-size: 74px !important;
+    top: -50px !important;
+    left: 0;
+    right: 0;
+  }
+
+  .content {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .spc-lvt .content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width:600px) {
+
+  .waterResistText,
+  .installTxt {
+    display: none !important;
+  }
+
+  .spc-lvt .container .row {
+    gap: 0 !important;
+  }
+
+  .qualities .d-flex span {
+    font-size: 12px !important;
+  }
+
+  .qualities .d-flex img {
+    width: 25px !important;
+  }
+
+
+}
+
+@media (max-width:426px) {
+  .images-wrapper .img-2 {
+    position: absolute;
+    left: 20%;
+    top: 233px;
+    z-index: 0;
+  }
+
+  .images-wrapper {
+    justify-content: center !important;
+  }
+
+  .onImgtext {
+    top: 36%;
+        left: 0;
+  }
+
+  .onImgtext .button,
+  .onImgtext2 .button {
+    padding: 0 5px !important;
+  }
+
+  .onImgtext2 {
+    top: 36%;
+    left: 0;
+  }
+
+  .onImgtext a,
+  .onImgtext2 a {
+    padding: 2px !important;
+  }
+}
+
+/* SPC-LVT   */

@@ -1,0 +1,17 @@
+.social-media-inner-home img{
+width: 18px;
+display: inline;
+}
+.followtxt{
+    color: #0A2647;
+}
+
+@media (max-width:600px) {
+    .followtxt{
+        font-size: 16px !important;
+    }
+
+    .newsletter{
+        justify-content: center !important;
+    }
+}

@@ -1,0 +1,45 @@
+/* Hero */
+
+
+.HomebannertextCont {
+  top: 55%;
+  right: 15%;
+  color: #FFFFFF;
+}
+
+.HomebannertextCont .txt h2 {
+  font-size: rem !important;
+}
+
+.HomebannertextCont .txt h2 a {
+  color: inherit !important;
+}
+.prdctmobilebanner{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .HomebannertextCont .heading {
+    font-size: 1rem;
+  }
+
+  .discoverBtn {
+    font-size: 12px;
+    margin: 0 !important;
+  }
+
+}
+
+@media (max-width:600px) {
+  .prdctdeskbanner{
+    display: none !important;
+  }
+  .prdctmobilebanner{
+    display: block !important;
+  }
+  .HomebannertextCont {
+    left: 10% !important;
+    top: 70%;
+  }
+  
+}
