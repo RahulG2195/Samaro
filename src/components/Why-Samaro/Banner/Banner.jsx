@@ -7,6 +7,7 @@ const Banner = () => {
     const [videoData, setVideoData] = useState({
         video: ''
     });
+    console.log("videooo",videoData.video)
 
     useEffect(() => {
         // Fetch video data based on videoId
@@ -28,8 +29,8 @@ const Banner = () => {
 
             <video autoPlay muted loop className='w-100 '>
                 <source src="assets/images/why-samaro/Samaro- About us Page1.mp4" type="video/mp4" />
-                {/* <source src={videoData.video} type="video/mp4" /> */}
-                Your browser does not support the video tag.
+                {/* <source src={`/uploads/${videoData.video}`} type="video/mp4" /> */}
+                {/* Your browser does not support the video tag. */}
             </video>
 
         </section>

@@ -15,8 +15,8 @@ const page = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [downloads, setDownloads] = useState([]);
   const [brocardData, setBrochureData] = useState([]);
-  // const [installationData, setInstallationData] = useState([]);
-  // const [warrantyData, setWarrantyData] = useState([]);
+  const [installationData, setInstallationData] = useState([]);
+  const [warrantyData, setWarrantyData] = useState([]);
  
   // const brocardData = [
   //   {
@@ -39,32 +39,32 @@ const page = () => {
 
   //   },
   // ]
-  const installationData = [  
-    {
-      imgurl: 'assets/images/brochure/Brochure.png',
-      title: 'Seven tips to help you get better flooring design & Concept',
-      date: 'November 11,2023 |',
-      author: 'By Anand Kashyap',
-      Badgetitle:"Installation",
-      pdf: 'Samara flooring product installation guide.docx'
+  // const installationData = [  
+  //   {
+  //     imgurl: 'assets/images/brochure/Brochure.png',
+  //     title: 'Seven tips to help you get better flooring design & Concept',
+  //     date: 'November 11,2023 |',
+  //     author: 'By Anand Kashyap',
+  //     Badgetitle:"Installation",
+  //     pdf: 'Samara flooring product installation guide.docx'
 
 
-    },
+  //   },
     
-  ]
-  const warrantyData = [
-    {
-      imgurl: 'assets/images/brochure/Brochure.png',
-      title: 'Seven tips to help you get better flooring design & Concept',
-      date: 'November 11,2023 |',
-      author: 'By Anand Kashyap',
-      Badgetitle:"Warrenty",
-      pdf: 'Samara flooring product installation guide.docx'
+  // ]
+  // const warrantyData = [
+  //   {
+  //     imgurl: 'assets/images/brochure/Brochure.png',
+  //     title: 'Seven tips to help you get better flooring design & Concept',
+  //     date: 'November 11,2023 |',
+  //     author: 'By Anand Kashyap',
+  //     Badgetitle:"Warrenty",
+  //     pdf: 'Samara flooring product installation guide.docx'
 
 
-    },
+  //   },
     
-  ]
+  // ]
 
    useEffect(() => {
     const fetchData = async () => {

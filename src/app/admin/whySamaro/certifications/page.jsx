@@ -1,3 +1,4 @@
+// pages/certifications-editor.js
 "use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -7,6 +8,12 @@ const CertificationsEditor = () => {
   const [certifications, setCertifications] = useState([]);
   const [initialData, setInitialData] = useState([]);
   const [editMode, setEditMode] = useState(false);
+  const [editedData, setEditedData] = useState({
+    id: null,
+    logo: "",
+    status: 1
+});
+  
 
   useEffect(() => {
     const fetchCertifications = async () => {
@@ -28,12 +35,11 @@ const CertificationsEditor = () => {
 
   const handleSave = async () => {
     try {
-      for (let certification of certifications) {
-        const formData = new FormData();
-        formData.append('id', certification.id);
-        formData.append('logo', certification.logo);
-
-        if (certification.id) {
+      const formData = new FormData();
+            Object.entries(editedData).forEach(([key, value]) => {
+                formData.append(key, value);
+            });
+        if (editedData.id) {
           await axios.put('/api/admin/certifications', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -46,7 +52,7 @@ const CertificationsEditor = () => {
             }
           });
         }
-      }
+      // }
       setEditMode(false);
       setInitialData([...certifications]);
     } catch (error) {
@@ -54,16 +60,19 @@ const CertificationsEditor = () => {
     }
   };
 
-  const handleLogoChange = (index, file) => {
+  const handleLogoChange = (index, file,) => {
     const updatedCertifications = [...certifications];
     updatedCertifications[index].logo = file;
     setCertifications(updatedCertifications);
-  };
+    setEditedData((prevData) => ({ ...prevData, logo: file }));
 
+
+  };
+  
   const handleAddCertification = () => {
     setCertifications(prevCertifications => [
       ...prevCertifications,
-      { id: null, logo: '' }
+      { id: null, logo: null }
     ]);
   };
 
@@ -71,6 +80,7 @@ const CertificationsEditor = () => {
     if (id) {
       try {
         await axios.delete('/api/admin/certifications', { data: { id }, headers: { 'Content-Type': 'application/json' } });
+       setEditMode(false)
       } catch (error) {
         console.error('Error deleting certification:', error);
       }

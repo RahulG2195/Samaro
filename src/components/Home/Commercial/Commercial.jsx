@@ -6,16 +6,10 @@ const Commercial = () => {
     const [spacesData, setSpacesData] = useState({
         commercial_images: "",
     });
-    // const images = spacesData.commercial_images.split(',');
+    const images = spacesData.commercial_images.split(',');
 
 
-    const images = [
-        "/assets/images/home/commercial/1.jpg",
-        "/assets/images/home/commercial/Mask Group 127.png",
-        "/assets/images/gallery/px-conversions/1 (1).webp",
-        "/assets/images/gallery/px-conversions/2 (20).webp",
-        "/assets/images/gallery/px-conversions/1 (2).webp"
-    ];
+    
 
 
     useEffect(() => {
@@ -48,7 +42,7 @@ const Commercial = () => {
                             <div className="carousel-inner">
                                 {images.map((image, index) => (
                                     <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                        <img src={image} className="d-block w-100" alt={`Slide ${index + 1}`} />
+                                        <img src={`/uploads/${image}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
                                     </div>
                                 ))}
                             </div>

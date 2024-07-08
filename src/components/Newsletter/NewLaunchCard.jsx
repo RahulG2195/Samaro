@@ -39,13 +39,15 @@ const NewLaunchCard = () => {
     }
     const banner_title = initialData[0].banner_title;
     const bannerContent = initialData[0].banner_content;
+    const bannerImg = initialData[0].banner_img;
+
 
 
     return (
         <>
             <div className='row my-5 align-items-center newlaunchCard'>
                 <div className='col-md-8 col-12'>
-                    <img src="/assets/images/Newletter/Mask Group 265.png" alt="err" />
+                    <img src={`/uploads/${bannerImg}`} alt="err" />
                 </div>
                 <div className='col-md-4 col-12 cardCont position-absolute'>
                     <div className='card px-4 py-5 rounded-4'>

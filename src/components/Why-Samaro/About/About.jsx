@@ -46,7 +46,7 @@ const About = () => {
                         {/* The amazing <span className='fw-bold'>JOURNEY</span> of */}
                         {formattedContent}
                     </p>
-                    <img className='logo' src="/assets/images/logo/logo.png" alt="" />
+                    <img className='logo' src={`/uploads/${videoData.logo}`} alt="" />
                 </div>
                 <div className="col-lg-7 col-md-7 col-sm-12">
                     <p className='text-white company-history text-start'>

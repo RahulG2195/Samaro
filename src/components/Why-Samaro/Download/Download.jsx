@@ -49,8 +49,8 @@ const Download = ({ useRed }) => {
                         </div>
                     )}
                     <div className="col-lg-4 col-md-4 col-sm-2 col-8 samply position-absolute">
-                        <img className="" src="/assets/images/home/floor-explorer/2.png" alt="" />
-                        {/* <img className="" src={downloadData.image_url} alt="err" /> */}
+                        {/* <img className="" src="/assets/images/home/floor-explorer/2.png" alt="" /> */}
+                        <img className="" src={`/uploads/${downloadData.image_url}`} alt="err" />
                     </div>
                     <div className="dwnldTXTAbout col-lg-4 col-md-4 col-8 position-absolute pt-4">
                         <h3 className="respHeading2">{downloadData.heading}</h3>

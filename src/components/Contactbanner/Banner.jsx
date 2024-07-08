@@ -48,8 +48,8 @@ const SubBanner = () => {
       <section className="career_banner">
         <div className='position-relative'>
           <Image
-            src="/assets/images/career/Mask Group 218@2x.png"
-            // src={initialData[0].banner_img}
+            // src="/assets/images/career/Mask Group 218@2x.png"
+            src={`/uploads/${initialData[0].banner_img}`}
             alt="career banner"
             width={100}
             height={100}
@@ -58,8 +58,8 @@ const SubBanner = () => {
             className="sub-banner contact-deskresp"
           />
           <Image
-            src="/assets/images/career/Group 28545.png"
-            // src={initialData[0].mobileBanner_img}
+            // src="/assets/images/career/Group 28545.png"
+            src={`/uploads/${initialData[0].mobileBanner_img}`}
             alt="Description of the image"
             width={100}
             height={100}

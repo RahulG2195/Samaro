@@ -63,8 +63,8 @@ const ProductBanner = () => {
         <div>
             <div className='position-relative'>
                 <Image
-                    src="/assets/images/products/Group 29177.png"
-                    // src={initialData[0].banner_img}
+                    // src="/assets/images/products/Group 29177.png"
+                    src={`/uploads/${initialData[0].banner_img}`}
                     alt="Description of the image"
                     width={100}
                     height={100}
@@ -75,8 +75,8 @@ const ProductBanner = () => {
                     className='prdctdeskbanner'
                 />
                 <Image
-                    src="/assets/images/products/Group 29096.png"
-                    // src={bannerData.mobileBanner_img}
+                    // src="/assets/images/products/Group 29096.png"
+                    src={`/uploads/${initialData[0].mobileBanner_img}`}
                     alt="Description of the image"
                     width={100}
                     height={100}

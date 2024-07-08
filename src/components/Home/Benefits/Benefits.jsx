@@ -35,55 +35,55 @@ const Benefits = () => {
         fetchBenefit();
     }, []);
 
-    const benifitsIcon = [
-        { imageSrc: "/assets/images/home/benefits/benefits/weather.png", text: "Weather Proof" },
-        { imageSrc: "/assets/images/home/benefits/benefits/waterproof.png", text: "100% waterproof" },
-        { imageSrc: "/assets/images/home/benefits/benefits/lock.png", text: "CLICK N LOCK INSTALLATION" },
-        { imageSrc: "/assets/images/home/benefits/benefits/scratch.png", text: "SCRATCH RESISTANT" },
-        { imageSrc: "/assets/images/home/benefits/benefits/termite.png", text: "TERMITE PROOF" },
-        { imageSrc: "/assets/images/home/benefits/benefits/glue-free.png", text: "GLUE FREE APPLICATION" },
-        { imageSrc: "/assets/images/home/benefits/benefits/fire-resistant.png", text: "FIRE RESISTANT" },
-        { imageSrc: "/assets/images/home/benefits/benefits/stain-protection.png", text: "STAIN PROTECTION" },
-        { imageSrc: "/assets/images/home/benefits/benefits/dust-free.png", text: "DUST FREE INSTALLATION" },
-        { imageSrc: "/assets/images/home/benefits/benefits/recyclable.png", text: "100% RECYCLABLE" },
-        { imageSrc: "/assets/images/home/benefits/benefits/durability.png", text: "DURABILITY" },
-        // { imageSrc: "/assets/images/home/benefits/benefits/Group 28770.svg", text: "Know Now" },
-    ];
+    // const benifitsIcon = [
+    //     { imageSrc: "/assets/images/home/benefits/benefits/weather.png", text: "Weather Proof" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/waterproof.png", text: "100% waterproof" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/lock.png", text: "CLICK N LOCK INSTALLATION" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/scratch.png", text: "SCRATCH RESISTANT" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/termite.png", text: "TERMITE PROOF" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/glue-free.png", text: "GLUE FREE APPLICATION" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/fire-resistant.png", text: "FIRE RESISTANT" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/stain-protection.png", text: "STAIN PROTECTION" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/dust-free.png", text: "DUST FREE INSTALLATION" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/recyclable.png", text: "100% RECYCLABLE" },
+    //     { imageSrc: "/assets/images/home/benefits/benefits/durability.png", text: "DURABILITY" },
+    //     // { imageSrc: "/assets/images/home/benefits/benefits/Group 28770.svg", text: "Know Now" },
+    // ];
 
 
 
-    //dynamic data for icon and titie
+    // dynamic data for icon and titie
 
-    // const benifitsIcon = benefit.icons.map((icon, index) => ({
-    //     imageSrc: `/assets/images/home/benefits/benefits/${icon}`,
-    //     text: benefit.titles[index]
-    //   }));
+    const benifitsIcon = benefit.icons.map((icon, index) => ({
+        imageSrc: `/uploads/${icon}`,
+        text: benefit.titles[index]
+      }));
 
-    const benifitsARR = [
-        {
-            url: "/assets/images/home/benefits/Mask Group 323.png",
-            alt: 'err'
-        },
-        {
-            url: "/assets/images/home/benefits/Mask Group 322.png",
-            alt: 'err'
-        },
-        {
-            url: "/assets/images/home/benefits/Mask Group 324.png",
-            alt: 'err'
-        },
-        {
-            url: "/assets/images/home/benefits/Mask Group 325.png",
-            alt: 'err'
-        },
-    ]
+    // const benifitsARR = [
+    //     {
+    //         url: "/assets/images/home/benefits/Mask Group 323.png",
+    //         alt: 'err'
+    //     },
+    //     {
+    //         url: "/assets/images/home/benefits/Mask Group 322.png",
+    //         alt: 'err'
+    //     },
+    //     {
+    //         url: "/assets/images/home/benefits/Mask Group 324.png",
+    //         alt: 'err'
+    //     },
+    //     {
+    //         url: "/assets/images/home/benefits/Mask Group 325.png",
+    //         alt: 'err'
+    //     },
+    // ]
 
     //dynamic data of slider
 
-    // const benifitsARR = benefit.slider_images.map((image, index) => ({
-    //     url: `/assets/images/home/benefits/benefits/${image}`,
-    //     alt: `Benefit ${index + 1}`
-    //   }));
+    const benifitsARR = benefit.slider_images.map((image, index) => ({
+        url: `/uploads/${image}`,
+        alt: `Benefit ${index + 1}`
+      }));
 
     return (
         <section className="benefits position-relative">
@@ -109,78 +109,8 @@ const Benefits = () => {
                             <img src="/assets/images/home/benefits/Group 27834.svg" alt="err" />
                         </div>
 
-                        <div className="column-wrapper px-5 benifitsinDesktop">
-                            <div className="row g-4 mt-1 respBenifitrow ">
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/weather.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">Weather Proof</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/waterproof.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">100% waterproof</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/lock.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">CLICK N LOCK INSTALLATION</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/scratch.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">SCRATCH RESISTANT</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/termite.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">TERMITE PROOF</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/glue-free.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">GLUE FREE APPLICATION</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/fire-resistant.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">FIRE RESISTANT</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/stain-protection.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">STAIN PROTECTION</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/dust-free.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">DUST FREE INSTALLATION</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/recyclable.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">100% RECYCLABLE</span>
-                                </div>
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                    <div className="image">
-                                        <img src="/assets/images/home/benefits/benefits/durability.png" alt="" />
-                                    </div>
-                                    <span className="text-navy text small fw-semibold">DURABILITY</span>
-                                </div>
-
-
                                 {/* dynamic data """ " */}
-                                {/* <div className="column-wrapper px-5 benifitsinDesktop">
+                                 <div className="column-wrapper px-5 benifitsinDesktop">
                                     <div className="row g-4 mt-1 respBenifitrow">
                                         {benifitsIcon.map((item, index) => (
                                             <div key={index} className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
@@ -189,7 +119,7 @@ const Benefits = () => {
                                                 </div>
                                                 <span className="text-navy text small fw-semibold">{item.text}</span>
                                             </div>
-                                        ))} */}
+                                        ))} 
                                         {/* Dynamic data end */}
                                         <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
                                             <Link href={'/why-samaro'}>

@@ -49,7 +49,7 @@ const NewsletterSwiper = ({ title, cardData, active, newlaunchCard, Newsletter }
                                     <div className='mb-5'>
                                         <DownloadCenterCard
                                             pdf={card.pdf}
-                                            imgurl={`/${card.imgurl}`}
+                                            imgurl={`/uploads/${card.imgurl}`}
                                             title={card.title}
                                             date={card.date}
                                             author={card.author}
@@ -90,7 +90,7 @@ const NewsletterSwiper = ({ title, cardData, active, newlaunchCard, Newsletter }
                         {cardData.map((card, index) => (
                             <SwiperSlide key={index} className='sliderchild'>
                                 <DownloadCenterCard
-                                    imgurl={`/${card.imgurl}`}
+                                    imgurl={`/uploads/${card.imgurl}`}
                                     title={card.title}
                                     date={card.date}
                                     author={card.author}

@@ -48,25 +48,19 @@ const formattedContent = explorerData.heading
             <div className="row">
               <h2 className="text-white pb-3 pt-md-5 my-2 text-center fw-normal respHeading1">
               {formattedContent}
-                {/* How to choose my <strong className='fw-semibold'>perfect floor</strong>? */}
               </h2>
               <div className="col-lg-4 col-md-4 col-sm6 ">
-                <img className="samaro-ply" src="/assets/images/home/floor-explorer/2.png" alt="" />
-                {/* <img className="samaro-ply" src={explorerData.ply_image} alt="" /> */}
+                <img className="samaro-ply" src={`/uploads/${explorerData.ply_image}`} alt="" />
               </div>
-              {/* <div className='floorExplrTxtinMbl'> <h3 className="respHeading2"><span>FLOOR</span>EXPLORER</h3></div> */}
               <div className='floorExplrTxtinMbl'> <h3 className="respHeading2">{explorerData.sub_heading}</h3></div>
               <div className="col-lg-4 col-md-4 col-sm6">
-                <img className="samaro-tab" src="/assets/images/home/floor-explorer/1.png" alt="" />
-                {/* <img className="samaro-tab" src={explorerData.tab_image} alt="" /> */}
+                <img className="samaro-tab" src={`/uploads/${explorerData.tab_image}`} alt="" />
               </div>
               <div className="col-lg-4 col-md-4 ">
                 <div className="content pb-5">
-                  {/* <h3 className="respHeading2 floorExplrDeskText"><span>FLOOR</span>EXPLORER</h3> */}
                   <h3 className="respHeading2 floorExplrDeskText">{explorerData.sub_heading}</h3>
                   <p className=" respCption my-3">
                   {explorerData.description}
-                  {/* Let our Floor Explorer be your compass to the perfect floor. We're here to guide your big decision with expertise and care! */}
                   </p>
                   <Link href={explorerData.url} className=" button d-inline-block mt-3 px-3 py-1 respCption">{explorerData.button}</Link>
                 </div>

@@ -54,18 +54,18 @@ const Spclvt = () => {
                         <div className="qualities px-4 mt-4 ">
                             <div className="d-flex flex-wrap justify-content-evenly py-2 " >
                                 <div className="d-flex align-items-center gap-2 text-white installTxt">
-                                    <img src="/assets/images/home/spc-lvt/icons/Group 29194.svg" alt="" />
-                                    {/* <img src={buildHomeData.feature1_icon} alt="" /> */}
+                                    {/* <img src="/assets/images/home/spc-lvt/icons/Group 29194.svg" alt="" /> */}
+                                    <img src={`/uploads/${buildHomeData.feature1_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature1_title}</span>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 text-white">
-                                    <img src="/assets/images/home/spc-lvt/icons/2.png" alt="" />
-                                    {/* <img src={buildHomeData.feature2_icon} alt="" /> */}
+                                    {/* <img src="/assets/images/home/spc-lvt/icons/2.png" alt="" /> */}
+                                    <img src={`/uploads/${buildHomeData.feature2_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature2_title}</span>
                                 </div>
                                 <div className="d-flex align-items-center gap-2 text-white waterResistText waterDrop">
-                                    <img src="/assets/images/home/spc-lvt/icons/Group 29195.svg" alt="" />
-                                    {/* <img src={buildHomeData.feature3_icon} alt="" /> */}
+                                    {/* <img src="/assets/images/home/spc-lvt/icons/Group 29195.svg" alt="" /> */}
+                                    <img src={`/uploads/${buildHomeData.feature3_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature3_title}</span>
                                     {/* <span className=''>100% Water-Resistant</span> */}
                                 </div>

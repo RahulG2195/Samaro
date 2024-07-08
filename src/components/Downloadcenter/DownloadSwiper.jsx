@@ -36,7 +36,7 @@ const DownloadSwiper = ({ Badgetitle, title, cardData, active }) => {
           {cardData.map((card, index) => (
             <SwiperSlide key={index} className='sliderchild '>
               <DownloadCenterCard
-                imgurl={`/${card.imgurl}`}
+                imgurl={`/uploads/${card.imgurl}`}
                 Badge={card.Badgetitle}
                 pdf={card.pdf}
               />

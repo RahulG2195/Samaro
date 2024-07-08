@@ -5,50 +5,50 @@ import axios from 'axios';
 
 
 const Gallery = () => {
-    const Images = [
-        { imageName: "/assets/images/gallery/1.jpg" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (1).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (2).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (3).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (4).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (5).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (6).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (7).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (8).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (9).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (10).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (11).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (12).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (13).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (14).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/1 (15).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (1).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (2).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (3).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (4).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (5).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (6).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (7).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (8).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (9).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (10).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (11).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (12).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (13).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (14).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (15).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (16).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (17).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (18).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (19).webp" },
-        { imageName: "/assets/images/gallery/px-conversions/2 (20).webp" },
+    // const Images = [
+    //     { imageName: "/assets/images/gallery/1.jpg" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (1).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (2).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (3).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (4).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (5).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (6).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (7).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (8).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (9).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (10).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (11).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (12).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (13).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (14).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/1 (15).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (1).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (2).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (3).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (4).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (5).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (6).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (7).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (8).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (9).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (10).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (11).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (12).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (13).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (14).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (15).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (16).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (17).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (18).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (19).webp" },
+    //     { imageName: "/assets/images/gallery/px-conversions/2 (20).webp" },
        
        
-    ];
+    // ];
 
 
 
-    // const [Images, setImages] = useState([]);
+    const [Images, setImages] = useState([]);
 
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const Gallery = () => {
                     {Images.map((img, index) => (
                         <div key={index} className="grid-item">
                             <div className="card border-0 new_div">
-                                <img src={img.imageName} alt="err" />
+                                <img src={`/uploads/${img.imageName}`} alt="err" />
                                 {/* <Image
                                 id="myImg"
                                 className="news_img"

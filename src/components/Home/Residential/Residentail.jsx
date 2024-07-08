@@ -6,7 +6,7 @@ const Residential = () => {
     const [spacesData, setSpacesData] = useState({
         residential_images: ""
     });
-    // const images = spacesData.commercial_images.split(',');
+    const images = spacesData.residential_images.split(',');
 
     useEffect(() => {
         const fetchSpacesData = async () => {
@@ -22,24 +22,24 @@ const Residential = () => {
         fetchSpacesData();
     }, []);
 
-    const images = [
-        {
-            src: "/assets/images/home/commercial/Mask Group 12.png",
-            alt: "Image 1"
-        },
-        {
-            src: "/assets/images/home/commercial/Mask Group 128.png",
-            alt: "Image 2"
-        },
-        {
-            src: "/assets/images/gallery/px-conversions/1 (2).webp",
-            alt: "Image 3"
-        },
-        {
-            src: "/assets/images/gallery/px-conversions/2 (5).webp",
-            alt: "Image 3"
-        },
-    ];
+    // const images = [
+    //     {
+    //         src: "/assets/images/home/commercial/Mask Group 12.png",
+    //         alt: "Image 1"
+    //     },
+    //     {
+    //         src: "/assets/images/home/commercial/Mask Group 128.png",
+    //         alt: "Image 2"
+    //     },
+    //     {
+    //         src: "/assets/images/gallery/px-conversions/1 (2).webp",
+    //         alt: "Image 3"
+    //     },
+    //     {
+    //         src: "/assets/images/gallery/px-conversions/2 (5).webp",
+    //         alt: "Image 3"
+    //     },
+    // ];
     return (
         <section className="commercial-2 my-5">
             <div className="row justify-content-end">
@@ -48,7 +48,7 @@ const Residential = () => {
                         <div className="carousel-inner">
                             {images.map((image, index) => (
                                 <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                    <img src={image.src} className="d-block w-100" alt={image.alt} />
+                                    <img src={`/uploads/${image}`} className="d-block w-100" alt={image.alt} />
                                 </div>
                             ))}
                         </div>

@@ -56,7 +56,8 @@ const Vision = () => {
                             <div className="vision-text position-relative row align-items-center justify-content-evenly">
                                 <div className="col-lg-2 col-md-2 col-2">
                                     <div className="vision-image p-4">
-                                        <img src="/assets/images/why-samaro/vision-mission/vision.png" alt="" />
+                                        {/* <img src="/assets/images/why-samaro/vision-mission/vision.png" alt="" /> */}
+                                        <img src={`/uploads/${visionData.logo}`} alt="" />
                                     </div>
                                 </div>
                                 <div className='col-md-10 col-lg-9'>
@@ -66,13 +67,7 @@ const Vision = () => {
                                             <img src="/assets/images/why-samaro/vision-mission/vision.png" alt="" className='w-75' />
                                         </div>
                                     </div>
-                                    {/* <ul className='m-0'>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Revolutionizing the flooring industry with innovation and sustainability.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Offering high-quality Stone Polymer Composite (SPC) and Luxury Vinyl Tile (LVT) flooring solutions.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Inspiring and enhancing living spaces globally.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Setting new standards in flooring excellence and building materials.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Making a progressive impact on homes, office and commercial spaces worldwide.</li>
-                                    </ul> */}
+                                   
                                     <ul className='m-0'>
                                         {visionData.subpoints.map((item, index) => (
                                             <li key={index} className='p-0 m-1 text-navy fw-normal'>{item}</li>
@@ -94,15 +89,11 @@ const Vision = () => {
                                     <div className='d-flex align-items-center gap-4'>
                                         <h2 className='text-darkred missionH2'>{missionData.title}</h2>
                                         <div className="w-25 d-none mobilevissionimg p-3">
-                                            <img src="/assets/images/why-samaro/vision-mission/mission.png" alt="" className='w-75' />
+                                            {/* <img src="/assets/images/why-samaro/vision-mission/mission.png" alt="" className='w-75' /> */}
+                                            <img src={`/uploads/${missionData.logo}`} alt="" className='w-75' />
                                         </div>
                                     </div>
-                                    {/* <ul className='p-0'>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Leading the flooring industry with continuous innovation, quality standards, and sustainability at Samaro Global Industries.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Exceeding customer expectations through a diverse range of premium flooring products and unparalleled service and support.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Utilizing expertise and state-of-the-art manufacturing to create beautiful, durable, and environment-friendly flooring solutions.</li>
-                                        <li className='p-0 m-1 text-navy fw-normal'>Transforming spaces and enriching lives with our commitment to excellence.</li>
-                                    </ul> */}
+                                    
                                     <ul className='p-0'>
                                         {missionData.subpoints.map((item, index) => (
                                             <li key={index} className='p-0 m-1 text-navy fw-normal'>{item}</li>
