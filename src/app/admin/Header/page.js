@@ -1,37 +1,62 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Navbar,
   Collapse,
   Nav,
-  NavItem,
   NavbarBrand,
-  UncontrolledDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Dropdown,
   Button,
-} from "reactstrap";
-// import LogoWhite from "public/assets/images/logo/main-logo.png";
-// import user1 from "public/assets/images/logo/logo.png";
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "reactstrap";;
+import ResetPass from "@/components/Admin/ResetPassword/resetPass";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const Header = ({ showMobmenu }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [showResetForm, setShowResetForm] = useState(false);
+const router = useRouter()
 
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-  const Handletoggle = () => {
-    setIsOpen(!isOpen);
+  const toggleResetModal = () => {
+    setShowResetForm(!showResetForm); 
   };
+  const closeResetModal = () => {
+    setShowResetForm(false); 
+  };
+
+  const toggle = () => setDropdownOpen(prevState => !prevState);
+  const toggleCollapse = () => setIsOpen(!isOpen);
+
+  const handleReset = () => {
+    setShowResetForm(true); 
+  };
+
+  const closeResetForm = () => {
+    setShowResetForm(false); 
+  };
+
+  const handleLogout = async () => {
+    try {
+      await axios.delete('/api/login');
+      router.push('/admin/adminLogin'); 
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  }
 
   return (
     <Navbar color="danger" dark expand="md">
       <div className="d-flex align-items-center">
-        <NavbarBrand href="/" className="d-lg-none ">
-          {/* <img src="/assets/images/logo/main-logo.png" alt="logo" className="w-50"/> */}
+        <NavbarBrand href="/" className="d-lg-none">
         </NavbarBrand>
         <Button color="danger" className="d-lg-none" onClick={showMobmenu}>
           <i className="bi bi-list"></i>
@@ -42,7 +67,7 @@ const Header = ({ showMobmenu }) => {
           color="danger"
           size="sm"
           className="d-sm-block d-md-none"
-          onClick={Handletoggle}
+          onClick={toggleCollapse}
         >
           {isOpen ? (
             <i className="bi bi-x"></i>
@@ -51,46 +76,32 @@ const Header = ({ showMobmenu }) => {
           )}
         </Button>
       </div>
-
+{/* SAMARO@123 */}
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto Admin" navbar>
-          {/* <NavItem>
-            <Link href="/" className="nav-link">
-              Starter
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/about" className="nav-link">
-              About
-            </Link>
-          </NavItem>
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown> */}
+          {/* Your navigation links */}
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="danger">
             <div style={{ lineHeight: "0px" }}>
-            <i className="bi bi-person-workspace"></i>
+              <i className="bi bi-person-workspace"></i>
             </div>
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>Reset Password</DropdownItem>
+            <DropdownItem onClick={handleReset}>Reset Password</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Collapse>
-    </Navbar>
+      <Modal isOpen={showResetForm} toggle={toggleResetModal} centered>
+        {/* <ModalHeader toggle={toggleResetModal}></ModalHeader> */}
+        <ModalBody>
+          <ResetPass onClose={closeResetModal} />
+        </ModalBody>
+      </Modal>   
+       </Navbar>
   );
 };
 

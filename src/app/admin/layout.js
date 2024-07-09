@@ -9,25 +9,39 @@ import "../../../styles/layout/_sidebar.css";
 import "../../../styles/layout/_container.css";
 import { ToastContainer } from "react-toastify";
 import "../../app/admin/global.css"
-// import Header from "./header/Header";
+import { useRouter,usePathname } from 'next/navigation';
 // import Sidebar from "./sidebars/vertical/Sidebar";
 
 const Admin = ({ children }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [open, setOpen] = React.useState(false);
   const showMobilemenu = () => {
     setOpen(!open);
   };
 
+  let isAdminLoginPage;
+  if(pathname === '/admin/adminLogin'){
+    isAdminLoginPage = true
+  }
+  else{
+    isAdminLoginPage = false;
+  }
+  
+  
+
+
   return (
     <main>
       <div className="pageWrapper d-md-block d-lg-flex">
         {/******** Sidebar **********/}
-        <aside
+        {!isAdminLoginPage && (<aside
           className={`sidebarArea shadow bg-white ${!open ? "" : "showSidebar"
             }`}
         >
           <Sidebar showMobilemenu={() => showMobilemenu()} />
-        </aside>
+        </aside>)}
         {/********Content Area**********/}
 
         <div className="contentArea">
@@ -37,7 +51,6 @@ const Admin = ({ children }) => {
           {/********Middle Content**********/}
           <Container className="p-4 wrapper" fluid>
             <div>{children}</div>
-            {/* <Component {...pageProps} /> */}
           </Container>
         </div>
       </div>

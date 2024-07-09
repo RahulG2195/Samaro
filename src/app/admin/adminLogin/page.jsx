@@ -13,10 +13,9 @@ export default function LoginPage() {
         e.preventDefault();
 
         try {
-            const res = await axios.post('/api/login', { username, password });
-
+            const res = await axios.post('/api/login', { username:username, password:password });
             if (res.status === 200) {
-                router.push('/dashboard');
+                router.push('/admin');
             } else {
                 alert('Login failed');
             }
