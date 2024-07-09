@@ -1,45 +1,39 @@
-
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "@/components/Home/Social/Social.css";
+
 const Inspiration = () => {
-  
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/admin/gallery')
+      .then(response => setImages(response.data.slice(0, 6))) // Assuming the API returns an array of image paths
+      .catch(error => console.error('Error fetching images:', error));
+  }, []);
+
   return (
     <>
-  <section className="social mb-5 d-flex justify-content-center">
-    <div className="container">
-      <div className="row mt-">
-        <div className="col-lg-12">
-          <h1 className='gallerytext'><span className='fw-medium'>INSPIRATIONAL</span> GALLERY</h1>
+      <section className="social mb-5 d-flex justify-content-center">
+        <div className="container">
+          <div className="row mt-">
+            <div className="col-lg-12">
+              <h1 className='gallerytext'>
+                <span className='fw-medium'>INSPIRATIONAL</span> GALLERY
+              </h1>
 
-          <div className="social-grid">
-            <div className="image">
-              <img src="/assets/images/gallery/px-conversions/1 (1).webp" alt="" />
-            </div>
-            <div className="image">
-              <img src="/assets/images/gallery/px-conversions/1 (2).webp" alt="" />
-            </div>
-            <div className="image">
-            <img src="/assets/images/gallery/px-conversions/1 (4).webp" alt="" />
-
-            </div>
-            <div className="image ">
-            <img src="/assets/images/gallery/px-conversions/1 (3).webp" alt="" />
-
-            </div>
-            <div className="image">
-              <img src="/assets/images/gallery/px-conversions/1 (5).webp" alt="" />
-            </div>
-            <div className="image">
-              <img src="/assets/images/gallery/px-conversions/2 (4).webp" alt="" />
+              <div className="social-grid">
+                {images.map((image, index) => (
+                  <div className="image" key={index}>
+                    <img src={`/uploads/${image.imageName}`} alt={`Inspiration ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-</>
+      </section>
+    </>
+  );
+};
 
-  )
-}
-
-export default Inspiration
+export default Inspiration;

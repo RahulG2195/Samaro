@@ -40,6 +40,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+   
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Provide jQuery globally
     config.plugins.push(
@@ -51,6 +52,16 @@ const nextConfig = {
     );
     return config;
   },
+
+  async middleware() {
+    return [
+      {
+        source: '/admin/:path*',
+        middleware: ['middleware'],
+      },
+    ];
+  },
+
 };
 
 export default nextConfig;
