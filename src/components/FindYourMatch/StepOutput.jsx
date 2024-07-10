@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import '@/components/FindYourMatch/findmatch.css';
@@ -97,9 +98,6 @@ import axios from 'axios';
 //     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
 //   },
 // ];
-
-
-
 
 
 const StepOutput = ({ formData }) => {
