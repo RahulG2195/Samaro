@@ -93,18 +93,21 @@ export async function PUT(req, res) {
 
   export async function DELETE(request) {
     try {
-      const cookies = request.cookies;
-      cookies.set('token', '', {
-        path: '/',
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production' ? true : false,
-        sameSite: 'strict'
-      });
-  
-      return new Response(JSON.stringify({ message: 'Token cookie deleted successfully' }), {
+      const response = new Response(JSON.stringify({ message: 'Token cookie deleted successfully' }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
       });
+  
+      // Set the cookie to an empty value and set the expiration date to a past date
+      response.headers.append('Set-Cookie', serialize('token', '', {
+        path: '/',
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        expires: new Date(0) // Expire the cookie immediately
+      }));
+  
+      return response;
     } catch (error) {
       console.error('Error deleting auth cookie:', error);
       return new Response(JSON.stringify({ error: 'Token cookie Not present' }), {
@@ -113,4 +116,5 @@ export async function PUT(req, res) {
       });
     }
   }
+  
   

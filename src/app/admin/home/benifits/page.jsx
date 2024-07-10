@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Container, Button, Input, Form, FormGroup, Label, Card } from "reactstrap";
+import { Container, Button, Input, Form, FormGroup, Label, Card, Alert } from "reactstrap";
 
 const BenefitsSection = () => {
   const [benefit, setBenefit] = useState({
@@ -10,6 +10,7 @@ const BenefitsSection = () => {
     titles: [],
     slider_images: []
   });
+
   const [editMode, setEditMode] = useState(false);
   const [editedBenefit, setEditedBenefit] = useState({
     heading: "",
@@ -19,6 +20,7 @@ const BenefitsSection = () => {
   });
   const [iconPreviews, setIconPreviews] = useState([]);
   const [sliderImagePreviews, setSliderImagePreviews] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Function to fetch initial data
   useEffect(() => {
@@ -123,8 +125,26 @@ const BenefitsSection = () => {
   };
   const handleSave = async () => {
     try {
+
+      if (!editedBenefit.heading.trim()) {
+        setErrorMessage("Please enter a heading.");
+        return;
+      }
+
+      const hasEmptyTitle = editedBenefit.titles.some(title => !title.trim());
+      if (hasEmptyTitle) {
+        setErrorMessage("Please enter all titles.");
+        return;
+      }
+
+        const trimmedBenefit = {
+          ...editedBenefit,
+          heading: editedBenefit.heading.trim(),
+          titles: editedBenefit.titles.map(title => title.trim())
+        };
+
       const formData = new FormData();
-      Object.entries(editedBenefit).forEach(([key, value]) => {
+      Object.entries(trimmedBenefit).forEach(([key, value]) => {
         if (key === "icons" || key === "slider_images") {
           value.forEach((file, index) => {
             if (file instanceof File) {
@@ -142,8 +162,10 @@ const BenefitsSection = () => {
         }
       });
 
-      setBenefit(editedBenefit);
+      setBenefit(trimmedBenefit);
       setEditMode(false);
+      setErrorMessage("");
+
       console.log("Benefit updated:", response.data);
     } catch (error) {
       console.error("Error updating benefit:", error);
@@ -153,6 +175,8 @@ const BenefitsSection = () => {
   const handleCancel = () => {
     setEditedBenefit(benefit);
     setEditMode(false);
+    setErrorMessage("");
+
   };
 
   return (
@@ -175,6 +199,8 @@ const BenefitsSection = () => {
               value={editedBenefit.heading}
               onChange={handleChange}
               readOnly={!editMode}
+              required
+
             />
           </FormGroup>
 
@@ -200,6 +226,7 @@ const BenefitsSection = () => {
                   readOnly={!editMode}
                   placeholder={`Title ${index + 1}`}
                   className="mr-2"
+                  required
                 />
                 {editMode && (
                   <Button color="danger" onClick={() => handleRemoveIcon(index)}>
@@ -252,6 +279,11 @@ const BenefitsSection = () => {
                 Cancel
               </Button>
             </div>
+          )}
+           {errorMessage && (
+            <Alert color="danger" className="mt-3">
+              {errorMessage}
+            </Alert>
           )}
         </Form>
       </Card>

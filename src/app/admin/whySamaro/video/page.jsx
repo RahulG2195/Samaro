@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Form, FormGroup, Label, Input, Button, Card } from 'reactstrap'; // Adjust as per your styling library
+import { Container, Form, FormGroup, Label, Input, Button, Card, Alert } from 'reactstrap'; // Adjust as per your styling library
 
 const EditVideoForm = () => {
   const [videoData, setVideoData] = useState({
@@ -19,6 +19,7 @@ const EditVideoForm = () => {
   const [editMode, setEditMode] = useState(false);
   const [logoPreview, setLogoPreview] = useState(null);
   const [videoPreview, setVideoPreview] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchVideoData = async () => {
@@ -82,17 +83,34 @@ const EditVideoForm = () => {
     // Reset previews
     setLogoPreview(initialVideoData.logo ? `/uploads/${initialVideoData.logo}` : null);
     setVideoPreview(initialVideoData.video ? `/uploads/${initialVideoData.video}` : null);
+    setError('');
+
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!videoData.heading.trim() || !videoData.description.trim() || !videoData.logo || !videoData.video) {
+      setError('Please fill out all required fields.');
+      return;
+    } else {
+      setError('');
+    }
+
+
+    const trimmedData = {
+      ...videoData,
+      heading: videoData.heading.trim(),
+      description: videoData.description.trim(),
+    };
+
     const formData = new FormData();
-    formData.append('heading', videoData.heading);
-    formData.append('description', videoData.description);
-    if (videoData.logo_file) formData.append('logo_file', videoData.logo_file);
-    if (videoData.video_file) formData.append('video_file', videoData.video_file);
-    formData.append('logo_filename', videoData.logo);
-    formData.append('video_filename', videoData.video);
+    formData.append('heading', trimmedData.heading);
+    formData.append('description', trimmedData.description);
+    if (videoData.logo_file) formData.append('logo_file', trimmedData.logo_file);
+    if (videoData.video_file) formData.append('video_file', trimmedData.video_file);
+    formData.append('logo_filename', trimmedData.logo);
+    formData.append('video_filename', trimmedData.video);
 
     try {
       const response = await axios.put(`/api/admin/whysamaro_video`, formData, {
@@ -183,6 +201,11 @@ const EditVideoForm = () => {
             </Button>
           </div>
         )}
+         {error && (
+                        <Alert color="danger" className="mt-3">
+                            {error}
+                        </Alert>
+                    )}
       </Form>
     </Card>
     </Container >

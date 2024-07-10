@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input, Card } from "reactstrap";
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, Card ,Alert } from "reactstrap";
 
 const EditBuildHomePage = () => {
   const [buildHomeData, setBuildHomeData] = useState({
@@ -17,6 +17,7 @@ const EditBuildHomePage = () => {
 
   const [editMode, setEditMode] = useState(false);
   const [initialData, setInitialData] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Function to fetch initial data
   useEffect(() => {
@@ -61,8 +62,20 @@ const EditBuildHomePage = () => {
 
   const handleSave = async () => {
     try {
+
+      const trimmedData = Object.fromEntries(
+        Object.entries(buildHomeData).map(([key, value]) => [
+          key,
+          typeof value === "string" ? value.trim() : value,
+        ])
+      );
+
+      if (!validateFields(trimmedData)) {
+        return;
+      }
+
       const formData = new FormData();
-      Object.entries(buildHomeData).forEach(([key, value]) => {
+      Object.entries(trimmedData).forEach(([key, value]) => {
         formData.append(key, value);
       });
 
@@ -74,6 +87,8 @@ const EditBuildHomePage = () => {
 
       console.log("Build home data updated:", response.data);
       setEditMode(false);
+      setErrorMessage("");
+
     } catch (error) {
       console.error("Error updating build home data:", error);
     }
@@ -82,6 +97,15 @@ const EditBuildHomePage = () => {
   const handleCancel = () => {
     setBuildHomeData(initialData);
     setEditMode(false);
+  };
+
+  const validateFields = () => {
+    const { heading, description, feature1_icon, feature1_title, feature2_icon, feature2_title, feature3_icon, feature3_title } = buildHomeData;
+    if (!heading || !description || !feature1_icon || !feature1_title || !feature2_icon || !feature2_title || !feature3_icon || !feature3_title) {
+      setErrorMessage("Please fill in all fields.");
+      return false;
+    }
+    return true;
   };
 
   return (
@@ -108,6 +132,7 @@ const EditBuildHomePage = () => {
                     value={buildHomeData.heading}
                     onChange={handleChange}
                     readOnly={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -121,6 +146,7 @@ const EditBuildHomePage = () => {
                     value={buildHomeData.description}
                     onChange={handleChange}
                     readOnly={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -136,6 +162,7 @@ const EditBuildHomePage = () => {
                     id="feature1_icon"
                     onChange={handleChange}
                     disabled={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -149,6 +176,7 @@ const EditBuildHomePage = () => {
                     value={buildHomeData.feature1_title}
                     onChange={handleChange}
                     readOnly={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -164,6 +192,7 @@ const EditBuildHomePage = () => {
                     id="feature2_icon"
                     onChange={handleChange}
                     disabled={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -177,6 +206,7 @@ const EditBuildHomePage = () => {
                     value={buildHomeData.feature2_title}
                     onChange={handleChange}
                     readOnly={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -192,6 +222,7 @@ const EditBuildHomePage = () => {
                     id="feature3_icon"
                     onChange={handleChange}
                     disabled={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -205,6 +236,7 @@ const EditBuildHomePage = () => {
                     value={buildHomeData.feature3_title}
                     onChange={handleChange}
                     readOnly={!editMode}
+                    required
                   />
                 </FormGroup>
               </Col>
@@ -220,6 +252,7 @@ const EditBuildHomePage = () => {
               </div>
             )}
           </Form>
+          {errorMessage && <Alert color="danger">{errorMessage}</Alert>}
         </Container>
       </Card>
     </Container>

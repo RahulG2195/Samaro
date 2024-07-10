@@ -18,6 +18,12 @@ export async function POST(request, response) {
         const requestData = await request.formData();
         const data = Object.fromEntries(requestData.entries());
 
+        Object.keys(data).forEach(key => {
+            if (typeof data[key] === 'string') {
+                data[key] = data[key].trim();
+            }
+        });
+
         const {
             productname, code, catalogue, variation, color, places,
             thikness, layer, prod_finish, size, spiece, no_of_groves,
@@ -25,12 +31,12 @@ export async function POST(request, response) {
         } = data;
 
         let cat_id = null;
-        if (category === 'SPC') {
+        if (category.toLowerCase() === 'spc') {
             cat_id = 1;
-        } else if (category === 'LVT') {
+        } else if (category.toLowerCase() === 'lvt') {
             cat_id = 2;
         }
-
+        console.log("catcat", cat_id)
         const updateFields = [];
         const values = [];
 
@@ -110,6 +116,12 @@ export async function PUT(request, response) {
     try {
         const requestData = await request.formData();
         const data = Object.fromEntries(requestData.entries());
+
+        Object.keys(data).forEach(key => {
+            if (typeof data[key] === 'string') {
+                data[key] = data[key].trim();
+            }
+        });
 
         const {
             productId, productname, code, catalogue, variation, color, places,
@@ -199,7 +211,7 @@ export async function PUT(request, response) {
 export async function DELETE(request) {
     try {
         const { id } = await request.json();
-        console.log("idid",id)
+        console.log("idid", id)
 
         const sqlQuery = `DELETE FROM products WHERE prod_id = ? `;
         const values = [id];

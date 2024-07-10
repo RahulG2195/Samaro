@@ -38,37 +38,37 @@ const NewslettersEditor = () => {
       // Save updated newsletters
       await Promise.all(newsletters.map(async (newsletter) => {
         const formData = new FormData();
-        formData.append('news_category', newsletter.news_category);
+        formData.append('news_category', newsletter.news_category.trim());
         if (newsletter.imgurl instanceof File) formData.append('imgurl', newsletter.imgurl);
-        formData.append('title', newsletter.title);
-        formData.append('author', newsletter.author);
+        formData.append('title', newsletter.title.trim());
+        formData.append('author', newsletter.author.trim());
         if (newsletter.video instanceof File) formData.append('video', newsletter.video);
         formData.append('status', newsletter.status);
         formData.append('news_id', newsletter.news_id); // Pass the ID for update
-
+  
         await axios.put(`/api/admin/newsletter`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         });
       }));
-
+  
       // Save new newsletter if any
       if (newNewsletter.news_category && newNewsletter.title && newNewsletter.author && newNewsletter.video && newNewsletter.imgurl) {
         const formData = new FormData();
-        formData.append('news_category', newNewsletter.news_category);
+        formData.append('news_category', newNewsletter.news_category.trim());
         formData.append('imgurl', newNewsletter.imgurl);
-        formData.append('title', newNewsletter.title);
-        formData.append('author', newNewsletter.author);
+        formData.append('title', newNewsletter.title.trim());
+        formData.append('author', newNewsletter.author.trim());
         formData.append('video', newNewsletter.video);
         formData.append('status', newNewsletter.status);
-
+  
         await axios.post('/api/admin/newsletter', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         });
-
+  
         setNewNewsletter({
           news_category: '',
           imgurl: null,
@@ -77,16 +77,15 @@ const NewslettersEditor = () => {
           video: null,
           status: 1
         });
-
+  
         fetchNewsletters(); // Refresh the list after save
       }
-
+  
       setEditMode(false);
     } catch (error) {
       console.error('Error saving newsletters:', error);
     }
   };
-
   const handleInputChange = (field, value, index) => {
     if (index !== 'new') {
       // Update existing newsletter

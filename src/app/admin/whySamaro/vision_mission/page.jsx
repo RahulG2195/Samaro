@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardImg, CardTitle } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardImg, CardTitle, Alert } from 'reactstrap';
 
 const VisionMissionEditor = () => {
   const [visionData, setVisionData] = useState({
@@ -9,12 +9,14 @@ const VisionMissionEditor = () => {
     logo: null, // Change to null for easier checking
     subpoints: []
   });
+  const [visionError, setVisionError] = useState('');
 
   const [missionData, setMissionData] = useState({
     title: '',
     logo: null, // Change to null for easier checking
     subpoints: []
   });
+  const [missionError, setMissionError] = useState('');
 
   const [initialVisionData, setInitialVisionData] = useState(null);
   const [initialMissionData, setInitialMissionData] = useState(null);
@@ -60,10 +62,19 @@ const VisionMissionEditor = () => {
   };
 
   const handleSave = async () => {
+
+    if (!visionData.title || visionData.subpoints.length === 0 || !missionData.title || missionData.subpoints.length === 0) {
+      setVisionError('Please fill all required fields for Vision.');
+      setMissionError('Please fill all required fields for Mission.');
+      return;
+    }
+
+
     try {
       const visionFormData = new FormData();
-      visionFormData.append('title', visionData.title);
-      visionFormData.append('subpoints', visionData.subpoints.join(', '));
+      visionFormData.append('title', visionData.title.trim());
+      visionFormData.append('subpoints', visionData.subpoints.map(sp => sp.trim()).join(', '));
+      // visionFormData.append('subpoints', visionData.subpoints.join(', '));
       if (visionData.logo) {
         visionFormData.append('logo', visionData.logo);
       }
@@ -74,8 +85,10 @@ const VisionMissionEditor = () => {
       });
 
       const missionFormData = new FormData();
-      missionFormData.append('title', missionData.title);
-      missionFormData.append('subpoints', missionData.subpoints.join(', '));
+      missionFormData.append('title', missionData.title.trim());
+      missionFormData.append('subpoints', missionData.subpoints.map(sp => sp.trim()).join(', '));
+
+      // missionFormData.append('subpoints', missionData.subpoints.join(','));
       if (missionData.logo) {
         missionFormData.append('logo', missionData.logo);
       }
@@ -89,6 +102,8 @@ const VisionMissionEditor = () => {
       setEditMode(false);
     } catch (error) {
       console.error('Error updating data:', error);
+      setVisionError('Failed to update Vision data. Please try again.');
+      setMissionError('Failed to update Mission data. Please try again.');
     }
   };
 
@@ -189,6 +204,8 @@ const VisionMissionEditor = () => {
                 disabled={!editMode}
               />
             </FormGroup>
+            {visionError && <Alert color="danger">{visionError}</Alert>}
+
             <FormGroup>
               <Label for="visionLogo">Logo Preview</Label><br />
               {visionData.logo && (
@@ -247,6 +264,8 @@ const VisionMissionEditor = () => {
                 disabled={!editMode}
               />
             </FormGroup>
+            {missionError  && <Alert color="danger">{missionError }</Alert>}
+
             <FormGroup>
               <Label for="missionLogo">Logo Preview</Label><br />
               {missionData.logo && (

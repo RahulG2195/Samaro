@@ -1,35 +1,32 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Form, FormGroup, Label, Input, Button, Card } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Card, Alert } from 'reactstrap';
 
 const DownloadCenterEditor = () => {
-  const [downloadData, setDownloadData] = useState([]); // State to hold download center data
-  const [initialDownloadData, setInitialDownloadData] = useState([]); // State to hold initial download center data
-  const [editMode, setEditMode] = useState(false); // State to toggle edit mode
+  const [downloadData, setDownloadData] = useState([]);
+  const [initialDownloadData, setInitialDownloadData] = useState([]);
+  const [editMode, setEditMode] = useState(false);
+  const [errorMessages, setErrorMessages] = useState([]);
 
-  // Fetch download center data on component mount
   useEffect(() => {
     fetchDownloadData();
   }, []);
 
-  // Function to fetch download center data
   const fetchDownloadData = async () => {
     try {
       const response = await axios.get('/api/admin/downloadCenter');
-      setDownloadData(response.data); // Set fetched data into state
-      setInitialDownloadData(response.data); // Store the initial data
+      setDownloadData(response.data);
+      setInitialDownloadData(response.data);
     } catch (error) {
       console.error('Error fetching download center data:', error);
     }
   };
 
-  // Toggle edit mode function
   const handleToggleEditMode = () => {
-    setEditMode(prevMode => !prevMode); // Toggle edit mode state
+    setEditMode(prevMode => !prevMode);
   };
 
-  // Function to handle file input change for images
   const handleFileChange = (index, event) => {
     const updatedDownloadData = [...downloadData];
     if (event.target.files && event.target.files.length > 0) {
@@ -38,43 +35,74 @@ const DownloadCenterEditor = () => {
     }
   };
 
-  // Function to handle input changes for other fields
   const handleInputChange = (index, field, value) => {
     const updatedDownloadData = [...downloadData];
     updatedDownloadData[index] = {
       ...updatedDownloadData[index],
       [field]: value
     };
-    setDownloadData(updatedDownloadData); // Update downloadData state with new field value
+    setDownloadData(updatedDownloadData);
   };
 
-  // Function to save changes to the backend
   const handleSave = async () => {
-    try {
-      // Create FormData for sending data including binary image
-      const formData = new FormData();
-      formData.append('downloadData', JSON.stringify(downloadData[0])); 
-      if (downloadData[0].image) {
-        formData.append('image', downloadData[0].image);
+    const errors = [];
+
+    // Validate and trim values
+    const trimmedDownloadData = downloadData.map(item => ({
+      ...item,
+      heading: item.heading.trim(),
+      description: item.description.trim(),
+      button_text: item.button_text.trim(),
+      button_url: item.button_url.trim()
+    }));
+  
+    trimmedDownloadData.forEach((item, index) => {
+      if (!item.heading) {
+        errors.push(`Heading ${index + 1} is required.`);
       }
+      if (!item.description) {
+        errors.push(`Description ${index + 1} is required.`);
+      }
+      if (!item.button_text) {
+        errors.push(`Button Text ${index + 1} is required.`);
+      }
+      if (!item.button_url) {
+        errors.push(`Button URL ${index + 1} is required.`);
+      }
+    });
+  
+    if (errors.length > 0) {
+      setErrorMessages(errors);
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      trimmedDownloadData.forEach(item => {
+        formData.append('downloadData', JSON.stringify(item));
+        if (item.image) {
+          formData.append('image', item.image);
+        }
+      });
 
       await axios.put('/api/admin/downloadCenter', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
-      }); // Send updated downloadData to backend
+      });
 
-      setEditMode(false); // Exit edit mode after saving
-      setInitialDownloadData(downloadData); // Update the initial data to the current state
+      setEditMode(false);
+      setInitialDownloadData(trimmedDownloadData);
+      setErrorMessages([]);
     } catch (error) {
       console.error('Error updating download center data:', error);
     }
   };
 
-  // Function to cancel changes and revert to initial data
   const handleCancel = () => {
-    setDownloadData(initialDownloadData); // Revert to the initial data
-    setEditMode(false); // Exit edit mode
+    setDownloadData(initialDownloadData);
+    setEditMode(false);
+    setErrorMessages([]);
   };
 
   return (
@@ -87,7 +115,8 @@ const DownloadCenterEditor = () => {
           </Button>
         )}
       </div>
-      <Card className='p-5'>
+      <Card className="p-5">
+       
         {downloadData.map((item, index) => (
           <Form key={index} className="mb-4">
             <FormGroup>
@@ -144,12 +173,19 @@ const DownloadCenterEditor = () => {
             </FormGroup>
           </Form>
         ))}
+         {errorMessages.length > 0 && (
+          <Alert color="danger">
+            {errorMessages.map((error, index) => (
+              <p key={index}>{error}</p>
+            ))}
+          </Alert>
+        )}
         {editMode && (
           <div className="d-flex gap-2">
             <Button color="success" onClick={handleSave}>
               Save
             </Button>
-            <Button color="success" onClick={handleCancel}>
+            <Button color="secondary" onClick={handleCancel}>
               Cancel
             </Button>
           </div>

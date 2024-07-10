@@ -1,7 +1,18 @@
 "use client";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Container, Button, Input, Form, FormGroup, Label, Card, Row, Col } from "reactstrap";
+import {
+  Container,
+  Button,
+  Input,
+  Form,
+  FormGroup,
+  Label,
+  Card,
+  Row,
+  Col,
+  FormFeedback, // Added for form validation feedback
+} from "reactstrap";
 
 const BasicInfoPage = () => {
   const [basicInfo, setBasicInfo] = useState({
@@ -38,28 +49,74 @@ const BasicInfoPage = () => {
     fetchBasicInfo();
   }, []);
 
-  const handleEdit = () => {
-    setEditMode(true);
+  // Validate email function
+  const validateEmail = (email) => {
+    // Basic email format validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
   };
 
+  // Validate mobile number function
+  const validateMobileNumber = (mobileNumber) => {
+    // Basic mobile number format validation
+    const re = /^[0-9 +]{13}$/;
+    return re.test(String(mobileNumber));
+  };
+
+  // Validate form function
+  const validateForm = () => {
+    const {
+      email1,
+      mobile_no_1,
+      address,
+    } = editedData;
+
+    if (!email1 || !mobile_no_1 || !address) {
+      return false; // Return false if any required field is empty
+    }
+
+    if (!validateEmail(email1)) {
+      return false; // Return false if email format is invalid
+    }
+
+    if (!validateMobileNumber(mobile_no_1)) {
+      return false; // Return false if mobile number format is invalid
+    }
+
+    // You can add more specific validations here as needed
+
+    return true;
+  };
+
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // Handle file change for logo
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setEditedData((prevData) => ({ ...prevData, comp_logo: file }));
-      setLogoPreview(URL.createObjectURL(file)); 
+      setLogoPreview(URL.createObjectURL(file));
     }
   };
 
+  // Handle save button click
   const handleSave = async () => {
     try {
+      if (!validateForm()) {
+        return; // Exit function if form validation fails
+      }
+
       const formData = new FormData();
       Object.entries(editedData).forEach(([key, value]) => {
-        formData.append(key, value);
+        if (typeof value === "string") {
+          formData.append(key, value.trim()); // Trim string values
+        } else {
+          formData.append(key, value);
+        }
       });
 
       const response = await axios.put("/api/admin/basicInfo", formData, {
@@ -76,11 +133,14 @@ const BasicInfoPage = () => {
     }
   };
 
+  // Handle cancel button click
   const handleCancel = () => {
     setEditMode(false);
     setEditedData(basicInfo); // Reset edited data to original basic info
   };
-
+  const handleEdit = () => {
+    setEditMode(true);
+  };
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center">
@@ -97,10 +157,10 @@ const BasicInfoPage = () => {
             <Col md={6}>
               <FormGroup>
                 <Label for="comp_logo">Company Logo</Label>
-                <div className="d-flex align-items-center">
+                <div className="">
                   {logoPreview && (
                     <img
-                      src={logoPreview}
+                      src={`/uploads/${logoPreview}`}
                       alt="Company Logo"
                       style={{ width: "100px", marginBottom: "10px" }}
                     />
@@ -122,7 +182,10 @@ const BasicInfoPage = () => {
                   value={editedData.email1}
                   onChange={handleChange}
                   readOnly={!editMode}
+                  invalid={!editedData.email1 || !validateEmail(editedData.email1)} // Added for validation feedback
                 />
+                {!editedData.email1 && <FormFeedback>Please enter Email 1.</FormFeedback>}
+                {!validateEmail(editedData.email1) && <FormFeedback>Please enter a valid Email 1.</FormFeedback>}
               </FormGroup>
               <FormGroup>
                 <Label for="email2">Email 2</Label>
@@ -142,7 +205,10 @@ const BasicInfoPage = () => {
                   value={editedData.mobile_no_1}
                   onChange={handleChange}
                   readOnly={!editMode}
+                  invalid={!editedData.mobile_no_1 || !validateMobileNumber(editedData.mobile_no_1)} // Added for validation feedback
                 />
+                {!editedData.mobile_no_1 && <FormFeedback>Please enter Mobile No 1.</FormFeedback>}
+                {!validateMobileNumber(editedData.mobile_no_1) && <FormFeedback>Please enter a valid Mobile No 1.</FormFeedback>}
               </FormGroup>
               <FormGroup>
                 <Label for="mobile_no_2">Mobile No 2</Label>
@@ -204,7 +270,9 @@ const BasicInfoPage = () => {
                   value={editedData.address}
                   onChange={handleChange}
                   readOnly={!editMode}
+                  invalid={!editedData.address} // Added for validation feedback
                 />
+                {!editedData.address && <FormFeedback>Please enter Address.</FormFeedback>}
               </FormGroup>
               <FormGroup>
                 <Label for="map_url">Map URL</Label>

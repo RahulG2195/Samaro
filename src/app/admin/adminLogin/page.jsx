@@ -7,13 +7,15 @@ import { Form, Button, Container } from 'react-bootstrap';
 export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
     const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const res = await axios.post('/api/login', { username:username, password:password });
+            const res = await axios.post('/api/login', { username: username, password: password });
             if (res.status === 200) {
                 router.push('/admin');
             } else {
@@ -42,11 +44,21 @@ export default function LoginPage() {
                     <Form.Group controlId="formPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
-                            type="password"
+                            type={showPassword ? 'text' : 'password'}
                             placeholder="Enter password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            
                         />
+                         <Form.Check
+                            type="checkbox"
+                            label="Show Password"
+                            checked={showPassword}
+                            onChange={() => setShowPassword(!showPassword)}
+                            className="mt-2 "
+                            
+                        />
+                        
                     </Form.Group>
                     <center className='my-4'>
                         <Button variant="primary" type="submit" onClick={handleSubmit} block>

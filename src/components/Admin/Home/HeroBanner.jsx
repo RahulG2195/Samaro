@@ -36,8 +36,19 @@ const Page = ({ pageName, initialData, isEditing }) => {
 
   const saveChanges = async (row) => {
     try {
-      const formData = new FormData();
+      const trimmedData = {};
+      
       Object.entries(editedData).forEach(([key, value]) => {
+        if (typeof value === 'string') {
+          trimmedData[key] = value.trim();
+        } else {
+          trimmedData[key] = value;
+        }
+      });
+
+
+      const formData = new FormData();
+      Object.entries(trimmedData).forEach(([key, value]) => {
         if (value !== null && value !== undefined && value !== '') {
           formData.append(key, value);
         }

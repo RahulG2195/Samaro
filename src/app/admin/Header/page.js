@@ -16,7 +16,10 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";;
-import ResetPass from "@/components/Admin/ResetPassword/resetPass";
+// import ResetPass from "@/components/Admin/ResetPassword/resetPass";
+// import ResetPass from "../components/Admin/ResetPassword/resetPass";
+import ResetPass from "../../../components/Admin/ResetPassword/ResetPass";
+
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
@@ -46,6 +49,7 @@ const router = useRouter()
 
   const handleLogout = async () => {
     try {
+      localStorage.clear();
       await axios.delete('/api/login');
       router.push('/admin/adminLogin'); 
     } catch (error) {

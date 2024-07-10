@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Container, Button, Input, Form, FormGroup, Label, Card } from 'reactstrap';
+import { Container, Button, Input, Form, FormGroup, Label, Card, Alert } from 'reactstrap';
 import axios from 'axios';
 
 const FloorExplorer = () => {
@@ -18,6 +18,7 @@ const FloorExplorer = () => {
     const [editedData, setEditedData] = useState({});
     const [plyImagePreview, setPlyImagePreview] = useState('');
     const [tabImagePreview, setTabImagePreview] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     // Function to fetch initial data
     useEffect(() => {
@@ -69,14 +70,28 @@ const FloorExplorer = () => {
 
     const handleSave = async () => {
         try {
+
+            const trimmedData = {
+                ...editedData,
+                heading: editedData.heading.trim(),
+                sub_heading: editedData.sub_heading.trim(),
+                description: editedData.description.trim(),
+                button: editedData.button.trim(),
+                url: editedData.url.trim(),
+            };
+            if (!trimmedData.heading || !trimmedData.sub_heading || !trimmedData.description || !trimmedData.button || !trimmedData.url || !trimmedData.ply_image || !trimmedData.tab_image) {
+                setErrorMessage('Please fill in all fields.');
+                return;
+            }
+
             const formData = new FormData();
-            formData.append('heading', editedData.heading);
-            formData.append('sub_heading', editedData.sub_heading);
-            formData.append('description', editedData.description);
-            formData.append('button', editedData.button);
-            formData.append('url', editedData.url);
-            formData.append('ply_image', editedData.ply_image);
-            formData.append('tab_image', editedData.tab_image);
+            formData.append('heading', trimmedData.heading);
+            formData.append('sub_heading', trimmedData.sub_heading);
+            formData.append('description', trimmedData.description);
+            formData.append('button', trimmedData.button);
+            formData.append('url', trimmedData.url);
+            formData.append('ply_image', trimmedData.ply_image);
+            formData.append('tab_image', trimmedData.tab_image);
 
             const response = await axios.put('/api/admin/floorExplorer', formData, {
                 headers: {
@@ -84,8 +99,10 @@ const FloorExplorer = () => {
                 }
             });
 
-            setExplorerData(editedData);
+            setExplorerData(trimmedData);
             setEditMode(false);
+            setErrorMessage('');
+
             console.log('Floor explorer data updated:', response.data);
         } catch (error) {
             console.error('Error updating floor explorer data:', error);
@@ -102,6 +119,8 @@ const FloorExplorer = () => {
         if (explorerData.tab_image) {
             setTabImagePreview(`/uploads/${explorerData.tab_image}`);
         }
+        setErrorMessage('');
+
     };
 
     return (
@@ -124,6 +143,7 @@ const FloorExplorer = () => {
                             value={editMode ? editedData.heading : explorerData.heading}
                             onChange={handleChange}
                             readOnly={!editMode}
+                            
                         />
                     </FormGroup>
                     <FormGroup>
@@ -204,6 +224,11 @@ const FloorExplorer = () => {
                                 Cancel
                             </Button>
                         </div>
+                    )}
+                     {errorMessage && (
+                        <Alert color="danger" className="mt-3">
+                            {errorMessage}
+                        </Alert>
                     )}
                 </Form>
             </Card>

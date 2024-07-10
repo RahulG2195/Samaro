@@ -17,7 +17,14 @@ export async function PUT(request, response) {
     const requestData = await request.formData();
     const data = Object.fromEntries(requestData.entries());
 
-    const { id, image, heading, description, button_text, button_url } = data;
+
+    // const { id, image, heading, description, button_text, button_url } = data;
+    const downloadData = JSON.parse(data.downloadData); 
+    const { id, image, heading, description, button_text, button_url } = downloadData;
+
+
+    console.log("dadada",data)
+    console.log("dadada",heading)
 
     const updateFields = [];
     const values = [];
@@ -32,7 +39,8 @@ export async function PUT(request, response) {
         console.error('Error uploading image_url:', error);
       }
     }
-    if (heading !== undefined) {
+   
+    if (heading) {
       updateFields.push('heading = ?');
       values.push(heading);
     }
@@ -62,6 +70,7 @@ export async function PUT(request, response) {
       WHERE id = 1;
     `;
 
+    console.log("queryquery",sqlQuery)
     // const values = [
     //   image_url || null,
     //   heading || null,

@@ -1,12 +1,13 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardTitle, CardImg } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardTitle, CardImg, Alert } from 'reactstrap';
 
 const WhysamaroBenefitsEditor = () => {
   const [benefits, setBenefits] = useState([]);
   const [initialBenefits, setInitialBenefits] = useState([]);
   const [editMode, setEditMode] = useState(false);
+  const [errorMessages, setErrorMessages] = useState([]);
 
   useEffect(() => {
     const fetchBenefits = async () => {
@@ -28,15 +29,35 @@ const WhysamaroBenefitsEditor = () => {
 
   const handleToggleEditMode = () => {
     setEditMode(prevMode => !prevMode);
+    setErrorMessages([]);
   };
 
   const handleSave = async () => {
+    const errors = [];
+
+    benefits.forEach(benefit => {
+      if (!benefit.point_heading.trim()) {
+        errors.push(`Point heading for Benefit ${benefit.id} is required.`);
+      }
+      if (benefit.subpoints.some(sp => !sp.trim())) {
+        errors.push(`Subpoints for Benefit ${benefit.id} are required.`);
+      }
+      if (!benefit.logo) {
+        errors.push(`Logo for Benefit ${benefit.id} is required.`);
+      }
+    });
+
+    if (errors.length > 0) {
+      setErrorMessages(errors);
+      return;
+    }
+
     try {
       const updatedBenefits = await Promise.all(benefits.map(async (benefit) => {
         const formData = new FormData();
         formData.append('id', benefit.id);
-        formData.append('point_heading', benefit.point_heading);
-        formData.append('subpoints', benefit.subpoints.join(', '))
+        formData.append('point_heading', benefit.point_heading.trim());
+        formData.append('subpoints', benefit.subpoints.map(sp => sp.trim()).join(', '));
 
         if (benefit.logo instanceof File) {
           formData.append('logo', benefit.logo);
@@ -57,6 +78,7 @@ const WhysamaroBenefitsEditor = () => {
       setBenefits(updatedBenefits);
       setInitialBenefits([...updatedBenefits]);
       setEditMode(false);
+      setErrorMessages([]);
     } catch (error) {
       console.error('Error updating benefits data:', error);
     }
@@ -65,6 +87,7 @@ const WhysamaroBenefitsEditor = () => {
   const handleCancel = () => {
     setBenefits([...initialBenefits]);
     setEditMode(false);
+    setErrorMessages([]);
   };
 
   const handleSubpointChange = (index, subpointIndex, value) => {
@@ -107,7 +130,6 @@ const WhysamaroBenefitsEditor = () => {
           </Button>
         )}
       </div>
-
       {benefits.map((benefit, index) => (
         <Card key={benefit.id} className="mb-4">
           <CardBody>
@@ -166,6 +188,13 @@ const WhysamaroBenefitsEditor = () => {
           </CardBody>
         </Card>
       ))}
+      {errorMessages.length > 0 && (
+        <Alert color="danger">
+          {errorMessages.map((error, index) => (
+            <p key={index}>{error}</p>
+          ))}
+        </Alert>
+      )}
 
       {editMode && (
         <div className="d-flex gap-2">
@@ -177,6 +206,7 @@ const WhysamaroBenefitsEditor = () => {
           </Button>
         </div>
       )}
+      
     </Container>
   );
 };

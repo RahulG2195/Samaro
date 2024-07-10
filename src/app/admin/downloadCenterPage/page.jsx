@@ -34,9 +34,15 @@ const DownloadCenterEditor = () => {
 
   const handleSave = async () => {
     try {
-      // Save updated downloads
+      const trimmedDownloads = downloads.map((download) => ({
+        ...download,
+        dc_category: download.dc_category.trim(),
+        dc_type: download.dc_type.trim(),
+        Badgetitle: download.Badgetitle.trim(),
+      }));
+
       await Promise.all(
-        downloads.map(async (download) => {
+        trimmedDownloads.map(async (download) => {
           const formData = new FormData();
           formData.append("dc_id", download.dc_id);
           formData.append("dc_category", download.dc_category);
@@ -55,20 +61,28 @@ const DownloadCenterEditor = () => {
         })
       );
 
+      
       // Save new download if any
+      const trimmedNewDownload = {
+        ...newDownload,
+        dc_category: newDownload.dc_category.trim(),
+        dc_type: newDownload.dc_type.trim(),
+        Badgetitle: newDownload.Badgetitle.trim(),
+      };
+
       if (
-        newDownload.dc_category &&
-        newDownload.dc_type &&
-        newDownload.imgurl &&
-        newDownload.pdf
+        trimmedNewDownload.dc_category &&
+        trimmedNewDownload.dc_type &&
+        trimmedNewDownload.imgurl &&
+        trimmedNewDownload.pdf
       ) {
         const formData = new FormData();
-        formData.append("dc_category", newDownload.dc_category);
-        formData.append("dc_type", newDownload.dc_type);
-        formData.append("imgurl", newDownload.imgurl);
-        formData.append("pdf", newDownload.pdf);
-        formData.append("Badgetitle", newDownload.Badgetitle);
-        formData.append("status", newDownload.status);
+        formData.append("dc_category", trimmedNewDownload.dc_category);
+        formData.append("dc_type", trimmedNewDownload.dc_type);
+        formData.append("imgurl", trimmedNewDownload.imgurl);
+        formData.append("pdf", trimmedNewDownload.pdf);
+        formData.append("Badgetitle", trimmedNewDownload.Badgetitle);
+        formData.append("status", trimmedNewDownload.status);
 
         await axios.post("/api/admin/main_dcPage", formData, {
           headers: {
@@ -211,6 +225,7 @@ const DownloadCenterEditor = () => {
                     onChange={(e) =>
                       handleInputChange("dc_category", e.target.value, download.dc_id)
                     }
+                    required
                   />
                 ) : (
                   download.dc_category
@@ -250,8 +265,8 @@ const DownloadCenterEditor = () => {
                   />
                 ) : (
                   <img
-                  src={typeof download?.imgurl === "string" ? `/uploads/${download.imgurl}` : URL.createObjectURL(download.imgurl)}
-                  alt="Download"
+                    src={typeof download?.imgurl === "string" ? `/uploads/${download.imgurl}` : URL.createObjectURL(download.imgurl)}
+                    alt="Download"
                     style={{ maxWidth: "100px" }}
                   />
                 )}
