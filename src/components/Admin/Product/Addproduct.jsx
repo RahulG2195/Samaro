@@ -17,11 +17,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, toast } from "react-toastify";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter} from "next/navigation";
 
 const Addproducts = () => {
   const router = useRouter();
-  const id = location.search ? location.search.split('=')[1] : '';
+  const { query } = router;
+  // const id = query || '';
+  const id = window.location.search ? window.location.search.split('=')[1] : '';
+  // const id = router;
   console.log("thiss new ", id)
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
