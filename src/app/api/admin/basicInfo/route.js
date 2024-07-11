@@ -38,7 +38,6 @@ export async function PUT(request,response) {
     if (comp_logo) {
       try {
         await uploadImage(request, response, comp_logo);
-        console.log("loglog",comp_logo.name)
         updateFields.push('comp_logo = ?');
         values.push(comp_logo.name);
       } catch (error) {

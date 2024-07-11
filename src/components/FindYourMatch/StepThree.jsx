@@ -86,14 +86,12 @@ const StepThree = ({ formData, handleInputChange }) => {
   // ];
 
   const [colorArr , setColorArr] = useState([]);
-  console.log("colors are ", colorArr)
 
   useEffect(() => {
     const fetchColor = async () => {
       const response = await axios.get('/api/color')
       const colors = response.data;
       setColorArr(colors);
-      console.log("data", colors)
     }
     fetchColor()
   }, [])

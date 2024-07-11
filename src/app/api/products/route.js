@@ -51,7 +51,6 @@ export async function GET(req, res) {
 export async function POST(request) {
   try {
     const { id } = await request.json();
-    //  console.log("here is id bro",id) 
 
     const category = await query({
       query: "SELECT products.*,category.cat_name FROM products JOIN category ON products.cat_id = category.cat_id WHERE seo_url = ?",
@@ -104,11 +103,9 @@ export async function PUT(request) {
 
 
 export async function PATCH(request) {
-  console.log("Received PATCH request");
 
   try {
       const { prod_status, prodId } = await request.json();
-      console.log("Payload:", prod_status, prodId);
 
       const updateResult = await query({
           query: "UPDATE products SET prod_status = ? WHERE prod_id = ?",

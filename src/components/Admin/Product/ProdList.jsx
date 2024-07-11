@@ -34,7 +34,6 @@ const ProdList = () => {
 
     const handleOnClick = async (action, id) => {
         if (action == 'Edit') {
-            console.log("editing id is ",id)
             router.push(`./addProductForm?query=${id}`)
             // router.push(`./addProductForm`)
             // localStorage.setItem('Id', id);
@@ -47,7 +46,6 @@ const ProdList = () => {
                     },
                     data: JSON.stringify({ id: id })
                 });
-                console.log("id", id)
                 if (response.status === 200) {
                     console.log("Product deleted successfully");
                     updatedProducts = products.filter(product => product.product_id !== id);

@@ -43,9 +43,7 @@ export async function PUT(request, response) {
 
     if (logo_file) {
       try {
-        console.log("this is logo file",logo_file)
        await uploadImage(request, response, logo_file);
-       console.log("resres",response)
         updateFields.push('logo = ?');
         values.push(logo_file.name);
       } catch (error) {

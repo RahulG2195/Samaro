@@ -75,9 +75,7 @@ export async function PUT(request, response) {
 
     if (imgurl) {
       try {
-        console.log("fordinesh",imgurl)
         await uploadImage(request, response, imgurl);
-      console.log("imgimg",imgurl.name)
         updateFields.push('imgurl = ?');
         values.push(imgurl.name);
       } catch (error) {

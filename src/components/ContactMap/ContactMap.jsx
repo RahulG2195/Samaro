@@ -16,7 +16,6 @@ const ContactMap = () => {
         youtube_url: "",
         map_url: "",
     });
-    console.log(basicInfo.map_url)
 
     useEffect(() => {
         const fetchBasicInfo = async () => {
@@ -24,8 +23,6 @@ const ContactMap = () => {
                 const response = await axios.get("/api/admin/basicInfo");
                 const info = response.data;
                 setBasicInfo(info);
-                setEditedData(info);
-                setLogoPreview(info.comp_logo); // Set the initial logo preview
             } catch (error) {
                 console.error("Error fetching basic info:", error);
             }
@@ -91,8 +88,8 @@ const ContactMap = () => {
                 </div>
                 <div className='col-xl-8 p-0'>
                     <iframe className='w-100'
-                        src={`https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3769.967650805929!2d72.84926427497828!3d19.109075032102382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1715236220781!5m2!1sen!2sin`}
-                        //    src={`${basicInfo.map_url}`}
+                        // src={`https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3769.967650805929!2d72.84926427497828!3d19.109075032102382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1715236220781!5m2!1sen!2sin`}
+                            src= {`${basicInfo.map_url}`}
                         width="100" height="400" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade">
 
                     </iframe>

@@ -18,7 +18,6 @@ export async function PUT(request, response) {
       const data = Object.fromEntries(requestData.entries());
   
       const { id, point_heading, subpoints, logo } = data;
-      console.log("subsub",data)
   
       const updateFields = [];
       const values = [];

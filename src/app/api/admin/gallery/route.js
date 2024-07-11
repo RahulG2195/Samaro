@@ -56,7 +56,6 @@ export async function PUT(request, response) {
         const data = Object.fromEntries(formData.entries());
 
         const { id, imageName } = data;
-        console.log("imgimg1", imageName)
 
         const updateFields = [];
         const values = [];

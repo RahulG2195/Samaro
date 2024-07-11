@@ -25,7 +25,6 @@ export async function PUT(request , response) {
 
     if (logo) {
       try {
-        console.log("loggolo",logo)
        await uploadImage(request ,response, logo);
         updateFields.push('logo = ?');
         values.push(logo.name);

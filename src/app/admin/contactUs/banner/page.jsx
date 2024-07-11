@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const page = () => {
     const [initialData, setInitialData] = useState([]);
-    // console.log("intial data ",initialData  )
 
     useEffect(() => {
         const fetchBanner = async() =>{
@@ -19,11 +18,6 @@ const page = () => {
         fetchBanner();
 
     }, [])
-
-    //   const initialData = [
-    //     { id: 1, Image: 'about_image.jpg', Banner_title: 'Home page', Banner_Content: 'Lorem ipsum dolor sit amet.' },
-    //   ];
-    // console.log("data is going",initialData)
 
     return <HeroBanner pageName="Contact Us page" initialData={initialData} isEditing={true} />;
 };

@@ -6,11 +6,25 @@ import "./Header.css";
 import Link from "next/link";
 import NavLink from "@/components/helpers/NavLink/NavLink";
 import FollowMore from "../FollowMore/FollowMore";
+import axios from "axios";
 
 const Header = () => {
 
+    const [companyLogo, setcompanyLogo] = useState('')
 
+    useEffect(() => {
+        const fetchBasicInfo = async () => {
+            try {
+                const response = await axios.get("/api/admin/basicInfo");
+                const info = response.data;
+                setcompanyLogo(info.comp_logo); 
+            } catch (error) {
+                console.error("Error fetching basic info:", error);
+            }
+        };
 
+        fetchBasicInfo();
+    }, []);
   
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu open/close
     const toggleMenu = () => {
@@ -26,7 +40,7 @@ const Header = () => {
             <nav className="navbar navbar-expand-lg ">
                 <div className="container">
                     <Link className="navbar-brand" href="/" >
-                        <img src="/assets/images/logo/main-logo.png" alt="" />
+                        <img src={`/uploads/${companyLogo}`} alt="comapany logo" />
                     </Link>
                     <div className="d-flex gap-3 align-items-center ">
                         <div className="headphoneJack">

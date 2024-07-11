@@ -5,6 +5,7 @@ import Link from 'next/link';
 import axios from 'axios';
 const Footer = () => {
     const [basicInfo, setBasicInfo] = useState({
+        comp_logo:"",
         email1: "",
         email2: "",
         mobile_no_1: "",
@@ -24,8 +25,6 @@ const Footer = () => {
                 const response = await axios.get("/api/admin/basicInfo");
                 const info = response.data;
                 setBasicInfo(info);
-                setEditedData(info);
-                setLogoPreview(info.comp_logo); // Set the initial logo preview
             } catch (error) {
                 console.error("Error fetching basic info:", error);
             }
@@ -44,7 +43,7 @@ const Footer = () => {
                         <div className="line"></div>
                     </div>
                     <div className="col-6 col-lg-2 col-md-2 logo">
-                        <img className="" src="/assets/images/logo/logo.png" alt="" />
+                        <img className="" src={`/uploads/${basicInfo.comp_logo}`} alt="Logo" />
                     </div>
                     <div className="col-3 col-lg-5 col-md-5">
                         <div className="line"></div>

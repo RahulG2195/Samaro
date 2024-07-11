@@ -14,7 +14,6 @@ const Banner = () => {
             const banner = response.data;
             const homepageBanner = banner.filter(banner => banner.banner_id === 1);
             setInitialData(homepageBanner[0] || {});
-            console.log("data", homepageBanner[0]);
         };
 
         fetchBanner();

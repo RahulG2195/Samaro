@@ -7,7 +7,6 @@ const Banner = () => {
     const [videoData, setVideoData] = useState({
         video: ''
     });
-    console.log("videooo",videoData.video)
 
     useEffect(() => {
         // Fetch video data based on videoId

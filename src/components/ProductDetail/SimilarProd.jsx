@@ -102,7 +102,6 @@ const options = {
 
 
 const SimilarProd = ({ Title1, Title2, id, variation }) => {
-  console.log("ididididid", id)
 
   const [productsArr, setProductsArr] = useState([])
   const [loading, setLoading] = useState(true);
@@ -135,7 +134,6 @@ const SimilarProd = ({ Title1, Title2, id, variation }) => {
   };
   useEffect(() => {
     fetchData()
-    console.log("#############", productsArr)
 
   }, [id, variation]);
 

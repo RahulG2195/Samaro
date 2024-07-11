@@ -36,7 +36,6 @@ export async function POST(request, response) {
         } else if (category.toLowerCase() === 'lvt') {
             cat_id = 2;
         }
-        console.log("catcat", cat_id)
         const updateFields = [];
         const values = [];
 
@@ -100,7 +99,6 @@ export async function POST(request, response) {
         const placeholders = updateFields.map(() => '?').join(', ');
 
         const sqlQuery = `INSERT INTO products (${updateFields.join(', ')}) VALUES (${placeholders})`;
-        console.log("queryquery", sqlQuery)
         const result = await query({
             query: sqlQuery,
             values,
@@ -211,7 +209,6 @@ export async function PUT(request, response) {
 export async function DELETE(request) {
     try {
         const { id } = await request.json();
-        console.log("idid", id)
 
         const sqlQuery = `DELETE FROM products WHERE prod_id = ? `;
         const values = [id];

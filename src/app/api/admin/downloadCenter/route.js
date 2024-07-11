@@ -23,8 +23,6 @@ export async function PUT(request, response) {
     const { id, image, heading, description, button_text, button_url } = downloadData;
 
 
-    console.log("dadada",data)
-    console.log("dadada",heading)
 
     const updateFields = [];
     const values = [];
@@ -70,7 +68,6 @@ export async function PUT(request, response) {
       WHERE id = 1;
     `;
 
-    console.log("queryquery",sqlQuery)
     // const values = [
     //   image_url || null,
     //   heading || null,

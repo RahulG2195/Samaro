@@ -22,7 +22,6 @@ import { useRouter, usePathname } from "next/navigation";
 const Addproducts = () => {
   const router = useRouter();
   const id = location.search ? location.search.split('=')[1] : '';
-  console.log("thiss new ", id)
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
   const [frontImage, setFrontImage] = useState("");
@@ -50,13 +49,11 @@ const Addproducts = () => {
     size: "",
     status: "",
   });
-  console.log("formvalues", formValues)
 
   useEffect(() => {
     if (id) {
       setIsEditMode(true);
 
-      console.log("this is editing mode ", isEditMode);
 
       const fetchData = async () => {
         try {

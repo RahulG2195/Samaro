@@ -20,22 +20,16 @@ import axios from "axios";
 const Home = () => {
   const router = useParams();
   const id  = router.productId
-  // console.log("id in prod detail", id)
 
   const [prodDetail, setProdDetail] = useState([]);
-// console.log("details are ",prodDetail)
 
   useEffect(() => {
-    console.log("useEffect is running");
 
     const getProduct = async () => {
       try {
         const response = await axios.post('/api/products', {id});
         const rawData = response.data[0];
-        // console.log("dataa", rawData);
 
-        // const filteredData = rawData.filter(product => product.seo_url === id);
-        // console.log("Filtered data:", filteredData[0]);
 
         setProdDetail(rawData);
       } catch (error) {

@@ -6,103 +6,8 @@ import Link from 'next/link';
 import axios from 'axios';
 
 
-// const dummyProducts = [
-//   {
-//     id: 1,
-//     name: 'Product 1',
-//     type: 'SPC',
-//     color: 'Black',
-//     rooms: ['Bedroom', 'Bathroom'],
-//     features: ['Authentic Texture', 'Budget Friendly'],
-//     image: '1.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 2,
-//     name: 'Product 2',
-//     type: 'LVT',
-//     color: 'Beige',
-//     rooms: ['Entrance', 'Living Room'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Supreme scratch resistance'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 3,
-//     name: 'Product 3',
-//     type: 'LVT',
-//     color: 'Blue',
-//     rooms: ['Home office', 'Entrance'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Soft & silent'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 4,
-//     name: 'Product 4',
-//     type: 'LVT',
-//     color: 'Dark brown',
-//     rooms: ['Living room', 'Kitchen'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Renovation friendly'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 5,
-//     name: 'Product 5',
-//     type: 'LVT',
-//     color: 'Dark grey',
-//     rooms: ['Nursery', 'Living Room'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Supreme scratch resistance'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 6,
-//     name: 'Product 6',
-//     type: 'LVT',
-//     color: 'Green',
-//     rooms: ['Bedroom', 'Kitchen'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Renovation friendly', 'Supreme scratch resistance'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 7,
-//     name: 'Product 6',
-//     type: 'LVT',
-//     color: 'Light grey',
-//     rooms: ['Entrance hall', 'Living Room'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Soft & silent'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     id: 8,
-//     name: 'Product 6',
-//     type: 'LVT',
-//     color: 'Natural',
-//     rooms: ['Home office', 'Living Room'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Supreme scratch resistance'],
-//     image: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-//   {
-//     prod_id: 9,
-//     prod_name: 'Product 6',
-//     cat_name: 'LVT',
-//     color: 'Pink',
-//     place: ['Bedroom', 'Nursery'],
-//     features: ['Authentic Texture', 'Budget Friendly', 'Soft & silent'],
-//     prod_images: '2.png',
-//     description: "Great looks at a great price: that’s what laminate has to offer. Enjoy an exceptionally natural-looking floor and give your room the warmth and look of real wood at a budget-friendly price."
-//   },
-// ];
-
-
 const StepOutput = ({ formData }) => {
   const [dummyProducts, setDummyProducts] = useState([])
-  // console.log("here are the all products",dummyProducts)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -145,7 +50,6 @@ const StepOutput = ({ formData }) => {
   }
 
   const selectedProduct = filteredProducts[0];
-  console.log("selected products data",selectedProduct)
   return (
     <>
       <section className='stepoutput_section my-md-5 my-3'>

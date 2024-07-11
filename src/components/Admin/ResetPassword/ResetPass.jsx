@@ -44,7 +44,6 @@ const ResetPass = ({ username, onClose }) => {
     if (usernameValidated && newPassword === confirmPassword) {
       try {
         const response = await axios.put('/api/login', { username: enteredUsername, newPassword: newPassword });
-        console.log('Password reset successful:', response.data);
         onClose(); // Close the reset form after successful reset
       } catch (error) {
         console.error('Error resetting password:', error);

@@ -29,8 +29,7 @@ const Addproducts = () => {
     id = window.location.search ? window.location.search.split('=')[1] : '';
 
   }, [])
-  
-  console.log("thiss new ", id)
+
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
   const [frontImage, setFrontImage] = useState("");
@@ -93,7 +92,6 @@ const Addproducts = () => {
           setSelectedPlaces(filteredProduct[0].place ? JSON.parse(filteredProduct[0].place) : []);
           setOtherImages(filteredProduct[0].prod_image2 ? JSON.parse(filteredProduct[0].prod_image2) : []);
           setFrontImage(filteredProduct[0].prod_images ? filteredProduct[0].prod_images : '');
-          console.log("dataa uploades ", filteredProduct[0])
         } catch (error) {
           console.log(error);
         }

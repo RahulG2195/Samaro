@@ -13,7 +13,6 @@ const EditVideoForm = () => {
     video_file: null,
     video: ''
   });
-  console.log("vdooo",videoData)
 
   const [initialVideoData, setInitialVideoData] = useState(null); // Store initial data
   const [editMode, setEditMode] = useState(false);

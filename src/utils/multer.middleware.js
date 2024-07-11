@@ -41,13 +41,11 @@ const handleUpload = (req, res) => {
 };
 const uploadImage = async (req, res, file) => {
   try {
-    console.log("Uploading", file);
     const result = await handleUpload(req, res);
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const path = `public/uploads/${file.name}`;
     await writeFile(path, buffer);
-    console.log("Uploaded", result);
     return result.filename; 
   } catch (error) {
     console.log('Upload error: ', error.message);

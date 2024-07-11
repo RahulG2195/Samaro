@@ -71,7 +71,6 @@ const page = () => {
         try {
             const response = await axios.get('/api/admin/main_dcPage');
             const data = response.data;
-            console.log("Fetched data: ", data);
 
             const brochures = data.filter(item => item.dc_category === 'Brochure');
             const installationGuides = data.filter(item => item.dc_category === 'Installation Guide');

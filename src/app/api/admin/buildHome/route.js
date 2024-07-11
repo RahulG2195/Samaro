@@ -15,7 +15,6 @@ export async function GET(request) {
 
 
 export async function PUT(request,response) {
-  // console.log("build home build home put request come");
   try {
     const requestData = await request.formData();
     const data = Object.fromEntries(requestData.entries());
@@ -31,15 +30,12 @@ export async function PUT(request,response) {
       feature3_title,
     } = data;
 
-    // console.log("build home build home", requestData);
     const updateFields = [];
     const values = [];
 
     if (feature1_icon) {
-      console.log("iconicon",feature1_icon)
       try {
           await uploadImage(request, response, feature1_icon);
-          console.log("iconicon1",feature1_icon.name)
 
           updateFields.push('feature1_icon = ?');
           values.push(feature1_icon.name);
@@ -78,7 +74,6 @@ export async function PUT(request,response) {
       UPDATE build_home SET  ${updateFields.join(', ')} WHERE id = 1
     `;
 
-    console.log("qry: ", sqlQuery);
     const result = await query({
         query: sqlQuery,
         values,

@@ -46,7 +46,6 @@ export async function PUT(req, res) {
         values.push(banner_id);
         // Construct and execute SQL query
         const sqlQuery = `UPDATE herobanner SET ${updateFields.join(', ')} WHERE banner_id = ?`;
-        console.log("qry: ", sqlQuery);
         const result = await query({
             query: sqlQuery,
             values,

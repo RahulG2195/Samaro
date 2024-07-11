@@ -19,10 +19,7 @@ const page = () => {
 
     }, [])
 
-    //   const initialData = [
-    //     { id: 1, Image: 'about_image.jpg', Banner_title: 'Home page', Banner_Content: 'Lorem ipsum dolor sit amet.' },
-    //   ];
-    // console.log("data is going",initialData)
+
 
     return <HeroBanner pageName="Product page" initialData={initialData} isEditing={true} />;
 };

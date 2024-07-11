@@ -51,10 +51,6 @@ const FindYourMatchPage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Handle final form submission here
-    console.log("Form Data Submitted:", formData);
-    // router.push("/StepOutput");
-    // setCurrentStep((prevStep) => prevStep + 1);
   };
 
   const CurrentStepComponent = steps[currentStep].Page;
