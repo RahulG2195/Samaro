@@ -33,7 +33,7 @@ const ToggleStatusButton = ({ initialStatus, prodId, onUpdateStatus }) => {
             color={status === 1 ? "success" : "warning"}
             className="toggle-button"
         >
-            {status === 1 ? "Deactivate product" : "Activate product"}
+            {status === 1 ? "Deactivate" : "Activate"}
         </Button>
     );
 };

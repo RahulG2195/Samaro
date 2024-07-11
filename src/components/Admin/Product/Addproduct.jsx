@@ -17,14 +17,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, toast } from "react-toastify";
-import { useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Addproducts = () => {
   const router = useRouter();
   const { query } = router;
-  // const id = query || '';
-  const id = window.location.search ? window.location.search.split('=')[1] : '';
-  // const id = router;
+  let id;
+
+  useEffect(() => {
+
+    id = window.location.search ? window.location.search.split('=')[1] : '';
+
+  }, [])
+  
   console.log("thiss new ", id)
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
@@ -143,39 +148,39 @@ const Addproducts = () => {
   const handleAllinputs = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-  
+
     // Append additional data
     formData.append("places", JSON.stringify(selectedPlaces));
     formData.append("productId", formValues.productId);
-  
+
     // Append other images if they exist
     if (OtherImagesFile.length > 0) {
       OtherImagesFile.forEach((file, index) => {
         formData.append(`image`, file);
       });
     }
-  
+
     // Handle front image
     if (FrontImageFile) {
       formData.append("frontImageFile", FrontImageFile);
       formData.append("prod_images", frontImage);
     }
-  
+
     // Preserve existing images if no new images are selected
     if (!OtherImagesFile.length && (!productDetail.prod_image2 || !productDetail.prod_image2.trim())) {
       formData.append("prod_image2", "[]");
     }
-  
+
     try {
       const url = isEditMode ? `/api/admin/products` : "/api/admin/products";
       const method = isEditMode ? axios.put : axios.post;
-  
+
       const response = await method(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
+
       if (response.status === 200) {
         // notify(isEditMode ? "Product updated successfully" : "Product added successfully");
         router.push("/admin/product");
@@ -186,7 +191,7 @@ const Addproducts = () => {
       console.error("Error:", error);
     }
   };
-  
+
 
 
   const handleImageChange = (e) => {

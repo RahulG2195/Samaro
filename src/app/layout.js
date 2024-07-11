@@ -29,12 +29,6 @@ export default function RootLayout({ children }) {
 
   let queryParams;
 
-  // useEffect(() => {
-
-  //     queryParams = window.location.pathname;
-  //    console.log(queryParams)
-
-  // }, [queryParams]);
 
   const [isAdmin, setIsAdmin] = useState(false)
 
