@@ -21,7 +21,9 @@ import { useRouter, usePathname } from "next/navigation";
 
 const Addproducts = () => {
   const router = useRouter();
-  const id = location.search ? location.search.split('=')[1] : '';
+
+  // const id = location.search ? location.search.split('=')[1] : '';
+  let id ;
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
   const [frontImage, setFrontImage] = useState("");

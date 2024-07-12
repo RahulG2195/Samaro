@@ -1,22 +1,33 @@
 "use client";
 import React, { useState } from "react";
 import "@/components/FindYourMatch/findmatch.css";
-import StepPoints from "@/components/FindYourMatch/StepPoints";
-import StepOne from "@/components/FindYourMatch/StepOne";
-import StepTwo from "@/components/FindYourMatch/StepTwo";
-import StepThree from "@/components/FindYourMatch/StepThree";
-import StepFour from "@/components/FindYourMatch/StepFour";
-import StepOutput from "@/components/FindYourMatch/StepOutput";
+import dynamic from "next/dynamic";
+
+// import StepPoints from "@/components/FindYourMatch/StepPoints";
+// import StepOne from "@/components/FindYourMatch/StepOne";
+// import StepTwo from "@/components/FindYourMatch/StepTwo";
+// import StepThree from "@/components/FindYourMatch/StepThree";
+// import StepFour from "@/components/FindYourMatch/StepFour";
+// import StepOutput from "@/components/FindYourMatch/StepOutput";
 import { useRouter } from "next/navigation";
 
 // Define steps here with the Page as a function that receives props
+
+const StepPoints = dynamic(() => import("@/components/FindYourMatch/StepPoints"));
+const StepOne = dynamic(() => import("@/components/FindYourMatch/StepOne"));
+const StepTwo = dynamic(() => import("@/components/FindYourMatch/StepTwo"));
+const StepThree = dynamic(() => import("@/components/FindYourMatch/StepThree"));
+const StepFour = dynamic(() => import("@/components/FindYourMatch/StepFour"));
+const StepOutput = dynamic(() => import("@/components/FindYourMatch/StepOutput"));
+
+
 const steps = [
   { title: "Get Started", Page: StepPoints },
   { title: "Continue", Page: StepOne },
   { title: "Continue", Page: StepTwo },
   { title: "Continue", Page: StepThree },
   { title: "Submit", Page: StepFour },
-  { title: " ", Page: StepOutput },
+  { title:"", Page: StepOutput },
 ];
 
 const FindYourMatchPage = () => {
@@ -27,7 +38,6 @@ const FindYourMatchPage = () => {
     floorType: "",
     color: "",
     features: [], 
-    // ... other fields
   });
   const router = useRouter();
 
@@ -54,6 +64,7 @@ const FindYourMatchPage = () => {
   };
 
   const CurrentStepComponent = steps[currentStep].Page;
+
 
   return (
     <section className="finyourMatch_sec my-md-5 mb-5">

@@ -20,7 +20,6 @@ const nextConfig = {
     return config;
   },
 
-  // Remove the middleware function and use the correct syntax for middleware
 };
 
 export default nextConfig;
