@@ -1,38 +1,5 @@
-
-// /** @type {import('next').NextConfig} */
-// // const webpack = require("webpack");
-// // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-// //   config.plugins.push(
-// //     new webpack.ProvidePlugin({
-// //       $: "jquery",
-// //       jQuery: "jquery",
-// //       "window.jQuery": "jquery",
-// //     })
-// //   );
-// //   return config;
-// // }
-
-// const nextConfig = {
-//   eslint: {
-//     ignoreDuringBuilds: true,
-//   },
-
-//   // env: {
-//   //   MYSQL_HOST: "localhost",
-//   //   MYSQL_DATABASE: "samaro_db",
-//   //   MYSQL_USER: "root",
-//   //   MYSQL_PASSWORD: "",
-//   //   MYSQL_PORT: "3306",
-//   // },
-  
-// };
-
-// export default nextConfig;
-
-
-
 import dotenv from 'dotenv';
-// import webpack from 'webpack'; // Uncomment if webpack customization is needed
+import webpack from 'webpack'; // Uncomment this line
 
 dotenv.config();
 
@@ -53,16 +20,7 @@ const nextConfig = {
     return config;
   },
 
-  async middleware() {
-    return [
-      {
-        source: '/admin/:path*',
-        middleware: ['middleware'],
-      },
-    ];
-  },
-
+  // Remove the middleware function and use the correct syntax for middleware
 };
 
 export default nextConfig;
-

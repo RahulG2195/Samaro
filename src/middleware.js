@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server';
 import { verifyToken } from './utils/jwtAuth';
 
-const secret = 'national_plastic';
+const secret = 'samaron-secret';
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: '/admin/:path*',
 };
-
 export async function middleware(request) {
   const token = request.cookies.get('token')?.value;
   const loginURL = new URL('/admin/adminLogin', request.url);
