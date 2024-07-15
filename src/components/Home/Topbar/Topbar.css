@@ -16,7 +16,7 @@
 
 .topbar-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 60px;
   align-items: center;
 }
@@ -48,7 +48,7 @@
 .social-media {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   /* gap: 25px; */
 }
 

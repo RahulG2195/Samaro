@@ -6,7 +6,7 @@ const Design = () => {
     return (
         <section className="why-samaro-design mt-5">
             <div className="container-fluid px-lg-5 ">
-                <h2 className="ps-5 text-navy text-start">Design Range in SPC & LVT</h2>
+                <h2 className="ps-5 text-navy text-center">Design Range in SPC & LVT</h2>
                 <div className="row g-0 ">
                     <div className="col-lg-4 col-md-4 col-sm-4 position-relative">
                         <Link href='/'>

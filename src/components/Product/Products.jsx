@@ -189,7 +189,7 @@ const Products = () => {
                             <div className="input-group-append interiorcheck">
                                 <div className="form-check">
                                     <input className="mx-1 form-check-input" type="checkbox" checked={showInteriorPictures} onChange={handleCheckboxChange} />
-                                    <label className="darkBlue">Show interior pictures</label>
+                                    <label htmlFor="" className="darkBlue">Show interior pictures</label>
                                 </div>
                             </div>
                         </div>

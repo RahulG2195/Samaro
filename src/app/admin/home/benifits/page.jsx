@@ -192,7 +192,7 @@ const BenefitsSection = () => {
       <Card className="p-5">
         <Form>
           <FormGroup>
-            <Label for="heading">Heading</Label>
+            <Label htmlFor="heading">Heading</Label>
             <Input
               type="text"
               name="heading"

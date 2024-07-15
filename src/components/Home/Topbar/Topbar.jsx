@@ -14,6 +14,7 @@ const Topbar = () => {
         insta_url: "",
         linkedin_url: "",
         youtube_url: "",
+        twitter_url: "",
         map_url: "",
     });
 
@@ -69,7 +70,7 @@ const Topbar = () => {
                                             </Link>
                                         </div>
                                         <div className="x">
-                                            <Link href="">
+                                            <Link href={basicInfo.twitter_url}>
                                                 <img className="img" src="/assets/images/social-media/x.png" alt="" />
                                             </Link>
                                         </div>

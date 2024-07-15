@@ -57,7 +57,7 @@ const Benefits = () => {
     const benifitsIcon = benefit.icons.map((icon, index) => ({
         imageSrc: `/uploads/${icon}`,
         text: benefit.titles[index]
-      }));
+    }));
 
     // const benifitsARR = [
     //     {
@@ -83,7 +83,7 @@ const Benefits = () => {
     const benifitsARR = benefit.slider_images.map((image, index) => ({
         url: `/uploads/${image}`,
         alt: `Benefit ${index + 1}`
-      }));
+    }));
 
     return (
         <section className="benefits position-relative">
@@ -109,91 +109,89 @@ const Benefits = () => {
                             <img src="/assets/images/home/benefits/Group 27834.svg" alt="err" />
                         </div>
 
-                                {/* dynamic data """ " */}
-                                 <div className="column-wrapper px-5 benifitsinDesktop">
-                                    <div className="row g-4 mt-1 respBenifitrow">
-                                        {benifitsIcon.map((item, index) => (
-                                            <div key={index} className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                                <div className="image">
-                                                    <img src={item.imageSrc} alt={item.text} />
-                                                </div>
-                                                <span className="text-navy text small fw-semibold">{item.text}</span>
-                                            </div>
-                                        ))} 
-                                        {/* Dynamic data end */}
-                                        <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
-                                            <Link href={'/why-samaro'}>
-                                                <div className="image">
-                                                    <img src="/assets/images/home/benefits/benefits/Group 28770.svg" alt="" />
-                                                </div>
-                                                <span className="text-navy text small fw-semibold">Know Now</span>
-                                            </Link>
+                        {/* dynamic data """ " */}
+                        <div className="column-wrapper px-5 benifitsinDesktop">
+                            <div className="row g-4 mt-1 respBenifitrow">
+                                {benifitsIcon.map((item, index) => (
+                                    <div key={index} className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
+                                        <div className="image">
+                                            <img src={item.imageSrc} alt={item.text} />
                                         </div>
+                                        <span className="text-navy text small fw-semibold">{item.text}</span>
                                     </div>
+                                ))}
+                                {/* Dynamic data end */}
+                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
+                                    <Link href={'/why-samaro'}>
+                                        <div className="image">
+                                            <img src="/assets/images/home/benefits/benefits/Group 28770.svg" alt="" />
+                                        </div>
+                                        <span className="text-navy text small fw-semibold">Know Now</span>
+                                    </Link>
                                 </div>
-
-                                {/*  Swipper of benifits icons in mobile view */}
-
-
-                                <div className='benifitsSwipper'>
-                                    <Swiper
-                                        spaceBetween={30}
-                                        slidesPerView={3}
-                                        modules={[EffectFade, Autoplay]}
-                                        loop={true}
-                                        autoplay={{
-                                            delay: 1000,
-                                            disableOnInteraction: false,
-                                        }}
-                                    >
-                                        {benifitsIcon.map((item, index) => (
-                                            <SwiperSlide key={index}>
-                                                <div className="column-wrapper my-3">
-                                                    <div className="row g-5 respBenifitrow px-0">
-                                                        <div className=" text-center">
-                                                            <div className="image">
-                                                                <img src={item.imageSrc} alt="" />
-                                                            </div>
-                                                            <span className="text-navy text small fw-semibold">{item.text}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                </div>
-
-
-                            </div>
-                            <div className="col-lg-6 col-md-6 col-12 ps- benifitsRightSide">
-
-                                <Swiper
-                                    effect={'fade'}
-                                    modules={[EffectFade, Autoplay]}
-                                    slidesPerView={1}
-                                    spaceBetween={0}
-                                    loop={true}
-                                    autoplay={{
-                                        delay: 1000,
-                                        disableOnInteraction: false,
-                                    }}
-                                    className="mySwiper"
-                                >
-                                    {benifitsARR.map((item, index) => (
-                                        <SwiperSlide key={index}>
-                                            <div className='benifitsSliderImage'>
-                                                <img src={item.url} className="rightside-image" alt={item.alt} />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-
-
                             </div>
                         </div>
+
+                        {/*  Swipper of benifits icons in mobile view */}
+
+
+                        <div className='benifitsSwipper'>
+                            <Swiper
+                                spaceBetween={30}
+                                slidesPerView={3}
+                                modules={[EffectFade, Autoplay]}
+                                loop={true}
+                                autoplay={{
+                                    delay: 1000,
+                                }}
+                            >
+                                {benifitsIcon.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className="column-wrapper my-3">
+                                            <div className="row g-5 respBenifitrow px-0">
+                                                <div className=" text-center">
+                                                    <div className="image">
+                                                        <img src={item.imageSrc} alt="" />
+                                                    </div>
+                                                    <span className="text-navy text small fw-semibold">{item.text}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+
+
                     </div>
-                </section>
-                )
+                    <div className="col-lg-6 col-md-6 col-12 benifitsRightSide">
+
+                        <Swiper
+                            effect='fade'
+                            slidesPerView={1}
+                            spaceBetween={0}
+                            modules={[EffectFade, Autoplay]}
+                            loop={true}
+                            autoplay={{
+                                delay: 1000,
+                            }}
+                            className="mySwiper"
+                        >
+                            {benifitsARR.map((item, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className='benifitsSliderImage'>
+                                        <img src={item.url} className="rightside-image" alt={item.alt} />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
 }
 
-                export default Benefits
+export default Benefits

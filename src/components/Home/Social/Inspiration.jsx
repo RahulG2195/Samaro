@@ -21,7 +21,7 @@ const Inspiration = () => {
                 <span className='fw-medium'>INSPIRATIONAL</span> GALLERY
               </h1>
 
-              <div className="social-grid">
+              <div className="social-grid mt-4">
                 {images.map((image, index) => (
                   <div className="image" key={index}>
                     <img src={`/uploads/${image.imageName}`} alt={`Inspiration ${index + 1}`} />

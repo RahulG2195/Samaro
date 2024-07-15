@@ -174,7 +174,7 @@ const SpcForm = ({ hideguide, contactformcol, pb }) => {
                   value="Commercial Projects"
                   onChange={handleOptionChange}
                 />
-                <label for="Commercial">Commercial Projects</label>
+                <label htmlFor="Commercial">Commercial Projects</label>
               </div>
               <div className="col-md-6 slct1 my-2  rdbuttons">
                 <input

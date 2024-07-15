@@ -20,6 +20,7 @@ export async function PUT(request,response) {
 
     const {
       comp_logo,
+      comp_footer_logo,
       email1,
       email2,
       mobile_no_1,
@@ -28,6 +29,7 @@ export async function PUT(request,response) {
       insta_url,
       linkedin_url,
       youtube_url,
+      twitter_url,
       address,
       map_url,
     } = data;
@@ -44,29 +46,18 @@ export async function PUT(request,response) {
         console.error('Error comp_logo image:', error);
       }
     }
+    if (comp_footer_logo) {
+      try {
+        await uploadImage(request, response, comp_footer_logo);
+        updateFields.push('comp_footer_logo = ?');
+        values.push(comp_footer_logo.name);
+      } catch (error) {
+        console.error('Error comp_footer_logo image:', error);
+      }
+    }
 
-    // updateFields.push('email1 = ?');
-    // values.push(email1);
-    // updateFields.push('email2 = ?');
-    // values.push(email2);
-    // updateFields.push('mobile_no_1 = ?');
-    // values.push(mobile_no_1);
-    // updateFields.push('mobile_no_2 = ?');
-    // values.push(mobile_no_2);
-    // updateFields.push('facebook_url = ?');
-    // values.push(facebook_url);
-    // updateFields.push('insta_url = ?');
-    // values.push(insta_url);
-    // updateFields.push('linkedin_url = ?');
-    // values.push(linkedin_url);
-    // updateFields.push('youtube_url = ?');
-    // values.push(youtube_url);
-    // updateFields.push('address = ?');
-    // values.push(address);
-    // updateFields.push('map_url = ?');
-    // values.push(map_url);
 
-    ['email1', 'email2', 'mobile_no_1', 'mobile_no_2', 'facebook_url', 'insta_url', 'linkedin_url', 'youtube_url', 'address', 'map_url'].forEach(field => {
+    ['email1', 'email2', 'mobile_no_1', 'mobile_no_2', 'facebook_url', 'insta_url', 'linkedin_url', 'youtube_url', 'twitter_url' ,'address', 'map_url'].forEach(field => {
       if (data[field]) {
         updateFields.push(`${field} = ?`);
         values.push(data[field]);

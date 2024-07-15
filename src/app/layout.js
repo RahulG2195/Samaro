@@ -49,6 +49,7 @@ export default function RootLayout({ children }) {
 
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
 
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsFixed(scrollTop > 2);

@@ -120,7 +120,7 @@ const DownloadCenterEditor = () => {
         {downloadData.map((item, index) => (
           <Form key={index} className="mb-4">
             <FormGroup>
-              <Label for={`image_${index}`}>Image</Label>
+              <Label htmlFor={`image_${index}`}>Image</Label>
               <Input
                 type="file"
                 id={`image_${index}`}
@@ -132,7 +132,7 @@ const DownloadCenterEditor = () => {
               )}
             </FormGroup>
             <FormGroup>
-              <Label for={`heading_${index}`}>Heading</Label>
+              <Label htmlFor={`heading_${index}`}>Heading</Label>
               <Input
                 type="text"
                 id={`heading_${index}`}
@@ -142,7 +142,7 @@ const DownloadCenterEditor = () => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for={`description_${index}`}>Description</Label>
+              <Label htmlFor={`description_${index}`}>Description</Label>
               <Input
                 type="textarea"
                 id={`description_${index}`}
@@ -152,7 +152,7 @@ const DownloadCenterEditor = () => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for={`button_text_${index}`}>Button Text</Label>
+              <Label htmlFor={`button_text_${index}`}>Button Text</Label>
               <Input
                 type="text"
                 id={`button_text_${index}`}
@@ -162,7 +162,7 @@ const DownloadCenterEditor = () => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for={`button_url_${index}`}>Button URL</Label>
+              <Label htmlFor={`button_url_${index}`}>Button URL</Label>
               <Input
                 type="text"
                 id={`button_url_${index}`}

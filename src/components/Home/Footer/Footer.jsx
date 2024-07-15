@@ -6,6 +6,7 @@ import axios from 'axios';
 const Footer = () => {
     const [basicInfo, setBasicInfo] = useState({
         comp_logo:"",
+        comp_footer_logo:"",
         email1: "",
         email2: "",
         mobile_no_1: "",
@@ -43,7 +44,7 @@ const Footer = () => {
                         <div className="line"></div>
                     </div>
                     <div className="col-6 col-lg-2 col-md-2 logo">
-                        <img className="" src={`/uploads/${basicInfo.comp_logo}`} alt="Logo" />
+                        <img className="" src={`/uploads/${basicInfo.comp_footer_logo}`} alt="Logo" />
                     </div>
                     <div className="col-3 col-lg-5 col-md-5">
                         <div className="line"></div>
@@ -106,7 +107,7 @@ const Footer = () => {
             </footer>
             <div className='copyright py-2 bg-white text-center'>
                 <p className='text-navy mb-0 small'>
-                    Copyright © 2023 Samaro | <a href="https://crezvatic.com/" target="_blank">Powered by Crezvatic PVT. LTD.</a>
+                    Copyright © 2024 Samaro | <a href="https://crezvatic.com/" target="_blank">Powered by Crezvatic PVT. LTD.</a>
                 </p>
             </div>
 

@@ -124,7 +124,7 @@ const EditBuildHomePage = () => {
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="heading" className="fw-bold">Heading</Label>
+                  <Label htmlFor="heading" className="fw-bold">Heading</Label>
                   <Input
                     type="text"
                     name="heading"
@@ -138,7 +138,7 @@ const EditBuildHomePage = () => {
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="description">Description</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Input
                     type="textarea"
                     name="description"
@@ -154,7 +154,7 @@ const EditBuildHomePage = () => {
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature1_icon">Feature 1 Icon</Label>
+                  <Label htmlFor="feature1_icon">Feature 1 Icon</Label>
                   <img src={`/uploads/${buildHomeData.feature1_icon}`} alt="Feature 1 Icon" className="d-block mb-2 w-25 bg-danger p-2" />
                   <Input
                     type="file"
@@ -168,7 +168,7 @@ const EditBuildHomePage = () => {
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature1_title">Feature 1 Title</Label>
+                  <Label htmlFor="feature1_title">Feature 1 Title</Label>
                   <Input
                     type="text"
                     name="feature1_title"
@@ -184,7 +184,7 @@ const EditBuildHomePage = () => {
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature2_icon">Feature 2 Icon</Label>
+                  <Label htmlFor="feature2_icon">Feature 2 Icon</Label>
                   <img src={`/uploads/${buildHomeData.feature2_icon}`} alt="Feature 2 Icon" className="d-block mb-2 w-25 bg-danger p-2" />
                   <Input
                     type="file"
@@ -198,7 +198,7 @@ const EditBuildHomePage = () => {
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature2_title">Feature 2 Title</Label>
+                  <Label htmlFor="feature2_title">Feature 2 Title</Label>
                   <Input
                     type="text"
                     name="feature2_title"
@@ -214,7 +214,7 @@ const EditBuildHomePage = () => {
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature3_icon">Feature 3 Icon</Label>
+                  <Label htmlFor="feature3_icon">Feature 3 Icon</Label>
                   <img src={`/uploads/${buildHomeData.feature3_icon}`} alt="Feature 3 Icon" className="d-block mb-2 w-25 bg-danger p-2" />
                   <Input
                     type="file"
@@ -228,7 +228,7 @@ const EditBuildHomePage = () => {
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="feature3_title">Feature 3 Title</Label>
+                  <Label htmlFor="feature3_title">Feature 3 Title</Label>
                   <Input
                     type="text"
                     name="feature3_title"

@@ -113,14 +113,14 @@ const CertificationsEditor = () => {
                 <CardTitle tag="h5">Certification {index + 1}</CardTitle>
                 <Form>
                   <FormGroup>
-                    <Label for={`certificationLogo${index}`}>Logo Preview</Label><br />
+                    <Label htmlFor={`certificationLogo${index}`}>Logo Preview</Label><br />
                     {certification.logo && (
                       <CardImg src={`/uploads/${certification.logo}`} alt="Certification Logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
                     )}
                   </FormGroup>
                   {editMode && (
                     <FormGroup>
-                      <Label for={`certificationLogoFile${index}`}>Upload Logo File</Label>
+                      <Label htmlFor={`certificationLogoFile${index}`}>Upload Logo File</Label>
                       <Input
                         type="file"
                         id={`certificationLogoFile${index}`}

@@ -7,6 +7,7 @@ const Banner = () => {
     const [videoData, setVideoData] = useState({
         video: ''
     });
+    const [videoUrl, setVideoUrl] = useState('')
 
     useEffect(() => {
         // Fetch video data based on videoId
@@ -14,6 +15,8 @@ const Banner = () => {
             try {
                 const response = await axios.get(`/api/admin/whysamaro_video`); // Adjust endpoint as per your API route
                 setVideoData(response.data);
+                setVideoUrl(`/uploads/${response.data.video}`);
+
             } catch (error) {
                 console.error('Error fetching video data:', error);
             }
@@ -23,16 +26,16 @@ const Banner = () => {
     }, []);
 
     return (
-        <section className='banner why-samaro whysamaro_sec position-relative'>
-
-
-            <video autoPlay muted loop className='w-100 '>
-                <source src="assets/images/why-samaro/Samaro- About us Page1.mp4" type="video/mp4" />
-                {/* <source src={`/uploads/${videoData.video}`} type="video/mp4" /> */}
-                {/* Your browser does not support the video tag. */}
+       
+        <section className='banner  whysamaro_sec'>
+        {videoUrl ? (
+            <video autoPlay muted loop className='w-100' >
+                <source src={videoUrl} type="video/mp4" />
             </video>
-
-        </section>
+        ) : (
+            <p>Loading video...</p>
+        )}
+    </section>
 
     )
 }

@@ -107,7 +107,7 @@ const GalleryEditor = () => {
                 {(addingNew && index === images.length - 1) ? ( // Check if adding new mode and current image is the new one
                   <Form className="mb-3">
                     <FormGroup>
-                      <Label for={`imageFile${index}`} className="visually-hidden">
+                      <Label htmlFor={`imageFile${index}`} className="visually-hidden">
                         Upload Image
                       </Label>
                       <Input

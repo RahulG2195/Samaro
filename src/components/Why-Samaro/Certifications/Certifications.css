@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 90px;
+  row-gap: 50px  !important;
   
 }
 .certificate-image {

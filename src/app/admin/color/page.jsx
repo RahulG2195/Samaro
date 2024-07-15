@@ -153,7 +153,7 @@ const ColorCodesPage = () => {
                     <ModalBody>
                         <Form>
                             <FormGroup>
-                                <Label for="clrCode">Color Code</Label>
+                                <Label htmlFor="clrCode">Color Code</Label>
                                 <Input
                                     type="text"
                                     name="clrCode"
@@ -162,7 +162,7 @@ const ColorCodesPage = () => {
                                 />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="image">Image</Label>
+                                <Label htmlFor="image">Image</Label>
                                 {imagePreview && (
                                     <div>
                                         <img

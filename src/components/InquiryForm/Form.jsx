@@ -61,7 +61,7 @@ const Form = () => {
                   name="example"
                   className="me-2 form-check-input"
                 />
-                <label for="radio-red1">Wholesaler/Distributors</label>
+                <label htmlFor="radio-red1">Wholesaler/Distributors</label>
               </div>
               <div className="col-md-6 slct1 my-2">
                 <input
@@ -69,7 +69,7 @@ const Form = () => {
                   name="example"
                   className="me-2 form-check-input"
                 />
-                <label for="radio-red2">Commercial Projects</label>
+                <label htmlFor="radio-red2">Commercial Projects</label>
               </div>
               <div className="col-md-6 slct1 my-2">
                 <input
@@ -77,7 +77,7 @@ const Form = () => {
                   name="example"
                   className="me-2 form-check-input"
                 />
-                <label for="radio-red3">Sales Inquery</label>
+                <label htmlFor="radio-red3">Sales Inquery</label>
               </div>
               <div className="col-md-6 slct1 my-2">
                 <input
@@ -85,7 +85,7 @@ const Form = () => {
                   name="example"
                   className="me-2 form-check-input"
                 />
-                <label for="radio-red4">OEM</label>
+                <label htmlFor="radio-red4">OEM</label>
               </div>
             </div>
 

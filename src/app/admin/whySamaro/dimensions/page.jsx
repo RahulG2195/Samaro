@@ -139,7 +139,7 @@ const DimensionsEditor = () => {
       <Card className="p-5">
         <Form>
           <FormGroup>
-            <Label for="plankSizesHeading">Plank Sizes Heading</Label>
+            <Label htmlFor="plankSizesHeading">Plank Sizes Heading</Label>
             <Input
               type="text"
               name="plank_sizes_heading"
@@ -150,7 +150,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankSizesDescription">Plank Sizes Description</Label>
+            <Label htmlFor="plankSizesDescription">Plank Sizes Description</Label>
             <Input
               type="textarea"
               name="plank_sizes_description"
@@ -161,7 +161,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankSizesImage">Plank Sizes Image</Label>
+            <Label htmlFor="plankSizesImage">Plank Sizes Image</Label>
             {initialData.plank_sizes_image_url && (
               <div>
                 <img
@@ -182,7 +182,7 @@ const DimensionsEditor = () => {
           </FormGroup>
           <div className='border-secondary border-3 border-top my-5'></div>
           <FormGroup>
-            <Label for="plankThicknessHeading">Plank Thickness Heading</Label>
+            <Label htmlFor="plankThicknessHeading">Plank Thickness Heading</Label>
             <Input
               type="text"
               name="plank_thickness_heading"
@@ -193,7 +193,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankThicknessDescription">Plank Thickness Description</Label>
+            <Label htmlFor="plankThicknessDescription">Plank Thickness Description</Label>
             <Input
               type="textarea"
               name="plank_thickness_description"
@@ -204,7 +204,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankThicknessMainImage">Plank Thickness Main Image URL</Label>
+            <Label htmlFor="plankThicknessMainImage">Plank Thickness Main Image URL</Label>
             {initialData.plank_thickness_main_image_url && (
               <div>
                 <img
@@ -225,7 +225,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankThicknessImage1">Plank Thickness Image 1</Label>
+            <Label htmlFor="plankThicknessImage1">Plank Thickness Image 1</Label>
             {initialData.plank_thickness_image_1_url && (
               <div>
                 <img
@@ -243,7 +243,7 @@ const DimensionsEditor = () => {
               onChange={(e) => handleFileChange('plank_thickness_image_1', e.target.files[0])}
               disabled={!editMode}
             />
-            <Label for="plankThicknessSizeRange1">Size Range 1</Label>
+            <Label htmlFor="plankThicknessSizeRange1">Size Range 1</Label>
             <Input
               type="text"
               name="plank_thickness_size_range_1"
@@ -254,7 +254,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankThicknessImage2">Plank Thickness Image 2</Label>
+            <Label htmlFor="plankThicknessImage2">Plank Thickness Image 2</Label>
             {initialData.plank_thickness_image_2_url && (
               <div>
                 <img
@@ -272,7 +272,7 @@ const DimensionsEditor = () => {
               onChange={(e) => handleFileChange('plank_thickness_image_2', e.target.files[0])}
               disabled={!editMode}
             />
-            <Label for="plankThicknessSizeRange2">Size Range 2</Label>
+            <Label htmlFor="plankThicknessSizeRange2">Size Range 2</Label>
             <Input
               type="text"
               name="plank_thickness_size_range_2"
@@ -283,7 +283,7 @@ const DimensionsEditor = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="plankThicknessImage3">Plank Thickness Image 3</Label>
+            <Label htmlFor="plankThicknessImage3">Plank Thickness Image 3</Label>
             {initialData.plank_thickness_image_3_url && (
               <div>
                 <img
@@ -301,7 +301,7 @@ const DimensionsEditor = () => {
               onChange={(e) => handleFileChange('plank_thickness_image_3', e.target.files[0])}
               disabled={!editMode}
             />
-            <Label for="plankThicknessSizeRange3">Size Range 3</Label>
+            <Label htmlFor="plankThicknessSizeRange3">Size Range 3</Label>
             <Input
               type="text"
               name="plank_thickness_size_range_3"

@@ -195,7 +195,7 @@ const VisionMissionEditor = () => {
           <CardTitle tag="h5">Vision</CardTitle>
           <Form>
             <FormGroup>
-              <Label for="visionTitle">Title</Label>
+              <Label htmlFor="visionTitle">Title</Label>
               <Input
                 type="text"
                 id="visionTitle"
@@ -207,14 +207,14 @@ const VisionMissionEditor = () => {
             {visionError && <Alert color="danger">{visionError}</Alert>}
 
             <FormGroup>
-              <Label for="visionLogo">Logo Preview</Label><br />
+              <Label htmlFor="visionLogo">Logo Preview</Label><br />
               {visionData.logo && (
                 <CardImg src={`/uploads/${visionData.logo}`} alt="Vision Logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
               )}
             </FormGroup>
             {editMode && (
               <FormGroup>
-                <Label for="visionLogoFile">Upload Logo File</Label>
+                <Label htmlFor="visionLogoFile">Upload Logo File</Label>
                 <Input
                   type="file"
                   id="visionLogoFile"
@@ -223,7 +223,7 @@ const VisionMissionEditor = () => {
               </FormGroup>
             )}
             <FormGroup>
-              <Label for="visionSubpoints">Subpoints</Label>
+              <Label htmlFor="visionSubpoints">Subpoints</Label>
               {visionData.subpoints.map((subpoint, index) => (
                 <div key={index} className="d-flex mb-2">
                   <Input
@@ -255,7 +255,7 @@ const VisionMissionEditor = () => {
           <CardTitle tag="h5">Mission</CardTitle>
           <Form>
             <FormGroup>
-              <Label for="missionTitle">Title</Label>
+              <Label htmlFor="missionTitle">Title</Label>
               <Input
                 type="text"
                 id="missionTitle"
@@ -267,14 +267,14 @@ const VisionMissionEditor = () => {
             {missionError  && <Alert color="danger">{missionError }</Alert>}
 
             <FormGroup>
-              <Label for="missionLogo">Logo Preview</Label><br />
+              <Label htmlFor="missionLogo">Logo Preview</Label><br />
               {missionData.logo && (
                 <CardImg src={`/uploads/${missionData.logo}`} alt="Mission Logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
               )}
             </FormGroup>
             {editMode && (
               <FormGroup>
-                <Label for="missionLogoFile">Upload Logo File</Label>
+                <Label htmlFor="missionLogoFile">Upload Logo File</Label>
                 <Input
                   type="file"
                   id="missionLogoFile"
@@ -283,7 +283,7 @@ const VisionMissionEditor = () => {
               </FormGroup>
             )}
             <FormGroup>
-              <Label for="missionSubpoints">Subpoints</Label>
+              <Label htmlFor="missionSubpoints">Subpoints</Label>
               {missionData.subpoints.map((subpoint, index) => (
                 <div key={index} className="d-flex mb-2">
                   <Input

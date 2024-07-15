@@ -137,7 +137,7 @@ const EditVideoForm = () => {
       <Card className="p-5">
         <Form onSubmit={handleSubmit}>
           <FormGroup>
-            <Label for="heading">Heading</Label>
+            <Label htmlFor="heading">Heading</Label>
             <Input
               type="text"
               name="heading"
@@ -148,7 +148,7 @@ const EditVideoForm = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="description">Description</Label>
+            <Label htmlFor="description">Description</Label>
             <Input
               type="textarea"
               name="description"
@@ -168,7 +168,7 @@ const EditVideoForm = () => {
             </FormGroup>
           ) : (
             <FormGroup>
-              <Label for="logo_file">Upload Logo File</Label>
+              <Label htmlFor="logo_file">Upload Logo File</Label>
               <Input type="file" name="logo_file" id="logo_file" onChange={handleFileChange} disabled={!editMode} />
             </FormGroup>
           )}
@@ -185,7 +185,7 @@ const EditVideoForm = () => {
         </FormGroup>
         ) : (
         <FormGroup>
-          <Label for="video_file">Upload Video File</Label>
+          <Label htmlFor="video_file">Upload Video File</Label>
           <Input type="file" name="video_file" id="video_file" onChange={handleFileChange} disabled={!editMode} />
         </FormGroup>
           )}

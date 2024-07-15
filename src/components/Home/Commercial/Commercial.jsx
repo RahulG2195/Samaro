@@ -38,7 +38,7 @@ const Commercial = () => {
                 <div className="container"></div>
                 <div className="row">
                     <div className="col-lg-11">
-                        <div id="carouselExampleFade" className="carousel slide carousel-fade">
+                        <div id="carouselExampleFade" className="carousel slide carousel-fade " data-bs-ride="carousel" data-bs-interval="3000">
                             <div className="carousel-inner">
                                 {images.map((image, index) => (
                                     <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>

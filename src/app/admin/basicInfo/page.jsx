@@ -17,6 +17,7 @@ import {
 const BasicInfoPage = () => {
   const [basicInfo, setBasicInfo] = useState({
     comp_logo: "",
+    comp_footer_logo:"",
     email1: "",
     email2: "",
     mobile_no_1: "",
@@ -25,12 +26,14 @@ const BasicInfoPage = () => {
     insta_url: "",
     linkedin_url: "",
     youtube_url: "",
+    twitter_url: "",
     address: "",
     map_url: "",
   });
   const [editMode, setEditMode] = useState(false);
   const [editedData, setEditedData] = useState({});
   const [logoPreview, setLogoPreview] = useState("");
+  const [footerLogoPreview, setFooterLogoPreview] = useState("");
 
   // Function to fetch initial data
   useEffect(() => {
@@ -38,9 +41,11 @@ const BasicInfoPage = () => {
       try {
         const response = await axios.get("/api/admin/basicInfo");
         const info = response.data;
+        console.log("information data",info)
         setBasicInfo(info);
         setEditedData(info);
-        setLogoPreview(info.comp_logo); // Set the initial logo preview
+        setLogoPreview(info.comp_logo); 
+        setFooterLogoPreview(info.comp_footer_logo)
       } catch (error) {
         console.error("Error fetching basic info:", error);
       }
@@ -102,6 +107,13 @@ const BasicInfoPage = () => {
       setLogoPreview(URL.createObjectURL(file));
     }
   };
+  const handleFooterLogoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setEditedData((prevData) => ({ ...prevData, comp_footer_logo: file }));
+      setFooterLogoPreview(URL.createObjectURL(file));
+    }
+  };
 
   // Handle save button click
   const handleSave = async () => {
@@ -156,7 +168,7 @@ const BasicInfoPage = () => {
           <Row>
             <Col md={6}>
               <FormGroup>
-                <Label for="comp_logo">Company Logo</Label>
+                <Label htmlFor="comp_logo">Company Logo</Label>
                 <div className="">
                   {logoPreview && (
                     <img
@@ -175,7 +187,26 @@ const BasicInfoPage = () => {
                 </div>
               </FormGroup>
               <FormGroup>
-                <Label for="email1">Email 1</Label>
+                <Label htmlFor="comp_footer_logo">Company Logo on Footer</Label>
+                <div className="">
+                  {logoPreview && (
+                    <img
+                      src={`/uploads/${footerLogoPreview}`}
+                      alt="comp_footer_logo"
+                      style={{ width: "100px", marginBottom: "10px" }}
+                    />
+                  )}
+                  <Input
+                    type="file"
+                    name="comp_footer_logo"
+                    id="comp_footer_logo"
+                    onChange={handleFooterLogoChange}
+                    disabled={!editMode}
+                  />
+                </div>
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="email1">Email 1</Label>
                 <Input
                   type="email"
                   name="email1"
@@ -188,7 +219,7 @@ const BasicInfoPage = () => {
                 {!validateEmail(editedData.email1) && <FormFeedback>Please enter a valid Email 1.</FormFeedback>}
               </FormGroup>
               <FormGroup>
-                <Label for="email2">Email 2</Label>
+                <Label htmlFor="email2">Email 2</Label>
                 <Input
                   type="email"
                   name="email2"
@@ -198,7 +229,7 @@ const BasicInfoPage = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="mobile_no_1">Mobile No 1</Label>
+                <Label htmlFor="mobile_no_1">Mobile No 1</Label>
                 <Input
                   type="text"
                   name="mobile_no_1"
@@ -211,7 +242,7 @@ const BasicInfoPage = () => {
                 {!validateMobileNumber(editedData.mobile_no_1) && <FormFeedback>Please enter a valid Mobile No 1.</FormFeedback>}
               </FormGroup>
               <FormGroup>
-                <Label for="mobile_no_2">Mobile No 2</Label>
+                <Label htmlFor="mobile_no_2">Mobile No 2</Label>
                 <Input
                   type="text"
                   name="mobile_no_2"
@@ -223,7 +254,7 @@ const BasicInfoPage = () => {
             </Col>
             <Col md={6}>
               <FormGroup>
-                <Label for="facebook_url">Facebook URL</Label>
+                <Label htmlFor="facebook_url">Facebook URL</Label>
                 <Input
                   type="text"
                   name="facebook_url"
@@ -233,7 +264,7 @@ const BasicInfoPage = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="insta_url">Instagram URL</Label>
+                <Label htmlFor="insta_url">Instagram URL</Label>
                 <Input
                   type="text"
                   name="insta_url"
@@ -243,7 +274,7 @@ const BasicInfoPage = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="linkedin_url">LinkedIn URL</Label>
+                <Label htmlFor="linkedin_url">LinkedIn URL</Label>
                 <Input
                   type="text"
                   name="linkedin_url"
@@ -253,7 +284,7 @@ const BasicInfoPage = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="youtube_url">YouTube URL</Label>
+                <Label htmlFor="youtube_url">YouTube URL</Label>
                 <Input
                   type="text"
                   name="youtube_url"
@@ -263,7 +294,17 @@ const BasicInfoPage = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="address">Address</Label>
+                <Label htmlFor="twitter_url">Twitter URL</Label>
+                <Input
+                  type="text"
+                  name="twitter_url"
+                  value={editedData.twitter_url}
+                  onChange={handleChange}
+                  readOnly={!editMode}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="address">Address</Label>
                 <Input
                   type="textarea"
                   name="address"
@@ -275,7 +316,7 @@ const BasicInfoPage = () => {
                 {!editedData.address && <FormFeedback>Please enter Address.</FormFeedback>}
               </FormGroup>
               <FormGroup>
-                <Label for="map_url">Map URL</Label>
+                <Label htmlFor="map_url">Map URL</Label>
                 <Input
                   type="text"
                   name="map_url"

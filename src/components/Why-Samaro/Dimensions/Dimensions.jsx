@@ -35,9 +35,9 @@ const Dimensions = () => {
     return (
         <section className='dimensions'>
             <div className="row">
-                <div className="col-lg-10 col-md-10 bg-navy text-white " >
-                    <div className="row align-items-center inner-row-one">
-                        <div className="col-lg-5 col-md-8 col-12 ">
+                <div className="col-lg-10 col-md-10 bg-navy text-white p-0" >
+                    <div className="row align-items-center inner-row-one p-0">
+                        <div className="col-lg-5 col-md-8 col-12 p-0 img-cont">
                             {/* <img src="/assets/images/why-samaro/dimensions/1.png" alt="" /> */}
                             <img src={`/uploads/${dimensionsData.plank_sizes_image_url}`} alt="img" />
                         </div>
@@ -53,29 +53,25 @@ const Dimensions = () => {
                 </div>
             </div>
             <div className="row justify-content-end my-5">
-                <div className="col-lg-10 col-md-8 bg-red text-white " >
-                    <div className="row align-items-center inner-row-two">
-                        <div className="col-lg-7 p-5 text-end odr1 respPlanktxt plnkThick">
+                <div className="col-lg-10 col-md-8 bg-red text-white p-0" >
+                    <div className="row align-items-center inner-row-two p-0">
+                        <div className="col-lg-7 p-5 text-end odr1 respPlanktxt plnkThick p-0">
                             <h3 className='fw-bold text-darkred'>
                                 {dimensionsData.plank_thickness_heading}
                             </h3>
                             <p className='text-navy '>
                                 {dimensionsData.plank_thickness_description} </p> 
                             <div className='thickness text-navy'>
-                                {/* <img src="/assets/images/why-samaro/dimensions/Group 28285.svg" alt="err" style={{ width: '40%' }} /> */}
                                 <img src={`/uploads/${dimensionsData.plank_thickness_image_1_url}`} alt="err" style={{ width: '40%' }} />
                                 <span className='small mx-3'>{dimensionsData.plank_thickness_size_range_1}</span>
-                                {/* <img src="/assets/images/why-samaro/dimensions/Group 28287.svg" alt="err" style={{ width: '50%' }} /> */}
                                 <img src={`/uploads/${dimensionsData.plank_thickness_image_2_url}`} alt="err" style={{ width: '50%' }} />
                                 <span className='small mx-3'>{dimensionsData.plank_thickness_size_range_2}</span>
-                                {/* <img src="/assets/images/why-samaro/dimensions/Group 28289.svg" alt="err" style={{ width: '60%' }} /> */}
                                 <img src={`/uploads/${dimensionsData.plank_thickness_image_3_url}`} alt="err" style={{ width: '60%' }} />
                                 <span className='small mx-3 wl'>{dimensionsData.plank_thickness_size_range_3}</span>
                             </div>
                         </div>
-                        <div className="col-lg-5  col-md-8 col-12 odr2">
-                            {/* <img src="/assets/images/why-samaro/dimensions/2.png" alt="" /> */}
-                            <img src={`/uploads/${dimensionsData.plank_thickness_main_image_url}`} alt="" />
+                        <div className="col-lg-5 col-md-8 col-12 odr2 img-cont p-o">
+                            <img src={`/uploads/${dimensionsData.plank_thickness_main_image_url}`} alt="" className='w-100' />
                         </div>
                     </div>
                 </div>

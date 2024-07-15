@@ -43,9 +43,9 @@ const Benefits = () => {
             {benefits.map((item) => (
               <div key={item.id} className="col-lg-3 col-md-3 col-sm-12 col-md-pt-1 pt-4">
                 <div className="benefits-boxes">
-                  <img src={`/uploads/${item.logo}`} alt="err" className={` ${item.id === 1 ? 'mt-5' : ''}`} />
+                  <img src={`/uploads/${item.logo}`} alt="err" className={` ${item.id === 1 || item.id === 4 ? 'mt-5 pt-5' : ''}`} />
                   <div className={`d-flex flex-column align-items-center ${item.id % 2 === 0 ? 'text-navy' : 'text-darkred'}`}>
-                    <h3 className="mb-4 text-center fw-bold">{item.point_heading}</h3>
+                    <h3 className="mt-4 text-center fw-bold">{item.point_heading}</h3>
                     <ul className="fw-normal ps-xl-5">
                       {item.subpoints.map((subpoint, index) => (
                         <li key={index}>{subpoint}</li>

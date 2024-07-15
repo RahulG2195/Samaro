@@ -92,7 +92,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                       checked={selectedProduct === 'spc'}
                       onChange={handleProductChange} />
 
-                    <label for="inlineRadio1 " className="darkBlue form-check-label">SPC</label>
+                    <label htmlFor="inlineRadio1 " className="darkBlue form-check-label">SPC</label>
                   </div>
                 </div>
                 <div
@@ -108,7 +108,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                       checked={selectedProduct === 'lvt'}
                       onChange={handleProductChange}
                     />
-                    <label for="inlineRadio1" className="darkBlue form-check-label">LVT</label>
+                    <label htmlFor="inlineRadio1" className="darkBlue form-check-label">LVT</label>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 <div
                   className={`${hide} chk col-lg-12 col-md-12 col-sm-2 col-6`}
                 >
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -133,7 +133,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -145,7 +145,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -157,7 +157,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -170,7 +170,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
 
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-2 col-6`}>
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -184,7 +184,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 </div>
 
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-2 col-6`}>
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -205,7 +205,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
               </p>
               <div className="row ">
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -218,7 +218,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -231,7 +231,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -252,7 +252,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
               </p>
               <div className="row ">
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1  form-check-input"
                       type="checkbox"
@@ -265,7 +265,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -278,7 +278,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -290,7 +290,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor=""  className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -303,7 +303,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -316,7 +316,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -329,7 +329,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -342,7 +342,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -355,7 +355,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -375,7 +375,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
               </p>
               <div className="row ">
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -388,7 +388,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -402,7 +402,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
                   {" "}
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -415,7 +415,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -428,7 +428,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -441,7 +441,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -454,7 +454,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -467,7 +467,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"

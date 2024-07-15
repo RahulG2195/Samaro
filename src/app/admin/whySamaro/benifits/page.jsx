@@ -136,7 +136,7 @@ const WhysamaroBenefitsEditor = () => {
             <CardTitle tag="h5">Benefit {index + 1}</CardTitle>
             <Form>
               <FormGroup>
-                <Label for={`pointHeading${index}`}>Point Heading</Label>
+                <Label htmlFor={`pointHeading${index}`}>Point Heading</Label>
                 <Input
                   type="text"
                   id={`pointHeading${index}`}
@@ -146,14 +146,14 @@ const WhysamaroBenefitsEditor = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for={`benefitLogo${index}`}>Logo Preview</Label><br />
+                <Label htmlFor={`benefitLogo${index}`}>Logo Preview</Label><br />
                 {benefit.logo && typeof benefit.logo === 'string' && (
                   <CardImg src={`/uploads/${benefit.logo}`} alt="Benefit Logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
                 )}
               </FormGroup>
               {editMode && (
                 <FormGroup>
-                  <Label for={`benefitLogoFile${index}`}>Upload Logo File</Label>
+                  <Label htmlFor={`benefitLogoFile${index}`}>Upload Logo File</Label>
                   <Input
                     type="file"
                     id={`benefitLogoFile${index}`}
@@ -162,7 +162,7 @@ const WhysamaroBenefitsEditor = () => {
                 </FormGroup>
               )}
               <FormGroup>
-                <Label for={`subpoints${index}`}>Subpoints</Label>
+                <Label htmlFor={`subpoints${index}`}>Subpoints</Label>
                 {benefit.subpoints.map((subpoint, subpointIndex) => (
                   <div key={subpointIndex} className="d-flex mb-2">
                     <Input

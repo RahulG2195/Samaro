@@ -151,7 +151,7 @@ const SpacesPage = () => {
       <Card className="p-5">
         <Form>
           <FormGroup>
-            <Label for="commercial_images">Commercial Images</Label>
+            <Label htmlFor="commercial_images">Commercial Images</Label>
             <Row>
               {commercialImagePreviews.map((preview, index) => (
                 <Col sm="6" md="4" lg="3" key={index} className="mb-4">
@@ -193,7 +193,7 @@ const SpacesPage = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="residential_images">Residential Images</Label>
+            <Label htmlFor="residential_images">Residential Images</Label>
             <Row>
               {residentialImagePreviews.map((preview, index) => (
                 <Col sm="6" md="4" lg="3" key={index} className="mb-4">

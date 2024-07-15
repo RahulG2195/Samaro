@@ -68,7 +68,7 @@ const Gallery = () => {
         <section className='gallery pb-5'>
             <div className="container">
                 <h2>Gallery</h2>
-                <div className="line"></div>
+                <div className="border-top border-danger border-2"></div>
 
                 <div className="grid">
                     {Images.map((img, index) => (

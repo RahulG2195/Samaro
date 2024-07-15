@@ -2,9 +2,9 @@
   position: relative;
   padding-top: 150px;
 }
-/* .popularplanksBG{
-  
-} */
+.img-cont{
+margin: -2px 0;
+}
 .dimensions .bg-navy {
   border:3px solid #0A2647 ;
   background-color: transparent !important;
@@ -15,6 +15,7 @@
 
 .dimensions .bg-red {
   border:3px solid #CA373C ;
+  border-right-color: aliceblue;
   background-color: transparent !important;
   border-top-left-radius: 100vw;
   border-bottom-left-radius: 100vw;

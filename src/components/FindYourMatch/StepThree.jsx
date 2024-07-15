@@ -119,7 +119,7 @@ const StepThree = ({ formData, handleInputChange }) => {
               <div className='col-md-2 col-4 col-xs-6 my-md-3 my-2'>
                 <div className='steps1-main text-center'>
                   <div className="inner_step1 text-center">
-                    <label for={data.id} className="stepslabel">
+                    <label htmlFor={data.id} className="stepslabel">
                       <div className="steps1_img">
                         <input
                           value={data.clrCode}

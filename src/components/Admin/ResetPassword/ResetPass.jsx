@@ -59,7 +59,7 @@ const ResetPass = ({ username, onClose }) => {
       <h3>Reset Passwords</h3>
       <Form>
         <FormGroup>
-          <Label for="username">Username</Label>
+          <Label htmlFor="username">Username</Label>
           <Input
             type="text"
             name="username"
@@ -74,7 +74,7 @@ const ResetPass = ({ username, onClose }) => {
         {usernameValidated && (
           <>
             <FormGroup>
-              <Label for="newPassword">New Password</Label>
+              <Label htmlFor="newPassword">New Password</Label>
               <Input
                 type={showPassword ? 'text' : 'password'}
                 name="newPassword"
@@ -96,7 +96,7 @@ const ResetPass = ({ username, onClose }) => {
               </div>
             </FormGroup>
             <FormGroup>
-              <Label for="confirmPassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">Confirm Password</Label>
               <Input
                 type="password"
                 name="confirmPassword"

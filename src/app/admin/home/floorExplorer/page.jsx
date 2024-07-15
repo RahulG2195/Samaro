@@ -136,7 +136,7 @@ const FloorExplorer = () => {
             <Card className='p-5'>
                 <Form>
                     <FormGroup>
-                        <Label for="heading">Heading</Label>
+                        <Label htmlFor="heading">Heading</Label>
                         <Input
                             type="text"
                             name="heading"
@@ -147,7 +147,7 @@ const FloorExplorer = () => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="sub_heading">Sub Heading</Label>
+                        <Label htmlFor="sub_heading">Sub Heading</Label>
                         <Input
                             type="text"
                             name="sub_heading"
@@ -157,7 +157,7 @@ const FloorExplorer = () => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="description">Description</Label>
+                        <Label htmlFor="description">Description</Label>
                         <Input
                             type="textarea"
                             name="description"
@@ -167,7 +167,7 @@ const FloorExplorer = () => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="button">Button Text</Label>
+                        <Label htmlFor="button">Button Text</Label>
                         <Input
                             type="text"
                             name="button"
@@ -177,7 +177,7 @@ const FloorExplorer = () => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="url">URL</Label>
+                        <Label htmlFor="url">URL</Label>
                         <Input
                             type="text"
                             name="url"
@@ -187,7 +187,7 @@ const FloorExplorer = () => {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="ply_image">Ply Image</Label>
+                        <Label htmlFor="ply_image">Ply Image</Label>
                         <div>
                             {editMode ? (
                                 <Input type="file" name="ply_image" onChange={handleFileChange} />
@@ -201,7 +201,7 @@ const FloorExplorer = () => {
                         </div>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="tab_image">Tab Image</Label>
+                        <Label htmlFor="tab_image">Tab Image</Label>
                         <div>
                             {editMode ? (
                                 <Input type="file" name="tab_image" onChange={handleFileChange} />

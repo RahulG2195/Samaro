@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./SPCLVT.css"
 import Link from 'next/link'
 import axios from 'axios';
+
 const Spclvt = () => {
 
     const [buildHomeData, setBuildHomeData] = useState({
@@ -42,7 +43,7 @@ const Spclvt = () => {
                 <div className="row align-items-end">
                     <div className="col-lg-6 ">
                         <div className="content">
-                            <h2 className="sub-heading fw-bold navyBlue w-md-75">
+                            <h2 className="sub-heading fw-bold navyBlue col-md-8 col-12 ">
                                 {buildHomeData.heading}
                                 {/* Build a happy home with a Samaro floor */}
                             </h2>

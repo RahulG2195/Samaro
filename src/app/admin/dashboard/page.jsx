@@ -207,7 +207,7 @@ const Addproducts = () => {
           <CardBody>
             <Form className="row justify-content-center" onSubmit={handleAllinputs}>
               <FormGroup className="col-6">
-                <Label for="productname">Product Name*</Label>
+                <Label htmlFor="productname">Product Name*</Label>
                 <Input
                   id="productname"
                   name="productname"
@@ -220,7 +220,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="category">Category*</Label>
+                <Label htmlFor="category">Category*</Label>
                 <Input
                   id="type"
                   name="category"
@@ -232,7 +232,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="catalogue">Catalogue*</Label>
+                <Label htmlFor="catalogue">Catalogue*</Label>
                 <Input
                   id="catalogue"
                   name="catalogue"
@@ -245,7 +245,7 @@ const Addproducts = () => {
               </FormGroup>
               {/* variation */}
               <FormGroup className="col-6">
-                <Label for="productType">Product Type*</Label>
+                <Label htmlFor="productType">Product Type*</Label>
                 <Input
                   id="catalogue"
                   name="variation"
@@ -257,7 +257,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="color">Color*</Label>
+                <Label htmlFor="color">Color*</Label>
                 <Input
                   id="color"
                   name="color"
@@ -268,7 +268,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="code">Code*</Label>
+                <Label htmlFor="code">Code*</Label>
                 <Input
                   required
                   id="code"
@@ -280,7 +280,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="places">Select Places*</Label>
+                <Label htmlFor="places">Select Places*</Label>
                 <Dropdown>
                   <Dropdown.Toggle variant="" id="dropdown-basic" className="border">
                     Select Options
@@ -307,7 +307,7 @@ const Addproducts = () => {
                 )}
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="thikness">Thikness</Label>
+                <Label htmlFor="thikness">Thikness</Label>
                 <Input
                   id="thikness"
                   name="thikness"
@@ -318,7 +318,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="layer">layer</Label>
+                <Label htmlFor="layer">layer</Label>
                 <Input
                   id="layer"
                   name="layer"
@@ -329,7 +329,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="prod_finish">prod_finish</Label>
+                <Label htmlFor="prod_finish">prod_finish</Label>
                 <Input
                   id="prod_finish"
                   name="prod_finish"
@@ -340,7 +340,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="size">prod_size</Label>
+                <Label htmlFor="size">prod_size</Label>
                 <Input
                   id="size"
                   name="size"
@@ -351,7 +351,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="spiece">prod_spiece</Label>
+                <Label htmlFor="spiece">prod_spiece</Label>
                 <Input
                   id="spiece"
                   name="spiece"
@@ -362,7 +362,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="grove">no_of_grove</Label>
+                <Label htmlFor="grove">no_of_grove</Label>
                 <Input
                   id="grove"
                   name="grove"
@@ -373,7 +373,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="m2pack">m2pack</Label>
+                <Label htmlFor="m2pack">m2pack</Label>
                 <Input
                   id="m2pack"
                   name="m2pack"
@@ -384,7 +384,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="plank">plank</Label>
+                <Label htmlFor="plank">plank</Label>
                 <Input
                   id="plank"
                   name="plank"
@@ -395,7 +395,7 @@ const Addproducts = () => {
                 />
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="status">Status</Label>
+                <Label htmlFor="status">Status</Label>
                 <Input
                   id="status"
                   name="status"
@@ -407,7 +407,7 @@ const Addproducts = () => {
               </FormGroup>
 
               <FormGroup className="col-6">
-                <Label for="frontImage">Front image*</Label>
+                <Label htmlFor="frontImage">Front image*</Label>
                 {isEditMode && productDetail.prod_images && (
                   <div className="mb-2">
                     <img
@@ -424,7 +424,7 @@ const Addproducts = () => {
                 </FormText>
               </FormGroup>
               <FormGroup className="col-6">
-                <Label for="otherImages">Other images*</Label>
+                <Label htmlFor="otherImages">Other images*</Label>
                 {isEditMode && productDetail.prod_image2 && (
                   <div className="mb-2">
                     {productDetail.prod_image2.split(',').map((imagePath, index) => (
