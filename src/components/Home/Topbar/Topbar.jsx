@@ -79,11 +79,11 @@ const Topbar = () => {
                                                 <img className="img" src="/assets/images/social-media/Group 29179.svg" alt="" />
                                             </Link>
                                         </div>
-                                        <div className="youtube">
+                                        {/* <div className="youtube">
                                             <Link href={basicInfo.youtube_url}>
                                                 <img className="img" src="/assets/images/social-media/yt.png" alt="" />
                                             </Link>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "./Benefits.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import { EffectFade, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import Link from 'next/link';
 import axios from 'axios';
 
@@ -139,11 +139,12 @@ const Benefits = () => {
                             <Swiper
                                 spaceBetween={30}
                                 slidesPerView={3}
-                                modules={[EffectFade, Autoplay]}
                                 loop={true}
                                 autoplay={{
                                     delay: 1000,
+                                    disableOnInteraction: false,
                                 }}
+                                modules={[EffectFade, Autoplay]}
                             >
                                 {benifitsIcon.map((item, index) => (
                                     <SwiperSlide key={index}>
@@ -170,12 +171,13 @@ const Benefits = () => {
                             effect='fade'
                             slidesPerView={1}
                             spaceBetween={0}
-                            modules={[EffectFade, Autoplay]}
                             loop={true}
                             autoplay={{
                                 delay: 1000,
+                                disableOnInteraction: false,
                             }}
-                            className="mySwiper"
+                            modules={[EffectFade, Autoplay]}
+                             className="mySwiper"
                         >
                             {benifitsARR.map((item, index) => (
                                 <SwiperSlide key={index}>

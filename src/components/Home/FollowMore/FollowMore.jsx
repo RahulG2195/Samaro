@@ -35,7 +35,7 @@ const FollowMore = () => {
 
     return (
         <>
-            <div className="align-items-center d-md-flex justify-content-center flex-wrap gap-2 my-5">
+            <div className="align-items-center d-md-flex justify-content-center flex-wrap gap-2 mb-5">
                 <div className="logo text-center">
                     <Link href="#">
                         <span className=' small followtxt'>Follow More</span>
@@ -53,11 +53,11 @@ const FollowMore = () => {
                         </Link>
                     </div>
 
-                    <div className="youtube">
+                    {/* <div className="youtube">
                         <Link href={basicInfo.youtube_url}>
                             <img className="img" src="/assets/images/social-media/Group 28059.svg" alt="" />
                         </Link>
-                    </div>
+                    </div> */}
                     <div className="in">
                         <Link href={basicInfo.linkedin_url}>
                             <img className="img" src="/assets/images/social-media/Group 28615.svg" alt="" />
