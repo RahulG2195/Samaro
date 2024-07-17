@@ -93,6 +93,12 @@ const navigation = [
     icon: "bi bi-bell",
   },
   
+  {
+    title: "Newsletter mails",
+    href: "/admin/emailList",
+    icon: "bi bi-bell",
+  },
+  
 ];
 
 const Sidebar = ({ showMobilemenu }) => {

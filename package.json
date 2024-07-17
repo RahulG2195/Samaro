@@ -63,6 +63,7 @@
     "sendmail": "^1.6.1",
     "styled-components": "^6.1.11",
     "swiper": "^11.1.4",
-    "webpack": "^5.93.0"
+    "webpack": "^5.93.0",
+    "xlsx": "^0.18.5"
   }
 }

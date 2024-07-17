@@ -8,7 +8,7 @@ export async function POST(request) {
     const mailgun = new Mailgun(formData);
     const mg = mailgun.client({
       username: 'api',
-      key: 'Need to add an env', // Replace with your Mailgun 
+      key: process.env.MAILGUN_SEDN_KEY, // Replace with your Mailgun 
     });
 
     const teamEmailData = {

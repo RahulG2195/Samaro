@@ -5,8 +5,8 @@ import Link from 'next/link';
 import axios from 'axios';
 const Footer = () => {
     const [basicInfo, setBasicInfo] = useState({
-        comp_logo:"",
-        comp_footer_logo:"",
+        comp_logo: "",
+        comp_footer_logo: "",
         email1: "",
         email2: "",
         mobile_no_1: "",
@@ -18,7 +18,8 @@ const Footer = () => {
         youtube_url: "",
         map_url: "",
     });
-    console.log(basicInfo.map_url)
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
         const fetchBasicInfo = async () => {
@@ -34,7 +35,24 @@ const Footer = () => {
         fetchBasicInfo();
     }, []);
 
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('/api/subscribe', { email });
+            setMessage(response.data.message);
+            setEmail('');
+        } catch (error) {
+            console.error("Error subscribing email:", error);
+            setMessage('Failed to subscribe.');
+            setEmail('');
+        }
+    };
 
     return (
         <>
@@ -79,7 +97,7 @@ const Footer = () => {
                                 <address className='d-flex'>
                                     {/* <i className="fas fa-map-marker-alt d-block mt-2 px-2"></i> */}
                                     <div className='me-2 '>
-                                    <img src="/assets/images/icons/Group 57.svg" alt="" className='w-100'/></div>
+                                        <img src="/assets/images/icons/Group 57.svg" alt="" className='w-100' /></div>
                                     {basicInfo.address}
                                 </address>
                             </div>
@@ -94,10 +112,17 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div className="newsletter  justify-content-start gap-2 mt-3">
-                                <input type="text" className="border-white border-2 rounded-pill px-5
-                                " placeholder="Enter your email for Newsletter" style={{ backgroundColor: 'inherit' }} />
-                                <button className='btn border-2 border-white rounded-pill footerSubmitbutton'>Submit</button>
+                                <form onSubmit={handleSubmit}>
+                                    <input type="text" className="border-white border-2 rounded-pill px-5"
+                                        placeholder="Enter your email for Newsletter" style={{ backgroundColor: 'inherit' }}
+                                        onChange={handleEmailChange}
+
+                                    />
+                                    <button className='btn border-2 border-white rounded-pill footerSubmitbutton' type="submit">Submit</button>
+                                </form>
                             </div>
+                            {message && <p className='p-2'>{message}</p>}
+
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-6 ps-md-5 mt-0  ordr1">
                             <img src="/assets/images/home/footer/1000_F_435229236_4nOQpFgQ8bzvj60ff4B5eBcGSEdTyG2s.png" alt="" />
