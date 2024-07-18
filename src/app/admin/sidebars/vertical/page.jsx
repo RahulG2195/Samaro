@@ -20,7 +20,7 @@ const navigation = [
       // { title: "Design Range", href: "/admin/action/three" ,icon: "bi bi-hdd-stack"},
       { title: "Benifits", href: "/admin/home/benifits" ,icon: "bi bi-hdd-stack"},
       { title: "Floor Explorer", href: "/admin/home/floorExplorer" ,icon: "bi bi-hdd-stack",icon: "bi bi-hdd-stack" },
-      { title: "Spaces", href: "/admin/home/spaces" ,icon: "bi bi-hdd-stack"},
+      { title: "Spaces", href:"/admin/home/spaces" ,icon: "bi bi-hdd-stack"},
     ],
     icon: "bi bi-hdd-stack",
 

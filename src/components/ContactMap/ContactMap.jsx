@@ -16,6 +16,7 @@ const ContactMap = () => {
         youtube_url: "",
         map_url: "",
     });
+console.log(basicInfo)
 
     useEffect(() => {
         const fetchBasicInfo = async () => {
@@ -53,7 +54,7 @@ const ContactMap = () => {
 
                                 <div className="social-media pt-5 justify-content-start align-items-center">
                                     <div className="logo text-center">
-                                        <Link href="#">
+                                        <Link href="/#">
                                             <span className='text-white '>Follow More</span>
                                         </Link>
                                     </div>

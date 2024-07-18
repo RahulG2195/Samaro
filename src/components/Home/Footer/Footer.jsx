@@ -18,6 +18,7 @@ const Footer = () => {
         youtube_url: "",
         map_url: "",
     });
+    console.log("basic",basicInfo)
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 

@@ -11,6 +11,7 @@ import axios from "axios";
 const Header = () => {
 
     const [companyLogo, setcompanyLogo] = useState('')
+    console.log("company logo",companyLogo)
 
     useEffect(() => {
         const fetchBasicInfo = async () => {

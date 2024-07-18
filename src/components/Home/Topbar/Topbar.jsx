@@ -18,7 +18,6 @@ const Topbar = () => {
         map_url: "",
     });
 
-
     useEffect(() => {
         const fetchBasicInfo = async () => {
             try {
@@ -60,24 +59,24 @@ const Topbar = () => {
                                     </div>
                                     <div className="social-media-inner gap-3">
                                         <div className="facebook">
-                                            <Link href={basicInfo.facebook_url}>
+                                            <a href={basicInfo.facebook_url}>
                                                 <img className="img " src="/assets/images/social-media/fb.png" alt="" />
-                                            </Link>
+                                            </a>
                                         </div>
                                         <div className="isntagram">
-                                            <Link href={basicInfo.insta_url}>
+                                            <a href={basicInfo.insta_url}>
                                                 <img className="img" src="/assets/images/social-media/instagram.png" alt="" />
-                                            </Link>
+                                            </a>
                                         </div>
                                         <div className="x">
-                                            <Link href={basicInfo.twitter_url}>
+                                            <a href={basicInfo.twitter_url}>
                                                 <img className="img" src="/assets/images/social-media/x.png" alt="" />
-                                            </Link>
+                                            </a>
                                         </div>
                                         <div className="linkedin">
-                                            <Link href={basicInfo.linkedin_url}>
+                                            <a href={basicInfo.linkedin_url}>
                                                 <img className="img" src="/assets/images/social-media/Group 29179.svg" alt="" />
-                                            </Link>
+                                            </a>
                                         </div>
                                         {/* <div className="youtube">
                                             <Link href={basicInfo.youtube_url}>

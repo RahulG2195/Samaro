@@ -5,11 +5,13 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link href="/">
-      {/* <a>
-        <Image src={LogoDark} alt="logo" />
-      </a> */}
-    </Link>
+    <>
+    // <Link href="/">
+    //   {/* <a>
+    //     <Image src={LogoDark} alt="logo" />
+    //   </a> */}
+    // </Link>
+    </>
   );
 };
 
