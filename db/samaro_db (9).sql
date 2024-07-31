@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 29, 2024 at 06:22 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Host: localhost:3306
+-- Generation Time: Jul 31, 2024 at 04:22 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adminlogin` (
-  `Id` int(255) NOT NULL,
+  `Id` int NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `resetToken` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `adminlogin`
@@ -48,18 +48,18 @@ INSERT INTO `adminlogin` (`Id`, `username`, `password`, `resetToken`) VALUES
 --
 
 CREATE TABLE `basic_info` (
-  `bi_id` int(11) NOT NULL,
-  `comp_logo` varchar(255) DEFAULT NULL,
-  `email1` varchar(255) DEFAULT NULL,
-  `email2` varchar(255) DEFAULT NULL,
-  `mobile_no_1` varchar(20) DEFAULT NULL,
-  `mobile_no_2` varchar(20) DEFAULT NULL,
-  `facebook_url` varchar(255) DEFAULT NULL,
-  `insta_url` varchar(255) DEFAULT NULL,
-  `linkedin_url` varchar(255) DEFAULT NULL,
-  `youtube_url` varchar(255) DEFAULT NULL,
-  `address` text DEFAULT NULL,
-  `map_url` varchar(10255) DEFAULT NULL
+  `bi_id` int NOT NULL,
+  `comp_logo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email1` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email2` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mobile_no_1` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mobile_no_2` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `facebook_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `insta_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `linkedin_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `youtube_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_general_ci,
+  `map_url` varchar(10255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -76,11 +76,11 @@ INSERT INTO `basic_info` (`bi_id`, `comp_logo`, `email1`, `email2`, `mobile_no_1
 --
 
 CREATE TABLE `benefits` (
-  `id` int(11) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `icons` varchar(1024) DEFAULT NULL,
-  `titles` varchar(1024) DEFAULT NULL,
-  `slider_images` varchar(4096) DEFAULT NULL
+  `id` int NOT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `icons` varchar(1024) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `titles` varchar(1024) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `slider_images` varchar(4096) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -97,15 +97,15 @@ INSERT INTO `benefits` (`id`, `heading`, `icons`, `titles`, `slider_images`) VAL
 --
 
 CREATE TABLE `build_home` (
-  `id` int(11) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `description` varchar(10255) DEFAULT NULL,
-  `feature1_icon` varchar(50) DEFAULT NULL,
-  `feature1_title` varchar(100) DEFAULT NULL,
-  `feature2_icon` varchar(50) DEFAULT NULL,
-  `feature2_title` varchar(100) DEFAULT NULL,
-  `feature3_icon` varchar(50) DEFAULT NULL,
-  `feature3_title` varchar(100) DEFAULT NULL
+  `id` int NOT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(10255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature1_icon` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature1_title` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature2_icon` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature2_title` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature3_icon` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `feature3_title` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -122,10 +122,10 @@ INSERT INTO `build_home` (`id`, `heading`, `description`, `feature1_icon`, `feat
 --
 
 CREATE TABLE `category` (
-  `cat_id` int(11) NOT NULL,
-  `cat_name` varchar(255) NOT NULL,
-  `cat_status` int(11) NOT NULL DEFAULT 1,
-  `cat_added_on` timestamp NOT NULL DEFAULT current_timestamp()
+  `cat_id` int NOT NULL,
+  `cat_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_status` int NOT NULL DEFAULT '1',
+  `cat_added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -143,8 +143,8 @@ INSERT INTO `category` (`cat_id`, `cat_name`, `cat_status`, `cat_added_on`) VALU
 --
 
 CREATE TABLE `certifications` (
-  `id` int(11) NOT NULL,
-  `logo` varchar(2555) NOT NULL
+  `id` int NOT NULL,
+  `logo` varchar(2555) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -170,10 +170,10 @@ INSERT INTO `certifications` (`id`, `logo`) VALUES
 --
 
 CREATE TABLE `color` (
-  `id` int(11) NOT NULL,
-  `clrCode` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `status` int(11) DEFAULT 1
+  `id` int NOT NULL,
+  `clrCode` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` int DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -197,21 +197,21 @@ INSERT INTO `color` (`id`, `clrCode`, `image`, `status`) VALUES
 --
 
 CREATE TABLE `dimensions` (
-  `id` int(11) NOT NULL,
-  `plank_sizes_heading` varchar(255) DEFAULT NULL,
-  `plank_sizes_description` text DEFAULT NULL,
-  `plank_sizes_image_url` varchar(255) DEFAULT NULL,
-  `plank_thickness_heading` varchar(255) DEFAULT NULL,
-  `plank_thickness_description` text DEFAULT NULL,
-  `plank_thickness_main_image_url` varchar(255) DEFAULT NULL,
-  `plank_thickness_image_1_url` varchar(255) DEFAULT NULL,
-  `plank_thickness_size_range_1` varchar(50) DEFAULT NULL,
-  `plank_thickness_image_2_url` varchar(255) DEFAULT NULL,
-  `plank_thickness_size_range_2` varchar(50) DEFAULT NULL,
-  `plank_thickness_image_3_url` varchar(255) DEFAULT NULL,
-  `plank_thickness_size_range_3` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id` int NOT NULL,
+  `plank_sizes_heading` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_sizes_description` text COLLATE utf8mb4_general_ci,
+  `plank_sizes_image_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_heading` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_description` text COLLATE utf8mb4_general_ci,
+  `plank_thickness_main_image_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_image_1_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_size_range_1` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_image_2_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_size_range_2` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_image_3_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank_thickness_size_range_3` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -228,14 +228,14 @@ INSERT INTO `dimensions` (`id`, `plank_sizes_heading`, `plank_sizes_description`
 --
 
 CREATE TABLE `download_center` (
-  `dc_id` int(11) NOT NULL,
-  `dc_category` varchar(255) NOT NULL,
-  `dc_type` varchar(255) NOT NULL,
-  `imgurl` varchar(255) NOT NULL,
-  `pdf` varchar(255) NOT NULL,
-  `status` int(11) DEFAULT 1,
-  `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Badgetitle` varchar(255) DEFAULT NULL
+  `dc_id` int NOT NULL,
+  `dc_category` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `dc_type` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `imgurl` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `pdf` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` int DEFAULT '1',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Badgetitle` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -255,14 +255,14 @@ INSERT INTO `download_center` (`dc_id`, `dc_category`, `dc_type`, `imgurl`, `pdf
 --
 
 CREATE TABLE `floor_explorer` (
-  `id` int(11) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `sub_heading` varchar(255) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `button` varchar(100) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
-  `ply_image` varchar(255) DEFAULT NULL,
-  `tab_image` varchar(255) DEFAULT NULL
+  `id` int NOT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `sub_heading` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_general_ci,
+  `button` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ply_image` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tab_image` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -279,9 +279,9 @@ INSERT INTO `floor_explorer` (`id`, `heading`, `sub_heading`, `description`, `bu
 --
 
 CREATE TABLE `gallery` (
-  `id` int(11) NOT NULL,
-  `imageName` varchar(255) NOT NULL,
-  `created_on` timestamp NOT NULL DEFAULT current_timestamp()
+  `id` int NOT NULL,
+  `imageName` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -325,13 +325,13 @@ INSERT INTO `gallery` (`id`, `imageName`, `created_on`) VALUES
 --
 
 CREATE TABLE `herobanner` (
-  `banner_id` int(11) NOT NULL,
-  `banner_title` varchar(255) NOT NULL,
-  `banner_content` text DEFAULT NULL,
-  `banner_url` varchar(255) DEFAULT NULL,
-  `button_text` varchar(255) DEFAULT NULL,
-  `banner_img` varchar(255) DEFAULT NULL,
-  `mobileBanner_img` varchar(255) DEFAULT NULL
+  `banner_id` int NOT NULL,
+  `banner_title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `banner_content` text COLLATE utf8mb4_general_ci,
+  `banner_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `button_text` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `banner_img` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mobileBanner_img` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -351,14 +351,14 @@ INSERT INTO `herobanner` (`banner_id`, `banner_title`, `banner_content`, `banner
 --
 
 CREATE TABLE `newsletter` (
-  `news_id` int(11) NOT NULL,
-  `news_category` varchar(255) DEFAULT NULL,
-  `imgurl` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `date` date DEFAULT current_timestamp(),
-  `author` varchar(255) DEFAULT NULL,
-  `video` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
+  `news_id` int NOT NULL,
+  `news_category` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `imgurl` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `author` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `video` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `status` int DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -366,14 +366,14 @@ CREATE TABLE `newsletter` (
 --
 
 INSERT INTO `newsletter` (`news_id`, `news_category`, `imgurl`, `title`, `date`, `author`, `video`, `status`) VALUES
-(1, 'New Launch', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-20', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
-(2, 'Product Knowledge', 'picture@2x.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-20', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
-(3, 'Events', 'picture@2x.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-20', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
-(5, 'New Launch ', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-20', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
-(7, 'New Launch ', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-08', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', NULL),
-(8, 'New Launch ', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-08', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', NULL),
-(9, 'Product Knowledge', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-08', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', NULL),
-(10, 'Events', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-08', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', NULL);
+(1, 'New Launch', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-19 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(2, 'Product Knowledge', 'picture@2x.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-19 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(3, 'Events', 'picture@2x.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-19 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(4, 'New Launch', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-06-19 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(5, 'New Launch', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-07 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(6, 'New Launch', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-07 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(7, 'Product Knowledge', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-07 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1),
+(8, 'Events', 'picture.png', 'Seven tips to help you to get better flooring design & concept', '2024-07-07 18:30:00', 'Anand Kashyap', 'Samaro- Building Lifestyle_Why samaro Banner.mp4', 1);
 
 -- --------------------------------------------------------
 
@@ -382,28 +382,28 @@ INSERT INTO `newsletter` (`news_id`, `news_category`, `imgurl`, `title`, `date`,
 --
 
 CREATE TABLE `products` (
-  `prod_id` int(11) NOT NULL,
-  `prod_name` varchar(255) NOT NULL,
-  `cat_id` int(11) NOT NULL,
-  `prod_code` varchar(255) NOT NULL,
-  `seo_url` varchar(255) NOT NULL,
-  `prod_catalogue` varchar(100) NOT NULL,
-  `variation` varchar(50) NOT NULL,
-  `color` varchar(50) NOT NULL,
-  `place` varchar(255) NOT NULL,
-  `thikness` varchar(50) DEFAULT NULL,
-  `layer` varchar(50) DEFAULT NULL,
-  `prod_images` varchar(255) NOT NULL,
-  `prod_image2` text NOT NULL,
-  `prod_finish` varchar(50) DEFAULT NULL,
-  `prod_size` varchar(50) DEFAULT NULL,
-  `prod_spiece` varchar(50) DEFAULT NULL,
-  `no_of_groves` varchar(50) DEFAULT NULL,
-  `m2pack` varchar(50) DEFAULT NULL,
-  `plank` varchar(50) DEFAULT NULL,
-  `prod_status` int(11) NOT NULL DEFAULT 1,
-  `added_on` timestamp NOT NULL DEFAULT current_timestamp(),
-  `colorId` int(11) DEFAULT NULL
+  `prod_id` int NOT NULL,
+  `prod_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_id` int NOT NULL,
+  `prod_code` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `seo_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `prod_catalogue` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `variation` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `color` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `place` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `thikness` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `layer` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `prod_images` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `prod_image2` text COLLATE utf8mb4_general_ci NOT NULL,
+  `prod_finish` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `prod_size` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `prod_spiece` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `no_of_groves` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `m2pack` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `plank` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `prod_status` int NOT NULL DEFAULT '1',
+  `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `colorId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -457,9 +457,9 @@ DELIMITER ;
 --
 
 CREATE TABLE `spaces` (
-  `id` int(11) NOT NULL,
-  `commercial_images` varchar(1000) DEFAULT NULL,
-  `residential_images` varchar(1000) DEFAULT NULL
+  `id` int NOT NULL,
+  `commercial_images` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `residential_images` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -476,13 +476,13 @@ INSERT INTO `spaces` (`id`, `commercial_images`, `residential_images`) VALUES
 --
 
 CREATE TABLE `vision_mission` (
-  `id` int(11) NOT NULL,
-  `type` enum('Vision','Mission') NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `subpoints` text DEFAULT NULL,
-  `logo` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id` int NOT NULL,
+  `type` enum('Vision','Mission') COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `subpoints` text COLLATE utf8mb4_general_ci,
+  `logo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -500,12 +500,12 @@ INSERT INTO `vision_mission` (`id`, `type`, `title`, `subpoints`, `logo`, `creat
 --
 
 CREATE TABLE `whysamaro_benifits` (
-  `id` int(11) NOT NULL,
-  `point_heading` varchar(255) NOT NULL,
-  `subpoints` text NOT NULL,
-  `logo` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id` int NOT NULL,
+  `point_heading` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `subpoints` text COLLATE utf8mb4_general_ci NOT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -525,12 +525,12 @@ INSERT INTO `whysamaro_benifits` (`id`, `point_heading`, `subpoints`, `logo`, `c
 --
 
 CREATE TABLE `whysamaro_download_center` (
-  `id` int(11) NOT NULL,
-  `image_url` varchar(255) DEFAULT NULL,
-  `heading` varchar(255) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `button_text` varchar(100) DEFAULT NULL,
-  `button_url` varchar(255) DEFAULT NULL
+  `id` int NOT NULL,
+  `image_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_general_ci,
+  `button_text` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `button_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -547,13 +547,13 @@ INSERT INTO `whysamaro_download_center` (`id`, `image_url`, `heading`, `descript
 --
 
 CREATE TABLE `whysamaro_video` (
-  `id` int(11) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `video` varchar(255) NOT NULL,
-  `logo` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id` int NOT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `video` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -598,206 +598,20 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `certifications`
---
-ALTER TABLE `certifications`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `color`
---
-ALTER TABLE `color`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `dimensions`
---
-ALTER TABLE `dimensions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `download_center`
---
-ALTER TABLE `download_center`
-  ADD PRIMARY KEY (`dc_id`);
-
---
--- Indexes for table `floor_explorer`
---
-ALTER TABLE `floor_explorer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gallery`
---
-ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `herobanner`
---
-ALTER TABLE `herobanner`
-  ADD PRIMARY KEY (`banner_id`);
-
---
 -- Indexes for table `newsletter`
 --
 ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`news_id`);
 
 --
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`prod_id`);
-
---
--- Indexes for table `spaces`
---
-ALTER TABLE `spaces`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `vision_mission`
---
-ALTER TABLE `vision_mission`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `whysamaro_benifits`
---
-ALTER TABLE `whysamaro_benifits`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `whysamaro_download_center`
---
-ALTER TABLE `whysamaro_download_center`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `whysamaro_video`
---
-ALTER TABLE `whysamaro_video`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `adminlogin`
---
-ALTER TABLE `adminlogin`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `basic_info`
---
-ALTER TABLE `basic_info`
-  MODIFY `bi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `benefits`
---
-ALTER TABLE `benefits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `build_home`
---
-ALTER TABLE `build_home`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `certifications`
---
-ALTER TABLE `certifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `color`
---
-ALTER TABLE `color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `dimensions`
---
-ALTER TABLE `dimensions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `download_center`
---
-ALTER TABLE `download_center`
-  MODIFY `dc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `floor_explorer`
---
-ALTER TABLE `floor_explorer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `gallery`
---
-ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
-
---
--- AUTO_INCREMENT for table `herobanner`
---
-ALTER TABLE `herobanner`
-  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
-
---
--- AUTO_INCREMENT for table `spaces`
---
-ALTER TABLE `spaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `vision_mission`
---
-ALTER TABLE `vision_mission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `whysamaro_benifits`
---
-ALTER TABLE `whysamaro_benifits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `whysamaro_download_center`
---
-ALTER TABLE `whysamaro_download_center`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `whysamaro_video`
---
-ALTER TABLE `whysamaro_video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `news_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
