@@ -6,10 +6,10 @@ dotenv.config();
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
-  host: process.env.MYSQL_HOST,
-  port: process.env.MYSQL_PORT,
-  database: process.env.MYSQL_DATABASE,
-  user: process.env.MYSQL_USER,
+  host:localhost,
+  port: 3306,
+  database:samaro_db,
+  user: root,
   // password: process.env.MYSQL_PASSWORD,
   waitForConnections: true,
   connectionLimit: 10,
