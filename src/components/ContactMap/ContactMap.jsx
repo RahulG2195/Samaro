@@ -16,7 +16,6 @@ const ContactMap = () => {
         youtube_url: "",
         map_url: "",
     });
-console.log(basicInfo)
 
     useEffect(() => {
         const fetchBasicInfo = async () => {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 31, 2024 at 04:22 AM
+-- Generation Time: Jul 31, 2024 at 06:59 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -59,15 +59,17 @@ CREATE TABLE `basic_info` (
   `linkedin_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `youtube_url` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_general_ci,
-  `map_url` varchar(10255) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `map_url` varchar(10255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `comp_footer_logo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `twitter_url` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `basic_info`
 --
 
-INSERT INTO `basic_info` (`bi_id`, `comp_logo`, `email1`, `email2`, `mobile_no_1`, `mobile_no_2`, `facebook_url`, `insta_url`, `linkedin_url`, `youtube_url`, `address`, `map_url`) VALUES
-(1, 'main-logo.png', 'info@samaro.in', 'export@samaro.in', '+918655984340', '', 'https://facebook.com/example', 'https://instagram.com/example', 'https://linkedin.com/company/example', 'https://youtube.com/channel/example', '5th Floor, Vilco Centre, Subhash Road, Opp. Garware, Vile Parle East, Mumbai-400057, Maharashtra, India', 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7540.094382095063!2d72.84777128831631!3d19.105585566319924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1720672315092!5m2!1sen!2sin');
+INSERT INTO `basic_info` (`bi_id`, `comp_logo`, `email1`, `email2`, `mobile_no_1`, `mobile_no_2`, `facebook_url`, `insta_url`, `linkedin_url`, `youtube_url`, `address`, `map_url`, `comp_footer_logo`, `twitter_url`) VALUES
+(1, 'main-logo.png', 'info@samaro.in', 'export@samaro.in', '+918655984340', '', 'https://www.facebook.com/profile.php?id=100090523595967', 'https://www.instagram.com/samaroflooring/', 'www.linkedin.com/in/samaro-flooring-b9966a269', 'https://www.youtube.com/@sapne6070', '5th Floor, Vilco Centre, Subhash Road, Opp. Garware, Vile Parle East, Mumbai-400057, Maharashtra, India', 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7540.094382095063!2d72.84777128831631!3d19.105585566319924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1720672315092!5m2!1sen!2sin', 'logo.png', '');
 
 -- --------------------------------------------------------
 
