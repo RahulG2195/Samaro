@@ -11,14 +11,24 @@ import axios from "axios";
 const Header = () => {
 
     const [companyLogo, setcompanyLogo] = useState('')
-    console.log("company logo",companyLogo)
-
+    const [contatnumber, setContatnumber] = useState('')
+    const [facebook, setFacebook] = useState('');
+    const [insta, setInsta] = useState('');
+    const [linkedin, setLinkedin] = useState('');
+    const [twitter, setTwitter] = useState('');
+    const [youtube, setYoutube] = useState('');
     useEffect(() => {
         const fetchBasicInfo = async () => {
             try {
                 const response = await axios.get("/api/admin/basicInfo");
                 const info = response.data;
-                setcompanyLogo(info.comp_logo); 
+                setcompanyLogo(info.comp_logo);
+                setContatnumber(info.mobile_no_1)
+                setFacebook(info.facebook_url)
+                setInsta(info.insta_url)
+                setLinkedin(info.linkedin_url)
+                setTwitter(info.twitter_url)
+                setYoutube(info.youtube_url)
             } catch (error) {
                 console.error("Error fetching basic info:", error);
             }
@@ -26,7 +36,7 @@ const Header = () => {
 
         fetchBasicInfo();
     }, []);
-  
+
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu open/close
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -45,7 +55,9 @@ const Header = () => {
                     </Link>
                     <div className="d-flex gap-3 align-items-center ">
                         <div className="headphoneJack">
-                            <img src="/assets/images/icons/Group 28600.svg" alt="err" />
+                            <a href={`tel:${contatnumber}`}>
+                                <img src="/assets/images/icons/Group 28600.svg" alt="Call" />
+                            </a>
                         </div>
                         <button
                             className="navbar-toggler"
@@ -62,10 +74,10 @@ const Header = () => {
                             <li className="nav-item" onClick={closeMenu}>
                                 <NavLink href="/">Home</NavLink>
                             </li>
-                            <li className="nav-item "  onClick={closeMenu}>
+                            <li className="nav-item " onClick={closeMenu}>
                                 <NavLink href="/why-samaro">Why Samaro</NavLink>
                             </li>
-                            <li className="nav-item position-relative prdcts"  onClick={closeMenu}>
+                            <li className="nav-item position-relative prdcts" onClick={closeMenu}>
                                 <NavLink className="prdctHeading" href="/product/All">Product</NavLink>
                                 {/* <ul className=" prdctDrop drop1 px-5 position-absolute">
                                     <li><Link href="/spcProducts"><p className="darkBlue">SPC</p></Link></li>
@@ -89,9 +101,9 @@ const Header = () => {
                             </li>
                             <span className="mobileoptions" >
 
-                                <li className="nav-ite"  onClick={closeMenu}><NavLink className="nav-link" href="/gallery">Gallery</NavLink></li>
-                                <li className="nav-ite"  onClick={closeMenu}><NavLink className="nav-link" href="/FindYourMatch">Find your ideal floor</NavLink></li>
-                                <li className="nav-ite"  onClick={closeMenu}><NavLink className="nav-link" href="/downloadCenter">Download center</NavLink></li>
+                                <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/gallery">Gallery</NavLink></li>
+                                <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/FindYourMatch">Find your ideal floor</NavLink></li>
+                                <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/downloadCenter">Download center</NavLink></li>
                             </span>
                             <li className="nav-item" onClick={closeMenu}>
                                 <NavLink className="nav-link" href="/newsletter">
@@ -130,36 +142,36 @@ const Header = () => {
 
                             <div className="align-items-center d-flex flex-column justify-content-center flex-wrap gap-2 mt-4">
                                 <div className="logo text-center">
-                                    <Link href="#">
-                                        <span className='text-danger' style={{fontSize:'12px'}}>SAMARO ON</span>
-                                    </Link>
+                                    <a href="#">
+                                        <span className='text-danger' style={{ fontSize: '12px' }}>SAMARO ON</span>
+                                    </a>
                                 </div>
                                 <div className="social-media-inner-home d-flex gap-3" >
                                     <div className="facebook" >
-                                        <Link href="#">
+                                        <a href={facebook} target="_blank">
                                             <img className="img p-1" src="/assets/images/social-media/Group 28057.svg" alt="err" />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div className="x">
-                                        <Link href="#">
+                                        <a href={twitter} target="blank">
                                             <img className="img " src="/assets/images/social-media/Path 98762.svg" alt="" />
-                                        </Link>
+                                        </a>
                                     </div>
 
-                                    <div className="youtube">
-                                        <Link href="">
+                                    {/* <div className="youtube">
+                                        <a href={youtube} target="blank">
                                             <img className="img" src="/assets/images/social-media/Group 28059.svg" alt="" />
-                                        </Link>
-                                    </div>
+                                        </a>
+                                    </div> */}
                                     <div className="insta">
-                                        <Link href="">
+                                        <a href={insta} target="blank">
                                             <img className="img" src="/assets/images/icons/Group 28058.svg" alt="" />
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div className="in">
-                                        <Link href="">
+                                        <a href={linkedin} target="blank">
                                             <img className="img" src="/assets/images/social-media/Group 28615.svg" alt="" />
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -24,7 +24,7 @@ const page = () => {
 
    
 
-    return <HeroBanner pageName="Newsletter page" initialData={initialData} isEditing={true} />;
+    return <HeroBanner pageName="Newsletter page" initialData={initialData} isEditing={true}  hidemobile/>;
 };
 
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Input, Form, FormGroup, Label, Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-const Page = ({ pageName, initialData, isEditing }) => {
+const Page = ({ pageName, initialData, isEditing ,hidemobile}) => {
   const [products, setProducts] = useState(initialData);
   const [editedData, setEditedData] = useState({});
   const [editId, setEditId] = useState(null);
@@ -107,14 +107,14 @@ const Page = ({ pageName, initialData, isEditing }) => {
                   </FormGroup>
                 </Col>
                 <Col md={6}>
-                  <FormGroup>
+                  {!hidemobile &&(<FormGroup>
                     <Label className='d-block'>Mobile Banner</Label>
                     {editId === product.banner_id ? (
                       <Input type="file" onChange={(e) => handleImageChange(e, 'mobileBanner_img')} />
                     ) : (
                       <img src={`/uploads/${product.mobileBanner_img}`} alt="Mobile Banner Image" style={{ width: '200px' }} className="img-fluid" />
                     )}
-                  </FormGroup>
+                  </FormGroup>)}
                 </Col>
               </Row>
               <Row>

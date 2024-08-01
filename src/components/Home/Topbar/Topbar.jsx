@@ -44,11 +44,11 @@ const Topbar = () => {
                                 <div className="contact-details">
                                     <div className="mail">
                                         <img src="/assets/images/home/topbar/mail.png" alt="err" />
-                                        <a href="mailto:">{basicInfo.email1}</a>
+                                        <a href={`mailto:${basicInfo.email1}`}>{basicInfo.email1}</a>
                                     </div>
                                     <div className="phone">
                                         <img src="/assets/images/home/topbar/phone.png" alt="err" />
-                                        <a href="tel:">{basicInfo.mobile_no_1}</a>
+                                        <a href={`tel:${basicInfo.mobile_no_1}`}>{basicInfo.mobile_no_1}</a>
                                     </div>
                                 </div>
                                 <div className="social-media align-items-center">
@@ -59,22 +59,22 @@ const Topbar = () => {
                                     </div>
                                     <div className="social-media-inner gap-3">
                                         <div className="facebook">
-                                            <a href={basicInfo.facebook_url}>
+                                            <a href={basicInfo.facebook_url} target='blank'>
                                                 <img className="img " src="/assets/images/social-media/fb.png" alt="" />
                                             </a>
                                         </div>
                                         <div className="isntagram">
-                                            <a href={basicInfo.insta_url}>
+                                            <a href={basicInfo.insta_url} target='blank'>
                                                 <img className="img" src="/assets/images/social-media/instagram.png" alt="" />
                                             </a>
                                         </div>
                                         <div className="x">
-                                            <a href={basicInfo.twitter_url}>
+                                            <a href={basicInfo.twitter_url} target='blank'>
                                                 <img className="img" src="/assets/images/social-media/x.png" alt="" />
                                             </a>
                                         </div>
                                         <div className="linkedin">
-                                            <a href={basicInfo.linkedin_url}>
+                                            <a href={basicInfo.linkedin_url} target='blank'>
                                                 <img className="img" src="/assets/images/social-media/Group 29179.svg" alt="" />
                                             </a>
                                         </div>

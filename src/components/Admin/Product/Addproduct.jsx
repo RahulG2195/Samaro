@@ -128,6 +128,9 @@ const Addproducts = () => {
     "Office",
   ];
 
+  const categories = ["SPC", "LVT"];
+
+
   const togglePlace = (option) => {
     if (selectedPlaces.includes(option)) {
       setSelectedPlaces(selectedPlaces.filter((item) => item !== option));
@@ -150,6 +153,8 @@ const Addproducts = () => {
     // Append additional data
     formData.append("places", JSON.stringify(selectedPlaces));
     formData.append("productId", formValues.productId);
+    formData.append("category" ,formValues.category)
+    
 
     // Append other images if they exist
     if (OtherImagesFile.length > 0) {
@@ -172,7 +177,7 @@ const Addproducts = () => {
     try {
       const url = isEditMode ? `/api/admin/products` : "/api/admin/products";
       const method = isEditMode ? axios.put : axios.post;
-
+      console.log("all data are ", formData)
       const response = await method(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -206,6 +211,12 @@ const Addproducts = () => {
     setFormValues({
       ...formValues,
       [name]: value,
+    });
+  };
+  const handleCategorySelect = (category) => {
+    setFormValues({
+      ...formValues,
+      category: category,
     });
   };
   const handleCancel = () => {
@@ -244,15 +255,27 @@ const Addproducts = () => {
               </FormGroup>
               <FormGroup className="col-6">
                 <Label htmlFor="category">Category*</Label>
-                <Input
-                  id="type"
-                  name="category"
-                  value={formValues.category}
-                  onChange={handleInputChange}
-                  placeholder={'Enter category SPC/LVT*'}
-                  type="text"
-                  required
-                />
+                <Dropdown>
+                  <Dropdown.Toggle variant="" id="dropdown-basic" className="border">
+                    {formValues.category || "Select Category"}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    {categories.map((category, index) => (
+                      <Dropdown.Item
+                        key={index}
+                        onClick={() => handleCategorySelect(category)}
+                        active={formValues.category === category}
+                      >
+                        {category}
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+                {!formValues.category && (
+                  <FormText color="danger">
+                    Select a category
+                  </FormText>
+                )}
               </FormGroup>
               <FormGroup className="col-6">
                 <Label htmlFor="catalogue">Catalogue*</Label>
