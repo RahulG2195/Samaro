@@ -131,6 +131,9 @@
 }
 
 @media (max-width:768px) {
+  .benefits-boxes{
+    padding: 20px !important;
+  }
   .benefits-boxes img {
     margin-top: 0 !important;
     padding-top: 0 !important;
