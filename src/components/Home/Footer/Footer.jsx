@@ -18,7 +18,7 @@ const Footer = () => {
         youtube_url: "",
         map_url: "",
     });
-    console.log("basic",basicInfo)
+    console.log("basic", basicInfo)
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -113,16 +113,16 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div className="newsletter  justify-content-start gap-2 mt-3">
-                                <form onSubmit={handleSubmit}>
+                                <form className='d-flex gap-2 align-items-center justify-content-center flex-wrap' onSubmit={handleSubmit}>
                                     <input type="text" className="border-white border-2 rounded-pill px-5"
                                         placeholder="Enter your email for Newsletter" style={{ backgroundColor: 'inherit' }}
                                         onChange={handleEmailChange}
 
                                     />
-                                    <button className='btn border-2 border-white rounded-pill footerSubmitbutton' type="submit">Submit</button>
+                                    <div className=''><button className='btn border-2 border-white rounded-pill footerSubmitbutton' type="submit">Submit</button></div>
                                 </form>
                             </div>
-                            {message && <p className='p-2'>{message}</p>}
+                            {message && <p className='p-2 text-danger' >{message}</p>}
 
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 col-6 ps-md-5 mt-0  ordr1">

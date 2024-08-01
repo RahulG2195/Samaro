@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'next/navigation';
 
 
+
 const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handleProductChange, selectedCatalogues,
   handleCatalogueChange, selectedTypes, handleTypeChange, selectedColors, handleColorChange,
   selectedPlaces, handlePlaceChange }) => {
@@ -55,10 +56,12 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
     setThickness(parseFloat(event.target.value)); // Update the wear layer value
   };
 
+ 
+
   return (
     <>
       <div className={` ${inSPC} hamburger-menu d-md-non d-block`}>
-        <Button variant="" onClick={toggleCollapse}>
+        <Button variant="" onClick={toggleCollapse} className="shake">
           <img src="/assets/images/products/Component 55 – 2.svg" alt="err" />
         </Button>
       </div>
@@ -127,13 +130,13 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                       type="checkbox"
                       name="all"
                       value='all'
-                      checked={selectedCatalogues.includes('all','Sicilian')}
+                      checked={selectedCatalogues.includes('all', 'Sicilian')}
                       onChange={handleCatalogueChange} />
                     All
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -145,7 +148,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -157,7 +160,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-3 col-6`}>
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -170,7 +173,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
 
                 </div>
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-2 col-6`}>
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -184,7 +187,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 </div>
 
                 <div className={`${hide} col-lg-12 col-md-12 col-sm-2 col-6`}>
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -205,20 +208,20 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
               </p>
               <div className="row ">
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
                       name="wood"
                       value='wood'
                       checked={variation === 'wood' || selectedTypes.includes('wood')}
-                       onChange={handleTypeChange}
+                      onChange={handleTypeChange}
                     />
                     Wood
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -231,7 +234,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -265,7 +268,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -278,7 +281,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"
@@ -290,7 +293,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor=""  className="darkBlue">
+                  <label htmlFor="" className="darkBlue">
                     <input
                       className="mx-1 form-check-input"
                       type="checkbox"

@@ -22,7 +22,7 @@
 }
 @media (max-width:600px) {
   .about .row .col-lg-7    {
-    padding: 0 !important;
+    /* padding: 0 !important; */
   }
   .company-history{
     font-size: 10px ;

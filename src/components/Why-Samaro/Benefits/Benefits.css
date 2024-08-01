@@ -98,19 +98,20 @@
 }
 
 
-@media (min-width:768px ) and (max-width:992px) {
-  .samcontResp .container
-  {
+@media (min-width:768px) and (max-width:992px) {
+  .samcontResp .container {
     max-width: 958px;
   }
-  .benefits-boxes ol, .benefits-boxes ul{
+
+  .benefits-boxes ol,
+  .benefits-boxes ul {
     padding-left: 1rem !important;
   }
 }
 
 
 @media (max-width:992px) {
-  
+
 
 
   .whysam-benifits h3 {
@@ -130,6 +131,11 @@
 }
 
 @media (max-width:768px) {
+  .benefits-boxes img {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   .whysam-benifits ol {
     font-size: 10px !important;
   }

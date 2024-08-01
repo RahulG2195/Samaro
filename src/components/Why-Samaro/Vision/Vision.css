@@ -157,9 +157,10 @@
   }
 
 
-  .vissionsectionResp {
-    padding-top: 15px !important;
+  .vissionsectionResp, .missionSectionResp {
+    padding: 15px !important;
   }
+
 }
 
 
