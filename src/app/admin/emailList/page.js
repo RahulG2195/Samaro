@@ -8,7 +8,6 @@ export default function AdminPanel() {
   const [emails, setEmails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  console.log("all emails are here ", emails)
 
   useEffect(() => {
     const fetchEmails = async () => {

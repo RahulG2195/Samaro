@@ -177,7 +177,6 @@ const Addproducts = () => {
     try {
       const url = isEditMode ? `/api/admin/products` : "/api/admin/products";
       const method = isEditMode ? axios.put : axios.post;
-      console.log("all data are ", formData)
       const response = await method(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',

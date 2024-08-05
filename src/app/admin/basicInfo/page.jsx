@@ -41,7 +41,6 @@ const BasicInfoPage = () => {
       try {
         const response = await axios.get("/api/admin/basicInfo");
         const info = response.data;
-        console.log("information data",info)
         setBasicInfo(info);
         setEditedData(info);
         setLogoPreview(info.comp_logo); 
@@ -139,7 +138,6 @@ const BasicInfoPage = () => {
 
       setBasicInfo(editedData);
       setEditMode(false);
-      console.log("Basic info updated:", response.data);
     } catch (error) {
       console.error("Error updating basic info:", error);
     }
