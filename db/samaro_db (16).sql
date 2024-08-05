@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 01, 2024 at 05:57 AM
+-- Generation Time: Aug 05, 2024 at 10:51 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -69,7 +69,7 @@ CREATE TABLE `basic_info` (
 --
 
 INSERT INTO `basic_info` (`bi_id`, `comp_logo`, `email1`, `email2`, `mobile_no_1`, `mobile_no_2`, `facebook_url`, `insta_url`, `linkedin_url`, `youtube_url`, `address`, `map_url`, `comp_footer_logo`, `twitter_url`) VALUES
-(1, 'main-logo.png', 'info@samaro.in', 'export@samaro.in', '+918655984340', '', 'https://www.facebook.com/profile.php?id=100090523595967', 'https://www.instagram.com/samaroflooring/', 'www.linkedin.com/in/samaro-flooring-b9966a269', 'https://www.youtube.com/@sapne6070', '5th Floor, Vilco Centre, Subhash Road, Opp. Garware, Vile Parle East, Mumbai-400057, Maharashtra, India', 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7540.094382095063!2d72.84777128831631!3d19.105585566319924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1720672315092!5m2!1sen!2sin', 'logo.png', '');
+(1, 'main-logo.png', 'info@samaro.in', 'export@samaro.in', '+918655984340', '', 'https://www.facebook.com/profile.php?id=100090523595967', 'https://www.instagram.com/samaroflooring/', 'https://www.linkedin.com/in/samaro-flooring-b9966a269', 'https://www.youtube.com/@sapne6070', '5th Floor, Vilco Centre, Subhash Road, Opp. Garware, Vile Parle East, Mumbai-400057, Maharashtra, India', 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7540.094382095063!2d72.84777128831631!3d19.105585566319924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s5th%20Floor%2C%20Vilco%20Centre%2C%20Subhash%20Road%2C%20Opp.%20Garware%2C%20Vile%20Parle%20East%2C%20Mumbai-400057%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1720672315092!5m2!1sen!2sin', 'logo.png', '');
 
 -- --------------------------------------------------------
 
@@ -341,8 +341,8 @@ CREATE TABLE `herobanner` (
 --
 
 INSERT INTO `herobanner` (`banner_id`, `banner_title`, `banner_content`, `banner_url`, `button_text`, `banner_img`, `mobileBanner_img`) VALUES
-(1, 'Home page', 'Premium Quality SPC & LVT flooring.', '/product/All', 'Discover all our floors', 'Mask Group 318.png', 'Group 28545.png'),
-(2, 'Premium quality SPC flooring.', 'High-quality LVT flooring.', '/downloadCenter', 'BROCHURE & DOWNLOAD CENTER', 'Samaro-Halfnhalf-banner.jpg', 'Group 29096.png'),
+(1, 'Home page', 'Premium Quality SPC & LVT flooring.', '/product/All', 'Discover all our floors', 'Group 28041.png,banner.jpg', 'homeMobile banner.png'),
+(2, 'Premium quality SPC flooring', 'High-quality LVT flooring.', '/downloadCenter', 'BROCHURE & DOWNLOAD CENTER', 'Samaro-Halfnhalf-banner.jpg', 'Group 29096.png'),
 (3, 'contact us page', 'Let\'s make your flooring', '/#', 'Home -> Contact', 'Mask Group 218.png', 'Group 28545.png'),
 (4, 'Get to know our SPC Collection', 'True to natures design. With its elegance and authenticity, it is almost impossible to distinguish Capture from real wood. Our high-quality floors are the result of refined craftmanship and innovation. That is why you cannot miss out on our Capture laminate floors.', '/product/All', 'Discover Spc Flooring', 'Mask Group 265.png', 'mobimg.png');
 
@@ -434,7 +434,7 @@ INSERT INTO `products` (`prod_id`, `prod_name`, `cat_id`, `prod_code`, `seo_url`
 (19, 'Oak Natural', 1, '527', 'Oak-Natural', 'SICILIAN', 'Wood', 'brown', 'Children\'s room', '22 mm', '4', '527 - Oak natural WITHOUT INSTALLATION.webp', '527 - Oak natural INSTALLATION.webp', 'Classic wood, modern oak & rough hand-craped wood', 'Plank 7.13 x 48.03 inches', 'modern oak and rough hand-craped wood', '4 grooves', '(23.7 sqft)', '10', 1, '2024-05-30 06:52:09', 6),
 (20, 'Ashford', 1, '528', 'Ashford', 'SICILIAN', 'Wood', 'light beige', 'Hallway', '23 mm', '4', '528 - Ashford WITHOUT INSTALLATION.webp', '528 - Ashford INSTALLATION.webp', 'Classic wood, modern oak & rough hand-craped wood', 'Plank 7.13 x 48.03 inches', 'modern oak and rough hand-craped wood', '4 grooves', '(23.7 sqft)', '10', 1, '2024-05-30 06:52:09', 8),
 (21, 'Walnut Oak', 1, '532', 'Walnut-Oak', 'SICILIAN', 'Wood', 'dark brown', 'Kitchen', '24 mm', '4', '532 - Walnut oak WITHOUT INSTALLATION.webp', '532 - Walnut oak INSTALLATION.webp', 'Classic wood, modern oak & rough hand-craped wood', 'Plank 7.13 x 48.03 inches', 'modern oak and rough hand-craped wood', '4 grooves', '(23.7 sqft)', '10', 1, '2024-05-30 06:52:09', 2),
-(22, 'Test122', 1, '1234', 'Test', 'TUSCANY', 'wood', 'Beige', '[\"Office\",\"Living room\"]', '1', '', '522 - Teak finish WITHOUT INSTALLATION.webp', '522 - Teak finish INSTALLATION.webp', '', '', '', '', '', '', 1, '2024-08-01 05:38:49', 1);
+(22, 'Test123', 2, '1234', 'Test', 'TUSCANY', 'wood', 'Beige', '[\"Office\",\"Living room\"]', '1', '', '522 - Teak finish WITHOUT INSTALLATION.webp', '522 - Teak finish INSTALLATION.webp', '', '', '', '', '', '', 1, '2024-08-01 05:38:49', 1);
 
 --
 -- Triggers `products`
@@ -692,19 +692,19 @@ ALTER TABLE `whysamaro_video`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cat_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `certifications`
 --
 ALTER TABLE `certifications`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `color`
 --
 ALTER TABLE `color`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `download_center`
@@ -716,13 +716,13 @@ ALTER TABLE `download_center`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `herobanner`
 --
 ALTER TABLE `herobanner`
-  MODIFY `banner_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `banner_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
