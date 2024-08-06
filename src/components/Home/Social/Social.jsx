@@ -1,42 +1,47 @@
-// import React from 'react';
-// import "./Social.css";
-// import { InstagramEmbed } from 'react-social-media-embed';
-
-// const Social = () => {
-//     return (
-//         <section className="social">
-//             <div className="container h-screen">
-//                 <h2 className="text-center">let's get <span>social</span></h2>
-//                 <div className='d-flex align-items-center justify-content-center mt-4 mb-3 instagramimg'>
-//                     <div className='instaLogo'>
-//                         <img src="/assets/images/home/social/Group 29049.svg" alt="Instagram Logo" className='w-75' />
-//                     </div>
-//                     <div>
-//                         <a href="https://www.instagram.com/samaroflooring?igsh=amowMmMyeHU1eXVh" target="_blank" rel="noopener noreferrer" className='idAndbio'>
-//                             <span className='instaid'>@SAMAROFLOORING</span>
-//                             <p className='instabio'>Where Indian Craftsmanship Meets Global Luxury,<br />Ready to Elevate Your World.</p>
-
-//                         </a>
-//                     </div>
-//                 </div>
-
-//                 <iframe className='instagramSliider' src="https://widget.tagembed.com/156029?view" style={{ width: "100%", height: "300px" }} allowtransparency="true"></iframe>
-//             </div>
-//         </section>
-//     )
-// }
-
-// export default Social;
-
-
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import { Autoplay, Navigation, Pagination  } from 'swiper/modules';
+import Link from 'next/link';
+import axios from 'axios';
 import "./Social.css";
 
+
+
 const Social = () => {
+    const [feed, setFeed] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const url = 'https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRQYlhnWXE5dkV4bXZAVNnh5LUxyWl90Rm9QMW00ZAUcwNExVSWU0UHpFNWxXRlJLNjJLdkdSZA1lhYllRejNJQzU3S1dFZAHFob2xqY1NYNUpCNWp6Vklaemp2WjZALaFRzcE5famstUzJNRTdjN1F4U0pyR2wxNE0ZD';
+                const response = await axios.get(url);
+                setFeed(response.data.data);
+
+                // Log media URLs for images
+                response.data.data.forEach(item => {
+                    if (item.media_type === 'IMAGE') {
+                        console.log("Image media_url: ", item.media_url);
+                    }
+                });
+            } catch (err) {
+                setError(err.message);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
         <section className="social">
-            <div className="container">
-                <h2 className="text-center ">let's get <span>social</span></h2>
+            <div className="container h-screen">
+                <h2 className="text-center">let's get <span>social</span></h2>
                 <div className='d-flex align-items-center justify-content-center mt-4 mb-3 instagramimg'>
                     <div className='instaLogo'><img src="/assets/images/home/social/Group 29049.svg" alt="err" className='w-75' /></div>
                     <div>
@@ -45,35 +50,54 @@ const Social = () => {
                         <p className='instabio'>Where Indian Craftsmanship Meets Global Luxury, <br />Ready to Elevate Your World.</p>
                     </a>
                     </div>
-                    {/* <a href="https://www.instagram.com/samaroflooring?igsh=amowMmMyeHU1eXVh" target="_blank"><img src="/assets/images/home/social/Group 28501.svg" alt="err" className='w-25 instagram my-2++*' /></a> */}
                 </div>
-                {/* <div className="row justify-content-center"> */}
-                    {/* <div className="col-lg-12 col-md-12 col-sm-12 col-12"> */}
-                    <a href="https://www.instagram.com/samaroflooring?igsh=amowMmMyeHU1eXVh" target="_blank">
-                        <div className=" row justify-content-center gap-2">
-                            <div className="image col-lg-2 col-md-4 col-sm-4 col-10">
-                                <img src="/assets/images/social-media/01.webp" alt="" />
-                            </div>
-                            <div className="image col-lg-2 col-md-4 col-sm-4 col-10">
-                                <img src="/assets/images/social-media/02.webp" alt="" />
-                            </div>
-                            <div className="image col-lg-2 col-md-4 col-sm-4 col-10">
-                                <img src="/assets/images/social-media/03.webp" alt="" />
-                            </div>
-                            <div className="image col-lg-2 col-md-4 col-sm-4 col-10">
-                                <img src="/assets/images/social-media/04.webp" alt="" />
-                            </div>
-                           
-                        </div>
-                        </a>
-                    {/* </div> */}
-                {/* </div> */}
+
+                {/* Swiper Carousel */}
+                <div className="swiper-container">
+                    <Swiper
+                       spaceBetween={30}
+                       slidesPerView={3}
+                       loop={true}
+                       pagination={true}
+                       autoplay={{
+                           delay: 4000,
+                           disableOnInteraction: false,
+                       }}
+                       breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                        1280: {
+                            slidesPerView: 4,
+                            spaceBetween: 40,
+                        },
+                    }}
+                       modules={[Autoplay, Navigation, Pagination]}
+                    >
+                        {feed
+                            .filter(item => item.media_type === 'IMAGE')
+                            .map(item => (
+                                <SwiperSlide key={item.id}>
+                                    <a href={item.permalink} target="_blank" rel="noopener noreferrer">
+                                        <img src={item.media_url} alt={item.caption} className='swiper-slide-image rounded' />
+                                    </a>
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
             </div>
         </section>
-    )
+    );
 }
 
-export default Social
-
-
-
+export default Social;

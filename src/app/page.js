@@ -29,7 +29,7 @@ export default function Home() {
         <SpcForm></SpcForm>
       </div>
       {/* <CallToAction /> */}
-      <div className="pt-lg-0 pt-md-0 pt-5">
+      <div className="pt-lg-0 pt-md-0 py-5 ">
         <Social />
       </div>
       <FollowMore />
