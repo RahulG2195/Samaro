@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 05, 2024 at 10:51 AM
+-- Generation Time: Aug 08, 2024 at 11:33 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -90,7 +90,7 @@ CREATE TABLE `benefits` (
 --
 
 INSERT INTO `benefits` (`id`, `heading`, `icons`, `titles`, `slider_images`) VALUES
-(1, 'Unlock Many Benefitswith Click-N-Lock® Tiles', 'weather.png,waterproof.png,scratch.png,glue-free.png,lock.png,fire-resistant.png,dust-free.png,stain-protection.png,recyclable.png,durability.png,termite.png', 'WEATHER PROOF,100% WATERPROOF,CLICK N LOCK INSTALLATION,SCRATCH RESISTANT,TERMITE PROOF,GLUE FREE APPLICATION,FIRE RESISTANT,STAIN PROTECTION,DUST FREE INSTALLATION,100% RECYCLABLE,DURABILITY', 'Mask Group 325.png,Mask Group 324.png,Mask Group 322.png,Mask Group 323.png');
+(1, 'Unlock Many Benefits with Click-N-Lock® Tiles', 'weather.png,waterproof.png,scratch.png,glue-free.png,lock.png,fire-resistant.png,dust-free.png,stain-protection.png,recyclable.png,durability.png,termite.png', 'WEATHER PROOF, 100% WATERPROOF, SCRATCH RESISTANT, GLUE FREE APPLICATION, CLICK N LOCK INSTALLATION, FIRE RESISTANT, DUST FREE INSTALLATION, STAIN PROTECTION, 100% RECYCLABLE, DURABILITY, TERMITE PROOF', 'Mask Group 325.png,Mask Group 324.png,Mask Group 322.png,Mask Group 323.png');
 
 -- --------------------------------------------------------
 
@@ -734,7 +734,7 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `prod_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
