@@ -105,11 +105,11 @@ const Header = () => {
                                 <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/FindYourMatch">Find your ideal floor</NavLink></li>
                                 <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/downloadCenter">Download center</NavLink></li>
                             </span>
-                            <li className="nav-item" onClick={closeMenu}>
+                            {/* <li className="nav-item" onClick={closeMenu}>
                                 <NavLink className="nav-link" href="/newsletter">
                                     Newsletter
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li className="nav-item" onClick={closeMenu}>
                                 <NavLink className="nav-link" href="/contact-us">
                                     Contact Us

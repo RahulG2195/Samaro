@@ -165,7 +165,7 @@ const Benefits = () => {
 
 
                     </div>
-                    <div className="col-lg-6 col-md-6 col-12 benifitsRightSide">
+                    <div className="col-lg-5 col-md-5 col-12 benifitsRightSide">
 
                         <Swiper
                             effect='fade'
