@@ -34,7 +34,7 @@ const ProductSwipper = ({ images }) => {
           >
             {images.map((image, index) => (
               <SwiperSlide key={index} className='sliderchild'>
-                <img src={`/assets/images/products/AllData/${image}`} alt={image} />
+                <img src={`/uploads/${image}`} alt={image} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -67,7 +67,7 @@ const ProductSwipper = ({ images }) => {
 
             {images.map((image, index) => (
               <SwiperSlide key={index} className='sliderchild'>
-                <img src={`/assets/images/products/AllData/${image}`} alt={image} />
+                <img src={` /uploads/${image}`} alt={image} />
               </SwiperSlide>
             ))}
           </Swiper>
