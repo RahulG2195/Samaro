@@ -10,7 +10,7 @@ const pool = mysql.createPool({
   port: 3306,
   database:'samaro_db',
   user: 'root',
-  password: '',
+  password: 'Samaro2024',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

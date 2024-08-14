@@ -16,7 +16,7 @@ const Social = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const url = 'https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRPVFFxbEtrR20xS0NkRWZAraGZAVbFhoZAS0wOVJHSUpWdzZATLUNLaE9lVWJNbE9IVjNaeGN6ZAFY0dFM1ZAWtXOUhsSXI0cjc0RzJWb0FaN3h1TDExMjJvQTZAZARmU3cTY5T0pENFJoZAjhFcEpXRURXR25hTFhxYkEZD';
+                const url = 'https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRPTjg5NVFZAcURKQjVKNjVJSG1qSldDdXBHdDNhRHphakktWFFuQXVXTld3ekRqWE1DaUhxdmNNVzFkQjJzQXZA2TVQ2U3ZASalNrQldNbDF5V2R5T21CYU9GRnBvQ0lJWC15akRxNEo4d3lHcEFMTFExZATBNcUUZD';
                 const response = await axios.get(url);
                 setFeed(response.data.data);
 
