@@ -18,17 +18,14 @@ const page = () => {
     }, []);
     return (
         <>
-            {/* <Topbar></Topbar> */}
-            {/* <Header></Header> */}
-            {/* <SpcBanner></SpcBanner>
+            <SpcBanner></SpcBanner>
             <SpcForm></SpcForm>
             <Collection></Collection>
             <Broucher></Broucher>
             <SpcPage></SpcPage>
             <InstallationSteps></InstallationSteps>
             <div className="mb-5 pb-5">
-            <CallToAction></CallToAction></div> */}
-            {/* <Footer></Footer> */}
+            <CallToAction></CallToAction></div>
         </>
 
     )
