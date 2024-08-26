@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 08, 2024 at 11:33 AM
+-- Generation Time: Aug 26, 2024 at 10:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -246,9 +246,10 @@ CREATE TABLE `download_center` (
 
 INSERT INTO `download_center` (`dc_id`, `dc_category`, `dc_type`, `imgurl`, `pdf`, `status`, `date`, `Badgetitle`) VALUES
 (2, 'Brochure', 'Type 2', 'Brochure.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'SPC Tuscany'),
-(3, 'Installation Guide', 'Type 3', 'Brochure.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'Installation'),
-(4, 'Warranty', 'Type 16', 'Brochure.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'Warrenty'),
-(5, 'Brochure', 'Type 2', 'Brochure.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'SPC Sicillian');
+(3, 'Installation Guide', 'Type 3', 'Installation Guide banner.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'Installation'),
+(4, 'Warranty', 'Type 16', 'Residential Warranty banner.png', 'Samaro Flooring Warranty - Residential final revised (1).pdf', 1, '2024-06-24 01:35:52', 'Warrenty'),
+(5, 'Brochure', 'Type 2', 'Brochure.png', 'Samara flooring product installation guide.docx', 1, '2024-06-24 01:35:52', 'SPC Sicillian'),
+(7, 'Warranty', 'type 16', 'Commercial Warranty banner.png', 'Samaro Flooring Warranty - Commercial final updated commercial (1).pdf', 1, '2024-08-26 10:41:13', 'Warranty');
 
 -- --------------------------------------------------------
 
@@ -710,7 +711,7 @@ ALTER TABLE `color`
 -- AUTO_INCREMENT for table `download_center`
 --
 ALTER TABLE `download_center`
-  MODIFY `dc_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `dc_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gallery`
