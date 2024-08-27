@@ -37,7 +37,7 @@ const DownloadSwiper = ({ Badgetitle, title, cardData, active }) => {
             <SwiperSlide key={index} className='sliderchild '>
               <DownloadCenterCard
                 imgurl={`/uploads/${card.imgurl}`}
-                Badge={card.Badgetitle}
+                // Badge={card.Badgetitle}
                 pdf={card.pdf}
               />
             </SwiperSlide>
