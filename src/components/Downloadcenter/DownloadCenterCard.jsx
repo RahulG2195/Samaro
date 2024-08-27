@@ -29,11 +29,12 @@ const DownloadCenterCard = ({ imgurl, title, date, author, WatchNowButton, Badge
                     {WatchNowButton ?
                         (
                             <a
-                                href={`/assets/images/why-samaro/${video}`}
+                                href={`/uploads/${video}`}
                                 // data-fancybox
                                 data-fancybox="video"
                                 // data-type="video"
                                 // data-src={`/assets/images/why-samaro/${video}`}
+                                target='blank'
                             >
                                 <button className='Downloadbtn text-danger border-danger rounded-pill py-1 me-2 fw-semibold px-4'>
                                     Watch Now</button></a>) :
