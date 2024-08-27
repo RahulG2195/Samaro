@@ -39,7 +39,7 @@ const DownloadCenterCard = ({ imgurl, title, date, author, WatchNowButton, Badge
                                     Watch Now</button></a>) :
 
                         (
-                            <a href={`/assets/images/pdf/${pdf}`}
+                            <a href={`/uploads/${pdf}`}
                                 download={pdf}
                             >
                                 <button className='Downloadbtn text-danger border-danger rounded-pill py-1 me-2 fw-semibold px-4'>
