@@ -75,7 +75,7 @@ const Header = () => {
                                 <NavLink href="/">Home</NavLink>
                             </li>
                             <li className="nav-item " onClick={closeMenu}>
-                                <NavLink href="/why-samaro">Why Samaro</NavLink>
+                                <NavLink href="/why-samaro">About Us</NavLink>
                             </li>
                             <li className="nav-item position-relative prdcts" onClick={closeMenu}>
                                 <NavLink className="prdctHeading" href="/product/All">Product</NavLink>
@@ -94,7 +94,7 @@ const Header = () => {
                                 </div>
                                 <ul className=" prdctDrop px-4 position-absolute">
                                     <li onClick={closeMenu}><Link href="/gallery"><p className="darkBlue">Gallery</p></Link></li>
-                                    <li onClick={closeMenu}><Link href="/FindYourMatch"><p className="darkBlue">Find your ideal floor</p></Link></li>
+                                    {/* <li onClick={closeMenu}><Link href="/FindYourMatch"><p className="darkBlue">Find your ideal floor</p></Link></li> */}
                                     <li onClick={closeMenu}><Link href="/downloadCenter"><p className="darkBlue">Download center</p></Link></li>
                                 </ul>
 
@@ -102,7 +102,7 @@ const Header = () => {
                             <span className="mobileoptions" >
 
                                 <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/gallery">Gallery</NavLink></li>
-                                <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/FindYourMatch">Find your ideal floor</NavLink></li>
+                                {/* <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/FindYourMatch">Find your ideal floor</NavLink></li> */}
                                 <li className="nav-ite" onClick={closeMenu}><NavLink className="nav-link" href="/downloadCenter">Download center</NavLink></li>
                             </span>
                             {/* <li className="nav-item" onClick={closeMenu}>

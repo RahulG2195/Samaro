@@ -73,9 +73,11 @@ const SubBanner = () => {
             {/* <h1 className="sub-banner-heading"><u className='border-bottom border-white'>Let's make</u> your flooring</h1> */}
             <h1 className="sub-banner-heading"><u className='border-bottom border-white'>{firstTwoWords}</u> {remainingWords}
             </h1>
-            <div className="breadcrump">
+            <span className='text-white'>Whether you have a question, need assistance, or are interested in joining our
+            team, we'd love to hear from you.</span>
+            {/* <div className="breadcrump">
               <a>Home</a> <span>-&gt;</span> <a>Contact</a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -64,8 +64,9 @@ const Social = () => {
                             disableOnInteraction: false,
                         }}
                         breakpoints={{
-                            640: {
-                                slidesPerView: 1,
+                            
+                            320: {
+                                slidesPerView: 2,
                                 spaceBetween: 10,
                             },
                             768: {

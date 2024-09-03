@@ -96,13 +96,13 @@ const Career = () => {
         </h1>
       </div>
       <div className="text-center whyus">
-        <h4>Why join us ?</h4>
-        <p className="w-25 mx-auto small">
-          Fusce placerat pretium mauris, vel sollicitudin elit lacinia vitae.
-          Quisque sit amet nisi erat.
+        <h4>Join Our Team</h4>
+        <p className="w-50 mx-auto ">
+          At Samaro Flooring, we're always on the lookout for passionate, talented individuals
+          to join our growing team.
         </p>
       </div>
-      <div className="container">
+      <div className="container mt-2 ">
         <div className="row justify-content-center">
           <div className="col-md-6 careerform">
             <form onSubmit={handleSubmit}>
@@ -149,6 +149,10 @@ const Career = () => {
                   onChange={handleInputChange}
                   required
                 />
+              </div>
+              <div className="my-3"><span className="fw-semibold">Note : </span>
+                To apply, please send your resume and a cover letter to [HR Email Address]. We’ll be in touch if
+                your qualifications meet our needs.
               </div>
               <div className="d-flex justify-content-center">
                 <button

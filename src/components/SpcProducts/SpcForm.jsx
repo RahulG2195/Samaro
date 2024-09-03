@@ -13,7 +13,7 @@ import {
 import { notify, notifyError } from "@/utils/toaster.js";
 import { toast, Bounce } from "react-toastify";
 
-const SpcForm = ({ hideguide, contactformcol, pb }) => {
+const SpcForm = ({ hideguide, contactformcol, pb, subheading, note }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,15 +92,15 @@ const SpcForm = ({ hideguide, contactformcol, pb }) => {
   return (
     <>
       <section
-        className={`spcFormCont row container mx-auto ${
-          pb ? "pb-0" : ""
-        } my-md-4 justify-content-evenly align-items-center getintouchformCont`}
+        className={`spcFormCont row container mx-auto ${pb ? "pb-0" : ""
+          } my-md-4 justify-content-evenly align-items-center getintouchformCont`}
       >
         <div className={`col-md-6 ${hideguide ? "hideguide" : ""}`}>
           <span className="spcformheading">
             <p className="fs-5 guidHeading letsGuideYou p-0">
               LET US GUIDE YOU
             </p>
+
             <p className="fs-5 guidHeading subH fw-normal">
               TO YOUR PERFECT SPC FLOOR
             </p>
@@ -111,9 +111,10 @@ const SpcForm = ({ hideguide, contactformcol, pb }) => {
             </p>
           </span>
         </div>
-        <span className="getinTouch text-center fs-1 fw-bold ">
+        <span className="getinTouch text-center fs-1 fw-bold mb-0">
           GET IN TOUCH
         </span>
+        {subheading && ( <span className="fw-medium text-center mb-3">{subheading}</span> )}
         <div className={`${contactformcol ? "col-md-10" : "col-md-6"}`}>
           <form className="spcform" onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -209,6 +210,12 @@ const SpcForm = ({ hideguide, contactformcol, pb }) => {
                   onChange={handleInputChange}
                 />
               </div>
+              {note && (
+                <div className="my-2 text-center">
+                  <span className="fw-bold">Note : </span>
+                  {note}
+                </div>
+              )}
               <div className="d-flex justify-content-center">
                 <button
                   type="submit"
