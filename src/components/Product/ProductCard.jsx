@@ -10,7 +10,7 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
                 <Link href={`/productdetail/${seo}`}>
                     <div className='frontimage'>
                         <Image 
-                            src={`/assets/images/products/AllData/${frontImage}`} 
+                            src={`/uploads/${frontImage}`} 
                             alt={`${title} - front view`} 
                             layout="responsive" 
                             width={500} 
@@ -23,7 +23,7 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
                         onHoverImage && 
                         <div className='onHoverimage'>
                             <Image 
-                                src={`/assets/images/products/AllData/${onHoverImage}`} 
+                                src={`/uploads/${onHoverImage}`} 
                                 alt={`${title} - hover view`} 
                                 layout="responsive" 
                                 width={500} 

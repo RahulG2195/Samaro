@@ -56,10 +56,13 @@
 @media (max-width:425px) {
     .contact-us-bannerTXT{
         position:absolute;
-        top: 25% !important;
-        left: 5%;
+        top: 45% !important;
+        left: 0%;
        
     } 
+    .contact-us-bannerTXT span{
+        font-size: 13px;
+    }
     .contact-us-bannerTXT h1{
         font-size: 20px;
         font-weight: 500;

@@ -20,14 +20,14 @@ const page = () => {
         <>
             {/* <Topbar></Topbar> */}
             {/* <Header></Header> */}
-            {/* <SpcBanner></SpcBanner>
+            <SpcBanner></SpcBanner>
             <SpcForm></SpcForm>
             <Collection></Collection>
             <Broucher></Broucher>
             <SpcPage></SpcPage>
             <InstallationSteps></InstallationSteps>
             <div className="my-5">
-            <CallToAction></CallToAction></div> */}
+            <CallToAction></CallToAction></div>
             {/* <Footer></Footer> */}
         </>
 

@@ -85,9 +85,9 @@ const Footer = () => {
                                     <ul className="ps-0 d-flex flex-column footer-links gap-2 ">
                                         <li><Link href="/product/All">SPC Flooring</Link></li>
                                         <li><Link href="/product/All">LVT Flooring</Link></li>
-                                        <li><Link href="/product/All">Ceramic</Link></li>
-                                        <li><Link href="/product/All">Marbal</Link></li>
-                                        <li><Link href="/product/All">Stone</Link></li>
+                                        {/* <li><Link href="/product/All">Ceramic</Link></li> */}
+                                        {/* <li><Link href="/product/All">Marbal</Link></li> */}
+                                        {/* <li><Link href="/product/All">Stone</Link></li> */}
                                     </ul>
                                 </div>
                             </div>
