@@ -67,12 +67,15 @@ const Vision = () => {
                                             <img src="/assets/images/why-samaro/vision-mission/vision.png" alt="" className='w-75' />
                                         </div>
                                     </div>
-                                   
-                                    <ul className='m-0'>
+                                    <p className='p-0 m-1 text-navy fw-normal'>
+                                        {visionData.subpoints}
+                                    </p>
+
+                                    {/* <ul className='m-0'>
                                         {visionData.subpoints.map((item, index) => (
                                             <li key={index} className='p-0 m-1 text-navy fw-normal'>{item}</li>
                                         ))}
-                                    </ul>
+                                    </ul> */}
                                 </div>
                             </div>
                         </div>
@@ -93,12 +96,13 @@ const Vision = () => {
                                             <img src={`/uploads/${missionData.logo}`} alt="" className='w-75' />
                                         </div>
                                     </div>
-                                    
-                                    <ul className='p-0'>
+                                    <p className='p-0 m-1 text-navy fw-normal'>{missionData.subpoints}</p>
+
+                                    {/* <ul className='p-0'>
                                         {missionData.subpoints.map((item, index) => (
                                             <li key={index} className='p-0 m-1 text-navy fw-normal'>{item}</li>
                                         ))}
-                                    </ul>
+                                    </ul> */}
                                 </div>
                                 <div className="col-lg-2 col-md-2 col-2">
                                     <div className="mission-image p-4 me-2">
@@ -111,6 +115,8 @@ const Vision = () => {
                     </div>
                 </div>
             </section>
+
+
             {/* </div> */}
         </>
     )

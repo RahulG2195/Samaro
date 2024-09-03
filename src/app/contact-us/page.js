@@ -16,11 +16,11 @@ export default function page() {
       <SubBanner></SubBanner>
       <section className="getintouch pb-5">
         <div className="container">
-          <div className="section_heaing mx-auto text-center mb-0">
+          <div className="section_heaing mx-auto text-center">
             <h1>
               <u className="border-3 border-bottom border-danger ">Contact</u> Us
             </h1>
-            {/* <span className="fw-semibold">Fill out the form below, and we'll get back to you as soon as possible.</span> */}
+            <span className="">Fill out the form below, and we'll get back to you as soon as possible.</span>
           </div>
         </div>
         <div className="container ">
@@ -41,7 +41,6 @@ export default function page() {
             </div>
             <div className="col-md-7">
               <SpcForm
-                subheading={"Fill out the form below, and we'll get back to you as soon as possible."}
                 hideguide={"hideguide"}
                 contactformcol={"contactform-col"}
                 pb={"py-0"}

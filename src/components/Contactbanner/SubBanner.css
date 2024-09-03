@@ -50,6 +50,9 @@
     .contact-us-bannerTXT h1{
     font-size: 30px;
     } 
+    .contact-us-bannerTXT{
+        left: 0%;
+    }
 
 }
 

@@ -13,7 +13,7 @@ import {
 import { notify, notifyError } from "@/utils/toaster.js";
 import { toast, Bounce } from "react-toastify";
 
-const SpcForm = ({ hideguide, contactformcol, pb, subheading, note }) => {
+const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -114,7 +114,6 @@ const SpcForm = ({ hideguide, contactformcol, pb, subheading, note }) => {
         <span className="getinTouch text-center fs-1 fw-bold mb-0">
           GET IN TOUCH
         </span>
-        {subheading && ( <span className="fw-medium text-center mb-3">{subheading}</span> )}
         <div className={`${contactformcol ? "col-md-10" : "col-md-6"}`}>
           <form className="spcform" onSubmit={handleSubmit}>
             <div className="mb-3">
