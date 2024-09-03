@@ -1,0 +1,73 @@
+
+
+
+  .Team_main{
+    width: 100%;
+    /* height: 100vh; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  .Team_main .profile-card{
+    position: relative;
+    font-family: sans-serif;
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    margin: 0 25px;
+  }
+  .Team_main .profile-card:hover{
+    border-radius: 10px;
+    height: 260px;
+  }
+  .Team_main .profile-card .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 9;
+  }
+  .Team_main .profile-card:hover .img{
+    transform: translateY(-60px);
+  }
+  .Team_main .img img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+  }
+  .Team_main .profile-card:hover img{
+    border-radius: 10px;
+  }
+  .Team_main .caption{
+    text-align: center;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: .6s;
+  }
+  .Team_main .profile-card:hover .caption{
+    opacity: 1;
+  }
+  .Team_main .caption h3{
+    font-size: 21px;
+    font-family: sans-serif;
+  }
+  .Team_main .caption p{
+    font-size: 15px;
+    color: #0c52a1;
+    font-family: sans-serif;
+    margin: 2px 0 9px 0;
+  }
+  .Team_main .caption .social-links a{
+    color: #333;
+    margin-right: 15px;
+    font-size: 21px;
+    transition: .6s;
+  }
+  .Team_main .social-links a:hover{
+    color: #0c52a1;
+  }
