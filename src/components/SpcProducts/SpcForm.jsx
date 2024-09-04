@@ -102,12 +102,15 @@ const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
             </p>
 
             <p className="fs-5 guidHeading subH fw-normal">
-              TO YOUR PERFECT SPC FLOOR
+              {/* TO YOUR PERFECT SPC FLOOR */}
+              Ready to transform your space?
             </p>
             <p className="fw-medium txt guid-para">
-              Choosing the perfect floor is not easy, but we would love to help
+              {/* Choosing the perfect floor is not easy, but we would love to help
               you with the challenge. Together we will find a vinyl floor that
-              fits your home perfectly.
+              fits your home perfectly. */}
+              Whether you're designing a new home, renovating an office, or
+              planning a commercial project, Samaro Flooring has the solutions you need.
             </p>
           </span>
         </div>
