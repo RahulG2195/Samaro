@@ -32,7 +32,7 @@ const Addproducts = () => {
 
 
   const [selectedPlaces, setSelectedPlaces] = useState([]);
-  const [frontImage, setFrontImage] = useState("");
+  const [frontImage, setFrontImage] = useState([]);
   const [OtherImagesFile, setOtherImagesFile] = useState("");
   const [FrontImageFile, setFrontImageFile] = useState("");
 
@@ -58,6 +58,7 @@ const Addproducts = () => {
     status: "",
   });
   const [initialFormValues, setInitialFormValues] = useState(formValues);
+  const imageFilenames = productDetail.prod_images ? productDetail.prod_images.split(',') : [];
 
 
   useEffect(() => {
@@ -153,8 +154,8 @@ const Addproducts = () => {
     // Append additional data
     formData.append("places", JSON.stringify(selectedPlaces));
     formData.append("productId", formValues.productId);
-    formData.append("category" ,formValues.category)
-    
+    formData.append("category", formValues.category)
+
 
     // Append other images if they exist
     if (OtherImagesFile.length > 0) {
@@ -199,11 +200,24 @@ const Addproducts = () => {
   const handleImageChange = (e) => {
     const { name, files } = e.target;
 
-    if (name === "frontImage" && files.length > 0) {
-      setFrontImage(files[0]);
-      setFrontImageFile(files[0]);
+    if (name === "frontImage") {
+      if (files.length > 2) {
+        alert('You can only upload up to 2 images.');
+        return;
+      }
+
+      // Convert FileList to an array and update the state
+      const fileArray = Array.from(files);
+      setFrontImage(fileArray);
+
+      // Optional: Display previews
+      fileArray.forEach(file => {
+        const objectURL = URL.createObjectURL(file);
+        console.log(objectURL); // Do something with the object URL
+      });
     }
   };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -453,18 +467,37 @@ const Addproducts = () => {
 
               <FormGroup className="col-6">
                 <Label htmlFor="frontImage">Front image*</Label>
-                {isEditMode && productDetail.prod_images && (
-                  <div className="mb-2">
-                    <img
-                      src={`/assets/images/products/AllData/${productDetail.prod_images}`}
-                      alt="Current Front Image"
-                      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                    />
-                  </div>
-                )}
+                 {isEditMode && imageFilenames.length > 0 && (
+        <div className="mb-2">
+          {imageFilenames.map((filename, index) => (
+            <img
+              key={index}
+              src={`/uploads/${filename}`}
+              alt={`Product Image ${index + 1}`}
+              style={{ width: '100px', height: '100px', objectFit: 'cover', marginRight: '10px' }}
+            />
+          ))}
+        </div>
+      )}
                 <Input
-                  required={!isEditMode ? true : false} id="frontImage" name="frontImage" type="file" onChange={handleImageChange}
+                  required={!isEditMode ? true : false}
+                  id="frontImage"
+                  name="frontImage"
+                  type="file"
+                  onChange={handleImageChange}
+                  multiple
                 />
+                <div>
+                  {isEditMode && frontImage>0 && frontImage.map((file, index) => (
+                    <img
+                      key={index}
+                      src={'uploads/'(file)}
+                      alt={`Preview ${index}`}
+                      style={{ width: '100px', height: '100px', margin: '10px' }}
+                    />
+                  ))}
+                </div>
+
                 <FormText>
                   Upload front image here.
                 </FormText>
@@ -476,7 +509,7 @@ const Addproducts = () => {
                     {productDetail.prod_image2.split(',').map((imagePath, index) => (
                       <img
                         key={index}
-                        src={`/assets/images/products/AllData/${imagePath.trim()}`}
+                        src={`/uploads/${imagePath.trim()}`}
                         alt={`Current Image ${index + 1}`}
                         style={{ width: '100px', height: '100px', objectFit: 'cover', marginRight: '10px' }}
                       />

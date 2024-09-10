@@ -79,11 +79,11 @@ export default function Home() {
 
 
 
-            <Team></Team>
-            <Design></Design>
-            <Benefits></Benefits>
-            <Certifications></Certifications>
-            <Dimensions></Dimensions>
+            {/* <Team></Team> */}
+            {/* <Design></Design> */}
+            {/* <Benefits></Benefits> */}
+            {/* <Certifications></Certifications> */}
+            {/* <Dimensions></Dimensions> */}
             <Download></Download>
             <div className="pb-5">
                 {/* <CallToAction></CallToAction> */}
