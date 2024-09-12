@@ -25,27 +25,39 @@ export default function Home() {
         {
             id: 1,
             icon: "fas fa-check-circle",
-            title: "Proven Quality",
-            text: "Our products undergo rigorous testing to ensure they meet the highest industry standards."
+            title: "70+ Years of Excellence",
+            text: "Over seven decades of experience in plastics manufacturing, making us leaders in innovation and high-quality flooring solutions."
         },
         {
             id: 2,
             icon: "fas fa-shield-alt",
-            title: "Comprehensive Warranty",
-            text: "We offer a warranty that provides peace of mind, knowing your investment is protected."
+            title: "Largest SPC and LVT flooring producer",
+            text: "Delivering advanced, durable flooring to homes, businesses, and public spaces worldwide."
         },
         {
             id: 3,
             icon: "fas fa-leaf",
-            title: "Sustainable Practices",
-            text: "Our eco-friendly production processes and use of recyclable materials reflect our commitment to sustainability."
+            title: "Fastest-Growing SPC Manufacturer",
+            text: " Consistent capacity expansion—30% increase in the next 4 months, enabling us to stay ahead in the market."
         },
         {
             id: 4,
             icon: "fas fa-users",
-            title: "Expert Support",
-            text: "From initial consultation to installation, our team is with you every step of the way, ensuring a seamless experience."
-        }
+            title: "End-to-End Support",
+            text: "From consultation to post-sale support, we ensure a seamless, satisfying experience for every customer."
+        },
+        {
+            id: 5,
+            icon: "fas fa-users",
+            title: "Comprehensive Warranty",
+            text: "We offer a comprehensive 10-year warranty on residential projects and 5 year warranty on commercial projects."
+        },
+        {
+            id: 4,
+            icon: "fas fa-users",
+            title: "Proven Quality",
+            text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
+        },
     ];
     return (
         <main>
@@ -61,9 +73,9 @@ export default function Home() {
                 <h1 className="text-center my-5 text-navy fw-bold">Why Choose Samaro?</h1>
                 <div className="row">
                     {cardData.map(card => (
-                        <div key={card.id} className="col-lg-3 col-md-6 col-sm-12 mb-4 rounded">
+                        <div key={card.id} className="col-lg-4 col-md-6 col-sm-12 mb-4 rounded">
                             <div className="card p-2 shadow-lg why_cust_Card" style={{minHeight:'250px'}}>
-                                <div className="card-icon mx-auto">
+                                <div className="card-icon mx-auto py-2">
                                     <i className={`${card.icon} fs-1`} ></i>
                                 </div>
                                 <div className="card-body text-center">

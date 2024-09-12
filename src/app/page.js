@@ -19,11 +19,11 @@ export default function Home() {
     <main>
       <Banner />
       <Spclvt />
-      <Design />
       <Benefits />
-      <FloorExplorer />
-      <Commercial />
-      <Residentail />
+      <Design />
+      {/* <FloorExplorer /> */}
+      {/* <Commercial />
+      <Residentail /> */}
       
       <div className="pt-lg-0 pt-5">
         <SpcForm></SpcForm>

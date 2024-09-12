@@ -68,11 +68,11 @@ const Topbar = () => {
                                                 <img className="img" src="/assets/images/social-media/instagram.png" alt="" />
                                             </a>
                                         </div>
-                                        <div className="x">
+                                        {/* <div className="x">
                                             <a href={basicInfo.twitter_url} target='blank'>
                                                 <img className="img" src="/assets/images/social-media/x.png" alt="" />
                                             </a>
-                                        </div>
+                                        </div> */}
                                         <div className="linkedin">
                                             <a href={basicInfo.linkedin_url} target='blank'>
                                                 <img className="img" src="/assets/images/social-media/Group 29179.svg" alt="" />

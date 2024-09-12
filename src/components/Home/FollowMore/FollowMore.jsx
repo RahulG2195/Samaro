@@ -38,7 +38,7 @@ const FollowMore = () => {
             <div className="align-items-center d-md-flex justify-content-center flex-wrap gap-2 mb-5">
                 <div className="logo text-center">
                     <a href="#">
-                        <span className=' small followtxt'>Follow More</span>
+                        <span className=' followtxt'>Follow More</span>
                     </a>
                 </div>
                 <div className="social-media-inner-home d-flex justify-content-center gap-3" >
@@ -47,11 +47,11 @@ const FollowMore = () => {
                             <img className="img p-1" src="/assets/images/social-media/Group 28057.svg" alt="err"  />
                         </a>
                     </div>
-                    <div className="x">
+                    {/* <div className="x">
                         <a href={basicInfo.twitter_url} target="blank">
                             <img className="img " src="/assets/images/social-media/Path 98762.svg" alt="" />
                         </a>
-                    </div>
+                    </div> */}
 
                     {/* <div className="youtube">
                         <Link href={basicInfo.youtube_url} target="blank">
