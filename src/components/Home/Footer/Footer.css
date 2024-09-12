@@ -90,6 +90,25 @@
   background-color: transparent !important;
   border: none !important;
 }
+
+/* .icon-bar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    background: red;
+    border: 1px solid lightgray;
+    transform: rotate(270deg);
+} */
 /* Footer */
 @media (max-width:768px) {
   .footerSubmitbutton{

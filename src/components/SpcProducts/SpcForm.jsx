@@ -94,30 +94,25 @@ const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
       <section
         className={`spcFormCont row container mx-auto ${pb ? "pb-0" : ""
           } my-md-4 justify-content-evenly align-items-center getintouchformCont`}
-      >
-        <div className={`col-md-6 ${hideguide ? "hideguide" : ""}`}>
+      > 
+      <div className="col-12 text-center my-md-5 my-2">
+      <h2 className="ps-5 text-navy text-center sub-heading">Ready to transform your space?</h2>
+      <small className="text-center">Whether you're designing a new home, renovating an office, or
+      planning a commercial project, Samaro Flooring has the solutions you need.</small>
+      </div>
+        {/* <div className={`col-md-6 ${hideguide ? "hideguide" : ""}`}>
           <span className="spcformheading">
-            <p className="fs-5 guidHeading letsGuideYou p-0">
-              LET US GUIDE YOU
-            </p>
-
-            <p className="fs-5 guidHeading subH fw-normal">
-              {/* TO YOUR PERFECT SPC FLOOR */}
-              Ready to transform your space?
-            </p>
+           
             <p className="fw-medium txt guid-para">
-              {/* Choosing the perfect floor is not easy, but we would love to help
-              you with the challenge. Together we will find a vinyl floor that
-              fits your home perfectly. */}
-              Whether you're designing a new home, renovating an office, or
-              planning a commercial project, Samaro Flooring has the solutions you need.
+             
+              
             </p>
           </span>
-        </div>
+        </div> */}
         <span className="getinTouch text-center fs-1 fw-bold mb-0">
           GET IN TOUCH
         </span>
-        <div className={`${contactformcol ? "col-md-10" : "col-md-6"}`}>
+        <div className={`${contactformcol ? "col-md-12" : "col-md-7"} mx-auto`}>
           <form className="spcform" onSubmit={handleSubmit}>
             <div className="mb-3">
               <input
@@ -218,12 +213,12 @@ const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
                   {note}
                 </div>
               )}
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center mt-md-3">
                 <button
                   type="submit"
                   className="callBTN btn px-5 py-0 rounded-pill fw-semibold"
                 >
-                  Get a free call
+                  Request a Free Consultation
                 </button>
               </div>
             </div>
