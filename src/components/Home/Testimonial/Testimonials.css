@@ -1,0 +1,55 @@
+/* Testimonials.css */
+.testimonial-swiper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.testimonial-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonial-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.testimonial-place {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.testimonial-review {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+    word-break: break-word;
+    /* Ensure long words break and don't overflow */
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+    color: #ca373c !important;
+    background: #ca373c;
+}
+
+.testimonial-swiper .swiper-button-next::after, .testimonial-swiper .swiper-button-prev::after {
+    color: #ca373c;
+    font-size: 20px !important;
+    font-weight: 800;
+    
+}

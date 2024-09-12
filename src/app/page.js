@@ -13,6 +13,7 @@ import CallToAction from "@/components/Home/CallToAction/CallToAction";
 import FloorExplorer from "@/components/Home/FloorExplorer/FloorExplorer";
 import FollowMore from "@/components/Home/FollowMore/FollowMore";
 import SpcForm from "@/components/SpcProducts/SpcForm";
+import Testimonials from "@/components/Home/Testimonial/Testimonial";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <Social />
       </div>
       <FollowMore />
+      {/* <Testimonials></Testimonials> */}
     </main>
   );
 }

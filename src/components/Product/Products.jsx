@@ -94,32 +94,32 @@ const Products = () => {
 
     const handleCatalogueChange = (event) => {
         const { value, checked } = event.target;
-      
+
         if (value === 'all') {
-          if (checked) {
-            // Include all options
-            handleCatalogueChange({ target: { value: 'sicilian', checked: true } });
-            handleCatalogueChange({ target: { value: 'tuscany', checked: true } });
-            handleCatalogueChange({ target: { value: 'lvt 1', checked: true } });
-            handleCatalogueChange({ target: { value: 'lvt 2', checked: true } });
-            handleCatalogueChange({ target: { value: 'others', checked: true } });
-            setSelectedCatalogues(['all', 'sicilian', 'tuscany', 'lvt 1', 'lvt 2', 'others']);
-          } else {
-            // Exclude all options
-            setSelectedCatalogues([]);
-          }
+            if (checked) {
+                // Include all options
+                handleCatalogueChange({ target: { value: 'sicilian', checked: true } });
+                handleCatalogueChange({ target: { value: 'tuscany', checked: true } });
+                handleCatalogueChange({ target: { value: 'lvt 1', checked: true } });
+                handleCatalogueChange({ target: { value: 'lvt 2', checked: true } });
+                handleCatalogueChange({ target: { value: 'others', checked: true } });
+                setSelectedCatalogues(['all', 'sicilian', 'tuscany', 'lvt 1', 'lvt 2', 'others']);
+            } else {
+                // Exclude all options
+                setSelectedCatalogues([]);
+            }
         } else {
-          // For individual options
-          if (checked) {
-            setSelectedCatalogues((prevSelected) => [...prevSelected, value]);
-          } else {
-            setSelectedCatalogues((prevSelected) =>
-              prevSelected.filter((item) => item !== value && item !== 'all')
-            );
-          }
+            // For individual options
+            if (checked) {
+                setSelectedCatalogues((prevSelected) => [...prevSelected, value]);
+            } else {
+                setSelectedCatalogues((prevSelected) =>
+                    prevSelected.filter((item) => item !== value && item !== 'all')
+                );
+            }
         }
-      };
-      
+    };
+
     const handleTypeChange = (event) => {
         const { value } = event.target;
 
@@ -158,6 +158,13 @@ const Products = () => {
 
     const visibleProducts = filteredProducts.slice(0, page * perPage);
 
+    const getImageData = (prod_images) => {
+        const images = prod_images ? prod_images.split(',') : [];
+        return {
+            frontImage: images[0] || null,
+            onHoverImage: images[1] || null
+        };
+    };
     return (
         <div className="px-5 prdctContainer position-relative">
             <div className="row justify-content-center">
@@ -198,24 +205,25 @@ const Products = () => {
                         <div className='text-center '>No more products available</div>
                     ) : (
                         <div className="row row-cols-md-3 row-cols-sm-3 row-cols-xs-1 row-cols-lg-3 row-cols-xl-5 mt-md-2">
+                            {visibleProducts.map((product, index) => {
+                                const { frontImage, onHoverImage } = getImageData(product.prod_images);
 
-                            {visibleProducts.map((product, index) => (
-                                <div key={index} className="col-6">
-                                    <ProductCard
-                                    frontImage={`${product.prod_images}`}
-                                    onHoverImage={showInteriorPictures ? `${product.prod_image2}` : null}
-                                    title={product.prod_name}
-                                    description={product.prod_spiece}
-                                    seo={product.seo_url}
-                                    cat_name={product.cat_name}
-                                    variation={product.variation}
-                                    prod_code={product.prod_code}
-
-                                />
-                                </div>
-                            ))}
-
-
+                                return (
+                                    <div key={index} className="col-6">
+                                        <ProductCard
+                                            frontImage={frontImage}
+                                            onHoverImage={showInteriorPictures ? onHoverImage : null}   // change here afte all imaages uploadeed
+                                            // onHoverImage={!showInteriorPictures === '' ? onHoverImage : product.prod_image2}   // change here afte all imaages uploadeed
+                                            title={product.prod_name}
+                                            description={product.prod_spiece}
+                                            seo={product.seo_url}
+                                            cat_name={product.cat_name}
+                                            variation={product.variation}
+                                            prod_code={product.prod_code}
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
                     )}
                     {filteredProducts.length <= visibleProducts.length ? '' : <div className='d-flex justify-content-center'>

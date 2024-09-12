@@ -141,9 +141,19 @@ const Addproducts = () => {
   };
 
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files);
-    setOtherImagesFile(files);
-    setFrontImageFile(files[0]);
+    const { name, files } = e.target;
+
+    if (name == "otherImages") {
+      // Handle other images (multiple)
+      const otherImagesArray = Array.from(files); // Convert FileList to array
+      setOtherImagesFile(otherImagesArray); // Set selected files as array
+
+      // Optional: Display previews or log URLs
+      otherImagesArray.forEach(file => {
+        const objectURL = URL.createObjectURL(file);
+        console.log(objectURL); // Do something with the object URL (e.g., preview)
+      });
+    }
 
   }
 
@@ -157,17 +167,17 @@ const Addproducts = () => {
     formData.append("category", formValues.category)
 
 
-    // Append other images if they exist
     if (OtherImagesFile.length > 0) {
       OtherImagesFile.forEach((file, index) => {
-        formData.append(`image`, file);
+        formData.append(`otherImages[${index}]`, file);
       });
     }
 
     // Handle front image
-    if (FrontImageFile) {
-      formData.append("frontImageFile", FrontImageFile);
-      formData.append("prod_images", frontImage);
+    if (Array.isArray(frontImage) && frontImage.length >= 0) {
+      frontImage.forEach((file, index) => {
+        formData.append(`frontImage[${index}]`, file);
+      });
     }
 
     // Preserve existing images if no new images are selected
@@ -196,7 +206,6 @@ const Addproducts = () => {
   };
 
 
-
   const handleImageChange = (e) => {
     const { name, files } = e.target;
 
@@ -208,12 +217,12 @@ const Addproducts = () => {
 
       // Convert FileList to an array and update the state
       const fileArray = Array.from(files);
-      setFrontImage(fileArray);
+      setFrontImage(fileArray);  // Store selected images in the state
 
       // Optional: Display previews
       fileArray.forEach(file => {
         const objectURL = URL.createObjectURL(file);
-        console.log(objectURL); // Do something with the object URL
+        console.log(objectURL); // Do something with the object URL, like displaying preview
       });
     }
   };
@@ -467,18 +476,18 @@ const Addproducts = () => {
 
               <FormGroup className="col-6">
                 <Label htmlFor="frontImage">Front image*</Label>
-                 {isEditMode && imageFilenames.length > 0 && (
-        <div className="mb-2">
-          {imageFilenames.map((filename, index) => (
-            <img
-              key={index}
-              src={`/uploads/${filename}`}
-              alt={`Product Image ${index + 1}`}
-              style={{ width: '100px', height: '100px', objectFit: 'cover', marginRight: '10px' }}
-            />
-          ))}
-        </div>
-      )}
+                {isEditMode && imageFilenames.length > 0 && (
+                  <div className="mb-2">
+                    {imageFilenames.map((filename, index) => (
+                      <img
+                        key={index}
+                        src={`/uploads/${filename}`}
+                        alt={`Product Image ${index + 1}`}
+                        style={{ width: '100px', height: '100px', objectFit: 'cover', marginRight: '10px' }}
+                      />
+                    ))}
+                  </div>
+                )}
                 <Input
                   required={!isEditMode ? true : false}
                   id="frontImage"
@@ -488,7 +497,7 @@ const Addproducts = () => {
                   multiple
                 />
                 <div>
-                  {isEditMode && frontImage>0 && frontImage.map((file, index) => (
+                  {isEditMode && frontImage > 0 && frontImage.map((file, index) => (
                     <img
                       key={index}
                       src={'uploads/'(file)}

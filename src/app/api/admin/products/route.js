@@ -27,7 +27,7 @@ export async function POST(request, response) {
         const {
             productname, code, catalogue, variation, color, places,
             thikness, layer, prod_finish, size, spiece, no_of_groves,
-            m2pack, plank, frontImageFile, prod_images, category
+            m2pack, plank, prod_images, category
         } = data;
 
         let cat_id = null;
@@ -40,29 +40,53 @@ export async function POST(request, response) {
         const values = [];
 
 
-        if (frontImageFile) {
-            try {
-                await uploadImage(request, response, frontImageFile);
-                updateFields.push('prod_images ');
-                values.push(frontImageFile.name);
-            } catch (error) {
-                console.error('Error uploading front image:', error);
+        const frontImageFiles = [];
+        const frontImageNames = [];
+
+
+        for (let i = 0; i < requestData.getAll('frontImage').length; i++) {
+            const frontImageFile = requestData.getAll('frontImage')[i];
+            if (frontImageFile) {
+                frontImageFiles.push(frontImageFile);
+
+                // Upload each front image
+                try {
+                    await uploadImage(request, response, frontImageFile);
+                    frontImageNames.push(frontImageFile.name); // Collect image names for DB
+                } catch (error) {
+                    console.error('Error uploading front image:', error);
+                }
             }
         }
 
-        let imageNames = [];
-        if (prod_images && prod_images.size > 0) {
-            try {
-                await uploadImage(request, response, prod_images);
-                imageNames.push(prod_images.name);
-            } catch (error) {
-                console.error('Error uploading other image:', error);
+
+         if (frontImageNames.length > 0) {
+            updateFields.push('prod_images');
+            values.push(frontImageNames.join(',')); // Join names with a comma
+        }
+
+
+        const otherImageFiles = [];
+        const otherImageNames = [];
+
+        for (let i = 0; i < requestData.getAll('otherImages').length; i++) {
+            const otherImageFile = requestData.getAll('otherImages')[i];
+            if (otherImageFile) {
+                otherImageFiles.push(otherImageFile);
+
+                // Upload each other image
+                try {
+                    await uploadImage(request, response, otherImageFile);
+                    otherImageNames.push(otherImageFile.name); // Collect image names for DB
+                } catch (error) {
+                    console.error('Error uploading other images:', error);
+                }
             }
         }
 
-        if (imageNames.length > 0) {
+        if (otherImageNames.length > 0) {
             updateFields.push('prod_image2');
-            values.push(imageNames.join(','));
+            values.push(otherImageNames.join(',')); // Join other image names
         }
 
         const seoUrl = productname ? productname.replace(/\s+/g, '_') : null;
@@ -115,6 +139,7 @@ export async function PUT(request, response) {
         const requestData = await request.formData();
         const data = Object.fromEntries(requestData.entries());
 
+        // Trim all string fields
         Object.keys(data).forEach(key => {
             if (typeof data[key] === 'string') {
                 data[key] = data[key].trim();
@@ -124,43 +149,72 @@ export async function PUT(request, response) {
         const {
             productId, productname, code, catalogue, variation, color, places,
             thikness, layer, prod_finish, size, spiece, no_of_groves, m2pack, plank,
-            status, frontImageFile, prod_images, category
+            status, prod_images, category ,frontImage
         } = data;
 
+        // Handle category ID
         let cat_id = null;
         if (category === 'SPC') {
             cat_id = 1;
         } else if (category === 'LVT') {
             cat_id = 2;
         }
+
         const updateFields = [];
         const values = [];
 
-        if (frontImageFile) {
-            try {
-                await uploadImage(request, response, frontImageFile);
-                updateFields.push('prod_images = ?');
-                values.push(frontImageFile.name);
-            } catch (error) {
-                console.error('Error uploading front image:', error);
+        // Handle front images (allowing multiple files)
+        const frontImageFiles = [];
+        const frontImageNames = [];
+
+
+        for (let i = 0; i < requestData.getAll('frontImage').length; i++) {
+            const frontImageFile = requestData.getAll('frontImage')[i];
+            if (frontImageFile) {
+                frontImageFiles.push(frontImageFile);
+
+                // Upload each front image
+                try {
+                    await uploadImage(request, response, frontImageFile);
+                    frontImageNames.push(frontImageFile.name); // Collect image names for DB
+                } catch (error) {
+                    console.error('Error uploading front image:', error);
+                }
             }
         }
 
-        let imageNames = [];
-        if (prod_images && prod_images.size > 0) {
-            try {
-                await uploadImage(request, response, prod_images);
-                imageNames.push(prod_images.name);
-            } catch (error) {
-                console.error('Error uploading other image:', error);
+
+         if (frontImageNames.length > 0) {
+            updateFields.push('prod_images = ?');
+            values.push(frontImageNames.join(',')); // Join names with a comma
+        }
+
+
+        // Handle other product images
+         const otherImageFiles = [];
+        const otherImageNames = [];
+
+        for (let i = 0; i < requestData.getAll('otherImages').length; i++) {
+            const otherImageFile = requestData.getAll('otherImages')[i];
+            if (otherImageFile) {
+                otherImageFiles.push(otherImageFile);
+
+                // Upload each other image
+                try {
+                    await uploadImage(request, response, otherImageFile);
+                    otherImageNames.push(otherImageFile.name); // Collect image names for DB
+                } catch (error) {
+                    console.error('Error uploading other images:', error);
+                }
             }
         }
 
-        if (imageNames.length > 0) {
+        if (otherImageNames.length > 0) {
             updateFields.push('prod_image2 = ?');
-            values.push(imageNames.join(','));
+            values.push(otherImageNames.join(',')); // Join other image names
         }
 
+        // Update product fields
         const fields = {
             'prod_name = ?': productname,
             'prod_code = ?': code,

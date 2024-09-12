@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container, Button } from 'reactstrap';
@@ -20,6 +20,7 @@ const ProdList = () => {
                 const rawData = await axios.get("/api/admin/products");
                 const products = rawData.data;
                 setProducts(products);
+                setFilteredProductArray(products);
             } catch (error) {
                 console.error("Error fetching products:", error);
             } finally {
@@ -28,17 +29,14 @@ const ProdList = () => {
         };
 
         getProducts();
-    }, [filteredProductArray]);
+    }, []);
 
     let updatedProducts;
 
     const handleOnClick = async (action, id) => {
-        if (action == 'Edit') {
-            router.push(`./addProductForm?query=${id}`)
-            // router.push(`./addProductForm`)
-            // localStorage.setItem('Id', id);
-                
-        } else if (action == 'Delete') {
+        if (action === 'Edit') {
+            router.push(`./addProductForm?query=${id}`);
+        } else if (action === 'Delete') {
             try {
                 const response = await axios.delete("/api/admin/products", {
                     headers: {
@@ -48,16 +46,17 @@ const ProdList = () => {
                 });
                 if (response.status === 200) {
                     console.log("Product deleted successfully");
-                    updatedProducts = products.filter(product => product.product_id !== id);
-                    setProducts(updatedProducts)
-                    setFilteredProductArray(updatedProducts)
+                    updatedProducts = products.filter(product => product.prod_id !== id);
+                    setProducts(updatedProducts);
+                    setFilteredProductArray(updatedProducts);
                 } else {
                     console.error("Failed to delete product");
                 }
             } catch (error) {
                 console.error("Error:", error);
-
             }
+        } else if (action === 'ToggleStatus') {
+            // Handle status toggling logic
         }
     };
 
@@ -80,8 +79,24 @@ const ProdList = () => {
         },
         {
             name: 'Image',
-            selector: 'prod_image',
-            cell: row => <img src={`/uploads/${row.prod_images}`} alt="Product" style={{ width: '50px' }} className="img-fluid" />,
+            selector: 'prod_images',
+            cell: row => {
+                // Handle multiple images
+                const images = row.prod_images ? row.prod_images.split(',') : [];
+                return (
+                    <div>
+                        {images.map((image, index) => (
+                            <img
+                                key={index}
+                                src={`/uploads/${image.trim()}`}
+                                alt={`Product Image ${index + 1}`}
+                                style={{ width: '50px', marginRight: '5px' }}
+                                className="img-fluid"
+                            />
+                        ))}
+                    </div>
+                );
+            },
         },
         {
             name: 'Action',
@@ -132,6 +147,5 @@ const ProdList = () => {
         </Container>
     );
 };
-
 
 export default ProdList;

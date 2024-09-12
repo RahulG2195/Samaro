@@ -20,7 +20,8 @@ const Social = () => {
         const fetchData = async () => {
             // console.log("env is working ", process.env.NEXT_PUBLIC_INSTAGRAM_KEY)
             try {
-                const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRNZAXlSa25uckJKWXJxZADdkSWxzRXdReld6bVQ0blJ5ZAzNOZAy1jeUVRMzN5MzNzWDBMcGpNWmJtMFVGaV9RTkdCc3B4Y0QzTDB1Rl9qbjFaWWJuUG5Ua3lNalJJc0pCajV0VEE4UmM3SkplN1FwVTc3WHd0Y1kZD`;
+                // const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=IGQWRNT29fdzhDaWQzR2V1WFlESFlhUlN1b0FyX2tDbjVXbXNkUlE2Wnh1YjBmaW1iMFU1NjUyOG5vMDhEcXF4ZAkFHRUU3aVBvdnhHNkgzdzVQUXh2WkV5TlB1aWlnUVZA2RzZAkSXFyMDUwUTJEczZATb3ZAoeWxlSjQZD`;
+                const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=`;
                 const response = await axios.get(url);
                 setFeed(response.data.data);
 
