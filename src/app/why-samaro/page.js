@@ -30,7 +30,7 @@ export default function Home() {
         },
         {
             id: 2,
-            icon: "fas fa-shield-alt",
+            icon: "fas fa-th",
             title: "Largest SPC and LVT flooring producer",
             text: "Delivering advanced, durable flooring to homes, businesses, and public spaces worldwide."
         },
@@ -42,21 +42,21 @@ export default function Home() {
         },
         {
             id: 4,
-            icon: "fas fa-users",
+            icon: "fas fa-headset", 
             title: "End-to-End Support",
             text: "From consultation to post-sale support, we ensure a seamless, satisfying experience for every customer."
         },
         {
             id: 5,
-            icon: "fas fa-users",
+            icon: "fas fa-shield-alt", 
             title: "Comprehensive Warranty",
             text: "We offer a comprehensive 10-year warranty on residential projects and 5 year warranty on commercial projects."
         },
         {
-            id: 4,
-            icon: "fas fa-users",
+            id: 6,
+            icon: "fas fa-check-circle", 
             title: "Proven Quality",
-            text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
+            text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
         },
     ];
     return (
@@ -70,7 +70,7 @@ export default function Home() {
 
 
             <div className="container my-5">
-                <h1 className="text-center my-5 text-navy fw-bold">Why Choose Samaro?</h1>
+                <h1 className="text-center my-5 text-navy fw-bold"><u className="border-3 border-bottom border-danger ">Why Choose</u> Samaro?</h1>
                 <div className="row">
                     {cardData.map(card => (
                         <div key={card.id} className="col-lg-4 col-md-6 col-sm-12 mb-4 rounded">

@@ -86,11 +86,11 @@ button:focus:not(:focus-visible) {
 /* Header */
 .prdctDrop {
   padding-top: 15px;
-  right: -84%;
+  right: -85%;
   z-index: -1;
   opacity: 0;
   width: max-content;
-  /* display: none; */
+  display: none;
 }
 
 .prdctDrop li {

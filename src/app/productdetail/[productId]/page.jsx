@@ -15,11 +15,12 @@ import "@/components/ProductDetail/productdetail.css";
 import DetailsNewSection from "@/components/ProductDetail/DetailsNewSection";
 import { useParams } from "next/navigation";
 import axios from "axios";
+import Certifications from "@/components/Why-Samaro/Certifications/Certifications";
 
 
 const Home = () => {
   const router = useParams();
-  const id  = router.productId
+  const id = router.productId
 
   const [prodDetail, setProdDetail] = useState([]);
 
@@ -27,7 +28,7 @@ const Home = () => {
 
     const getProduct = async () => {
       try {
-        const response = await axios.post('/api/products', {id});
+        const response = await axios.post('/api/products', { id });
         const rawData = response.data[0];
 
 
@@ -222,7 +223,7 @@ const Home = () => {
         <div className="container">
           <div className="row justify-content-end ">
             <div className="col-md-6 col-12 col-xl-5 position-relative ">
-              <ProductSwipper images={[prodDetail.prod_images, prodDetail.prod_image2]}  />
+              <ProductSwipper images={[prodDetail.prod_images, prodDetail.prod_image2]} />
             </div>
             <div className="col-md-6 col-12 col-xl-5 prodDetailTXT">
               <div className="prod_name_lg">
@@ -341,7 +342,13 @@ const Home = () => {
       </section> */}
       <div className="pt-5">
 
-      {prodDetail.cat_name == 'SPC' ? <DetailsNewSection /> : null}
+        {prodDetail.cat_name == 'SPC' ? <DetailsNewSection /> : null}
+      </div>
+
+
+      {/* certifications  */}
+      <div className="pb-5">
+        <Certifications />
       </div>
 
       {/* product details new section */}
@@ -370,7 +377,7 @@ const Home = () => {
       {/* Similar product end */}
 
       {/* More Flooring Start */}
-      <SimilarProd Title1="More" Title2="Flooring" variation={'All'}/>
+      <SimilarProd Title1="More" Title2="Flooring" variation={'All'} />
       {/* More Flooring end */}
       <Inspiration />
     </>

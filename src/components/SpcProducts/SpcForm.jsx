@@ -13,7 +13,7 @@ import {
 import { notify, notifyError } from "@/utils/toaster.js";
 import { toast, Bounce } from "react-toastify";
 
-const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
+const SpcForm = ({ centerHeading, hideguide, contactformcol, pb, note }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -95,11 +95,11 @@ const SpcForm = ({ hideguide, contactformcol, pb, note }) => {
         className={`spcFormCont row container mx-auto ${pb ? "pb-0" : ""
           } my-md-4 justify-content-evenly align-items-center getintouchformCont`}
       > 
-      <div className="col-12 text-center my-md-5 my-2">
-      <h2 className="ps-5 text-navy text-center sub-heading">Ready to transform your space?</h2>
+      {!centerHeading && (<div className="col-12 text-center my-md-5 my-2">
+      <h2 className="ps-5 text-navy text-center sub-heading"> <u className="border-3 border-bottom border-danger ">Ready to transform </u> your space?</h2>
       <small className="text-center">Whether you're designing a new home, renovating an office, or
       planning a commercial project, Samaro Flooring has the solutions you need.</small>
-      </div>
+      </div>)}
         {/* <div className={`col-md-6 ${hideguide ? "hideguide" : ""}`}>
           <span className="spcformheading">
            

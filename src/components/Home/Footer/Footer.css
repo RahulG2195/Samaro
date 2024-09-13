@@ -1,4 +1,3 @@
-
 /* Footer */
 
 .footer-headings {
@@ -12,6 +11,7 @@
   font-weight: 200;
   font-size: 15px;
 }
+
 .custom-footer a,
 .custom-footer p {
   color: var(--light);
@@ -21,14 +21,17 @@
 .custom-footer .phone img {
   width: 20px;
 }
+
 .custom-footer {
   position: relative;
 }
+
 .custom-footer .line {
   height: 1px;
   width: 100%;
   background-color: #ffffff;
 }
+
 .custom-footer .logo {
   display: flex;
   align-items: center;
@@ -44,6 +47,7 @@
   top: -20px;
   padding: 78px;
 }
+
 .backgroundCorner {
   width: 696px;
 }
@@ -56,7 +60,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  background-color:transparent;
+  background-color: transparent;
   border-radius: 20px;
   width: 100%;
   /* justify-content: space-between; */
@@ -78,72 +82,87 @@
   padding-left: 10px;
   color: #ffffff;
 }
+
 .newsletter input::placeholder {
   font-size: 14px;
 }
 
-.btn-close{
-    align-self: end;
-    color: white !important;
+.btn-close {
+  align-self: end;
+  color: white !important;
 }
-.modal-content{
+
+.modal-content {
   background-color: transparent !important;
   border: none !important;
 }
 
-/* .icon-bar {
+
+
+.icon-bar {
+  width: 195px;
   position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  /* right: -5%; */
+  left: 99%;
+  top: 60%;
+  transform: translate(-50%) rotate(270deg);
+  background-color: #ca373c;
+  /* padding: 10px; */
+  /* border-radius: 5px 0 0 5px; */
+  z-index: 999;
 }
 
 .icon-bar a {
-  display: block;
-    text-align: center;
-    padding: 10px;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 20px;
-    background: red;
-    border: 1px solid lightgray;
-    transform: rotate(270deg);
-} */
+  padding: 10px;
+}
+
+
 /* Footer */
 @media (max-width:768px) {
-  .footerSubmitbutton{
+  .icon-bar {
+    left: 96%;
+  }
+
+  .footerSubmitbutton {
     margin: 0 auto !important;
   }
-  .ordr3{
+
+  .ordr3 {
     order: 3 !important;
     /* padding-left: 1rem !important; */
   }
-  .ordr2{
+
+  .ordr2 {
     order: 2 !important;
     /* padding-left: 0rem !important; */
 
   }
-  .ordr1{
+
+  .ordr1 {
     order: 1 !important;
     padding-top: 20px;
     justify-content: center !important;
   }
-  .ordr3 p{
+
+  .ordr3 p {
     font-size: 12px;
   }
-  .contact-details .mail{
+
+  .contact-details .mail {
     font-size: 12px !important;
   }
-  .contact-details .phone{
+
+  .contact-details .phone {
     font-size: 12px !important;
   }
-  .contact-details{
+
+  .contact-details {
     justify-content: space-evenly !important;
   }
 }
 
 @media (max-width:425px) {
- .newsletter{
-  flex-wrap: wrap ;
- } 
+  .newsletter {
+    flex-wrap: wrap;
+  }
 }

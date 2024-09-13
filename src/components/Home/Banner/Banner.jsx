@@ -190,7 +190,7 @@ const Banner = () => {
                 <div className="carousel-inner">
                     {banners.map((banner, index) => (
                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                            <div className="homepageHeroBanner">
+                            <div className="homepageHeroBanner" style={{height:'100vh'}}>
                                 <Image
                                     src={`/uploads/${banner.image}`}
                                     alt={`Desktop Banner Image ${index + 1}`}

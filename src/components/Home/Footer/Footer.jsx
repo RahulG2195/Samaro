@@ -179,11 +179,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div class="icon-bar">
-        <a href="#" class="facebook">
-          <p>Contact us</p>
+      <div class="icon-bar rounded d-flex">
+        <a href="/contact-us" class="text-white  ">
+          Contact us
         </a>
-        <a href="#" class="twitter">
+        <a href="/product/All" class=" text-white border-start">
           Products
         </a>
       </div>

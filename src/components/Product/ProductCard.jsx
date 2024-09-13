@@ -4,13 +4,17 @@ import Image from 'next/image';
 import './Filters.css';
 
 const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, prod_code, seo }) => {
+    const frontImageArray = frontImage ? frontImage.split(',') : [];
+
+    // Get the first image for the front view
+    const firstFrontImage = frontImageArray.length > 0 ? frontImageArray[0].trim() : null;
     return (
         <>
             <div className="card productCard my-3 mx-0" style={{ width: '100%' }}>
                 <Link href={`/productdetail/${seo}`}>
                     <div className='frontimage'>
                         <Image 
-                            src={`/uploads/${frontImage}`} 
+                            src={`/uploads/${firstFrontImage}`} 
                             alt={`${title} - front view`} 
                             layout="responsive" 
                             width={500} 

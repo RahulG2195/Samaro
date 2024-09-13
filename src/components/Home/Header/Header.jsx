@@ -79,14 +79,14 @@ const Header = () => {
                             </li>
                             <li className="nav-item position-relative prdcts" onClick={closeMenu}>
                                 <NavLink className="prdctHeading" href="/product/All">Product</NavLink>
-                                {/* <ul className=" prdctDrop drop1 px-5 position-absolute">
+                                <ul className=" prdctDrop drop1 px-5 position-absolute " style={{listStyle:'none'}}>
                                     <li><Link href="/spcProducts"><p className="darkBlue">SPC</p></Link></li>
                                     <li><Link href="/lvtProducts"><p className="darkBlue">LVT</p></Link></li>
                                 </ul>
                                 <ul className="mobileoptions">
                                     <li><Link href="/spcProducts">SPC</Link></li>
                                     <li><Link href="/lvtProducts">LVT</Link></li>
-                                </ul> */}
+                                </ul>
                             </li>
                             <li className="nav-item position-relative prdcts inspiration">
                                 <div className="inspi " >
