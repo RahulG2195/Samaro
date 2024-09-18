@@ -6,7 +6,7 @@ import { Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap'; // E
 const Features = ({features, title}) => {
   return (
     <div className="container my-5">
-      <h1 className="text-center mb-4 text-navy fw-bold py-5">{title}</h1>
+      <h1 className="text-center mb-4 text-navy fw-bold">{title}</h1>
       <Row className='justify-content-center'>
         {features.map((feature, index) => (
           <Col md={6} lg={4} className="mb-4" key={index}>

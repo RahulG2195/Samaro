@@ -103,7 +103,7 @@ const features = [
 
 const SpcStructer = () => {
     return (
-        <Container className="pt-5">
+        <Container className="">
             {/* Header */}
             <Row>
                 <Col>

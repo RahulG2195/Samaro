@@ -50,7 +50,7 @@ const SpcPage = () => {
                         }
                     });
                     const products = response.data;
-                    setProductsData(products);
+                    // setProductsData(products);
                     setFilteredProducts(products);
                 } catch (error) {
                     console.error('Error fetching products:', error);
@@ -76,13 +76,13 @@ const SpcPage = () => {
         setFilteredProducts(filtered);
     };
 
-    useEffect(() => {
-        applyFilters();
-    }, [selectedProduct, selectedCatalogues, selectedTypes, selectedColors, selectedPlaces, searchQuery, productsData]);
+    // useEffect(() => {
+    //     applyFilters();
+    // }, [selectedProduct, selectedCatalogues, selectedTypes, selectedColors, selectedPlaces, searchQuery, productsData]);
 
-    const handleCheckboxChange = () => {
-        setShowInteriorPictures(!showInteriorPictures);
-    };
+    // const handleCheckboxChange = () => {
+    //     setShowInteriorPictures(!showInteriorPictures);
+    // };
 
     const handleProductChange = (event) => {
         setSelectedProduct(event.target.value);
