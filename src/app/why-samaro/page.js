@@ -16,6 +16,7 @@ import Design from "@/components/Why-Samaro/Design/Design";
 import Banner from "@/components/Why-Samaro/Banner/Banner";
 import SpcForm from "@/components/SpcProducts/SpcForm";
 import Team from "@/components/Why-Samaro/Team/Team";
+import Timeline from "@/components/Why-Samaro/Timeline/Timeline";
 
 export default function Home() {
     useEffect(() => {
@@ -65,6 +66,7 @@ export default function Home() {
             {/* <Header></Header> */}
             <Banner></Banner>
             <About></About>
+            <Timeline/>
             <Vision></Vision>
             {/* <Mission></Mission> */}
 

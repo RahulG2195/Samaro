@@ -34,7 +34,7 @@ export default function Home() {
         <Social />
       </div>
       <FollowMore />
-      {/* <Testimonials></Testimonials> */}
+      <Testimonials></Testimonials>
     </main>
   );
 }

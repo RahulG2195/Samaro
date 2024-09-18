@@ -1,5 +1,5 @@
-// TestimonialSwiper.js
-import React from 'react';
+'Use client'
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import core Swiper styles
 import 'swiper/css/navigation'; // Import Navigation styles
@@ -11,51 +11,90 @@ import './Testimonials.css'; // Import your custom CSS
 
 const testimonials = [
   {
-    id: 1,
-    name: 'John Doe',
-    place: 'New York',
-    review: 'This is an amazing product! Highly recommended. I was truly impressed with the quality and customer service. This has exceeded my expectations in every way. The details and craftsmanship are top-notch. I would definitely recommend this to anyone looking for something special.',
+    title: "Mussum Ipsum",
+    subtitle: "Mussum Ipsum",
+    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
   },
   {
-    id: 2,
-    name: 'Jane Smith',
-    place: 'Los Angeles',
-    review: 'I had a great experience. Will buy again! The delivery was prompt, and the product was exactly as described. I’m very satisfied with the purchase and will consider buying more products from this seller in the future.',
+    title: "Mussum Ipsum",
+    subtitle: "Mussum Ipsum",
+    text: "Cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
   },
   {
-    id: 3,
-    name: 'Alice Johnson',
-    place: 'Chicago',
-    review: 'Fantastic service and support. The customer support team went above and beyond to ensure that my needs were met. They were very responsive and helpful throughout the entire process. I truly appreciate their dedication and hard work.',
+    title: "Mussum Ipsum",
+    subtitle: "Mussum Ipsum",
+    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
   },
-  // Add more testimonials as needed
+  {
+    title: "Mussum Ipsum",
+    subtitle: "Mussum Ipsum",
+    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+  },
+  {
+    title: "Mussum Ipsum",
+    subtitle: "Mussum Ipsum",
+    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+  },
 ];
 
+
+
 const TestimonialSwiper = () => {
+
   return (
-    <div className="testimonial-swiper container pb-5">
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        pagination={{ clickable: true }} // Ensure pagination is enabled
-        navigation={true} // Enable navigation
-        loop={true}
-        modules={[Navigation, Pagination]} // Register the modules
-        className="mySwiper"
-      >
-        {testimonials.map((testimonial) => (
-          <SwiperSlide key={testimonial.id} className='py-5 px-5'>
-            <div className="testimonial">
-              <div className="testimonial-content">
-                <h3 className="testimonial-name">{testimonial.name}</h3>
-                <p className="testimonial-place">{testimonial.place}</p>
-                <p className="testimonial-review">"{testimonial.review}"</p>
+    <div className="section-testmonials position-relative container py-5">
+      <div className="column-testmonials border-end border-2 px-2">
+        <div className="section-details">
+          <h1 className="fw-bold text-danger fs-1 border-bottom border-danger py-3 ">What Our Client Say</h1>
+          <p className="fw-medium">Discover what our clients have to say about their experience with</p>
+        </div>
+        
+      </div>
+      <div className="swiper-testmonials px-5">
+        <Swiper
+          modules={[Navigation]} // Include Navigation module
+          loop={true}
+          spaceBetween={0}
+          slidesPerView={1.2}
+          grabCursor={true}
+          navigation={{
+            nextEl: '.swiper-button-testmonials-next',
+            prevEl: '.swiper-button-testmonials-prev',
+          }}
+          breakpoints={{
+            500: {
+              slidesPerView: 1.4,
+            },
+            780: {
+              slidesPerView: 1.8,
+            },
+            1300: {
+              slidesPerView: 2,
+            },
+            1630: {
+              slidesPerView: 3.6,
+            },
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="card-slide p-2">
+                <div className="head-slide">
+                </div>
+                <p className="text-slide">{testimonial.text}</p>
+                <div className="title-slide">
+                  <h4>{testimonial.title}</h4>
+                  <h6>{testimonial.subtitle}</h6>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {/* Navigation buttons will be added automatically */}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="navigation-testmonials">
+          <div className="swiper-button-testmonials-prev ">Prev</div>
+          <div className="swiper-button-testmonials-next ">Next</div>
+        </div>
+      </div>
     </div>
   );
 };
