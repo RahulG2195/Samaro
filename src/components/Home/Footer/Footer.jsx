@@ -186,9 +186,9 @@ const Footer = () => {
         <a href="/product/All" class=" text-white border-start">
           Products
         </a>
-        <a href="/downloadCenter" class=" text-white border-start">
+        {/* <a href="/downloadCenter" class=" text-white border-start">
           Download Center
-        </a>
+        </a> */}
       </div>
       {/* <div className="dwnldCenter">
         <a href="" className="text-white fw-bold">DOWNLOAD CENTER </a>

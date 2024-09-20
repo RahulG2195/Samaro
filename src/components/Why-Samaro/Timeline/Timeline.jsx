@@ -4,29 +4,72 @@ import './Timeline.css'
 // import 'react-chrono/dist/styles.css'; // Import default styles
 
 const TimelineNew = () => {
-    const events = [
-        { year: '1952', description: 'National Plastic Founded, The rich legacy of 70+ years' },
-        { year: '2019', description: 'Samaro founded' },
-        { year: '2020', description: 'Started Production with 2 extruders & 1 homag profiling machine' },
-        { year: '2021', description: 'Added 1 more extrution line' },
-        { year: '2022', description: 'Moved to 30 acre production facility with ' },
-        { year: '2023', description: 'Added 5 extruders & 2 homang profile lines ' },
-        { year: '2024', description: 'Added 3 more lines + 1 homang line' },
-        {  description: "India's largest manufacturer & exporter of SPC flooring" },
-      ];
+  const timelineData = [
+    {
+      year: '1952',
+      title: 'NATIONAL PLASTICS FOUNDED A RICH LEGACY OF 70+ YEARS',
+      icon: 'fa-building',
+    },
+    {
+      year: '2019',
+      title: 'Samaro Founded',
+      icon: 'fa-briefcase',
+    },
+    {
+      year: '2020',
+      title: 'STARTED PRODUCTION WITH 2 EXTRUDERS & 1 HOMAG PROFILING MACHINE',
+      icon: 'fa-cogs',
+    },
+    {
+      year: '2021',
+      title: 'ADDED 1 MORE EXTRUSION LINE',
+      icon: 'fa-plus-circle',
+    },
+    {
+      year: '2022',
+      title: 'MOVED TO A 30 ACRE PRODUCTION FACILITY WITH',
+      icon: 'fa-map-signs',
+    },
+    {
+      year: '2023',
+      title: 'ADDED 5 EXTRUDERS & 2 HOMAG PROFILE LINES',
+      icon: 'fa-tools',
+    },
+    {
+      year: '2024',
+      title: 'ADDED 3 MORE LINES + 1 HOMAG LINE',
+      icon: 'fa-rocket',
+    },
+    {
+      year: '2024',
+      title: "INDIA'S LARGEST MANUFACTURER & EXPORTER OF SPC FLOORING",
+      icon: 'fa-globe',
+    },
+  ];
+  
 
-    return (
-        <div className="timeline">
-          <div className="timeline-content">
-            {events.map((event, index) => (
-              <div className="timeline-item" key={index}>
-                <div className="timeline-year">{event.year}</div>
-                <div className="timeline-description">{event.description}</div>
+  return (
+    <div className="container py-5">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="main-timeline7">
+            {timelineData.map((item, index) => (
+              <div className="timeline pb-5" key={index}>
+                <div className="timeline-icon">
+                  <i className={`fa ${item.icon} `}></i>
+                </div>
+                <span className="year fw-bold ">{item.year}</span>
+                <div className="timeline-content">
+                  <h5 className="title">{item.title}</h5>
+                  {/* <p className="description">{item.description}</p> */}
+                </div>
               </div>
             ))}
           </div>
         </div>
-      );
-    };
+      </div>
+    </div>
+  );
+};
 
 export default TimelineNew

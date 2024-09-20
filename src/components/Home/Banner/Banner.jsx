@@ -147,20 +147,20 @@ const Banner = () => {
         {
             image: "commercial banner.jpg",
             mobileImage: "commercial banner.jpg",
-            content: "Elevate Your Home with the Perfect Blend of Luxury and Comfort",
+            content: "Professional Spaces, Perfected: Flooring Solutions That Drive Success",
             spcLink: "/spc",
             lvtLink: "/lvt"
         },
         {
             image: "residential banner.jpg",
-            mobileImage: "mobile-image2.jpg",
-            content:  "Professional Spaces, Perfected: Flooring Solutions That Drive Success",
+            mobileImage: "residential banner.jpg",
+            content:  "Elevate Your Home with the Perfect Blend of Luxury and Comfort",
             spcLink: "/spc",
             lvtLink: "/lvt"
         },
         {
             image: "Manufacturing banner.png",
-            mobileImage: "mobile-image2.jpg",
+            mobileImage: "Manufacturing banner.png",
             content:  "State-of-the-Art Manufacturing Meets Flooring Expertise",
             spcLink: "/spc",
             lvtLink: "/lvt"
