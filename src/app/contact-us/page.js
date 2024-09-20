@@ -101,11 +101,11 @@ export default function page() {
                             <img className="img" src="/assets/images/social-media/instagram.png" alt="" />
                           </Link>
                         </div>
-                        <div className="x">
+                        {/* <div className="x">
                           <Link href={basicInfo.linkedin_url}>
                             <img className="img" src="/assets/images/social-media/x.png" alt="" />
                           </Link>
-                        </div>
+                        </div> */}
                         <div className="youtube">
                           <Link href={basicInfo.youtube_url}>
                             <img className="img" src="/assets/images/social-media/yt.png" alt="" />

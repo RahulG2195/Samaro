@@ -82,7 +82,7 @@ const Social = () => {
                                 spaceBetween: 40,
                             },
                         }}
-                        modules={[Autoplay, Navigation, Pagination]}
+                        modules={[Autoplay, Navigation,]}
                     >
                         {feed
                             .filter(item => item.media_type === 'IMAGE')
