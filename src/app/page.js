@@ -21,11 +21,14 @@ export default function Home() {
       <Banner />
       <Spclvt />
       <Benefits />
+      <div className="my-5">
       <Design />
+      </div>
       {/* <FloorExplorer /> */}
       {/* <Commercial />
       <Residentail /> */}
       
+      <Testimonials></Testimonials>
       <div className="pt-lg-0 pt-5">
         <SpcForm></SpcForm>
       </div>
@@ -34,7 +37,6 @@ export default function Home() {
         <Social />
       </div>
       <FollowMore />
-      <Testimonials></Testimonials>
     </main>
   );
 }

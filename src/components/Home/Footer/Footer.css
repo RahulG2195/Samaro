@@ -100,9 +100,9 @@
 
 
 .icon-bar {
-  width: 195px;
+  width: max-content  ;
   position: fixed;
-  /* right: -5%; */
+  /* right: 0%; */
   left: 99%;
   top: 60%;
   transform: translate(-50%) rotate(270deg);
@@ -116,7 +116,17 @@
   padding: 10px;
 }
 
+.dwnldCenter{
 
+  position: fixed;
+  right: 0;
+  top: 90%;
+  z-index: 999;
+  background-color: #ca373c;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
 /* Footer */
 @media (max-width:768px) {
   .icon-bar {

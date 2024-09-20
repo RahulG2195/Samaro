@@ -86,9 +86,9 @@ const Benefits = () => {
     }));
 
     return (
-        <section className="benefits position-relative">
+        <section className="benefits position-relative mt-5">
 
-            <div className="mt-3">
+            <div className="mt-5">
 
                 {/* <h2 className="text-navy benifitsHeading px-5 UpperBenifitsText pt-5">
                     Unlock Many Benefits <br />

@@ -179,14 +179,20 @@ const Footer = () => {
         </div>
       </div>
 
-      <div class="icon-bar rounded d-flex">
+      <div class="icon-bar rounded d-flex text-center">
         <a href="/contact-us" class="text-white  ">
-          Contact us
+          Contact Us
         </a>
         <a href="/product/All" class=" text-white border-start">
           Products
         </a>
+        <a href="/downloadCenter" class=" text-white border-start">
+          Download Center
+        </a>
       </div>
+      {/* <div className="dwnldCenter">
+        <a href="" className="text-white fw-bold">DOWNLOAD CENTER </a>
+      </div> */}
     </>
   );
 };

@@ -1,102 +1,108 @@
 'Use client'
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Import core Swiper styles
-import 'swiper/css/navigation'; // Import Navigation styles
-import 'swiper/css/pagination'; // Import Pagination styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { Navigation, Pagination } from 'swiper/modules'; // Import Swiper modules
 
-import './Testimonials.css'; // Import your custom CSS
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+import './Testimonials.css';
 
 const testimonials = [
   {
-    title: "Mussum Ipsum",
-    subtitle: "Mussum Ipsum",
-    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+    name: "Calvin pais",
+    location: "Mumbai",
+    quote: "We recently purchased flooring from Samaro, and we couldn't be happier! The selection of shades and patterns was impressive, allowing us to find exactly what we needed to match our home's décor. On top of that, the prices were very reasonable, and the quality of the flooring exceeded our expectations. The entire experience, from choosing the product to the installation, was smooth, and we're extremely satisfied with the results. Highly recommended!"
+    ,
   },
   {
-    title: "Mussum Ipsum",
-    subtitle: "Mussum Ipsum",
-    text: "Cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+    name: "Ritu Sharma",
+    location: "Gaziabad",
+    quote: "I recently purchased flooring from Samaro Flooring, and I couldn't be happier with my decision. The variety of shades available made it easy for me to find the perfect match for my home. The prices were very reasonable, especially considering the high quality of the flooring. I'm thrilled with the results, and the customer service was exceptional throughout the entire process. I highly recommend Samaro Flooring to anyone looking for beautiful and affordable flooring options.",
   },
   {
-    title: "Mussum Ipsum",
-    subtitle: "Mussum Ipsum",
-    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+    name: "Tanvir Nizam (Architect)",
+    location: "Delhi",
+    quote: "I recently purchased flooring from Samaro, and I couldn't be happier with the decision. The variety of shades and designs they offer is amazing - I found the perfect match for my home's interior. On top of that, the prices were very reasonable, offering excellent value for money. The customer service was outstanding, ensuring I was fully satisfied with my purchase from start to finish. I highly recommend Samaro for anyone looking for high-quality flooring at great prices.",
   },
   {
-    title: "Mussum Ipsum",
-    subtitle: "Mussum Ipsum",
-    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+    name: "Calvin pais",
+    location: "Mumbai",
+    quote: "We recently purchased flooring from Samaro, and we couldn't be happier! The selection of shades and patterns was impressive, allowing us to find exactly what we needed to match our home's décor. On top of that, the prices were very reasonable, and the quality of the flooring exceeded our expectations. The entire experience, from choosing the product to the installation, was smooth, and we're extremely satisfied with the results. Highly recommended!"
+    ,
   },
   {
-    title: "Mussum Ipsum",
-    subtitle: "Mussum Ipsum",
-    text: "Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!",
+    name: "Ritu Sharma",
+    location: "Gaziabad",
+    quote: "I recently purchased flooring from Samaro Flooring, and I couldn't be happier with my decision. The variety of shades available made it easy for me to find the perfect match for my home. The prices were very reasonable, especially considering the high quality of the flooring. I'm thrilled with the results, and the customer service was exceptional throughout the entire process. I highly recommend Samaro Flooring to anyone looking for beautiful and affordable flooring options.",
   },
 ];
-
 
 
 const TestimonialSwiper = () => {
 
   return (
-    <div className="section-testmonials position-relative container py-5">
-      <div className="column-testmonials border-end border-2 px-2">
-        <div className="section-details">
-          <h1 className="fw-bold text-danger fs-1 border-bottom border-danger py-3 ">What Our Client Say</h1>
-          <p className="fw-medium">Discover what our clients have to say about their experience with</p>
-        </div>
-        
-      </div>
-      <div className="swiper-testmonials px-5">
-        <Swiper
-          modules={[Navigation]} // Include Navigation module
-          loop={true}
-          spaceBetween={0}
-          slidesPerView={1.2}
-          grabCursor={true}
-          navigation={{
-            nextEl: '.swiper-button-testmonials-next',
-            prevEl: '.swiper-button-testmonials-prev',
-          }}
-          breakpoints={{
-            500: {
-              slidesPerView: 1.4,
-            },
-            780: {
-              slidesPerView: 1.8,
-            },
-            1300: {
-              slidesPerView: 2,
-            },
-            1630: {
-              slidesPerView: 3.6,
-            },
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="card-slide p-2">
-                <div className="head-slide">
-                </div>
-                <p className="text-slide">{testimonial.text}</p>
-                <div className="title-slide">
-                  <h4>{testimonial.title}</h4>
-                  <h6>{testimonial.subtitle}</h6>
-                </div>
+    <div className="Testimonial container pb-5">
+      <h1 className='py-5 text-center fw-bold text-navy'>Testimonial</h1>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: true,
+        }}
+        navigation
+        // pagination={{ clickable: true }}
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={1}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1536: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        }}
+
+      >
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div className="content-wrapper card  p-4 rounded-2">
+              <div className="content">
+                <p>{`"${testimonial.quote}"`}</p>
+                <p className="cite">- {testimonial.name}, {testimonial.location}</p>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="navigation-testmonials">
-          <div className="swiper-button-testmonials-prev ">Prev</div>
-          <div className="swiper-button-testmonials-next ">Next</div>
-        </div>
-      </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
+
 
 export default TestimonialSwiper;

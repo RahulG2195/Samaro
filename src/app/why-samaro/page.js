@@ -43,10 +43,11 @@ export default function Home() {
         },
         {
             id: 4,
-            icon: "fas fa-headset", 
-            title: "End-to-End Support",
-            text: "From consultation to post-sale support, we ensure a seamless, satisfying experience for every customer."
+            icon: "fas fa-check-circle", 
+            title: "Proven Quality",
+            text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
         },
+       
         {
             id: 5,
             icon: "fas fa-shield-alt", 
@@ -55,9 +56,9 @@ export default function Home() {
         },
         {
             id: 6,
-            icon: "fas fa-check-circle", 
-            title: "Proven Quality",
-            text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
+            icon: "fas fa-headset", 
+            title: "End-to-End Support",
+            text: "From consultation to post-sale support, we ensure a seamless, satisfying experience for every customer."
         },
     ];
     return (
@@ -98,7 +99,7 @@ export default function Home() {
             {/* <Benefits></Benefits> */}
             {/* <Certifications></Certifications> */}
             {/* <Dimensions></Dimensions> */}
-            <Download></Download>
+            {/* <Download></Download> */}
             <div className="pb-5">
                 {/* <CallToAction></CallToAction> */}
                 <SpcForm></SpcForm>
