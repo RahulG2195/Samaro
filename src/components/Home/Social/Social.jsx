@@ -20,7 +20,7 @@ const Social = () => {
         const fetchData = async () => {
             // console.log("env is working ", process.env.NEXT_PUBLIC_INSTAGRAM_KEY)
             try {
-                const url = ''
+                const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_KEY}`;
                 const response = await axios.get(url);
                 setFeed(response.data.data);
 
@@ -64,7 +64,7 @@ const Social = () => {
                             disableOnInteraction: false,
                         }}
                         breakpoints={{
-                            
+
                             320: {
                                 slidesPerView: 2,
                                 spaceBetween: 10,
