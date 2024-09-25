@@ -1,294 +1,302 @@
 "use client";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { Container, Button, Input, Form, FormGroup, Label, Card, Alert } from "reactstrap";
+import { Button, Input, FormGroup, Table } from "reactstrap";
+import SliderImagesEditor from "@/components/Admin/SliderImagesEditor/page";
 
-const BenefitsSection = () => {
-  const [benefit, setBenefit] = useState({
-    heading: "",
-    icons: [],
-    titles: [],
-    slider_images: []
-  });
+const BenefitsEditor = () => {
+  const [benefits, setBenefits] = useState([]);
+  const [newBenefit, setNewBenefit] = useState({ icons: "", titles: "" });
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTitles, setEditedTitles] = useState({});
+  const [heading, setHeading] = useState("");
+  const [isEditingHeading, setIsEditingHeading] = useState(false);
+  console.log("cls", heading)
 
-  const [editMode, setEditMode] = useState(false);
-  const [editedBenefit, setEditedBenefit] = useState({
-    heading: "",
-    icons: [],
-    titles: [],
-    slider_images: []
-  });
-  const [iconPreviews, setIconPreviews] = useState([]);
-  const [sliderImagePreviews, setSliderImagePreviews] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  // Function to fetch initial data
   useEffect(() => {
-    const fetchBenefit = async () => {
+    const fetchBenefits = async () => {
       try {
         const response = await axios.get("/api/admin/benifits");
-        const benefitData = response.data[0];
-        benefitData.icons = benefitData.icons.split(",");
-        benefitData.titles = benefitData.titles.split(",");
-        benefitData.slider_images = benefitData.slider_images.split(",");
-
-        setBenefit(benefitData);
-        setEditedBenefit(benefitData);
-        setIconPreviews(benefitData.icons.map(icon => `/uploads/${icon}`));
-        setSliderImagePreviews(benefitData.slider_images.map(img => `/uploads/${img}`));
+        setBenefits(response.data);
       } catch (error) {
-        console.error("Error fetching benefit:", error);
+        console.error("Error fetching benefits:", error);
       }
     };
 
-    fetchBenefit();
-  }, []);
-
-  const handleEdit = () => {
-    setEditMode(true);
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === "file") {
-      const file = files[0];
-      const fieldName = name.substring(0, name.indexOf("["));
-      const index = parseInt(name.substring(name.indexOf("[") + 1, name.indexOf("]")), 10);
-
-      if (fieldName === "icons") {
-        const newIcons = [...editedBenefit.icons];
-        newIcons[index] = file;
-        setEditedBenefit((prevData) => ({ ...prevData, icons: newIcons }));
-
-        const newPreviews = [...iconPreviews];
-        newPreviews[index] = URL.createObjectURL(file);
-        setIconPreviews(newPreviews);
-      } else if (fieldName === "slider_images") {
-        const newSliderImages = [...editedBenefit.slider_images];
-        newSliderImages[index] = file;
-        setEditedBenefit((prevData) => ({ ...prevData, slider_images: newSliderImages }));
-
-        const newPreviews = [...sliderImagePreviews];
-        newPreviews[index] = URL.createObjectURL(file);
-        setSliderImagePreviews(newPreviews);
+    const fetchHeading = async () => {
+      try {
+        const response = await axios.get("/api/admin/benefits_slider");
+        setHeading(response.data[0].heading); // Assuming the response contains a heading field
+      } catch (error) {
+        console.error("Error fetching heading:", error);
       }
-    } else {
-      setEditedBenefit((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
+    };
+
+    fetchBenefits();
+    fetchHeading();
+  }, [isEditing]);
+
+  const addBenefit = async () => {
+    const formData = new FormData();
+    formData.append("file", newBenefit.icons);
+    formData.append("titles", newBenefit.titles);
+
+    try {
+      const response = await axios.post("/api/admin/benifits", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setBenefits([...benefits, response.data]);
+      setNewBenefit({ icons: "", titles: "" });
+      setIsEditing(true);
+    } catch (error) {
+      console.error("Error adding benefit:", error);
     }
   };
 
-  const handleAddIcon = () => {
-    setEditedBenefit((prevData) => ({
-      ...prevData,
-      icons: [...prevData.icons, ""],
-      titles: [...prevData.titles, ""]
-    }));
-    setIconPreviews([...iconPreviews, ""]);
-  };
 
-  const handleRemoveIcon = (index) => {
-    const newIcons = [...editedBenefit.icons];
-    const newTitles = [...editedBenefit.titles];
-    const newPreviews = [...iconPreviews];
-    newIcons.splice(index, 1);
-    newTitles.splice(index, 1);
-    newPreviews.splice(index, 1);
-    setEditedBenefit((prevData) => ({ ...prevData, icons: newIcons, titles: newTitles }));
-    setIconPreviews(newPreviews);
-  };
-
-  const handleAddSliderImage = () => {
-    setEditedBenefit((prevData) => ({
-      ...prevData,
-      slider_images: [...prevData.slider_images, ""]
-    }));
-    setSliderImagePreviews([...sliderImagePreviews, ""]);
-  };
-
-  const handleRemoveSliderImage = (index) => {
-    const newSliderImages = [...editedBenefit.slider_images];
-    const newPreviews = [...sliderImagePreviews];
-    newSliderImages.splice(index, 1);
-    newPreviews.splice(index, 1);
-    setEditedBenefit((prevData) => ({ ...prevData, slider_images: newSliderImages }));
-    setSliderImagePreviews(newPreviews);
-  };
-
-  const handleTitleChange = (index, e) => {
-    const { value } = e.target;
-    const newTitles = [...editedBenefit.titles];
-    newTitles[index] = value;
-    setEditedBenefit((prevData) => ({ ...prevData, titles: newTitles }));
-  };
-  const handleSave = async () => {
+  const updateHeading = async () => {
     try {
-
-      if (!editedBenefit.heading.trim()) {
-        setErrorMessage("Please enter a heading.");
-        return;
-      }
-
-      const hasEmptyTitle = editedBenefit.titles.some(title => !title.trim());
-      if (hasEmptyTitle) {
-        setErrorMessage("Please enter all titles.");
-        return;
-      }
-
-        const trimmedBenefit = {
-          ...editedBenefit,
-          heading: editedBenefit.heading.trim(),
-          titles: editedBenefit.titles.map(title => title.trim())
-        };
-
-      const formData = new FormData();
-      Object.entries(trimmedBenefit).forEach(([key, value]) => {
-        if (key === "icons" || key === "slider_images") {
-          value.forEach((file, index) => {
-            if (file instanceof File) {
-              formData.append(`${key}[${index}]`, file);
-            }
-          });
-        } else {
-          formData.append(key, value);
-        }
-      });
-
-      const response = await axios.put("/api/admin/benifits", formData, {
+      const response = await fetch('/api/admin/benefits_slider', {
+        method: 'PUT',
         headers: {
-          "Content-Type": "multipart/form-data"
-        }
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ heading }), // Directly use the current heading state
       });
+  
+      const data = await response.json();
+      if (response.ok) {
+        console.log(data.message); // Successfully updated
+      } else {
+        console.error(data.message); // Handle error response
+      }
+    } catch (error) {
+      console.error('Error updating heading:', error);
+    }
+  };
+  
 
-      setBenefit(trimmedBenefit);
-      setEditMode(false);
-      setErrorMessage("");
+  const updateBenefit = async (benefitId, updatedBenefitData) => {
+    const formData = new FormData();
 
-      console.log("Benefit updated:", response.data);
+    // Check for icons update
+    if (updatedBenefitData.icons instanceof File) {
+      formData.append("icons", updatedBenefitData.icons);
+    }
+
+    // Titles update
+    formData.append("titles", updatedBenefitData.titles);
+
+    // Sequence update
+    if (updatedBenefitData.sequence !== undefined) {
+      formData.append("sequence", updatedBenefitData.sequence);
+    }
+
+    formData.append("id", benefitId);
+
+    try {
+      const response = await axios.put(`/api/admin/benifits/`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      // Update the local state if necessary
+      // setBenefits((prev) => prev.map((benefit) => benefit.id === benefitId ? response.data : benefit));
     } catch (error) {
       console.error("Error updating benefit:", error);
     }
   };
 
-  const handleCancel = () => {
-    setEditedBenefit(benefit);
-    setEditMode(false);
-    setErrorMessage("");
 
+  const handleFileChange = async (e, id) => {
+    const file = e.target.files[0];
+    if (file) {
+      const updatedBenefitData = {
+        ...benefits.find((b) => b.id === id),
+        icons: file,
+      };
+      await updateBenefit(id, updatedBenefitData);
+    }
   };
 
+  const handleTitleChange = (e, id) => {
+    const value = e.target.value;
+    setEditedTitles((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleEdit = () => {
+    setIsEditing(!isEditing);
+    if (!isEditing) {
+      const initialEditedTitles = {};
+      benefits.forEach((benefit) => {
+        initialEditedTitles[benefit.id] = benefit.titles;
+      });
+      setEditedTitles(initialEditedTitles);
+    } else {
+      setEditedTitles({}); // Clear titles on cancel
+    }
+  };
+
+  const deleteBenefit = async (id) => {
+    try {
+      await axios.delete("/api/admin/benifits", { data: { id } });
+      setBenefits(benefits.filter((benefit) => benefit.id !== id));
+    } catch (error) {
+      console.error("Error deleting benefit:", error);
+    }
+  };
+
+  const moveBenefit = async (index, direction) => {
+    const newBenefits = [...benefits];
+    const targetIndex = index + direction;
+
+    if (targetIndex >= 0 && targetIndex < newBenefits.length) {
+      // Swap benefits
+      const temp = newBenefits[index];
+      newBenefits[index] = newBenefits[targetIndex];
+      newBenefits[targetIndex] = temp;
+
+      setBenefits(newBenefits);
+
+      // Update the sequence for both benefits
+      await Promise.all([
+        updateBenefit(newBenefits[index].id, { titles: editedTitles[newBenefits[index].id] || newBenefits[index].titles, sequence: targetIndex }),
+        updateBenefit(newBenefits[targetIndex].id, { titles: editedTitles[newBenefits[targetIndex].id] || newBenefits[targetIndex].titles, sequence: index })
+      ]);
+    }
+  };
+
+
   return (
-    <Container>
-      <div className="d-flex justify-content-between align-items-center">
-        <h3 className="my-4">Benefits Section</h3>
-        {!editMode && (
-          <Button color="secondary" onClick={handleEdit}>
-            Edit
+    <div>
+
+      <h1>Benefits Editor</h1>
+
+      {/* <h2>Heading</h2> */}
+      <div className="my-4">
+        <Input
+          value={heading}
+          onChange={(e) => setHeading(e.target.value)}
+          readOnly={!isEditingHeading} // Make input read-only if not editing
+        />
+        <Button
+          color="primary"
+          className="m-2"
+          onClick={async () => {
+            if (isEditingHeading) {
+              await updateHeading(); // Save changes
+            }
+            setIsEditingHeading(!isEditingHeading); // Toggle editing state
+          }}
+        >
+          {isEditingHeading ? "Save Heading" : "Edit Heading"}
+        </Button>
+        {isEditingHeading && (
+          <Button
+            color="secondary"
+            onClick={() => {
+              setIsEditingHeading(false);
+              // Optionally, reset the heading if you want to discard changes
+              // setHeading(originalHeading); // Uncomment if you want to revert changes
+            }}
+          >
+            Cancel
           </Button>
         )}
       </div>
-      <Card className="p-5">
-        <Form>
-          <FormGroup>
-            <Label htmlFor="heading">Heading</Label>
-            <Input
-              type="text"
-              name="heading"
-              value={editedBenefit.heading}
-              onChange={handleChange}
-              readOnly={!editMode}
-              required
 
-            />
-          </FormGroup>
 
-          <FormGroup>
-            <Label>Icons and Titles</Label>
-            {editedBenefit.icons.map((icon, index) => (
-              <div key={index} className="d-flex align-items-center mb-2">
-                {iconPreviews[index] && (
-                  <img src={iconPreviews[index] || `` } alt={`Icon ${index + 1}`} style={{ width: "50px", marginRight: "10px" }} />
-                )}
-                <Input
-                  type="file"
-                  name={`icons[${index}]`}
-                  onChange={(e) => handleChange(e)}
-                  disabled={!editMode}
-                  className="mr-2"
+
+      <FormGroup>
+        <h4>Icons and Titles</h4>
+
+        <Input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setNewBenefit({ ...newBenefit, icons: e.target.files[0] })}
+        />
+        <Input
+          placeholder="Titles"
+          value={newBenefit.titles}
+          onChange={(e) => setNewBenefit({ ...newBenefit, titles: e.target.value })}
+        />
+        <Button onClick={addBenefit}>Add Benefit</Button>
+      </FormGroup>
+
+      <Button color="primary" onClick={handleEdit}>
+        {isEditing ? "Cancel Editing" : "Edit"}
+      </Button>
+      {isEditing && (
+        <Button color="success" onClick={() => {
+          benefits.forEach((benefit) => {
+            updateBenefit(benefit.id, { titles: editedTitles[benefit.id] || benefit.titles });
+          });
+          setIsEditing(false);
+        }}>
+          Save
+        </Button>
+      )}
+      <Table striped>
+        <thead>
+          <tr>
+            <th>Icon</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {benefits.map((benefit, index) => (
+            <tr key={benefit.id}>
+              <td>
+                <img
+                  src={`/uploads/${benefit.icons}`}
+                  alt={benefit.titles}
+                  style={{ width: "50px", height: "50px" }}
                 />
-                <Input
-                  type="text"
-                  name="title"
-                  value={editedBenefit.titles[index]}
-                  onChange={(e) => handleTitleChange(index, e)}
-                  readOnly={!editMode}
-                  placeholder={`Title ${index + 1}`}
-                  className="mr-2"
-                  required
-                />
-                {editMode && (
-                  <Button color="danger" onClick={() => handleRemoveIcon(index)}>
-                    Remove
-                  </Button>
+                {isEditing && (
+                  <Input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleFileChange(e, benefit.id)}
+                  />
                 )}
-              </div>
-            ))}
-            {editMode && (
-              <Button color="primary" onClick={handleAddIcon}>
-                Add Icon
-              </Button>
-            )}
-          </FormGroup>
-
-          <FormGroup>
-            <Label>Slider Images</Label>
-            {editedBenefit.slider_images.map((image, index) => (
-              <div key={index} className="mb-2 d-flex align-items-center">
-                {sliderImagePreviews[index] && (
-                  <img src={sliderImagePreviews[index]} alt="Slider" style={{ width: "100px", marginRight: "10px" }} />
+              </td>
+              <td>
+                {isEditing ? (
+                  <Input
+                    value={editedTitles[benefit.id] || benefit.titles}
+                    onChange={(e) => handleTitleChange(e, benefit.id)}
+                  />
+                ) : (
+                  benefit.titles
                 )}
-                <Input
-                  type="file"
-                  name={`slider_images[${index}]`}
-                  onChange={(e) => handleChange(e)}
-                  disabled={!editMode}
-                  className="mr-2"
-                />
-                {editMode && (
-                  <Button color="danger" onClick={() => handleRemoveSliderImage(index)}>
-                    Remove
-                  </Button>
+              </td>
+              <td>
+                {isEditing && (
+                  <>
+                    {index > 0 && (
+                      <Button color="secondary" onClick={() => moveBenefit(index, -1)}>
+                        <i className="fa fa-arrow-up" />
+                      </Button>
+                    )}
+                    {index < benefits.length - 1 && (
+                      <Button color="secondary" onClick={() => moveBenefit(index, 1)}>
+                        <i className="fa fa-arrow-down" />
+                      </Button>
+                    )}
+                  </>
                 )}
-              </div>
-            ))}
-            {editMode && (
-              <Button color="primary" onClick={handleAddSliderImage}>
-                Add Slider Image
-              </Button>
-            )}
-          </FormGroup>
-
-          {editMode && (
-            <div className="d-flex gap-2">
-              <Button color="success" onClick={handleSave}>
-                Save
-              </Button>
-              <Button color="success" onClick={handleCancel}>
-                Cancel
-              </Button>
-            </div>
-          )}
-           {errorMessage && (
-            <Alert color="danger" className="mt-3">
-              {errorMessage}
-            </Alert>
-          )}
-        </Form>
-      </Card>
-    </Container>
+                <Button color="danger" onClick={() => deleteBenefit(benefit.id)}>
+                  Delete
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <div>
+        <SliderImagesEditor />
+      </div>
+    </div>
   );
 };
 
-export default BenefitsSection;
+export default BenefitsEditor;

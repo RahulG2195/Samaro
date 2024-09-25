@@ -9,8 +9,8 @@ const Design = () => {
             <div className="container mb-4">
                 <div className="row mx-auto">
                     <div className="col-lg-2"></div>
-                    <div className="col-lg-6">
-                        <h2 className="sub-heading ">Featured Ranges</h2>
+                    <div className="col-lg-12">
+                        <h1 className="text-navy">Featured Ranges</h1>
                     </div>
                 </div>
             </div>
@@ -19,13 +19,13 @@ const Design = () => {
                     <div className="col-lg-4 col-md-4 position-relative">
                         <Link href={`product/wood`}>
                             <img className='design-img' src="/assets/images/home/design/Mask Group 81.png" alt="err" />
-                            <p className='designText'>WOOD</p>
+                            <p className='designText'>WOOD FINISH</p>
                         </Link>
                     </div>
                     <div className="col-lg-4 col-md-4 position-relative">
                         <Link href='product/Stone'>
                             <img className='design-img' src="/assets/images/home/design/Mask Group 82.png" alt="" />
-                            <p className='designText'>STONE</p>
+                            <p className='designText'>STONE FINISH</p>
                             {/* <span className='text-danger fw-semibold position-absolute ' style={{ left: '0' }}>COMING SOON*</span> */}
                         
                         </Link>
@@ -33,7 +33,7 @@ const Design = () => {
                     <div className="col-lg-4 col-md-4 position-relative">
                         <Link href='product/Marble'>
                             <img className='design-img' src="/assets/images/home/design/Mask Group 83.png" alt="" />
-                            <p className='designText'>MARBLE</p>
+                            <p className='designText'>MARBLE FINISH</p>
                             <span className='text-danger fw-semibold position-absolute py-2 commingSoon' style={{ left: '0', opacity: '0.5', padding: '0 20px' }}>COMING SOON*</span>
                         </Link>
                     </div>

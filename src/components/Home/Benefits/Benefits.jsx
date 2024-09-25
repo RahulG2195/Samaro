@@ -8,25 +8,41 @@ import Link from 'next/link';
 import axios from 'axios';
 
 const Benefits = () => {
-    const [benefit, setBenefit] = useState({
-        heading: "",
-        icons: [],
-        titles: [],
-        slider_images: []
-    });
+    const [benefit, setBenefit] = useState([]);
+    const [sliderImages, setSliderImages] = useState([]);
+    const [heading, setHeading] = useState('');
+
 
     useEffect(() => {
         const fetchBenefit = async () => {
             try {
                 const response = await axios.get("/api/admin/benifits");
-                const benefitData = response.data[0]; // Assuming the API returns an array with one object
+                // console.log(response)
+                const benefitData = response.data;
+                setBenefit(benefitData);
+
+
+                // console.log("first all data beniftis ", benefitData)
+
+                const sliderResponse = await axios.get("/api/admin/benefits_slider");
+                const sliderData = sliderResponse.data[0];
+                setHeading(sliderResponse.data[0].heading)
+                // console.log("datatata",sliderData.image)
+
+                // If sliderData is a string, split it into an array
+                const formattedSliderImages = sliderData.image.split(',').map((image, index) => ({
+                    url: `/uploads/${image.trim()}`,
+                    alt: `Benefit ${index + 1}`
+                }));
+                console.log(formattedSliderImages)
+
+                setSliderImages(formattedSliderImages);
 
                 // Convert comma-separated strings to arrays
-                benefitData.icons = benefitData.icons.split(",");
-                benefitData.titles = benefitData.titles.split(",");
-                benefitData.slider_images = benefitData.slider_images.split(",");
+                // benefitData.icons = benefitData.icons.split(",");
+                // benefitData.titles = benefitData.titles.split(",");
+                // benefitData.slider_images = benefitData.slider_images.split(",");
 
-                setBenefit(benefitData);
             } catch (error) {
                 console.error("Error fetching benefit:", error);
             }
@@ -54,10 +70,11 @@ const Benefits = () => {
 
     // dynamic data for icon and titie
 
-    const benifitsIcon = benefit.icons.map((icon, index) => ({
-        imageSrc: `/uploads/${icon}`,
-        text: benefit.titles[index]
+    const benefitsIcon = benefit.map((benefit) => ({
+        imageSrc: `/uploads/${benefit.icons}`,
+        text: benefit.titles
     }));
+    // console.log("icons data is ", benefit.icons)
 
     // const benifitsARR = [
     //     {
@@ -80,10 +97,10 @@ const Benefits = () => {
 
     //dynamic data of slider
 
-    const benifitsARR = benefit.slider_images.map((image, index) => ({
-        url: `/uploads/${image}`,
-        alt: `Benefit ${index + 1}`
-    }));
+    // const benifitsARR = slider.map((image, index) => ({
+    //     url: `/uploads/${image.image}`,
+    //     alt: `Benefit ${index + 1}`
+    // }));
 
     return (
         <section className="benefits position-relative mt-5">
@@ -96,11 +113,11 @@ const Benefits = () => {
                 </h2> */}
                 <div className="row align-items-center justify-content-between ms-5 benifitscont">
                     <div className="col-lg-6 col-md-12 position-relative px-5  beniInnerCont">
-                        <h4 className="text-navy benifitsHeading px-5 lowerBenifitsText w-75">
-                            {benefit.heading}
+                        <h2 className="text-navy benifitsHeading px-5 lowerBenifitsText w-75">
+                            <u className='border-bottom border-danger'>{heading}</u>
                             {/* Unlock Many Benefits <br />
                             with Click-N-Lock® Tiles */}
-                        </h4>
+                        </h2>
                         <img src="/assets/images/home/benefits/Mask Group 325.png" alt="" className='upperimage' />
                         <div className="topcorner">
                             <img src="/assets/images/home/benefits/Group 27837.svg" alt="err" />
@@ -112,23 +129,23 @@ const Benefits = () => {
                         {/* dynamic data """ " */}
                         <div className="column-wrapper px-5 benifitsinDesktop">
                             <div className="row g-4 mt-1 respBenifitrow">
-                                {benifitsIcon.map((item, index) => (
+                                {benefitsIcon.map((item, index) => (
                                     <div key={index} className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
                                         <div className="image">
-                                            <img src={item.imageSrc} alt={item.text} />
+                                            <img src={item.imageSrc} alt="err" />
                                         </div>
                                         <span className="text-navy text small fw-semibold">{item.text}</span>
                                     </div>
                                 ))}
                                 {/* Dynamic data end */}
-                                <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
+                                {/* <div className="col-lg-2 col-md-2 col-sm-2 col-4 text-center">
                                     <Link href={'/why-samaro'}>
                                         <div className="image">
                                             <img src="/assets/images/home/benefits/benefits/Group 28770.svg" alt="" />
                                         </div>
-                                        <span className="text-navy text small fw-semibold">Know Now</span>
+                                        <span className="text-navy text small fw-semibold">10 year Warrenty</span>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -146,7 +163,7 @@ const Benefits = () => {
                                 }}
                                 modules={[EffectFade, Autoplay]}
                             >
-                                {benifitsIcon.map((item, index) => (
+                                {benefitsIcon.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <div className="column-wrapper my-3">
                                             <div className="row g-5 respBenifitrow px-0">
@@ -177,9 +194,9 @@ const Benefits = () => {
                                 disableOnInteraction: false,
                             }}
                             modules={[EffectFade, Autoplay]}
-                             className="mySwiper"
+                            className="mySwiper"
                         >
-                            {benifitsARR.map((item, index) => (
+                            {sliderImages.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='benifitsSliderImage'>
                                         <img src={item.url} className="rightside-image" alt={item.alt} />
