@@ -64,9 +64,9 @@
   object-fit: contain;
 }
 
-.waterDrop img {
+/* .waterDrop img {
   height: 15px !important;
-}
+} */
 
 .qualities .row span {
   font-size: 12px !important;
