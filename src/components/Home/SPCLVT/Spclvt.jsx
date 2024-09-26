@@ -43,7 +43,7 @@ const Spclvt = () => {
                 <div className="row align-items-end">
                     <div className="col-lg-6 ">
                         <div className="content">
-                            <h2 className="sub-heading fw-bold navyBlue col-md-8 col-12 ">
+                            <h2 className="sub-heading fw-bold navyBlue text-capitalize col-md-8 col-12 ">
                                 {buildHomeData.heading}
                                 {/* Build a happy home with a Samaro floor */}
                             </h2>

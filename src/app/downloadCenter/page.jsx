@@ -90,7 +90,7 @@ const page = () => {
 
     <section className='py-5 dwnldCentermainCont'>
       <div className='text-center dwnldcenterHeading'>
-        <h2 className='fw-bold text-navy'>Download center</h2>
+        <h1 className='fw-bold text-navy fw-bold text-capitalize'>Download center</h1>
         <div className='dwnldcenterFilters my-4 d-flex justify-content-center flex-wrap gap-2'>
           <button onClick={() => setActiveCategory('All')} 
           className={`btn text-danger border-danger rounded-pill py-0 px-4 me-2 fw-semibold ${activeCategory === 'All' && 'bg-danger text-white'}`}>All</button>

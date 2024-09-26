@@ -25,38 +25,38 @@ export default function Home() {
     const cardData = [
         {
             id: 1,
-            icon: "fas fa-check-circle",
+            icon: "70Years-01.webp",
             title: "70+ Years of Excellence",
             text: "Over seven decades of experience in plastics manufacturing, making us leaders in innovation and high-quality flooring solutions."
         },
         {
             id: 2,
-            icon: "fas fa-th",
+            icon: "Herringbone(SPC)-01.webp",
             title: "Largest SPC and LVT flooring producer",
             text: "Delivering advanced, durable flooring to homes, businesses, and public spaces worldwide."
         },
         {
             id: 3,
-            icon: "fas fa-leaf",
+            icon: "Growing-01.webp",
             title: "Fastest-Growing SPC Manufacturer",
             text: " Consistent capacity expansion—30% increase in the next 4 months, enabling us to stay ahead in the market."
         },
         {
             id: 4,
-            icon: "fas fa-check-circle", 
+            icon: "ProvenQuality-01.webp", 
             title: "Proven Quality",
             text: "Our products undergo over 30+ rigorous tests to ensure they meet the highest industry standards."
         },
        
         {
             id: 5,
-            icon: "fas fa-shield-alt", 
+            icon: "WarrantyIcon-01.webp", 
             title: "Comprehensive Warranty",
             text: "We offer a comprehensive 10-year warranty on residential projects and 5 year warranty on commercial projects."
         },
         {
             id: 6,
-            icon: "fas fa-headset", 
+            icon: "EndtoEnd-01.webp", 
             title: "End-to-End Support",
             text: "From consultation to post-sale support, we ensure a seamless, satisfying experience for every customer."
         },
@@ -79,7 +79,7 @@ export default function Home() {
                         <div key={card.id} className="col-lg-4 col-md-6 col-sm-12 mb-4 rounded">
                             <div className="card p-2 shadow-lg why_cust_Card" style={{minHeight:'250px'}}>
                                 <div className="card-icon mx-auto py-2">
-                                    <i className={`${card.icon} fs-1`} ></i>
+                                    <img src={`/assets/newicons/WhyChooseUS/${card.icon}`} alt="err"></img>
                                 </div>
                                 <div className="card-body text-center">
                                     <h5 className="card-title text-darkred">{card.title}</h5>

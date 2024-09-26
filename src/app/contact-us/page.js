@@ -46,8 +46,8 @@ export default function page() {
       <section className="getintouch pb-5">
         <div className="containe">
           <div className="section_heaing mx-auto text-center">
-            <h1>
-              <u className="border-3 border-bottom border-danger ">Contact</u> Us
+            <h1 className="text-capitalize">
+              <u className="border-3 border-bottom border-danger  ">Contact</u> Us
             </h1>
             <span className="">Fill out the form below, and we'll get back to you as soon as possible.</span>
           </div>

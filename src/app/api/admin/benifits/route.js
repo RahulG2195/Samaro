@@ -85,11 +85,12 @@ export async function POST(request, response) {
 }
 
 // PUT endpoint to update benefits
-export async function PUT(request) {
+// PUT endpoint to update benefits
+export async function PUT(request, response) {
   try {
     const formData = await request.formData();
     const data = Object.fromEntries(formData.entries());
-    const { id, titles, sequence } = data; // Get sequence
+    const { id, titles, sequence, icons } = data; // Get icons
 
     const values = [];
     const updateFields = [];
@@ -108,8 +109,17 @@ export async function PUT(request) {
       values.push(sequence); // Add the new sequence
     }
 
-    // Handle icons and slider_images...
-    // (keep existing logic for file uploads)
+    // Handle icons
+    if (icons && icons instanceof File) {
+      // Upload the new icon
+      try {
+        await uploadImage(request,response, icons); // Assuming uploadImage returns the path
+        updateFields.push('icons = ?');
+        values.push(icons.name);
+      } catch (error) {
+        console.error('Error uploading icon file:', error);
+      }
+    }
 
     if (updateFields.length === 0) {
       return new Response(JSON.stringify({ status: 400, message: 'No fields to update' }), { status: 400 });
@@ -129,6 +139,9 @@ export async function PUT(request) {
     return new Response(JSON.stringify({ status: 500, message: error.message }), { status: 500 });
   }
 }
+
+
+
 // DELETE endpoint to remove a benefit
 export async function DELETE(request) {
   try {

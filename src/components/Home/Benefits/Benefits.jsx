@@ -111,13 +111,13 @@ const Benefits = () => {
                     Unlock Many Benefits <br />
                     with Click-N-Lock® Tiles
                 </h2> */}
-                <div className="row align-items-center justify-content-between ms-5 benifitscont">
+                <div className="row align-items-center justify-content-evenly ms-5 benifitscont">
                     <div className="col-lg-6 col-md-12 position-relative px-5  beniInnerCont">
-                        <h2 className="text-navy benifitsHeading px-5 lowerBenifitsText w-75">
-                            <u className='border-bottom border-danger'>{heading}</u>
+                        <h1 className=" fw-bold text-navy benifitsHeading px-5 lowerBenifitsText">
+                            <u className='border-bottom border-danger text-capitalize'>{heading}</u>
                             {/* Unlock Many Benefits <br />
                             with Click-N-Lock® Tiles */}
-                        </h2>
+                        </h1>
                         <img src="/assets/images/home/benefits/Mask Group 325.png" alt="" className='upperimage' />
                         <div className="topcorner">
                             <img src="/assets/images/home/benefits/Group 27837.svg" alt="err" />
@@ -185,6 +185,7 @@ const Benefits = () => {
                     <div className="col-lg-6 col-md-6 col-12 benifitsRightSide">
 
                         <Swiper
+                            modules={[EffectFade, Autoplay]}
                             effect='fade'
                             slidesPerView={1}
                             spaceBetween={0}
@@ -193,7 +194,6 @@ const Benefits = () => {
                                 delay: 1000,
                                 disableOnInteraction: false,
                             }}
-                            modules={[EffectFade, Autoplay]}
                             className="mySwiper"
                         >
                             {sliderImages.map((item, index) => (

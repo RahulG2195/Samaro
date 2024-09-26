@@ -145,15 +145,15 @@ const Banner = () => {
     // Hardcoded arrays for demo purposes
     const banners = [
         {
-            image: "commercial banner.jpg",
-            mobileImage: "commercial banner.jpg",
+            image: "HeroBannerSamaro01.webp",
+            mobileImage: "HeroBannerSamaro01.webp",
             content: "Professional Spaces, Perfected: Flooring Solutions That Drive Success",
             spcLink: "/spc",
             lvtLink: "/lvt"
         },
         {
-            image: "residential banner.jpg",
-            mobileImage: "residential banner.jpg",
+            image: "HeroBannerSamaro02.webp",
+            mobileImage: "HeroBannerSamaro02.webp",
             content:  "Elevate Your Home with the Perfect Blend of Luxury and Comfort",
             spcLink: "/spc",
             lvtLink: "/lvt"

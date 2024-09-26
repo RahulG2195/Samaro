@@ -10,7 +10,7 @@ const Design = () => {
                 <div className="row mx-auto">
                     <div className="col-lg-2"></div>
                     <div className="col-lg-12">
-                        <h1 className="text-navy">Featured Ranges</h1>
+                        <h1 className="text-navy text-capitalize fw-bold text-navy">featured ranges</h1>
                     </div>
                 </div>
             </div>

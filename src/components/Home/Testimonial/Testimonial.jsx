@@ -56,7 +56,7 @@ const TestimonialSwiper = () => {
 
   return (
     <div className="Testimonial container pb-5">
-      <h1 className='py-5 text-center fw-bold text-navy'> Samaro Success Stories</h1>
+      <h1 className='py-5 text-center fw-bold text-navy text-capitalize'> Samaro success stories</h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         autoplay={{
