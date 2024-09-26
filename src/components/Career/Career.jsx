@@ -151,7 +151,7 @@ const Career = () => {
                 />
               </div>
               <div className="my-3"><span className="fw-semibold">Note : </span>
-                To apply, please send your resume and a cover letter to <a href="mailto:Hrd@samaro.in">Hrd@samaro.in</a>. We'll be in touch if
+                To apply, please send your resume and a cover letter to <a href="mailto:hrd@samaro.in">hrd@samaro.in</a>. We'll be in touch if
                 your qualifications meet our needs.
               </div>
               <div className="d-flex justify-content-center">
