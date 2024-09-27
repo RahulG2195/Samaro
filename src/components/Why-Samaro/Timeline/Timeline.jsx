@@ -56,11 +56,11 @@ const TimelineNew = () => {
             {timelineData.map((item, index) => (
               <div className="timeline pb-5" key={index}>
                 <div className="timeline-icon">
-                  <i className={`fa ${item.icon} `}></i>
+                  <i className={`fa ${item.icon} text-danger`}></i>
                 </div>
-                <span className="year fw-bold ">{item.year}</span>
+                <span className="year fw-bold text-navy ">{item.year}</span>
                 <div className="timeline-content">
-                  <h5 className="title">{item.title}</h5>
+                  <h5 className="title text-navy">{item.title}</h5>
                   {/* <p className="description">{item.description}</p> */}
                 </div>
               </div>
