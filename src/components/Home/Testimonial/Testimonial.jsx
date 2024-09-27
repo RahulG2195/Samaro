@@ -44,7 +44,7 @@ const TestimonialSwiper = () => {
 
   return (
     <div className="Testimonial container pb-5">
-      <h1 className='py-5 text-center fw-bold text-navy text-capitalize'> Samaro success stories</h1>
+      <h1 className='py-5 text-center fw-bold text-navy text-capitalize'> <u className='border-bottom border-danger border-2'>Samaro success stories</u></h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         autoplay={{
@@ -92,7 +92,7 @@ const TestimonialSwiper = () => {
           <SwiperSlide key={index} className='rounded-5'>
             <div className="shadow content-wrapper card rounded-5 border-1 overflow-hidden ">
               <div className="content px-lg-5 px-md-4 px-sm-2 pt-4">
-                <p className='lh-base fw-semibold text-navy'>{`"${testimonial.quote}"`}</p>
+                <p className='lh-base fw-semibold text-navy' style={{textAlign:'justify'}}>{`"${testimonial.quote}"`}</p>
               </div>
               <div className="cite  p-4">
                 <p className='m-0 text-start fw-bold text-white fs-5'>- {testimonial.name} </p>
