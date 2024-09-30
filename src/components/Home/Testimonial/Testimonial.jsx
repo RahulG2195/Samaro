@@ -91,8 +91,8 @@ const TestimonialSwiper = () => {
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className='rounded-5'>
             <div className="shadow content-wrapper card rounded-5 border-1 overflow-hidden ">
-              <div className="content px-lg-5 px-md-4 px-sm-2 pt-4">
-                <p className='lh-base fw-semibold text-navy' style={{textAlign:'justify'}}>{`"${testimonial.quote}"`}</p>
+              <div className="content px-lg-5 px-md-4 px-sm-4 pt-4 ">
+                <p className='lh-base fw-semibold text-navy p-2' style={{textAlign:'justify'}}>{`"${testimonial.quote}"`}</p>
               </div>
               <div className="cite  p-4">
                 <p className='m-0 text-start fw-bold text-white fs-5'>- {testimonial.name} </p>

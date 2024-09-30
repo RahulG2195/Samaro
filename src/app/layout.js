@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
           }}>
             {!isAdmin && <Header />}
           </div>
-          <div className={`childrens_topPading ${isAdmin ? "pt-0 mt-0" : "pt-5 mt-4"} `}>{children}</div>
+          <div className={`childrens_topPading ${isAdmin ? "pt-0 mt-0" : "pt-5"} `}>{children}</div>
           <ToastContainer />
           {!isAdmin && <Footer />}
         </div>

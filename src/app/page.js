@@ -14,6 +14,7 @@ import FloorExplorer from "@/components/Home/FloorExplorer/FloorExplorer";
 import FollowMore from "@/components/Home/FollowMore/FollowMore";
 import SpcForm from "@/components/SpcProducts/SpcForm";
 import Testimonials from "@/components/Home/Testimonial/Testimonial";
+import Featured_ranges from "@/components/Home/Design/Featured_ranges";
 
 export default function Home() {
   return (
@@ -21,8 +22,9 @@ export default function Home() {
       <Banner />
       <Spclvt />
       <Benefits />
-      <div className="my-5">
-      <Design />
+      <div >
+      {/* <Design /> */}
+      <Featured_ranges/>
       </div>
       {/* <FloorExplorer /> */}
       {/* <Commercial />
