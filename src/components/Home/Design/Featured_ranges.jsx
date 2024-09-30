@@ -5,9 +5,9 @@ const FeaturedRanges = () => {
     const [activeRange, setActiveRange] = useState(1);
 
     const ranges = [
-        { id: 1, name: 'Wood Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: '/assets/images/home/design/Mask Group 81.png' },
-        { id: 2, name: 'Stone Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: '/assets/images/home/design/Mask Group 81.png' },
-        { id: 3, name: 'Marble Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: '/assets/images/home/design/Mask Group 81.png' }
+        { id: 1, name: 'Wood Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'WoodFinishImage.png' },
+        { id: 2, name: 'Stone Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'StoneFinshImage4.png' },
+        { id: 3, name: 'Marble Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
     ];
 
     return (
@@ -28,7 +28,7 @@ const FeaturedRanges = () => {
                             onMouseLeave={() => setActiveRange(1)}
                         >
                             <div className="image">
-                                <img src={range.img} alt={range.name} />
+                                <img src={`/uploads/${range.img}`} alt={range.name} />
                             </div>
                             {activeRange !== range.id && (
                                 <div className='overlayName'>
