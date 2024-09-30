@@ -14,27 +14,38 @@ const testimonials = [
   {
     name: "Calvin pais",
     location: "Mumbai",
-    quote: "We recently purchased flooring from Samaro, and we couldn't be happier! The selection of shades and patterns was impressive, allowing us to find exactly what we needed to match our home's décor. On top of that, the prices were very reasonable, and the quality of the flooring exceeded our expectations. The entire experience, from choosing the product to the installation, was smooth, and we're extremely satisfied with the results. Highly recommended!"
+    type:"Customer",
+    quote:"Samaro's flooring was a perfect match for our home. Great selection, reasonable prices, and excellent quality. The installation was smooth, and we highly recommend them!"
     ,
   },
   {
     name: "Ritu Sharma",
     location: "Gaziabad",
-    quote: "I recently purchased flooring from Samaro Flooring, and I couldn't be happier with my decision. The variety of shades available made it easy for me to find the perfect match for my home. The prices were very reasonable, especially considering the high quality of the flooring. I'm thrilled with the results, and the customer service was exceptional throughout the entire process. I highly recommend Samaro Flooring to anyone looking for beautiful and affordable flooring options.",
+    type:"Customer",
+    quote : "I recently bought flooring from Samaro Flooring and am very pleased. They had a great selection, reasonable prices, and excellent customer service. I highly recommend them."
   },
   {
     name: "Tanvir Nizam (Architect)",
     location: "Delhi",
-    quote: "I recently purchased flooring from Samaro, and I couldn't be happier with the decision. The variety of shades and designs they offer is amazing - I found the perfect match for my home's interior. On top of that, the prices were very reasonable, offering excellent value for money. The customer service was outstanding, ensuring I was fully satisfied with my purchase from start to finish. I highly recommend Samaro for anyone looking for high-quality flooring at great prices.",
+    type:"Customer",
+    quote : "I recently bought flooring from Samaro and am very impressed. They have a huge selection, great prices, and excellent customer service. I highly recommend them."
+  },
+  {
+    name: " Sahu N Sons",
+    location: "Mumbai",
+    type:"Dealer",
+    quote: "As a dealer, I've been extremely satisfied with Samaro Flooring's offerings. The variety in shades and styles is impressive, allowing us to cater to diverse customer preferences. The pricing is unbeatable, giving us a significant edge in the market. Our customers are consistently happy with the quality and durability of Samaro Flooring products, which has helped us build a loyal client base. Their customer support is top-notch, always ready to assist with any inquiries or orders.",
   },
   {
     name: "Jitendra",
     location: "",
-    quote: "As a dealer, I've been thoroughly impressed with the offerings from Samaro Flooring. The variety in shades and finishes they provide is exceptional, allowing us to cater to diverse customer preferences. The pricing is competitive, enabling us to offer great deals to our customers without compromising on quality. We've received excellent feedback from end-users, and it’s clear that customer satisfaction is at the core of what Samaro does. Highly recommend them to any dealer looking for a reliable flooring partner.",
+    type:"Dealer",
+    quote : "As a dealer, I've been thoroughly impressed with the offerings from Samaro Flooring. The variety in shades and finishes they provide is exceptional, allowing us to cater to diverse customer preferences. The pricing is competitive, enabling us to offer great deals to our customers without compromising on quality. We've received excellent feedback from end-users, and it’s clear that customer satisfaction is at the core of what Samaro does. Highly recommend them to any dealer looking for a reliable flooring partner."
   },
   {
     name: "SPACEsio Beryl- (Shweta Mehta)",
     location: "Delhi",
+    type:"Distributor ",
     quote: "Working with Samaro Flooring as a distributor has been an absolute pleasure. Their extensive range of shades and patterns ensures that we always have the perfect options for our clients. The pricing is competitive, which makes it easier for us to offer great deals to our customers. Samaro Flooring consistently delivers high-quality products and exceptional customer service, making them a reliable partner in the flooring industry.",
   },
 ];
@@ -43,7 +54,7 @@ const testimonials = [
 const TestimonialSwiper = () => {
 
   return (
-    <div className="Testimonial container pb-5">
+    <div className="Testimonial container pb-5" >
       <h1 className='py-5 text-center fw-bold text-navy text-capitalize'> <u className='border-bottom border-danger border-2'>Samaro success stories</u></h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -90,13 +101,14 @@ const TestimonialSwiper = () => {
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className='rounded-5'>
-            <div className="shadow content-wrapper card rounded-5 border-1 overflow-hidden ">
+            <div className="shadow content-wrapper card rounded-5 border-1 overflow-hidden "style={{height:'523px'}}>
               <div className="content px-lg-5 px-md-4 px-sm-4 pt-4 ">
                 <p className='lh-base fw-semibold text-navy p-2' style={{textAlign:'justify'}}>{`"${testimonial.quote}"`}</p>
               </div>
-              <div className="cite  p-4">
-                <p className='m-0 text-start fw-bold text-white fs-5'>- {testimonial.name} </p>
-                <p className='m-0 text-end fw-semibold text-white'> {testimonial.location}</p>
+              <div className="cite  p-3 w-75">
+                <p className='m-0 text-start text-white fs-6 type '>{testimonial.type} </p>
+                <p className='m-0 text-start fw-medium text-white fs-5 name'>{testimonial.name} </p>
+                <p className='m-0  text-white location'> {testimonial.location}</p>
               </div>
             </div>
           </SwiperSlide>

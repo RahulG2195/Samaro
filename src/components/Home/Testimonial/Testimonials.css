@@ -50,7 +50,9 @@
 
 
 .cite {
-    width: max-content;
+    width:max-content;
+    position: absolute;
+    bottom: 0;
     font-size: 14px;
     font-weight: bold;
     background-color: #CA373C;
@@ -66,6 +68,14 @@
     padding: 10px;
     border-radius: 100px;
 }
+
+.type , .location {
+    font-size: 13px !important;
+}
+.name{
+    font-size: 14px !important;
+}
+
 
 /* @media (min-width: 600px) and (max-width: 768px){
     .Testimonial{
