@@ -54,8 +54,8 @@ const testimonials = [
 const TestimonialSwiper = () => {
 
   return (
-    <div className="Testimonial container pb-5" >
-      <h1 className='py-5 text-center fw-bold text-navy text-capitalize'> <u className='border-bottom border-danger border-2'>Samaro success stories</u></h1>
+    <div className="Testimonial container div_space " >
+      <h1 className='pb-3 text-center fw-bold text-navy text-capitalize'> <u className='border-bottom border-danger border-3'>Samaro success stories</u></h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         autoplay={{
@@ -102,7 +102,7 @@ const TestimonialSwiper = () => {
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className='rounded-5'>
             <div className="shadow content-wrapper card rounded-5 border-1 overflow-hidden "style={{height:'523px'}}>
-              <div className="content px-lg-5 px-md-4 px-sm-4 pt-4 ">
+              <div className="content px-lg-5 px-md-4 px-sm-4 pt-4">
                 <p className='lh-base fw-semibold text-navy p-2' style={{textAlign:'justify'}}>{`"${testimonial.quote}"`}</p>
               </div>
               <div className="cite  p-3 w-75">

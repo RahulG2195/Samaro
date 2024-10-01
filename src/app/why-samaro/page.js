@@ -73,7 +73,7 @@ export default function Home() {
 
 
             <div className="container my-5">
-                <h1 className="text-center my-5 text-navy fw-bold"><u className="border-3 border-bottom border-danger ">Why Choose</u> Samaro?</h1>
+                <h1 className="text-center my-5 text-navy fw-bold"><u className="border-3 border-bottom border-danger ">Why Choose Samaro?</u> </h1>
                 <div className="row">
                     {cardData.map(card => (
                         <div key={card.id} className="col-lg-4 col-md-6 col-sm-12 mb-4 rounded">
