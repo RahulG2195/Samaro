@@ -36,14 +36,14 @@
     font-size: 4rem;
 }
 .careetAbtText{
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
 }
 .oppHeading{
-    font-size: 3.5rem;
+    /* font-size: 3.5rem; */
 
 }
 .hireHeading{
-    font-size: 3rem;
+    /* font-size: 3rem; */
 }
 .processList li{
     list-style:decimal-leading-zero;
