@@ -41,7 +41,7 @@ const Social = () => {
     return (
         <section className="social">
             <div className="container h-screen">
-                <h2 className="text-center fw-semibold">let's get <span>social</span></h2>
+                <h2 className="text-center fw-semibold border-bottom border-danger border-3" style={{ width: '420px', margin : 'auto'}}>let's get <span className='border-bottom border-danger border-3'>social</span></h2>
                 <div className='d-flex align-items-center justify-content-center mt-4 mb-3 instagramimg'>
                     <div className='instaLogo'><img src="/assets/images/home/social/Group 29049.svg" alt="err" className='w-75' /></div>
                     <div>

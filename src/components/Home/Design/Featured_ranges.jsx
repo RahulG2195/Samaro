@@ -13,8 +13,8 @@ const FeaturedRanges = () => {
     return (
         <>
 
-            <div className="featured-ranges row justify-content-center align-items-center">
-                <div className="heading col-12 col-lg-3 col-md-12 text-center text-md-start">
+            <div className="featured-ranges row justify-content-center align-items-center div-space">
+                <div className="heading col-12 col-lg-3 col-md-12 text-center text-md-start pb-3">
                     <h1 className='fw-semibold text-danger '>
                         <span className='text-navy'>Featured</span> Ranges
                     </h1>

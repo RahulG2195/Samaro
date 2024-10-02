@@ -114,7 +114,7 @@ const Benefits = () => {
                 <div className="row align-items-center justify-content-evenly ms-5 benifitscont">
                     <div className="col-lg-6 col-md-12 position-relative px-5  beniInnerCont">
                         <h1 className=" fw-bold text-navy benifitsHeading px-5 lowerBenifitsText">
-                            <u className='border-bottom border-danger text-capitalize'>{heading}</u>
+                            <u className='border-bottom border-danger text-capitalize border-3'>{heading}</u>
                             {/* Unlock Many Benefits <br />
                             with Click-N-Lock® Tiles */}
                         </h1>

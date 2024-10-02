@@ -43,7 +43,7 @@ const Spclvt = () => {
                 <div className="row align-items-end">
                     <div className="col-lg-6 ">
                         <div className="content">
-                            <h2 className="sub-heading fw-bold navyBlue text-capitalize col-md-8 col-12 border-bottom border-danger border-2">
+                            <h2 className="sub-heading fw-bold navyBlue text-capitalize col-md-8 col-12 ">
                                 {buildHomeData.heading}
                                 {/* Build a happy home with a Samaro floor */}
                             </h2>
@@ -53,18 +53,18 @@ const Spclvt = () => {
                             </p>
                         </div>
                         <div className="qualities px-4 mt-4 ">
-                            <div className="d-flex flex-wrap justify-content-evenly py-2 " >
-                                <div className="d-flex align-items-center gap-2 text-white installTxt">
+                            <div className="d-md-flex d-block flex-wrap  justify-content-center py-2 text-center " >
+                                <div className="d-flex align-items-center gap-2 text-white installTxt justify-content-center">
                                     {/* <img src="/assets/images/home/spc-lvt/icons/Group 29194.svg" alt="" /> */}
                                     <img src={`/uploads/${buildHomeData.feature1_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature1_title}</span>
                                 </div>
-                                <div className="d-flex align-items-center gap-2 text-white">
+                                <div className="d-flex align-items-center gap-2 text-white justify-content-center">
                                     {/* <img src="/assets/images/home/spc-lvt/icons/2.png" alt="" /> */}
                                     <img src={`/uploads/${buildHomeData.feature2_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature2_title}</span>
                                 </div>
-                                <div className="d-flex align-items-center gap-2 text-white waterResistText waterDrop">
+                                <div className="d-flex align-items-center gap-2 text-white waterResistText waterDrop justify-content-center">
                                     {/* <img src="/assets/images/home/spc-lvt/icons/Group 29195.svg" alt="" /> */}
                                     <img src={`/uploads/${buildHomeData.feature3_icon}`} alt="" />
                                     <span className=''>{buildHomeData.feature3_title}</span>

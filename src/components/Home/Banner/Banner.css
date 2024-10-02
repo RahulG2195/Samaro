@@ -98,3 +98,9 @@
   }
   
 }
+@media (max-width:425px) {
+  .fw-normal{
+    font-size: 1rem;
+  }
+  
+}

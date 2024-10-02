@@ -2,8 +2,6 @@
 .heading h1 {
     font-size: 4.5rem;
 }
-
-
 .ranges-container {
     display: flex;
     /* justify-content: space-between; */

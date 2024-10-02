@@ -140,10 +140,10 @@
 
 @media (max-width:600px) {
 
-  .waterResistText,
+  /* .waterResistText,
   .installTxt {
     display: none !important;
-  }
+  } */
 
   .spc-lvt .container .row {
     gap: 0 !important;

@@ -109,6 +109,7 @@ p a:hover {
 .bg-primary {
   background: var(--text) !important;
 }
+
 .bg-navy {
   background: var(--text) !important;
 }
@@ -117,7 +118,7 @@ p a:hover {
   background: var(--secondary) !important;
 }
 
-.bg-red{
+.bg-red {
   background: var(--primary) !important;
 }
 
@@ -125,6 +126,7 @@ p a:hover {
 .text-darkred {
   color: var(--primary) !important;
 }
+
 .text-white {
   color: var(--light) !important;
 }
@@ -132,11 +134,12 @@ p a:hover {
 .text-secondary {
   color: var(--text) !important;
 }
+
 .text-navy {
   color: var(--navy) !important;
 }
 
-.headerBottomspace{
+.headerBottomspace {
   z-index: 99;
   /* position: fixed;
   width: 100%; */
@@ -150,6 +153,13 @@ p a:hover {
   background: var(--light);
   overflow-x: hidden !important;
 }
+
+/* Div Spacing */
+.div-space {
+  padding: 75px 10px;
+}
+
+
 
 /* Headings */
 
@@ -183,16 +193,16 @@ p a:hover {
   border-color: var(--primary) !important;
 }
 
-.small{
+.small {
   font-size: 10px !important;
 }
 
 
-.common_sec{
+.common_sec {
   margin: 85px 0 0 0;
 }
 
-.owl-theme .owl-nav [className*='owl-']:hover{
+.owl-theme .owl-nav [className*='owl-']:hover {
   background: none !important;
 }
 
@@ -208,8 +218,14 @@ input[type="checkbox"]:checked {
   outline: none !important;
 }
 
+@media (max-width: 425px) {
+  .div-space {
+    padding: 28px 10px !important;
+  }
+}
+
 @media (max-width: 600px) {
-  .childrens_topPading{
-    padding-top:50px;
+  .childrens_topPading {
+    padding-top: 50px;
   }
 }
