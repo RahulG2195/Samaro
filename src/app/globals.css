@@ -139,6 +139,12 @@ p a:hover {
   color: var(--navy) !important;
 }
 
+.bg-danger {
+  background-color: #CA373C !important;
+}
+.text-danger{
+  color: #CA373C !important;
+}
 .headerBottomspace {
   z-index: 99;
   /* position: fixed;

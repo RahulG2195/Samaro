@@ -94,7 +94,7 @@ export default function Home() {
 
 
 
-            {/* <Team></Team> */}
+            <Team></Team>
             {/* <Design></Design> */}
             {/* <Benefits></Benefits> */}
             {/* <Certifications></Certifications> */}

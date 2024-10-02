@@ -50,7 +50,7 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc }) => {
 
 
             {/* featured Ranges */}
-            {spc && (<div className='container my-5'>
+            {/* {spc && (<div className='container my-5'>
                 <h1 className='text-center my-5 fw-bold text-danger'>Featured Ranges</h1>
                 <div className='row align-items-center justify-content-center'>
                     <div className='col-12 col-md-8 col-lg-8'>
@@ -62,7 +62,7 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc }) => {
                         <img src="/uploads/featuredRange.png" alt="" />
                     </div>
                 </div>
-            </div>)}
+            </div>)} */}
 
 
         </>
