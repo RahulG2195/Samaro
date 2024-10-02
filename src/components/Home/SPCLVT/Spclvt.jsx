@@ -100,4 +100,4 @@ const Spclvt = () => {
     )
 }
 
-export default Spclvt
+export default Spclvt;
