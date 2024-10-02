@@ -22,7 +22,7 @@ export default function Home() {
       <Banner />
       <Spclvt />
       <Benefits />
-      <div >
+      <div className="pt-5">
       {/* <Design /> */}
       <Featured_ranges/>
       </div>

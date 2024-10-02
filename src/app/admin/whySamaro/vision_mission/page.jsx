@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardImg, CardTitle, Alert } from 'reactstrap';
@@ -6,15 +6,15 @@ import { Container, Form, FormGroup, Label, Input, Button, Card, CardBody, CardI
 const VisionMissionEditor = () => {
   const [visionData, setVisionData] = useState({
     title: '',
-    logo: null, // Change to null for easier checking
-    subpoints: []
+    logo: null,
+    description: ''
   });
   const [visionError, setVisionError] = useState('');
 
   const [missionData, setMissionData] = useState({
     title: '',
-    logo: null, // Change to null for easier checking
-    subpoints: []
+    logo: null,
+    description: ''
   });
   const [missionError, setMissionError] = useState('');
 
@@ -26,10 +26,10 @@ const VisionMissionEditor = () => {
     const fetchVisionData = async () => {
       try {
         const response = await axios.get('/api/admin/vision');
-        const { subpoints, ...rest } = response.data;
         setVisionData({
-          ...rest,
-          subpoints: subpoints.split(',').map(subpoint => subpoint.trim())
+          title: response.data.title,
+          logo: response.data.logo,
+          description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
         });
       } catch (error) {
         console.error('Error fetching Vision data:', error);
@@ -39,10 +39,10 @@ const VisionMissionEditor = () => {
     const fetchMissionData = async () => {
       try {
         const response = await axios.get('/api/admin/mission');
-        const { subpoints, ...rest } = response.data;
         setMissionData({
-          ...rest,
-          subpoints: subpoints.split(',').map(subpoint => subpoint.trim())
+          title: response.data.title,
+          logo: response.data.logo,
+          description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
         });
       } catch (error) {
         console.error('Error fetching Mission data:', error);
@@ -56,25 +56,22 @@ const VisionMissionEditor = () => {
   const handleToggleEditMode = () => {
     setEditMode(prevMode => !prevMode);
     if (!editMode) {
-      setInitialVisionData(visionData); // Store the initial vision data when entering edit mode
-      setInitialMissionData(missionData); // Store the initial mission data when entering edit mode
+      setInitialVisionData(visionData);
+      setInitialMissionData(missionData);
     }
   };
 
   const handleSave = async () => {
-
-    if (!visionData.title || visionData.subpoints.length === 0 || !missionData.title || missionData.subpoints.length === 0) {
+    if (!visionData.title || !visionData.description || !missionData.title || !missionData.description) {
       setVisionError('Please fill all required fields for Vision.');
       setMissionError('Please fill all required fields for Mission.');
       return;
     }
 
-
     try {
       const visionFormData = new FormData();
       visionFormData.append('title', visionData.title.trim());
-      visionFormData.append('subpoints', visionData.subpoints.map(sp => sp.trim()).join(', '));
-      // visionFormData.append('subpoints', visionData.subpoints.join(', '));
+      visionFormData.append('subpoints', visionData.description.trim());
       if (visionData.logo) {
         visionFormData.append('logo', visionData.logo);
       }
@@ -86,9 +83,7 @@ const VisionMissionEditor = () => {
 
       const missionFormData = new FormData();
       missionFormData.append('title', missionData.title.trim());
-      missionFormData.append('subpoints', missionData.subpoints.map(sp => sp.trim()).join(', '));
-
-      // missionFormData.append('subpoints', missionData.subpoints.join(','));
+      missionFormData.append('subpoints', missionData.description.trim());
       if (missionData.logo) {
         missionFormData.append('logo', missionData.logo);
       }
@@ -107,59 +102,9 @@ const VisionMissionEditor = () => {
     }
   };
 
-  const handleSubpointChange = (index, type, value) => {
-    if (type === 'vision') {
-      const updatedSubpoints = [...visionData.subpoints];
-      updatedSubpoints[index] = value;
-      setVisionData(prevData => ({
-        ...prevData,
-        subpoints: updatedSubpoints
-      }));
-    } else if (type === 'mission') {
-      const updatedSubpoints = [...missionData.subpoints];
-      updatedSubpoints[index] = value;
-      setMissionData(prevData => ({
-        ...prevData,
-        subpoints: updatedSubpoints
-      }));
-    }
-  };
-
-  const handleAddSubpoint = (type) => {
-    if (type === 'vision') {
-      setVisionData(prevData => ({
-        ...prevData,
-        subpoints: [...prevData.subpoints, '']
-      }));
-    } else if (type === 'mission') {
-      setMissionData(prevData => ({
-        ...prevData,
-        subpoints: [...prevData.subpoints, '']
-      }));
-    }
-  };
-
-  const handleRemoveSubpoint = (index, type) => {
-    if (type === 'vision') {
-      const updatedSubpoints = [...visionData.subpoints];
-      updatedSubpoints.splice(index, 1);
-      setVisionData(prevData => ({
-        ...prevData,
-        subpoints: updatedSubpoints
-      }));
-    } else if (type === 'mission') {
-      const updatedSubpoints = [...missionData.subpoints];
-      updatedSubpoints.splice(index, 1);
-      setMissionData(prevData => ({
-        ...prevData,
-        subpoints: updatedSubpoints
-      }));
-    }
-  };
-
   const handleCancel = () => {
-    setVisionData(initialVisionData); // Revert to the initial vision data
-    setMissionData(initialMissionData); // Revert to the initial mission data
+    setVisionData(initialVisionData);
+    setMissionData(initialMissionData);
     setEditMode(false);
   };
 
@@ -223,27 +168,14 @@ const VisionMissionEditor = () => {
               </FormGroup>
             )}
             <FormGroup>
-              <Label htmlFor="visionSubpoints">Subpoints</Label>
-              {visionData.subpoints.map((subpoint, index) => (
-                <div key={index} className="d-flex mb-2">
-                  <Input
-                    type="text"
-                    value={subpoint}
-                    onChange={(e) => handleSubpointChange(index, 'vision', e.target.value)}
-                    disabled={!editMode}
-                  />
-                  {editMode && (
-                    <Button color="danger" className="ml-2" onClick={() => handleRemoveSubpoint(index, 'vision')}>
-                      Remove
-                    </Button>
-                  )}
-                </div>
-              ))}
-              {editMode && (
-                <Button color="primary" onClick={() => handleAddSubpoint('vision')}>
-                  Add Subpoint
-                </Button>
-              )}
+              <Label htmlFor="visionDescription">Description</Label>
+              <Input
+                type="textarea"
+                id="visionDescription"
+                value={visionData.description}
+                onChange={(e) => setVisionData({ ...visionData, description: e.target.value })}
+                disabled={!editMode}
+              />
             </FormGroup>
           </Form>
         </CardBody>
@@ -264,7 +196,7 @@ const VisionMissionEditor = () => {
                 disabled={!editMode}
               />
             </FormGroup>
-            {missionError  && <Alert color="danger">{missionError }</Alert>}
+            {missionError && <Alert color="danger">{missionError}</Alert>}
 
             <FormGroup>
               <Label htmlFor="missionLogo">Logo Preview</Label><br />
@@ -283,27 +215,14 @@ const VisionMissionEditor = () => {
               </FormGroup>
             )}
             <FormGroup>
-              <Label htmlFor="missionSubpoints">Subpoints</Label>
-              {missionData.subpoints.map((subpoint, index) => (
-                <div key={index} className="d-flex mb-2">
-                  <Input
-                    type="text"
-                    value={subpoint}
-                    onChange={(e) => handleSubpointChange(index, 'mission', e.target.value)}
-                    disabled={!editMode}
-                  />
-                  {editMode && (
-                    <Button color="danger" className="ml-2" onClick={() => handleRemoveSubpoint(index, 'mission')}>
-                      Remove
-                    </Button>
-                  )}
-                </div>
-              ))}
-              {editMode && (
-                <Button color="primary" onClick={() => handleAddSubpoint('mission')}>
-                  Add Subpoint
-                </Button>
-              )}
+              <Label htmlFor="missionDescription">Description</Label>
+              <Input
+                type="textarea"
+                id="missionDescription"
+                value={missionData.description}
+                onChange={(e) => setMissionData({ ...missionData, description: e.target.value })}
+                disabled={!editMode}
+              />
             </FormGroup>
           </Form>
         </CardBody>

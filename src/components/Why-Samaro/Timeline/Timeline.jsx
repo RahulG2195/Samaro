@@ -1,51 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Timeline.css'
+import axios from "axios";
 
 // import 'react-chrono/dist/styles.css'; // Import default styles
 
 const TimelineNew = () => {
-  const timelineData = [
-    {
-      year: '1952',
-      title: 'NATIONAL PLASTICS FOUNDED A RICH LEGACY OF 70+ YEARS',
-      icon: 'fa-building',
-    },
-    {
-      year: '2019',
-      title: 'Samaro Founded',
-      icon: 'fa-briefcase',
-    },
-    {
-      year: '2020',
-      title: 'STARTED PRODUCTION WITH 2 EXTRUDERS & 1 HOMAG PROFILING MACHINE',
-      icon: 'fa-cogs',
-    },
-    {
-      year: '2021',
-      title: 'ADDED 1 MORE EXTRUSION LINE',
-      icon: 'fa-plus-circle',
-    },
-    {
-      year: '2022',
-      title: 'MOVED TO A 30 ACRE PRODUCTION FACILITY WITH',
-      icon: 'fa-map-signs',
-    },
-    {
-      year: '2023',
-      title: 'ADDED 5 EXTRUDERS & 2 HOMAG PROFILE LINES',
-      icon: 'fa-tools',
-    },
-    {
-      year: '2024',
-      title: 'ADDED 3 MORE LINES + 1 HOMAG LINE',
-      icon: 'fa-rocket',
-    },
-    {
-      year: '2024',
-      title: "INDIA'S LARGEST MANUFACTURER & EXPORTER OF SPC FLOORING",
-      icon: 'fa-globe',
-    },
-  ];
+  const [timelineData, setTimelineData] = useState([]);
+
+  useEffect(() => {
+    fetchTimelineData();
+  }, []);
+
+  const fetchTimelineData = async () => {
+    try {
+      const response = await axios.get('/api/admin/timeline');
+      setTimelineData(response.data); // Set the fetched data
+    } catch (err) {
+      setError('Failed to fetch timeline data.');
+    }
+  };
+
+  // const timelineData = [
+  //   {
+  //     year: '1952',
+  //     title: 'NATIONAL PLASTICS FOUNDED A RICH LEGACY OF 70+ YEARS',
+  //     icon: 'fa-building',
+  //   },
+  //   {
+  //     year: '2019',
+  //     title: 'Samaro Founded',
+  //     icon: 'fa-briefcase',
+  //   },
+  //   {
+  //     year: '2020',
+  //     title: 'STARTED PRODUCTION WITH 2 EXTRUDERS & 1 HOMAG PROFILING MACHINE',
+  //     icon: 'fa-cogs',
+  //   },
+  //   {
+  //     year: '2021',
+  //     title: 'ADDED 1 MORE EXTRUSION LINE',
+  //     icon: 'fa-plus-circle',
+  //   },
+  //   {
+  //     year: '2022',
+  //     title: 'MOVED TO A 30 ACRE PRODUCTION FACILITY WITH',
+  //     icon: 'fa-map-signs',
+  //   },
+  //   {
+  //     year: '2023',
+  //     title: 'ADDED 5 EXTRUDERS & 2 HOMAG PROFILE LINES',
+  //     icon: 'fa-tools',
+  //   },
+  //   {
+  //     year: '2024',
+  //     title: 'ADDED 3 MORE LINES + 1 HOMAG LINE',
+  //     icon: 'fa-rocket',
+  //   },
+  //   {
+  //     year: '2024',
+  //     title: "INDIA'S LARGEST MANUFACTURER & EXPORTER OF SPC FLOORING",
+  //     icon: 'fa-globe',
+  //   },
+  // ];
   
 
   return (

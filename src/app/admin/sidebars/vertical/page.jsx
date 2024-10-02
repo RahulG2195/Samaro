@@ -27,12 +27,12 @@ const navigation = [
   },
   {
     type: "accordion",
-    title: "Why samaro page",
+    title: "About us page",
     items: [
       { title: "video and description", href: "/admin/whySamaro/video" ,icon: "bi bi-hdd-stack"},
       { title: "Vision , mission section", href: "/admin/whySamaro/vision_mission" ,icon: "bi bi-hdd-stack"},
-      // { title: "Design Range", href: "/admin/action/three" ,icon: "bi bi-hdd-stack"},
-      { title: "Benifits", href: "/admin/whySamaro/benifits" ,icon: "bi bi-hdd-stack"},
+      { title: "Timeline", href: "/admin/whySamaro/timeline" ,icon: "bi bi-hdd-stack"},
+      { title: "Benefits", href: "/admin/whySamaro/benifits" ,icon: "bi bi-hdd-stack"},
       { title: "Certifications", href: "/admin/whySamaro/certifications" ,icon: "bi bi-hdd-stack"},
       { title: "Dimension & Spaces", href: "/admin/whySamaro/dimensions" ,icon: "bi bi-hdd-stack"},
       { title: "Download center", href: "/admin/whySamaro/downloadcenter" ,icon: "bi bi-hdd-stack"},
@@ -143,7 +143,7 @@ const Sidebar = ({ showMobilemenu }) => {
                       data-bs-parent={`#accordionFlushExample${index}`}
                     >
                       {navi.items.map((item, subIndex) => (
-                        <li className="nav-item  d-inline-block" key={subIndex}>
+                        <li className="nav-item  d-block" key={subIndex}>
                           <NavLink href={item.href} className="nav-link">
                             {item.title}
                           </NavLink>
