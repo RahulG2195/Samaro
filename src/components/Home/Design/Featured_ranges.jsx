@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import './FeaturedRanges.css'; // Ensure this file exists
 
-const FeaturedRanges = () => {
+const FeaturedRanges = ({ranges}) => {
     const [activeRange, setActiveRange] = useState(1);
 
-    const ranges = [
-        { id: 1, name: 'Wood Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'WoodFinishImage.png' },
-        { id: 2, name: 'Stone Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'StoneFinshImage4.png' },
-        { id: 3, name: 'Marble Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
-    ];
+
 
     return (
         <>

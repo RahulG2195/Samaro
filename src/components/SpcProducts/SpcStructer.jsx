@@ -140,14 +140,12 @@ const SpcStructer = () => {
             </Row>
 
             {/* Features Section */}
-            <Row className="mt-5 ">
-                {/* First Column: Show features 1 to 6 */}
+            {/* <Row className="mt-5 ">
                 <Col md={6} className="mb-4">
                     {features.slice(0, 6).map((feature, index) => (
                         <Row key={feature.id} className="mb-4 justify-content-center align-items-center">
                             {index % 2 === 0 ? (
                                 <>
-                                    {/* For even indexes in first column, image left on large screens, text right */}
                                     <Col md={4} className="order-1 order-md-1">
                                         <img
                                             src={feature.image}
@@ -162,7 +160,6 @@ const SpcStructer = () => {
                                 </>
                             ) : (
                                 <>
-                                    {/* For odd indexes in first column, text left on large screens, image right */}
                                     <Col md={8} className="order-2 order-md-1">
                                         <h5>{index + 1}. {feature.title}</h5>
                                         <p className="fw-medium">{feature.description}</p>
@@ -180,13 +177,11 @@ const SpcStructer = () => {
                     ))}
                 </Col>
 
-                {/* Second Column: Show features 7 to 12 */}
                 <Col md={6} className="mb-4">
                     {features.slice(6).map((feature, index) => (
                         <Row key={feature.id} className="mb-4 justify-content-center align-items-center ">
                             {index % 2 === 0 ? (
                                 <>
-                                    {/* For even indexes in second column, image left on large screens, text right */}
                                     <Col md={4} className="order-1 order-md-1">
                                         <img
                                             src={feature.image}
@@ -201,7 +196,6 @@ const SpcStructer = () => {
                                 </>
                             ) : (
                                 <>
-                                    {/* For odd indexes in second column, text left on large screens, image right */}
                                     <Col md={8} className="order-2 order-md-1">
                                         <h5>{index + 7}. {feature.title}</h5>
                                         <p className="fw-medium">{feature.description}</p>
@@ -218,7 +212,7 @@ const SpcStructer = () => {
                         </Row>
                     ))}
                 </Col>
-            </Row>
+            </Row> */}
 
 
         </Container>

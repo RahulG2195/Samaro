@@ -2,13 +2,13 @@ import React from 'react'
 import Image from 'next/image';
 import './spc.css'
 
-const SpcBanner = () => {
+const SpcBanner = ({img}) => {
   return (
     <>
       <section className="spchero">
         <div className='position-relative'>
           <Image
-            src="/assets/images/products/Group 28040.png"
+            src={`/uploads/${img}`}
             alt="Description of the image"
             width={100}
             height={100}

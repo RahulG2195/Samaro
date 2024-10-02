@@ -115,11 +115,11 @@ const Header = () => {
                                     Contact Us
                                 </NavLink>
                             </li>
-                            {/* <li className="nav-item">
-                                <NavLink className="nav-link" href="/career">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" href="/newCareer">
                                     Career
                                 </NavLink>
-                            </li> */}
+                            </li>
                         </ul>
                         <div className="bottomOptionsOfHeader pb-5 mb-3">
                             <div className="pt-4 d-flex justify-content-center gap-5 align-items-center">
