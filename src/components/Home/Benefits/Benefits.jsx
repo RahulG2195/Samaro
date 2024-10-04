@@ -34,7 +34,7 @@ const Benefits = () => {
                     url: `/uploads/${image.trim()}`,
                     alt: `Benefit ${index + 1}`
                 }));
-                console.log(formattedSliderImages)
+                // console.log(formattedSliderImages)
 
                 setSliderImages(formattedSliderImages);
 

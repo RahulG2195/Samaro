@@ -105,27 +105,26 @@ const SpcStructer = () => {
     return (
         <Container className="">
             {/* Header */}
-            <Row>
+            {/* <Row>
                 <Col>
                     <h1 className="text-danger text-center fw-bold my-4">PRODUCT STRUCTURE</h1>
                 </Col>
             </Row>
 
-            {/* Product structure image and details */}
             <Row className="mt-4 justify-content-center">
                 <Col md={6} sm={12}>
                     <img
-                        src="/uploads/spcLayers.png" // Replace with the correct image path
+                        src="/uploads/spcLayers.png" 
                         alt="Product Structure"
                         className="img-fluid"
                     />
                 </Col>
-            </Row>
+            </Row> */}
 
             {/* Specifications table */}
             <Row className="mt-5 justify-content-center">
                 <Col md={10}>
-                    <h3 className='text-navy fw-semibold '>Specifications of SPC Flooring :</h3>
+                    <h3 className='text-navy fw-semibold '><u className='border-danger border-bottom border-2'>Specifications of SPC Flooring</u> :</h3>
                     <Table bordered>
                         <tbody>
                             {specifications.map((spec, index) => (

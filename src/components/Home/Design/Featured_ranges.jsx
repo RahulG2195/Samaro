@@ -24,7 +24,7 @@ const FeaturedRanges = ({ranges}) => {
                             onMouseLeave={() => setActiveRange(1)}
                         >
                             <div className="image">
-                                <img src={`/uploads/${range.img}`} alt={range.name} />
+                                <img src={`/uploads/${range.image}`} alt={range.name} />
                             </div>
                             {activeRange !== range.id && (
                                 <div className='overlayName'>

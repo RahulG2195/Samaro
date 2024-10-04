@@ -53,7 +53,7 @@ const Spclvt = () => {
                             </p>
                         </div>
                         <div className="qualities px-4 mt-4 ">
-                            <div className="d-md-flex d-block flex-wrap  justify-content-center py-2 text-center " >
+                            <div className="d-md-flex gap-3 d-block flex-wrap  justify-content-center py-2 text-center " >
                                 <div className="d-flex align-items-center gap-2 text-white installTxt justify-content-center">
                                     {/* <img src="/assets/images/home/spc-lvt/icons/Group 29194.svg" alt="" /> */}
                                     <img src={`/uploads/${buildHomeData.feature1_icon}`} alt="" />

@@ -54,11 +54,11 @@
         top: 30%;
     }
     .careerText h1{
-        font-size: 2rem;
+        font-size: 2rem !important;
         margin: 0 !important;
     }
     .careerText p{
-        font-size: 15px;
+        font-size: 15px !important;
         margin: 0 !important;
     }
     .oppHeading{

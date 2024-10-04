@@ -4,7 +4,7 @@ import Footer from '@/components/Home/Footer/Footer'
 import Header from '@/components/Home/Header/Header'
 import Topbar from '@/components/Home/Topbar/Topbar'
 import SpcBanner from '@/components/SpcProducts/SpcBanner'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SpcForm from "@/components/SpcProducts/SpcForm";
 import Collection from "@/components/SpcProducts/Collection";
 import Broucher from "@/components/SpcProducts/Broucher";
@@ -15,6 +15,7 @@ import AboutSpc from "@/components/SpcProducts/AboutSpc";
 import SpcStructer from "@/components/SpcProducts/SpcStructer";
 import Features from "@/components/SpcProducts/Features";
 import FeaturedRanges from "@/components/Home/Design/Featured_ranges";
+import axios from "axios";
 
 
 const page = () => {
@@ -57,11 +58,30 @@ const page = () => {
             icon: 'fa-cloud',
         },
     ];
-    const ranges = [
-        { id: 1, name: 'Wood Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'WoodFinishImage.png' },
-        { id: 2, name: 'Stone Finish', description: 'Add a touch of elegance and sophistication with our stunning stone-inspired flooring', img: 'StoneFinshImage4.png' },
-        { id: 3, name: 'Ceramic Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
-    ];
+    // const ranges = [
+    //     { id: 1, name: 'Wood Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'WoodFinishImage.png' },
+    //     { id: 2, name: 'Stone Finish', description: 'Add a touch of elegance and sophistication with our stunning stone-inspired flooring', img: 'StoneFinshImage4.png' },
+    //     { id: 3, name: 'Ceramic Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
+    // ];
+
+    const[ranges , setRanges] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get('api/admin/featuredRange')
+            const data = response.data;
+            const datawithCeramic = data.filter(item => item.name !== 'Marble Finish');
+            setRanges(datawithCeramic);
+          } catch (error) {
+            console.error('Error fetching range data:', error);
+          }
+        }
+        fetchData();
+    
+      }, [])
+    
+
     return (
         <>
             {/* <Topbar></Topbar> */}
@@ -70,7 +90,7 @@ const page = () => {
             <AboutSpc
                 title={"What is SPC"}
                 desc={"Stone Plastic Composite (SPC) flooring is a type of rigid core luxury vinyl flooring known for its durability, waterproof nature, and realistic look. It's made from a blend of limestone, PVC, and stabilizers, making it highly resistant to dents, scratches, and moisture. Ideal for both residential and commercial use, SPC flooring is easy to install and maintain, offering a stylish and long-lasting flooring solution."}
-                img={"spcLayers.png"}
+                img={"spclayer.jpg"}
                 specificationTitle={"Layers of SPC Flooring :"}
                 layers={spcLayers}
                 spc={true}
