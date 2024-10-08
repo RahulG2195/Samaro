@@ -138,7 +138,7 @@ const page = () => {
                     <div className="col-md-6 col-lg-6 col-12">
                         <h1 className='oppHeading fw-bold text-wrap w-50 text-navy'>Career <span className='text-danger'>Opportunities</span></h1>
                         <p className='me-md-5 me-lg-5 me-0 fw-semibold careetAbtText'>We offer diverse career paths across functions like Sales, Mechanical-Electrical-Plastic Engineering, Accounts & Costing, Planning, and Administration. If you want to be part of a team that values growth, collaboration, and excellence, we would love to hear from you!</p>
-                        <button className='btn bg-danger rounded-pill text-white fw-medium px-3 py-2'>View Open Position &gt;</button>
+                        <a href="#openpos" class="openpos"><button  className='btn bg-danger rounded-pill text-white fw-medium px-3 py-2'>View Open Position &gt;</button></a>
                     </div>
                 </div>
 
@@ -203,7 +203,7 @@ const page = () => {
                 </ul>
 
             </div>
-            <div className='openingBanner position-relative'>
+            <div id="openpos" className='openingBanner position-relative'>
                 <img src="uploads\Current_openings.jpg" alt="" />
                 <h1 className='text-center fw-bold position-absolute top-50'>Current Openings</h1>
                 <div className='careerOverlay2 bottom-0' ></div>

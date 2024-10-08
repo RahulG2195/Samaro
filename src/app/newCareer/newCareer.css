@@ -48,6 +48,10 @@
 .processList li{
     list-style:decimal-leading-zero;
 }
+.openpos{
+    scroll-behavior: smooth;
+    /* transition: all 2s; */
+}
 
 @media (max-width:768px) {
     .careerText{
