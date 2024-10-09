@@ -16,7 +16,7 @@ import SpcStructer from "@/components/SpcProducts/SpcStructer";
 import Features from "@/components/SpcProducts/Features";
 import FeaturedRanges from "@/components/Home/Design/Featured_ranges";
 import axios from "axios";
-
+import Products from "@/components/Product/Products";
 
 const page = () => {
     useEffect(() => {
@@ -64,23 +64,23 @@ const page = () => {
     //     { id: 3, name: 'Ceramic Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
     // ];
 
-    const[ranges , setRanges] = useState([]);
+    const [ranges, setRanges] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            const response = await axios.get('api/admin/featuredRange')
-            const data = response.data;
-            const datawithCeramic = data.filter(item => item.name !== 'Marble Finish');
-            setRanges(datawithCeramic);
-          } catch (error) {
-            console.error('Error fetching range data:', error);
-          }
+            try {
+                const response = await axios.get('api/admin/featuredRange')
+                const data = response.data;
+                const datawithCeramic = data.filter(item => item.name !== 'Marble Finish');
+                setRanges(datawithCeramic);
+            } catch (error) {
+                console.error('Error fetching range data:', error);
+            }
         }
         fetchData();
-    
-      }, [])
-    
+
+    }, [])
+
 
     return (
         <>
@@ -96,7 +96,7 @@ const page = () => {
                 spc={true}
 
             />
-            <FeaturedRanges  ranges={ranges}/>
+            <FeaturedRanges ranges={ranges} />
 
             <SpcStructer />
             <Features
@@ -107,7 +107,9 @@ const page = () => {
             {/* <SpcForm></SpcForm> */}
             {/* <Collection></Collection> */}
             {/* <Broucher></Broucher> */}
-            <SpcPage></SpcPage>
+            <div className="mt-lg-5 mt-md-5 mb-5">
+                <Products></Products>
+            </div>
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
                 <CallToAction></CallToAction></div>

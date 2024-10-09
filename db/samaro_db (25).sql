@@ -79,10 +79,10 @@ INSERT INTO `basic_info` (`bi_id`, `comp_logo`, `email1`, `email2`, `mobile_no_1
 
 CREATE TABLE `benefits` (
   `id` int NOT NULL,
-  `icons` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `icons` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `titles` varchar(255) NOT NULL,
   `sequence` int DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `benefits`
@@ -112,8 +112,8 @@ CREATE TABLE `benefits_slider` (
   `id` int NOT NULL,
   `image` text NOT NULL,
   `heading` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+#1273 - Unknown collation: 'utf8mb4_0900_ai_ci'
 --
 -- Dumping data for table `benefits_slider`
 --
@@ -291,7 +291,7 @@ CREATE TABLE `featured_range` (
   `name` varchar(255) NOT NULL,
   `description` text,
   `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `featured_range`
@@ -537,7 +537,7 @@ CREATE TABLE `timeline` (
   `year` varchar(4) NOT NULL,
   `title` text NOT NULL,
   `icon` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `timeline`
