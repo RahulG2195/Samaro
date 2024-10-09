@@ -206,13 +206,13 @@ const Home = () => {
     },
 
     {
-      specification: "Attached ",
-      Tiles: "underlayment	Additional underlay to be added",
+      specification: "Attached underlayment",
+      Tiles: "Additional underlay to be added",
     },
 
     {
-      specification: "Installation ",
-      Tiles: "Method	Click and lock",
+      specification: "Installation Method",
+      Tiles: "Click and lock",
     },
   ];
 
