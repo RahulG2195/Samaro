@@ -40,7 +40,7 @@ const page = () => {
         {
             title: "Realistic Appearance",
             description: "High-resolution prints make LVT flooring look and feel like natural materials such as wood or stone, offering a luxurious appearance.",
-            icon: "fa fa-picture-o"
+            icon: "fa fa-eye"
         },
         {
             title: "Waterproof",
