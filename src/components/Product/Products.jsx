@@ -2,13 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import Filters from './Filters';
 import ProductCard from './ProductCard';
 import './Filters.css';
-import { useParams, useRouter } from 'next/navigation';
+import {  useRouter,usePathname } from 'next/navigation';
 import axios from 'axios';
-
 const Products = () => {
     const router = useRouter();
-    const params = useParams();
-    const variation = params.slug;
+    const pathname = usePathname();
+
+    const segments = pathname.split('/');
+    const spcProducts = segments[segments.length - 1];
+    console.log('spcProducts:', spcProducts);
+    const variation = spcProducts || "all";
+
 
     const productsArr = [
         {
@@ -48,12 +52,15 @@ const Products = () => {
         if (effectRan.current === false) {
             const getProducts = async () => {
                 try {
-                    const response = await axios.get("/api/admin/products", {
+                    const response = await axios.get("/api/products", {
                         params: {
                             variation: variation,
                         }
                     });
                     const products = response.data;
+                    console.log("Products-"+ products);
+                    console.log("Products-"+ JSON.stringify(products));
+
                     setProductsData(products);
                     setFilteredProducts(products);
                 } catch (error) {
@@ -89,6 +96,12 @@ const Products = () => {
     };
 
     const handleProductChange = (event) => {
+        if(event.target.value == "spc"){
+            router.push('/spcProducts');
+            }else if (event.target.value == "lvt"){
+            router.push(`/lvtProducts`);
+            }
+            setSelectedProduct(event.target.value);
         setSelectedProduct(event.target.value);
     };
 
@@ -170,6 +183,7 @@ const Products = () => {
             <div className="row justify-content-center">
                 <div className="col-lg-2 col-md-3">
                     <Filters
+                        variation={variation}
                         totalCount={productsData.length}
                         resultCount={filteredProducts.length}
                         selectedProduct={selectedProduct}

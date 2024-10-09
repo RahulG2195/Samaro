@@ -7,6 +7,24 @@ export async function GET(req, res) {
     // const variation = req.url;
     let paramString = req.url.split('?')[1];
     let paramString2 = paramString.split('=')[1];
+    console.log("param -------------------" + paramString);
+    console.log("param -------------------" + paramString2);
+    let value = 2;
+    if(paramString2 == "spcProducts"){
+      value = 1
+    }
+    console.log("param -------------------" + value );
+    if(paramString2){
+      const category = await query({
+        query: "SELECT products.*, category.cat_name FROM products JOIN category ON products.cat_id = category.cat_id WHERE products.cat_id = ?",
+        values: [value],
+      });
+
+      let data = JSON.stringify(category);
+      return new Response(data, {
+        status: 200,
+      });
+    }
 
     if (paramString2 == 'All') {
       const category = await query({
@@ -19,18 +37,7 @@ export async function GET(req, res) {
         status: 200,
       });
     }
-    else {
-
-      const category = await query({
-        query: "SELECT products.*,category.cat_name FROM products JOIN category ON products.cat_id = category.cat_id WHERE variation = ? ",
-        values: [paramString2.toLowerCase()],
-      });
-
-      let data = JSON.stringify(category);
-      return new Response(data, {
-        status: 200,
-      });
-    }
+   
 
     // let data = JSON.stringify(category);
     // return new Response(data, {

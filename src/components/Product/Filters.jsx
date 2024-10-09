@@ -5,15 +5,28 @@ import { useParams } from 'next/navigation';
 
 
 
-const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handleProductChange, selectedCatalogues,
+const Filters = ({ variation,hide, inSPC, resultCount, totalCount, selectedProduct, handleProductChange, selectedCatalogues,
   handleCatalogueChange, selectedTypes, handleTypeChange, selectedColors, handleColorChange,
   selectedPlaces, handlePlaceChange }) => {
 
-  const router = useParams();
-  const variation = router.slug;
 
+    
+    const [svcLvt, setSvcLvt] = useState('');
+  
+    useEffect(() => {
+      if (variation === 'spcProducts' || variation === 'spc') {
+        setSvcLvt('spc');
+      } else {
+        setSvcLvt('lvt');
+      }
+    }, [variation,handleProductChange]);
+  
+    useEffect(() => {
+      console.log("selectedProduct: " + selectedProduct);
+      console.log("variation: " + variation);
+    }, [selectedProduct, variation]);
 
-
+  // const [isOpen, setIsOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isMediumOrLarger, setIsMediumOrLarger] = useState(false);
 
@@ -66,7 +79,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
         </Button>
       </div>
       <div className="Filter-title">
-        <p className="fw-bold samFloor m-0">SAMARO FLOORS</p>
+        <p className="fw-bold samFloor m-0">SAMARO FLOORSS</p>
         <p className="m-0 p-0 small fw-semibold text-navy">
           Home -&gt; Products
         </p>
@@ -92,7 +105,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                       name="spc"
                       id="inlineRadio1"
                       value="spc"
-                      checked={selectedProduct === 'spc'}
+                      checked={svcLvt === 'spc'}
                       onChange={handleProductChange} />
 
                     <label htmlFor="inlineRadio1 " className="darkBlue form-check-label">SPC</label>
@@ -108,7 +121,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                       name="lvt"
                       id="inlineRadio1"
                       value="lvt"
-                      checked={selectedProduct === 'lvt'}
+                      checked={svcLvt === 'lvt'}
                       onChange={handleProductChange}
                     />
                     <label htmlFor="inlineRadio1" className="darkBlue form-check-label">LVT</label>
@@ -116,7 +129,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 </div>
               </div>
             </div>
-            <div className={` border-bottom border-danger py-2 chk`}>
+            {/* <div className={` border-bottom border-danger py-2 chk`}>
               <p className="pb-2 darkBlue m-0">
                 Choose Your <strong className="fw-medium">Catalogue</strong>
               </p>
@@ -200,7 +213,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="border-bottom border-danger py-2">
               <p className="pb-2 darkBlue m-0">
@@ -318,19 +331,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                     Dark grey
                   </label>
                 </div>
-                <div className="col-lg-12 col-md-12 col-sm-2 col-6">
-                  <label htmlFor="" className="darkBlue">
-                    <input
-                      className="mx-1 form-check-input"
-                      type="checkbox"
-                      name="dark brown"
-                      value='dark brown'
-                      checked={selectedColors.includes('dark brown')}
-                      onChange={handleColorChange}
-                    />
-                    Dark brown
-                  </label>
-                </div>
+                
                 <div className="col-lg-12 col-md-12 col-sm-2 col-6">
                   <label htmlFor="" className="darkBlue">
                     <input
@@ -372,7 +373,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                 </div>
               </div>
             </div>
-            <div className="border-bottom border-danger py-2">
+            {/* <div className="border-bottom border-danger py-2">
               <p className="pb-2 darkBlue m-0">
                 Choose Your <strong className="fw-medium">place</strong>
               </p>
@@ -483,7 +484,7 @@ const Filters = ({ hide, inSPC, resultCount, totalCount, selectedProduct, handle
                   </label>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <div className=" border-bottom border-danger">
               <label htmlFor="" className="form-label darkBlue">
                 Choose Your <strong className="fw-medium">Thickness</strong>

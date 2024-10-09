@@ -16,7 +16,8 @@ import SpcStructer from "@/components/SpcProducts/SpcStructer";
 import Features from "@/components/SpcProducts/Features";
 import FeaturedRanges from "@/components/Home/Design/Featured_ranges";
 import axios from "axios";
-
+import Products from "@/components/Product/Products";
+import Certifications from "@/components/Why-Samaro/Certifications/Certifications";
 
 const page = () => {
     useEffect(() => {
@@ -53,9 +54,9 @@ const page = () => {
             icon: 'fa-wrench',
         },
         {
-            title: 'Weatherproof',
+            title: 'Waterproof',
             description: 'Whether indoors or semi-outdoor areas (e.g., cafes or lobbies), SPC flooring maintains its quality across various weather conditions, reducing maintenance costs.',
-            icon: 'fa-cloud',
+            icon: 'fa-tint',
         },
     ];
     // const ranges = [
@@ -64,23 +65,23 @@ const page = () => {
     //     { id: 3, name: 'Ceramic Finish', description: 'Experience the natural beauty and warmth of wood with our realistic wood-look flooring', img: 'MarleFinishImage.png' }
     // ];
 
-    const[ranges , setRanges] = useState([]);
+    const [ranges, setRanges] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             const response = await axios.get('api/admin/featuredRange')
             const data = response.data;
-            const datawithCeramic = data.filter(item => item.name !== 'Marble Finish');
+            const datawithCeramic = data.filter(item => item.name !== 'Marble coming soon');
             setRanges(datawithCeramic);
           } catch (error) {
             console.error('Error fetching range data:', error);
           }
         }
         fetchData();
-    
-      }, [])
-    
+
+    }, [])
+
 
     return (
         <>
@@ -90,13 +91,13 @@ const page = () => {
             <AboutSpc
                 title={"What is SPC"}
                 desc={"Stone Plastic Composite (SPC) flooring is a type of rigid core luxury vinyl flooring known for its durability, waterproof nature, and realistic look. It's made from a blend of limestone, PVC, and stabilizers, making it highly resistant to dents, scratches, and moisture. Ideal for both residential and commercial use, SPC flooring is easy to install and maintain, offering a stylish and long-lasting flooring solution."}
-                img={"spclayer.jpg"}
-                specificationTitle={"Layers of SPC Flooring :"}
+                img={"spcLayer.png"}
+                specificationTitle={"Layers of SPC Flooring "}
                 layers={spcLayers}
                 spc={true}
 
             />
-            <FeaturedRanges  ranges={ranges}/>
+            <FeaturedRanges ranges={ranges} />
 
             <SpcStructer />
             <Features
@@ -107,7 +108,10 @@ const page = () => {
             {/* <SpcForm></SpcForm> */}
             {/* <Collection></Collection> */}
             {/* <Broucher></Broucher> */}
-            <SpcPage></SpcPage>
+            <div className="mt-lg-5 mt-md-5 mb-5">
+                <Products></Products>
+            </div>
+            <Certifications/>
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
                 <CallToAction></CallToAction></div>
