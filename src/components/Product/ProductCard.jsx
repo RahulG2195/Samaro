@@ -14,7 +14,7 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
                 <Link href={`/productdetail/${seo}`}>
                     <div className='frontimage'>
                         <Image 
-                            src={`/uploads/${firstFrontImage}`} 
+                            src={`/uploads/${firstFrontImage.trim()}`} 
                             alt={`${title} - front view`} 
                             layout="responsive" 
                             width={500} 
