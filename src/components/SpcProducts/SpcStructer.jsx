@@ -9,7 +9,7 @@ const specifications = [
     { label: "Backing Layer", value: "EVA, IXPE" },
     { label: "Edge Detail", value: "Squared edge & Beveled edge available" },
     { label: "Surface Texture", value: "Wood grain, Deep embossing grain, Light embossing grain" },
-    { label: "Feature", value: "Formaldehyde Free, Waterproof, Strong Stability" },
+    // { label: "Feature", value: "Formaldehyde Free, Waterproof, Strong Stability" },
     { label: "Installation", value: "Clickcore installation" },
     { label: "Application", value: "Residential and Commercial" },
 ];
