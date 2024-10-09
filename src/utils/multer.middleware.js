@@ -3,10 +3,10 @@ import multer from "multer";
 import { writeFile } from "fs/promises";
 
 const upload = multer({
-  dest: "public/uploads/",
+  dest: `${process.env.NEXT_PUBLIC_UPLOAD_PATH_DIR}`,
   limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB size limit
   storage: multer.diskStorage({
-    destination: "public/uploads/",
+    destination: `${process.env.NEXT_PUBLIC_UPLOAD_PATH_DIR}`,
     filename: (_req, file, cb) => {
       cb(null, file.originalname);
     },
@@ -38,13 +38,16 @@ const handleUpload = (req, res) => {
       }
     });
   });
+
 };
+
+
 const uploadImage = async (req, res, file) => {
   try {
     const result = await handleUpload(req, res);
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    const path = `public/uploads/${file.name}`;
+    const path = `${process.env.NEXT_PUBLIC_UPLOAD_PATH_DIR}${file.name}`;
     await writeFile(path, buffer);
     return result.filename; 
   } catch (error) {

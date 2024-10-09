@@ -6,12 +6,32 @@ import Products from '@/components/Product/Products'
 import Inspiration from '@/components/Home/Social/Inspiration';
 import { useEffect, useRef, useState } from 'react';
 import axios, { all } from 'axios';
+import { useRouter } from 'next/navigation';
 
 const SpcPage = () => {
-    const variation = all;
+    const variation = "All";
+    const router = useRouter();
+    const productsDatas = [
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honeys", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
+
+
+        // Adjust paths as necessary for additional products
+    ];
 
     // const [productsArr , setProductsArr] = useState();
-    // const [productsData, setProductsData] = useState([]);
+    const [productsData, setProductsData] = useState([productsDatas]);
     const [showInteriorPictures, setShowInteriorPictures] = useState(true);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState('');
@@ -22,35 +42,19 @@ const SpcPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const effectRan = useRef(false);
 
-    const productsData = [
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-                
-        
-        // Adjust paths as necessary for additional products
-    ];
+
     useEffect(() => {
         if (effectRan.current === false) {
             const getProducts = async () => {
                 try {
-                    const response = await axios.get("/api/admin/products", {
+                    const response = await axios.get("/api/products", {
                         params: {
                             variation: variation,
                         }
                     });
                     const products = response.data;
-                    // setProductsData(products);
+                    console.log("productsData" + JSON.stringify(products));
+                    setProductsData(products);
                     setFilteredProducts(products);
                 } catch (error) {
                     console.error('Error fetching products:', error);
@@ -85,37 +89,42 @@ const SpcPage = () => {
     // };
 
     const handleProductChange = (event) => {
+        if(event.target.value == "spc"){
+        router.push('/spcProducts');
+        }else if (event.target.value == "lvt"){
+        router.push(`/lvtProducts`);
+        }
         setSelectedProduct(event.target.value);
     };
 
     const handleCatalogueChange = (event) => {
         const { value, checked } = event.target;
-      
+
         if (value === 'all') {
-          if (checked) {
-            // Include all options
-            handleCatalogueChange({ target: { value: 'sicilian', checked: true } });
-            handleCatalogueChange({ target: { value: 'tuscany', checked: true } });
-            handleCatalogueChange({ target: { value: 'lvt 1', checked: true } });
-            handleCatalogueChange({ target: { value: 'lvt 2', checked: true } });
-            handleCatalogueChange({ target: { value: 'others', checked: true } });
-            setSelectedCatalogues(['all', 'sicilian', 'tuscany', 'lvt 1', 'lvt 2', 'others']);
-          } else {
-            // Exclude all options
-            setSelectedCatalogues([]);
-          }
+            if (checked) {
+                // Include all options
+                handleCatalogueChange({ target: { value: 'sicilian', checked: true } });
+                handleCatalogueChange({ target: { value: 'tuscany', checked: true } });
+                handleCatalogueChange({ target: { value: 'lvt 1', checked: true } });
+                handleCatalogueChange({ target: { value: 'lvt 2', checked: true } });
+                handleCatalogueChange({ target: { value: 'others', checked: true } });
+                setSelectedCatalogues(['all', 'sicilian', 'tuscany', 'lvt 1', 'lvt 2', 'others']);
+            } else {
+                // Exclude all options
+                setSelectedCatalogues([]);
+            }
         } else {
-          // For individual options
-          if (checked) {
-            setSelectedCatalogues((prevSelected) => [...prevSelected, value]);
-          } else {
-            setSelectedCatalogues((prevSelected) =>
-              prevSelected.filter((item) => item !== value && item !== 'all')
-            );
-          }
+            // For individual options
+            if (checked) {
+                setSelectedCatalogues((prevSelected) => [...prevSelected, value]);
+            } else {
+                setSelectedCatalogues((prevSelected) =>
+                    prevSelected.filter((item) => item !== value && item !== 'all')
+                );
+            }
         }
-      };
-      
+    };
+
     const handleTypeChange = (event) => {
         const { value } = event.target;
 
@@ -153,20 +162,20 @@ const SpcPage = () => {
                 <div className="row">
                     {/* Filters */}
                     <div className="col-md-2 ">
-                    <Filters
-                        totalCount={productsData.length}
-                        resultCount={filteredProducts.length}
-                        selectedProduct={selectedProduct}
-                        handleProductChange={handleProductChange}
-                        selectedCatalogues={selectedCatalogues}
-                        handleCatalogueChange={handleCatalogueChange}
-                        selectedTypes={selectedTypes}
-                        handleTypeChange={handleTypeChange}
-                        selectedColors={selectedColors}
-                        handleColorChange={handleColorChange}
-                        selectedPlaces={selectedPlaces}
-                        handlePlaceChange={handlePlaceChange}
-                    />
+                        <Filters
+                            totalCount={productsData.length}
+                            resultCount={filteredProducts.length}
+                            selectedProduct={selectedProduct}
+                            handleProductChange={handleProductChange}
+                            selectedCatalogues={selectedCatalogues}
+                            handleCatalogueChange={handleCatalogueChange}
+                            selectedTypes={selectedTypes}
+                            handleTypeChange={handleTypeChange}
+                            selectedColors={selectedColors}
+                            handleColorChange={handleColorChange}
+                            selectedPlaces={selectedPlaces}
+                            handlePlaceChange={handlePlaceChange}
+                        />
                     </div>
                     <div className="col-md-10">
                         <div className="row align-items-center">
@@ -178,12 +187,14 @@ const SpcPage = () => {
                             {productsData.map((product, index) => (
                                 <div key={index} className="col-6 mb-4">
                                     <ProductCard
-                                        frontImage={product.frontImage}
-                                        onHoverImage={product.onHoverImage}
-                                        title={product.title}
-                                        prod_code={product.prod_code}
-                                        variation={product.variation}
+                                        frontImage={product.prod_images}
+                                        onHoverImage={product.prod_image2}
+                                        title={product.prod_name}
+                                        description={product.prod_spiece}
+                                        seo={product.seo_url}
                                         cat_name={product.cat_name}
+                                        variation={product.variation}
+                                        prod_code={product.prod_code}
                                     />
                                 </div>
                             ))}

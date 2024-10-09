@@ -104,7 +104,7 @@ const page = () => {
             experience: '7+',
         },
     ];
-    
+
 
     return (
         <>
@@ -138,53 +138,53 @@ const page = () => {
                     <div className="col-md-6 col-lg-6 col-12">
                         <h1 className='oppHeading fw-bold text-wrap w-50 text-navy'>Career <span className='text-danger'>Opportunities</span></h1>
                         <p className='me-md-5 me-lg-5 me-0 fw-semibold careetAbtText'>We offer diverse career paths across functions like Sales, Mechanical-Electrical-Plastic Engineering, Accounts & Costing, Planning, and Administration. If you want to be part of a team that values growth, collaboration, and excellence, we would love to hear from you!</p>
-                        <button className='btn bg-danger rounded-pill text-white fw-medium px-3 py-2'>View Open Position &gt;</button>
+                        <a href="#openpos" class="openpos"><button  className='btn bg-danger rounded-pill text-white fw-medium px-3 py-2'>View Open Position &gt;</button></a>
                     </div>
                 </div>
 
             </div>
-            
-        <section className='container'> 
-            <h1 className="fw-bold text-navy text-center"><u className=' border-danger border-bottom border-2'>Our Values</u></h1>
-            <div className="values-list">
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Innovation :</h3>
-                    <p className="fw-semibold text-navy">
-                        We are constantly striving for innovation in all aspects—whether it’s our products, services, safety, or human relations. Our goal is to excel and set new standards for value, competitiveness, and profitability.
-                    </p>
+
+            <section className='container'>
+                <h1 className="fw-bold text-navy text-center"><u className=' border-danger border-bottom border-2'>Our Values</u></h1>
+                <div className="values-list">
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Innovation :</h3>
+                        <p className="fw-semibold text-navy">
+                            We are constantly striving for innovation in all aspects—whether it’s our products, services, safety, or human relations. Our goal is to excel and set new standards for value, competitiveness, and profitability.
+                        </p>
+                    </div>
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Quality :</h3>
+                        <p className="fw-semibold text-navy">
+                            Excellence is our benchmark. By offering products and services that are best in class, we aim to lead in business growth, profitability, and technology.
+                        </p>
+                    </div>
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Trust & Respect :</h3>
+                        <p className="fw-semibold text-navy">
+                            People are our strength. We encourage teamwork, ensuring that all employees treat each other with trust and respect, and fostering a work environment that inspires.
+                        </p>
+                    </div>
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Customer Focus :</h3>
+                        <p className="fw-semibold text-navy">
+                            Our customers are at the heart of everything we do. We identify their needs and ensure our products and services deliver the best possible solutions.
+                        </p>
+                    </div>
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Action Orientation</h3>
+                        <p className="fw-semibold text-navy">
+                            In a rapidly changing world, speed is our competitive edge. We are agile, responsive, and proactive to stay ahead.
+                        </p>
+                    </div>
+                    <div className="value-item">
+                        <h3 className="fw-bold text-danger">Responsibility to Society :</h3>
+                        <p className="fw-semibold text-navy">
+                            We recognise our duty to society and are committed to high ethical and social standards in all our business practices.
+                        </p>
+                    </div>
                 </div>
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Quality :</h3>
-                    <p className="fw-semibold text-navy">
-                        Excellence is our benchmark. By offering products and services that are best in class, we aim to lead in business growth, profitability, and technology.
-                    </p>
-                </div>
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Trust & Respect :</h3>
-                    <p className="fw-semibold text-navy">
-                        People are our strength. We encourage teamwork, ensuring that all employees treat each other with trust and respect, and fostering a work environment that inspires.
-                    </p>
-                </div>
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Customer Focus :</h3>
-                    <p className="fw-semibold text-navy">
-                        Our customers are at the heart of everything we do. We identify their needs and ensure our products and services deliver the best possible solutions.
-                    </p>
-                </div>
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Action Orientation</h3>
-                    <p className="fw-semibold text-navy">
-                        In a rapidly changing world, speed is our competitive edge. We are agile, responsive, and proactive to stay ahead.
-                    </p>
-                </div>
-                <div className="value-item">
-                    <h3 className="fw-bold text-danger">Responsibility to Society :</h3>
-                    <p className="fw-semibold text-navy">
-                        We recognise our duty to society and are committed to high ethical and social standards in all our business practices.
-                    </p>
-                </div>
-            </div>
-        </section>
+            </section>
             <div className="Hire container px-md-5 px-lg-5 px-2 pb-5">
                 <h1 className='text-navy fw-bold text-center hireHeading py-4 '><u className='border-bottom border-2 border-danger'>How We Hire</u></h1>
                 <p className='fw-semibold mx-auto careetAbtText'>We understand that building a career is a crucial step, and at Samaro, we value a transparent and objective recruitment process. Our hiring decisions are based on your skills, experience, and competencies. Here’s what you can expect:</p>
@@ -203,7 +203,7 @@ const page = () => {
                 </ul>
 
             </div>
-            <div className='openingBanner position-relative'>
+            <div id="openpos" className='openingBanner position-relative'>
                 <img src="uploads\Current_openings.jpg" alt="" />
                 <h1 className='text-center fw-bold position-absolute top-50'>Current Openings</h1>
                 <div className='careerOverlay2 bottom-0' ></div>
@@ -239,6 +239,14 @@ const page = () => {
                     </Card>
                 ))}
             </Container>
+            {/* <div className="mb-5 text-center"><h3 className="fw-semibold"> Join Our Team</h3>
+                <p className='d-inline-block fw-semibold fs-5'>Share your CV here:</p> <a className='fs-5 text-decoration-underline' href="mailto:hrd@samaro.in">hrd@samaro.in</a>
+            </div> */}
+            
+            <div className="mb-5 text-center fs-6"><span className="fw-semibold">Note : </span>
+                To apply, please send your resume and a cover letter to <a className='fw-semibold text-decoration-underline' href="mailto:hrd@samaro.in">hrd@samaro.in</a>. We'll be in touch if
+                your qualifications meet our needs.
+            </div>
         </>
     )
 }
