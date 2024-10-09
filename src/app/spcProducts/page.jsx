@@ -53,9 +53,9 @@ const page = () => {
             icon: 'fa-wrench',
         },
         {
-            title: 'Weatherproof',
+            title: 'Waterproof',
             description: 'Whether indoors or semi-outdoor areas (e.g., cafes or lobbies), SPC flooring maintains its quality across various weather conditions, reducing maintenance costs.',
-            icon: 'fa-cloud',
+            icon: 'fa-tint',
         },
     ];
     // const ranges = [
@@ -71,7 +71,7 @@ const page = () => {
           try {
             const response = await axios.get('api/admin/featuredRange')
             const data = response.data;
-            const datawithCeramic = data.filter(item => item.name !== 'Marble Finish');
+            const datawithCeramic = data.filter(item => item.name !== 'Marble coming soon');
             setRanges(datawithCeramic);
           } catch (error) {
             console.error('Error fetching range data:', error);
@@ -90,8 +90,8 @@ const page = () => {
             <AboutSpc
                 title={"What is SPC"}
                 desc={"Stone Plastic Composite (SPC) flooring is a type of rigid core luxury vinyl flooring known for its durability, waterproof nature, and realistic look. It's made from a blend of limestone, PVC, and stabilizers, making it highly resistant to dents, scratches, and moisture. Ideal for both residential and commercial use, SPC flooring is easy to install and maintain, offering a stylish and long-lasting flooring solution."}
-                img={"spclayer.jpg"}
-                specificationTitle={"Layers of SPC Flooring :"}
+                img={"spcLayer.png"}
+                specificationTitle={"Layers of SPC Flooring "}
                 layers={spcLayers}
                 spc={true}
 

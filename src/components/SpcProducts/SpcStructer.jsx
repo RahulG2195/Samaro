@@ -2,16 +2,16 @@ import React from 'react'
 import { Container, Row, Col, Table } from 'reactstrap';
 
 const specifications = [
-    { label: "Wear Layer", value: "0.3mm, 0.5mm, 0.7mm" },
-    { label: "Thickness", value: "3.2mm, 4mm, 5mm, 5.5mm, 6mm" },
-    { label: "Dimensions", value: "184*1220mm, 151*920mm, Customized" },
+    { label: "Wear Layer", value: "0.3mm" },
+    { label: "Thickness", value: " 4mm" },
+    { label: "Dimensions", value: "9 X 48, 7 X 48, customized" },
     { label: "Material", value: "100% Virgin Material" },
-    { label: "Backing Layer", value: "EVA, IXPE, Cork" },
+    { label: "Backing Layer", value: "EVA, IXPE" },
     { label: "Edge Detail", value: "Squared edge & Beveled edge available" },
-    { label: "Surface Texture", value: "Wood grain, Flat grain, Deep embossing grain, Hand scraped grain, Light embossing grain" },
+    { label: "Surface Texture", value: "Wood grain, Deep embossing grain, Light embossing grain" },
     { label: "Feature", value: "Formaldehyde Free, Waterproof, Strong Stability" },
-    { label: "Installation", value: "Easy Installation, Unilin Click" },
-    { label: "Application", value: "Indoor area, Decoration material, Office, Household, Hotel, Shopping center, School, Hospital, Residential and Commercial" },
+    { label: "Installation", value: "Clickcore installation" },
+    { label: "Application", value: "Residential and Commercial" },
 ];
 
 const features = [

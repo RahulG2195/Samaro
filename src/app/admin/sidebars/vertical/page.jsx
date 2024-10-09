@@ -17,13 +17,12 @@ const navigation = [
     items: [
       { title: "Hero banner", href: "/admin/home/banner" ,icon: "bi bi-hdd-stack"},
       { title: "Spc Lvt section", href: "/admin/home/spcLvt" ,icon: "bi bi-hdd-stack"},
-      // { title: "Design Range", href: "/admin/action/three" ,icon: "bi bi-hdd-stack"},
+      { title: "Featrured Range", href: "/admin/home/featuredRange" ,icon: "bi bi-hdd-stack"},
       { title: "Benifits", href: "/admin/home/benifits" ,icon: "bi bi-hdd-stack"},
       { title: "Floor Explorer", href: "/admin/home/floorExplorer" ,icon: "bi bi-hdd-stack",icon: "bi bi-hdd-stack" },
       { title: "Spaces", href:"/admin/home/spaces" ,icon: "bi bi-hdd-stack"},
     ],
     icon: "bi bi-hdd-stack",
-
   },
   {
     type: "accordion",
@@ -40,7 +39,6 @@ const navigation = [
     icon: "bi bi-hdd-stack",
 
   },
- 
   {
     type: "accordion", title: "Product", items: [
       { title: "Hero Banner", href: "/admin/product/banner" },

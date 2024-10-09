@@ -202,7 +202,9 @@ p a:hover {
 .small {
   font-size: 10px !important;
 }
-
+.medium{
+  font-size: 16px !important;
+}
 
 .common_sec {
   margin: 85px 0 0 0;
