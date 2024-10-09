@@ -117,7 +117,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item" onClick={closeMenu}>
                                 <NavLink className="nav-link" href="/newCareer">
-                                    Career
+                                    Careers
                                 </NavLink>
                             </li>
                         </ul>

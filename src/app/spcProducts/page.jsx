@@ -17,6 +17,7 @@ import Features from "@/components/SpcProducts/Features";
 import FeaturedRanges from "@/components/Home/Design/Featured_ranges";
 import axios from "axios";
 import Products from "@/components/Product/Products";
+import Certifications from "@/components/Why-Samaro/Certifications/Certifications";
 
 const page = () => {
     useEffect(() => {
@@ -110,6 +111,7 @@ const page = () => {
             <div className="mt-lg-5 mt-md-5 mb-5">
                 <Products></Products>
             </div>
+            <Certifications/>
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
                 <CallToAction></CallToAction></div>
