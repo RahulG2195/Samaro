@@ -15,15 +15,15 @@ import 'swiper/css/scrollbar';
 
 // Initialize Swiper modules
 
-const DownloadBroch = () => {
+const DownloadBroch = ({pdf}) => {
   const brochureImages = [
     {
-      src: '/assets/images/brochure/Brochure.png',
+      src: '/assets/images/brochure/Brochure.webp',
       alt: 'Brochure 1',
       link: '/#',
     },
     {
-      src: '/assets/images/brochure/Brochure.png',
+      src: '/assets/images/brochure/Brochure.webp',
       alt: 'Brochure 2',
       link: '/#',
     },
@@ -52,7 +52,7 @@ const DownloadBroch = () => {
           <h1 className='section_heading'>Download <strong>Brochure</strong></h1>
         </div>
         <Swiper
-              modules={[ Pagination, Scrollbar, A11y]}
+          modules={[Pagination, Scrollbar, A11y]}
           slidesPerView={2}
           spaceBetween={10}
           breakpoints={{
@@ -82,7 +82,8 @@ const DownloadBroch = () => {
               <div className='col-md-12 col-12 px-3'>
                 <div className='brochure_imgdiv'>
 
-                  <Link href={image.link}>
+                  <Link href={`/uploads/${pdf}`}
+                      download={pdf}>
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -91,12 +92,16 @@ const DownloadBroch = () => {
                       layout='responsive'
                       objectFit='cover'
                     />
+                    {/* <a>
+                      <button className='Downloadbtn text-danger border-danger rounded-pill py-1 me-2 fw-semibold px-4'>
+                        Download</button>
+                    </a> */}
                   </Link>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          
+
         </Swiper>
       </div>
     </section>
