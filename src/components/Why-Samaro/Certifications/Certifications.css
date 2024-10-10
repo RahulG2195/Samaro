@@ -37,7 +37,7 @@
 @media (max-width:768px) {
   .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     
   }
@@ -54,7 +54,7 @@
 @media (max-width:600px) {
   .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 28px !important;
     
   }
