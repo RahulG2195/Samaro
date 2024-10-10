@@ -89,7 +89,7 @@ const page = () => {
             {/* <Header></Header> */}
             <SpcBanner img={'spcBanner.jpg'}></SpcBanner>
             <AboutSpc
-                title={"What is SPC"}
+                title={"What is SPC ?"}
                 desc={"Stone Plastic Composite (SPC) flooring is a type of rigid core luxury vinyl flooring known for its durability, waterproof nature, and realistic look. It's made from a blend of limestone, PVC, and stabilizers, making it highly resistant to dents, scratches, and moisture. Ideal for both residential and commercial use, SPC flooring is easy to install and maintain, offering a stylish and long-lasting flooring solution."}
                 img={"spcLayer.png"}
                 specificationTitle={"Layers of SPC Flooring "}

@@ -7,28 +7,33 @@ import './AboutSpc.css'
 //     { name: "UV Layer", description: "The UV layer can have a glossy or matt finish. It protects the surface from stains, resists UV rays and ensures that the floor does not fade after a long period of sunlight exposure." },
 //     { name: "UV Layer", description: "The UV layer can have a glossy or matt finish. It protects the surface from stains, resists UV rays and ensures that the floor does not fade after a long period of sunlight exposure." }
 // ];
-const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc }) => {
+const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc, lvt = false }) => {
+
     return (
         <>
             <div className="spc-section">
-                <div className=' my-5'>
+            <div className={`my-${!lvt ? '10' : '5'}`}>
                     <div className='row justify-content-center align-items-center'>
-                        <div className='col-lg-6 col-md-8'>
+                        <div className={`col-lg-${!lvt ? '5' : '10'} col-md-8`}>
                             <h1 className='display-4  text-navy fw-bold'><u className='border-bottom border-danger border-2'>{title}</u></h1>
                             <p className='lead text-muted fw-semibold'>{desc}</p>
                         </div>
-                        <div className='col-lg-3 col-md-4 text-center '>
-                            <img src={`/uploads/${img}`} alt=" Flooring" className=" img-fluid rounded shadow-lg bg-transperent" />
-                        </div>
+                        {!lvt &&
+                            (
+                                <div className='col-lg-3 col-md-4 text-center '>
+                                    <img src={`/uploads/${img}`} alt=" Flooring" className=" img-fluid rounded shadow-lg bg-transperent" />
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
 
             {/* spc layers */}
             <div className="container">
-                <div className="row justify-content-center align-items-center mb-5">
+                <div className={`row justify-content-${!lvt ? 'center' : 'left'} align-items-center mb-5`}>
                     <h1 className="text-center text-navy fw-bold col-12"><u className='border-danger border-2 border-bottom'>Product Specification</u></h1>
-                    <div className="col-lg-7 col-md-12 productSpecification">
+                    <div className={`col-lg-${!lvt ? '7' : '10'}  col-md-12 productSpecification`}>
                         <h3 className="text-navy fw-semibold p-1">{specificationTitle} :</h3>
                         <ul className="spec-list">
                             {layers.map((layer, index) => (
@@ -38,13 +43,15 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc }) => {
                             ))}
                         </ul>
                     </div>
-                    <div className="col-lg-5 col-md-12 d-flex justify-content-center">
-                        <img
-                            src={`/uploads/${img}`}
-                            alt="SPC Layers"
-                            className="spec-image img-fluid"
-                        />
-                    </div>
+                    {!lvt && (
+                        <div className="col-lg-5 col-md-12 d-flex justify-content-center">
+                            <img
+                                src={`/uploads/${img}`}
+                                alt="SPC Layers"
+                                className="spec-image img-fluid"
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
 

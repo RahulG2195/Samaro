@@ -80,11 +80,12 @@ const page = () => {
             {/* <Header></Header> */}
             <SpcBanner img={'lvtBanner.jpg'}></SpcBanner>
             <AboutSpc
-                title={"What is LVT"}
+                title={"What is LVT ?"}
                 desc={"LVT stands for Luxury Vinyl Tile, designed to mimic natural flooring materials like wood, stone, or ceramic tiles.Composed of multiple layers, including a durable wear layer, realistic print layer, and a vinyl core that adds flexibility and comfort.Samaro's Focus: Offering high-quality, stylish, and durable LVT options for both residential and commercial spaces."}
                 img={"spcLayers.png"}
                 specificationTitle={"Composition Of LVT Flooring"}
                 layers={lvtLayers}
+                lvt={true}
 
             />
             {/* <SpcStructer /> */}
