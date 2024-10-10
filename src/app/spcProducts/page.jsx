@@ -111,7 +111,7 @@ const page = () => {
             <div className="mt-lg-5 mt-md-5 mb-5">
                 <Products></Products>
             </div>
-            <Certifications/>
+            {/* <Certifications/> */}
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
                 <CallToAction></CallToAction></div>

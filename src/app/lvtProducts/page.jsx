@@ -96,7 +96,7 @@ const page = () => {
             {/* <Collection></Collection> */}
             {/* <Broucher></Broucher> */}
             <SpcPage></SpcPage>
-            <Certifications/>
+            {/* <Certifications/> */}
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
                 <CallToAction></CallToAction></div>
