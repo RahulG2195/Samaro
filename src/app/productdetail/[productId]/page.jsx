@@ -15,7 +15,7 @@ import "@/components/ProductDetail/productdetail.css";
 import DetailsNewSection from "@/components/ProductDetail/DetailsNewSection";
 import { useParams } from "next/navigation";
 import axios from "axios";
-import Certifications from "@/components/Why-Samaro/Certifications/Certifications";
+
 
 
 const Home = () => {
@@ -344,14 +344,6 @@ const Home = () => {
 
         {prodDetail.cat_name == 'SPC' ? <DetailsNewSection /> : null}
       </div>
-      {/* certifications  */}
-      <div className="pb-5">
-        <Certifications />
-      </div>
-
-
-
-
       {/* product details new section */}
 
       <section className="inspectionBanner ">
