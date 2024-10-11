@@ -13,7 +13,7 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
             <div className="card productCard my-3 mx-0" style={{ width: '100%' }}>
                 <Link href={`/productdetail/${seo}`}>
                     <div className='frontimage'>
-                        <Image 
+                        {/* <Image 
                             src={`/uploads/${firstFrontImage}`} 
                             alt={`${title} - front view`} 
                             layout="responsive" 
@@ -21,12 +21,13 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
                             height={500} 
                             objectFit="contain" 
                             className="card-img-top"
-                        />
+                        /> */}
+                        <img src={`/uploads/${firstFrontImage}`} alt="" />
                     </div>
                     {
                         onHoverImage && 
                         <div className='onHoverimage'>
-                            <Image 
+                            {/* <Image 
                                 src={`/uploads/${onHoverImage}`} 
                                 alt={`${title} - hover view`} 
                                 layout="responsive" 
@@ -34,7 +35,8 @@ const ProductCard = ({ frontImage, onHoverImage, title, cat_name, variation, pro
                                 height={500} 
                                 objectFit="contain" 
                                 className="card-img-top"
-                            />
+                            /> */}
+                            <img src={`/uploads/${onHoverImage}`}  alt="" />
                         </div>
                     }
                 </Link>

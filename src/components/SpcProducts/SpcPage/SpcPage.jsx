@@ -13,18 +13,6 @@ const SpcPage = () => {
     const router = useRouter();
     const productsDatas = [
         { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honeys", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
-        { frontImage: "502 - Swiss light WITHOUT INSTALLATION.webp", onHoverImage: "503 - Tulip tree INSTALLATION.webp", title: "Pure oak honey", description: "VINYL | CRIO | AVHBU40360" },
 
 
         // Adjust paths as necessary for additional products
