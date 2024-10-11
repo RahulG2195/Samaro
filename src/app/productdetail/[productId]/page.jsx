@@ -182,7 +182,7 @@ const Home = () => {
 
     {
       specification: "Finish ",
-      Tiles: "	Classic wood, modern oak and rough hand-craped wood",
+      Tiles: "Classic Wood finish and Stone Finish",
     },
 
     {
@@ -212,7 +212,7 @@ const Home = () => {
 
     {
       specification: "Installation Method",
-      Tiles: "Click and lock",
+      Tiles: "ClickCore installation",
     },
   ];
 

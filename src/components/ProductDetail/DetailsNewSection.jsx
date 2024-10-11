@@ -121,7 +121,7 @@ const DetailsNewSection = () => {
                 <img src="/assets/images/icons/Group 29204.svg" alt="" />
                 <p>Bedroom</p>
               </div>
-              <div className="col-3 px-4 d-flex flex-column align-items-center">
+              {/* <div className="col-3 px-4 d-flex flex-column align-items-center">
                 <img src="/assets/images/icons/Group 29205.svg" alt="" />
                 <p>Kitchen</p>
 
@@ -130,7 +130,7 @@ const DetailsNewSection = () => {
                 <img src="/assets/images/icons/Group 29206.svg" alt="" />
                 <p>Washroom</p>
 
-              </div>
+              </div> */}
               <div className="col-3 px-4 d-flex flex-column align-items-center">
                 <img src="/assets/images/icons/Group 29207.svg" alt="" />
                 <p>Commercial</p>

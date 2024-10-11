@@ -15,6 +15,7 @@ import AboutSpc from "@/components/SpcProducts/AboutSpc";
 import SpcStructer from "@/components/SpcProducts/SpcStructer";
 import Features from "@/components/SpcProducts/Features";
 import Certifications from "@/components/Why-Samaro/Certifications/Certifications";
+import Products from "@/components/Product/Products";
 
 const page = () => {
 
@@ -96,7 +97,11 @@ const page = () => {
             {/* <SpcForm></SpcForm> */}
             {/* <Collection></Collection> */}
             {/* <Broucher></Broucher> */}
-            <SpcPage></SpcPage>
+            {/* <SpcPage></SpcPage>
+             */}
+              <div className="mt-lg-5 mt-md-5 mb-5">
+                <Products></Products>
+            </div>
             <Certifications/>
             {/* <InstallationSteps></InstallationSteps> */}
             <div className="my-5">
