@@ -4,8 +4,8 @@ import { Container, Row, Col, Table } from 'reactstrap';
 const specifications = [
     { label: "Wear Layer", value: "0.3mm (0.5mm and 0.7mm customizable)" },
     { label: "Thickness", value: " 4mm" },
-    { label: "Backing Layer", value: "1 inch ( ixpe, Eva) and customisation available in same thickness" },
-    { label: "Dimensions", value: "9 X 48 inches, 7 X 48 inches, customized" },
+    { label: "Backing Layer", value: "1 inch ( ixpe, Eva) and customisation available" },
+    { label: "Dimensions", value: "9 X 48 inches, 7 X 48 inches, customisation available in same thickness" },
     { label: "Material", value: "100% Virgin Material" },
     { label: "Edge Detail", value: "Squared edge & Beveled edge available" },
     { label: "Surface Texture", value: "Wood grain, Deep embossing grain, Light embossing grain" },

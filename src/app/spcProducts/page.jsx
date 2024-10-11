@@ -72,7 +72,7 @@ const page = () => {
           try {
             const response = await axios.get('api/admin/featuredRange')
             const data = response.data;
-            const datawithCeramic = data.filter(item => item.name !== 'Marble coming soon');
+            const datawithCeramic = data.filter(item => item.name !== 'Ceramic Finish');
             setRanges(datawithCeramic);
           } catch (error) {
             console.error('Error fetching range data:', error);
