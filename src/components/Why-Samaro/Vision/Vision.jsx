@@ -6,13 +6,13 @@ const Vision = () => {
     const [visionData, setVisionData] = useState({
         title: '',
         logo: '',
-        subpoints: []
+        description: ''
     });
 
     const [missionData, setMissionData] = useState({
         title: '',
         logo: '',
-        subpoints: []
+        description: ''
     });
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const Vision = () => {
                 const { subpoints, ...rest } = response.data;
                 setVisionData({
                     ...rest,
-                    subpoints: subpoints.split(',').map(subpoint => subpoint.trim())
+                    description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
                 });
             } catch (error) {
                 console.error('Error fetching Vision data:', error);
@@ -35,7 +35,7 @@ const Vision = () => {
                 const { subpoints, ...rest } = response.data;
                 setMissionData({
                     ...rest,
-                    subpoints: subpoints.split(',').map(subpoint => subpoint.trim())
+                    description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
                 });
             } catch (error) {
                 console.error('Error fetching Mission data:', error);
@@ -68,7 +68,7 @@ const Vision = () => {
                                         </div>
                                     </div>
                                     <p className='p-0 m-1 text-navy fw-normal'>
-                                        {visionData.subpoints}
+                                        {visionData.description}
                                     </p>
 
                                     {/* <ul className='m-0'>
@@ -96,7 +96,7 @@ const Vision = () => {
                                             <img src={`/uploads/${missionData.logo}`} alt="" className='w-75' />
                                         </div>
                                     </div>
-                                    <p className='p-0 m-1 text-navy fw-normal'>{missionData.subpoints}</p>
+                                    <p className='p-0 m-1 text-navy fw-normal'>{missionData.description}</p>
 
                                     {/* <ul className='p-0'>
                                         {missionData.subpoints.map((item, index) => (

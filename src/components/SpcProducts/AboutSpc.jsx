@@ -11,7 +11,7 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc, lvt = fal
 
     return (
         <>
-            <div className="spc-section">
+            <div id="about-section" className="spc-section">
             <div className={`my-${!lvt ? '10' : '5'}`}>
                     <div className='row justify-content-center align-items-center'>
                         <div className={`col-lg-${!lvt ? '5' : '10'} col-md-8`}>

@@ -1,8 +1,10 @@
 import React from 'react'
 import Image from 'next/image';
 import './spc.css'
+import { Link } from 'react-scroll';
 
-const SpcBanner = ({img}) => {
+
+const SpcBanner = ({ img }) => {
   return (
     <>
       <section className="spchero">
@@ -25,10 +27,16 @@ const SpcBanner = ({img}) => {
                 &nbsp;
                 <span >superior quality.</span>
               </h2>
-              <a href="#" className="discoverBtn button d-inline-block mt-3 px-3">
+              {/* <a href="#" className="discoverBtn button d-inline-block mt-3 px-3"> */}
+              <Link
+                to="about-section" // target the AboutSpc component by id
+                smooth={true}       // smooth scroll effect
+                duration={500}      // scroll duration in milliseconds
+                className="btn-scroll discoverBtn button d-inline-block mt-3 px-3" // optional: styling class for the button
+              >
                 Discover all our floors
-              </a>
-            </div>
+                </Link>
+                </div>
           </div>
 
         </div>
