@@ -22,7 +22,7 @@ const Vision = () => {
                 const { subpoints, ...rest } = response.data;
                 setVisionData({
                     ...rest,
-                    description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
+                    description: response.data.subpoints
                 });
             } catch (error) {
                 console.error('Error fetching Vision data:', error);
@@ -35,7 +35,7 @@ const Vision = () => {
                 const { subpoints, ...rest } = response.data;
                 setMissionData({
                     ...rest,
-                    description: response.data.subpoints.split(',').map(subpoint => subpoint.trim()).join(', ')
+                    description: response.data.subpoints
                 });
             } catch (error) {
                 console.error('Error fetching Mission data:', error);
