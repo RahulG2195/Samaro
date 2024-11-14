@@ -13,18 +13,18 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc, lvt = fal
         <>
             <div id="about-section" className="spc-section">
             <div className={`my-${!lvt ? '10' : '5'}`}>
-                    <div className='row justify-content-center align-items-center'>
-                        <div className={`col-lg-${!lvt ? '5' : '10'} col-md-8`}>
+                    <div className='row justify-content-center align-items-left text-center '>
+                        <div className={`col-lg-${!lvt ? '8' : '10'} col-md-8`}>
                             <h1 className='display-4  text-navy fw-bold'><u className='border-bottom border-danger border-2'>{title}</u></h1>
-                            <p className='lead text-muted fw-semibold'>{desc}</p>
+                            <p className='lead text-muted fw-semibold mt-2'>{desc}</p>
                         </div>
-                        {!lvt &&
+                        {/* {!lvt &&
                             (
                                 <div className='col-lg-3 col-md-4 text-center '>
                                     <img src={`/uploads/${img}`} alt=" Flooring" className=" img-fluid rounded shadow-lg bg-transperent" />
                                 </div>
                             )
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const AboutSpc = ({ title, desc, img, specificationTitle, layers, spc, lvt = fal
                         </ul>
                     </div>
                     {!lvt && (
-                        <div className="col-lg-5 col-md-12 d-flex justify-content-center">
+                        <div className="col-lg-5 col-md-12 d-flex justify-content-center ">
                             <img
                                 src={`/uploads/${img}`}
                                 alt="SPC Layers"
