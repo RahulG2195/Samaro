@@ -1,0 +1,153 @@
+.dimensions {
+  position: relative;
+  padding-top: 150px;
+}
+.img-cont{
+margin: -2px 0;
+}
+.dimensions .bg-navy {
+  border:3px solid #0A2647 ;
+  background-color: transparent !important;
+  border-top-right-radius: 100vw;
+  border-bottom-right-radius: 100vw;
+}
+
+
+.dimensions .bg-red {
+  border:3px solid #CA373C ;
+  border-right-color: aliceblue;
+  background-color: transparent !important;
+  border-top-left-radius: 100vw;
+  border-bottom-left-radius: 100vw;
+}
+
+.dimensions::before {
+  content: "Dimension & Space";
+  position: absolute;
+  top: 40px;
+  font-weight: 800;
+  right: 0;
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #e6e9ec;
+  z-index: -1;
+  font-size: 100px;
+}
+
+@media (max-width:768px) {
+  .dimensions .bg-navy {
+    border:0px solid #0A2647 ;
+
+  }
+  
+  
+  .dimensions .bg-red {
+    border:0px solid #CA373C ;
+  
+  }
+
+
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+
+  }
+
+  .dimensions::before {
+    font-size: 70px;
+    top: 61px;
+    left: 0;
+  }
+
+  .certifications {
+    padding-top: 50px;
+    position: relative;
+  }
+}
+
+@media (max-width:600px) {
+
+  .dimensions .row .bg-navy,
+  .dimensions .bg-red {
+    background-color: transparent !important;
+  }
+
+  .respPlanktxt {
+    padding: 1rem !important;
+    color: black;
+  }
+
+  .respPlanktxt h3 {
+    font-weight: 800 !important;
+    color: #CA373C;
+    ;
+
+  }
+
+  .respPlanktxt h3::after {
+
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: #CA373C;
+    position: relative;
+    top: -10px;
+
+  }
+
+  .respPlanktxt p {
+    font-size: 12px !important;
+    color: #0A2647 !important;
+  }
+
+  .dimensions::before {
+    font-size: 30px !important;
+    top: 60px !important;
+    color: #e6e9ec;
+    text-align: center;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: none;
+  }
+
+  .dimensions {
+    position: relative;
+    padding-top: 100px;
+  }
+
+  .odr2 {
+    order: 1 !important;
+  }
+
+  .odr1 {
+    order: 2 !important;
+  }
+
+  .odr1 h3 {
+    text-align: right !important;
+    margin-bottom: 20px ;
+
+  }
+  .odr1 h3::after {
+
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: #CA373C;
+    position: absolute;
+    top: 86%;
+    right: 0;
+
+  }
+  .thickness{
+    padding: 0 !important;
+  }
+  .thickness span{
+    font-size: 8px !important;
+  }
+  .wl{
+    margin:2px !important;
+  }
+}

@@ -1,0 +1,63 @@
+.team-left {
+    border-top-right-radius: 100vw;
+    border-bottom-right-radius: 100vw;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.team-right {
+    border-top-left-radius: 100vw;
+    border-bottom-left-radius: 100vw;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.team-right:hover {
+    background-color: transparent !important;
+    border: 2px solid var(--primary) !important;
+    color: black !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.team-left:hover {
+    background-color: transparent !important;
+    border: 2px solid var(--text) !important;
+    color: black !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.team-left:hover .description,
+.team-right:hover .description {
+    color: black !important;
+}
+
+.team-left:hover .role u,
+.team-right:hover .role u {
+    border-color: black !important;
+}
+
+@media (max-width:768px) {
+    .team-left .description {
+        font-size: 12px !important;
+    }
+
+    .team-right .description {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width:425px) {
+    .team-left {
+        border-top-right-radius: 10vw;
+        border-bottom-right-radius: 10vw;
+    }
+
+    .team-right {
+        border-top-left-radius: 10vw;
+        border-bottom-left-radius: 10vw;
+    }
+    .name{
+        font-size: 20px !important;
+    }
+}

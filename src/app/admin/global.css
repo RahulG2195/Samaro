@@ -1,0 +1,28 @@
+label{
+    font-weight: 700 !important;
+}
+
+textarea:focus{
+    color: black !important;
+}
+
+.Admin .nav-item a:hover{
+    color: #fafafa !important;
+}
+.kzZBXj {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 800;
+}
+.adminHeader .nav-link{
+    color: black !important;
+}
+.sidebarBgColor{
+    background-color: #EEF5F9
+}
+/* Form{
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+} */

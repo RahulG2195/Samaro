@@ -1,0 +1,159 @@
+/* Explorer */
+.explorer {
+  position: relative;
+  padding: 0px 0;
+  margin-bottom: 60px;
+}
+
+.explorer h2 {
+  font-weight: 300;
+}
+
+.explorer .row {
+  align-items: center;
+}
+
+.explorer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 75%;
+  left: 0;
+  background: var(--navy);
+  border-top-right-radius: 100vw;
+  border-bottom-right-radius: 100vw;
+  z-index: -1;
+}
+
+.explorer h3,
+.explorer h2,
+.explorer p {
+  color: var(--light);
+}
+
+.explorer .samaro-ply {
+  position: relative;
+  top: 10px;
+}
+
+.explorer .samaro-tab {
+  position: relative;
+  top: -20px;
+  right: 120px;
+}
+
+.explorer .content {
+  position: relative;
+  top: -60px;
+  right: 100px;
+}
+
+.explorer .respHeading2 {
+  /* font-size: 30px; */
+  font-weight: 300;
+  letter-spacing: 7px;
+}
+
+.explorer p {
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.explorer .button {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.explorer .samaro-ply {
+  position: relative;
+  top: -12px;
+  left: 20px;
+}
+
+.floorExplrTxtinMbl {
+  display: none;
+}
+
+/* Explorer */
+
+@media (min-width:1496px) {
+
+  /* .explorer .respHeading1 {
+    position: relative !important;
+    top: 50px !important;
+  } */
+  .explorer .content {
+    position: relative;
+    top: -50px;
+    right: 100px;
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .respHeading1 {
+    font-size: 18px !important;
+    text-align: start !important;
+  }
+
+  .respHeading2 {
+    font-size: 18px !important;
+  }
+
+  .respCption {
+    font-size: 12px !important;
+  }
+  
+  .floorExplrTxtinMbl {
+    display: block;
+  }
+
+  .floorExplrDeskText {
+    display: none;
+  }
+
+  .respCption {
+    padding: 0 3rem;
+  }
+
+  .explorer::before {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .samaro-ply {
+    width: 50%;
+    position: relative;
+    left: 50% !important;
+    top: 50%;
+    transform: translate(-50%, -0%);
+  }
+
+  .samaro-tab {
+    width: 75%;
+    position: relative;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -0%);
+    margin-top: 20px;
+  }
+
+  .respHeading1 {
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+
+  .respHeading2 {
+    text-align: center !important;
+  }
+
+  .explorer .content {
+    position: relative;
+    top: 0px;
+    right: 0px;
+  }
+}

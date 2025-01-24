@@ -1,0 +1,70 @@
+/* Hero */
+
+/* .hero {
+    height: 80vh;
+    background: url("/assets/images/products/Group 28040.png");
+    background-size: cover;
+    background-position: center center;
+  }
+   */
+.spchero .heading {
+    color: var(--light);
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.spchero .heading span {
+    font-weight: 600;
+}
+
+.spcbannertext {
+    right: 0;
+    top: 60%;
+}
+
+.passiontext {
+    letter-spacing: 5px;
+}
+
+.bannerbottom {
+    background-color: var(--navy);
+}
+
+.bannerbottom p {
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .spchero .heading {
+        font-size: 1rem;
+    }
+
+    .discoverBtn {
+        font-size: 10px;
+        margin: 0 !important;
+    }
+    .passiontext{
+        padding: 0 !important;
+        font-size: 12px;
+        text-align: center;
+    }
+    .subcption{
+        font-size: 10px;
+        text-align: center !important;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .spchero .heading {
+        font-size: 0.8rem;
+        /* Adjust font size for even smaller screens */
+    }
+    .spcbannertext {
+        left: 10% !important;
+        top: 50%;
+    }
+}
+
+/* Hero */

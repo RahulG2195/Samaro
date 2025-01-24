@@ -1,0 +1,162 @@
+/* Social */
+
+.social {
+  padding-top: 50px;
+  /* padding-bottom: 100px; */
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
+  grid-gap: 30px;
+  /* Gap between grid items */
+}
+
+/* .image {
+  width: 100%;
+}  */
+
+
+
+.gallerytext {
+  font-size: 60px !important;
+  color: #0A2647;
+  opacity: 60%;
+  letter-spacing: 12px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.instaid {
+  letter-spacing: 5px;
+  border-bottom: 1px solid #0A2647;
+  color: #0A2647;
+}
+
+.instabio {
+  font-size: 9px;
+}
+
+.social .image {
+  height: 200px;
+}
+
+.social .image img {
+  height: 100%;
+  border-radius: 30px;
+  object-fit: fill;
+}
+
+.social h2 {
+  color: var(--navy);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+.social h2 span {
+  color: var(--primary);
+}
+
+@media (max-width : 1200px) {
+  .instagramSliider{
+    height: 320px !important;
+  }
+}
+@media (max-width : 991px) {
+  .instagramSliider{
+    height: 340px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .instagramSliider{
+    height: 500px !important;
+  }
+  .social-grid {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+
+  .image:nth-child(1) {
+    grid-column: 1 / 2;
+  }
+
+  .image:nth-child(2) {
+    grid-column: 1 / 2;
+  }
+
+  .image:nth-child(3) {
+    grid-column: 1 / 2;
+  }
+
+  .image:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .image:nth-child(5) {
+    grid-column: 1 / 2;
+  }
+
+  .instagramimg {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+
+
+@media (max-width:600px) {
+  .social h2{
+    letter-spacing: 6px;
+  }
+  .instaid {
+    font-size: 12px;
+    margin: 0 auto;
+    /* padding: 0 40px; */
+  }
+
+  .instagramimg .instaLogo img{
+    width: 50% !important;
+  }
+  .instabio {
+    font-size: 9px;
+    text-align: justify;
+    /* padding: 0 40px; */
+  }
+
+  .social {
+    padding: 0px !important;
+  }
+  
+  .instagramimg .instaLogo {
+    width: 20% !important;
+    text-align: center;
+}
+}
+
+/* inspiration gallery */
+
+@media (max-width:600px) {
+  .gallerytext {
+    letter-spacing: 0px !important;
+    font-size: 20px !important;
+    text-align: center;
+}}
+
+@media (max-width : 500px) {
+  .instagramSliider{
+    height: 430px !important;
+  }
+}
+@media (max-width : 425px) {
+  .instagramSliider{
+    height: 362px !important;
+  }
+}
+@media (max-width : 3755px) {
+  .instagramSliider{
+    height: 318px !important;
+  }
+}

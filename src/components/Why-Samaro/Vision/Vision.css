@@ -1,0 +1,255 @@
+.vissionmissionCont {
+  top: 0%
+}
+
+.vision h2 {
+
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.missionCont {
+  margin-top: 30px !important;
+}
+
+.mission h2 {
+  /* font-size: 40px; */
+  font-weight: 800;
+}
+
+.missionCont,
+.vissionmissionCont ul {
+  padding-left: 1rem;
+}
+
+.missionCont,
+.vissionmissionCont ul li {
+  list-style: disc;
+}
+
+@media (min-width:768px) {
+
+  .missionCont,
+  .vissionmissionCont ul li {
+    font-size: 1vw !important;
+  }
+}
+
+@media (max-width: 1430px) {
+  .vissionsectionResp {
+    margin-top: 1px !important;
+  }
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 40px !important;
+
+  }
+
+}
+
+@media (max-width:1423px) {
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 12px !important;
+  }
+
+  .missionSectionResp {
+    margin-top: 10px !important;
+  }
+
+  .vissionsectionResp {
+    padding: 0 !important;
+  }
+
+  .missionCont {
+    margin: 5px !important;
+  }
+
+}
+
+@media (max-width:1148px) {
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 30px !important;
+  }
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 10px !important;
+
+  }
+}
+
+@media (max-width:981px) {
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 20px !important;
+  }
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 10px !important;
+
+  }
+}
+
+@media (max-width:917px) and (min-width:768px) {
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 15px !important;
+  }
+
+  .mission-text {
+    padding-top: 0 !important;
+  }
+}
+
+.vissionsectionResp {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media (max-width:768px) {
+  .vissionmissionCont {
+    position: relative !important;
+  }
+
+  .mission-image {
+    position: absolute !important;
+    top: 50%;
+
+  }
+
+  .vision-image , .mission-image {
+    display: none;
+  }
+
+  .mobilevissionimg {
+    display: block !important;
+  }
+
+  .vision .image1 {
+    display: none;
+  }
+
+  .vision .image2 {
+    display: block !important;
+  }
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 42px !important;
+  }
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 15px !important;
+  }
+
+
+  .vissionsectionResp, .missionSectionResp {
+    padding: 15px !important;
+  }
+
+}
+
+
+
+@media (min-width:600px) and (max-width:768px) {
+
+  .missionCont,
+  .vissionmissionCont ul li {
+    font-size: 2vw !important;
+  }
+
+  .missionCont {
+    margin: 0 !important;
+    padding-top: 3%;
+  }
+}
+
+@media (max-width:600px) {
+
+  .vision {
+    margin: 0 !important;
+  }
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 38px !important;
+  }
+
+  .whysam-benifits {
+    height: auto !important;
+    position: relative !important;
+  }
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 10px !important;
+  }
+
+  .missionCont {
+    padding-right: 0rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .vision {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+}
+
+@media (max-width: 425px) {
+
+
+  .vissionmissionCont {
+    top: 10%;
+    position: relative !important;
+  }
+
+  .vision h2,
+  .mission h2 {
+
+    font-size: 35px !important;
+  }
+
+  .vissionsectionResp p,
+  .missionSectionResp p {
+    font-size: 9px !important;
+    margin: 0 !important;
+  }
+
+}
+
+@media (max-width:375px) {
+
+
+  .visionH2,
+  .missionH2 {
+    letter-spacing: 5px;
+    color: #0A2647 !important;
+    /* opacity: 40%; */
+
+  }
+
+  .mission-image {
+    position: absolute;
+    top: 43%;
+    width: 25%;
+    left: 52%;
+  }
+}

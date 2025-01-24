@@ -1,0 +1,178 @@
+/* Footer */
+
+.footer-headings {
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  color: var(--light) !important;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.custom-footer a,
+.custom-footer p {
+  color: var(--light);
+}
+
+.custom-footer .mail img,
+.custom-footer .phone img {
+  width: 20px;
+}
+
+.custom-footer {
+  position: relative;
+}
+
+.custom-footer .line {
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.custom-footer .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-footer .logo img {
+  width: 150px;
+}
+
+.Benifitsleft {
+  position: absolute !important;
+  top: -20px;
+  padding: 78px;
+}
+
+.backgroundCorner {
+  width: 696px;
+}
+
+.BenifitsRight img {
+  height: 500px;
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+  /* justify-content: space-between; */
+  margin-top: 20px;
+}
+
+.newsletter button {
+  outline: none;
+  padding: 0 20px;
+  color: #ffffff;
+  border-radius: 20px;
+  /* opacity: 0; */
+  transition: 0.5s ease-in-out all;
+}
+
+.newsletter input {
+  background: transparent;
+  outline: none;
+  padding-left: 10px;
+  color: #ffffff;
+}
+
+.newsletter input::placeholder {
+  font-size: 14px;
+}
+
+.btn-close {
+  align-self: end;
+  color: white !important;
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+
+
+.icon-bar {
+  width: max-content  ;
+  position: fixed;
+  /* right: 0%; */
+  left: 99%;
+  top: 55%;
+  transform: translate(-50%) rotate(270deg);
+  background-color: #ca373c;
+  /* padding: 10px; */
+  /* border-radius: 5px 0 0 5px; */
+  z-index: 999;
+}
+
+.icon-bar a {
+  padding: 10px;
+}
+
+.dwnldCenter{
+
+  position: fixed;
+  right: 0;
+  top: 90%;
+  z-index: 999;
+  background-color: #ca373c;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+/* Footer */
+@media (max-width:768px) {
+  .icon-bar {
+    left: 96%;
+  }
+
+  .footerSubmitbutton {
+    margin: 0 auto !important;
+  }
+
+  .ordr3 {
+    order: 3 !important;
+    /* padding-left: 1rem !important; */
+  }
+
+  .ordr2 {
+    order: 2 !important;
+    /* padding-left: 0rem !important; */
+
+  }
+
+  .ordr1 {
+    order: 1 !important;
+    padding-top: 20px;
+    justify-content: center !important;
+  }
+
+  .ordr3 p {
+    font-size: 12px;
+  }
+
+  .contact-details .mail {
+    font-size: 12px !important;
+  }
+
+  .contact-details .phone {
+    font-size: 12px !important;
+  }
+
+  .contact-details {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (max-width:425px) {
+  .newsletter {
+    flex-wrap: wrap;
+  }
+}

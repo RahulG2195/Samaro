@@ -1,0 +1,21 @@
+.dwnldbr{
+    background-color: var(--navy);
+}
+.dwnldbtn:hover{
+background-color: white;
+color: #0A2647 !important;
+}
+.explorebtn:hover{
+    background-color: #C62C26;
+    border-color: #C62C26 !important ;
+}
+.dwnldCards img{
+    width: 60% !important;
+}
+
+@media (max-width:600px) {
+    .dwnldbr .container .bro{
+        padding: 0 !important;
+        text-align: center !important;
+    }
+}

@@ -1,0 +1,62 @@
+.spcBrotext {
+    bottom: 15%;
+    left: 12%;
+}
+
+.lvtBrotext {
+    bottom: 15%;
+    right: 20%;
+}
+
+.spcBrotext p,
+.lvtBrotext p {
+    font-size: 1.5rem;
+}
+
+.prdctmobilebanner {
+    display: none ;
+}
+
+@media (max-width:1224px) {
+    .spcBrotext {
+        bottom: 15%;
+        left: 0%;
+    }
+
+    .lvtBrotext {
+        bottom: 15%;
+        right: 0%;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .spcBrotext p,
+    .lvtBrotext p {
+        font-size: 15px !important;
+    }
+}
+@media (max-width:600px) {
+    .prdctmobilebanner {
+        display: block !important;
+    }
+    .prdctdeskbanner{
+        display: none !important;
+    }
+
+    .spcBrotext {
+        bottom: 55%;
+        left: 0%;
+    }
+
+    .lvtBrotext {
+        bottom: 15%;
+        right: 0%;
+    }
+    .spcBrotext p,
+    .lvtBrotext p {
+        font-size: 20px !important;
+    }
+    
+}

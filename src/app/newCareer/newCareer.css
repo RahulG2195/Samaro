@@ -1,0 +1,76 @@
+.careerOverlay {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+}
+.careerOverlay2{
+    position: absolute;
+    top: 0;
+    background-color: #0A2647;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.openingBanner h1{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 2;
+    color: white;
+    font-weight: 800;
+    font-size: 5.2vw !important;
+}
+
+.careerText{
+    top: 45%;
+    z-index: 2;
+    left: 12%;
+}
+.careerText h1{
+    font-size: 4rem;
+}
+.careetAbtText{
+    /* font-size: 1.3rem; */
+}
+.oppHeading{
+    /* font-size: 3.5rem; */
+
+}
+.hireHeading{
+    /* font-size: 3rem; */
+}
+.processList li{
+    list-style:decimal-leading-zero;
+}
+.openpos{
+    scroll-behavior: smooth;
+    /* transition: all 2s; */
+}
+
+@media (max-width:768px) {
+    .careerText{
+        top: 30%;
+    }
+    .careerText h1{
+        font-size: 2rem !important;
+        margin: 0 !important;
+    }
+    .careerText p{
+        font-size: 15px !important;
+        margin: 0 !important;
+    }
+    .oppHeading{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width:600px) {
+    .careetAbtText{
+        font-size: 1rem !important;
+    }
+}

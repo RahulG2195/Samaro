@@ -1,0 +1,96 @@
+.newsletterTxt {
+    color: #0A2647;
+}
+
+.productKBtn {
+    border: 3px solid #0A2647;
+    outline: none;
+    font-size: 12px;
+    background-color: transparent;
+}
+
+.productKBtn:hover {
+    background-color: #0A2647;
+    color: white;
+
+}
+
+.newscardImg {
+    height: auto;
+    /* width: 25%; */
+}
+
+.playbtn {
+    height: auto;
+    width: 25%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* New launch card section  */
+
+.newlaunchCard .card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.newlaunchCard .card .cardBody p {
+    font-size: 12px;
+}
+
+.newlaunchCard .card .cardBody p,
+.newlaunchCard .card .cardBody h5 {
+    color: #174c89;
+}
+
+.newlaunchCard .cardCont {
+    right: 5%;
+}
+
+
+
+@media (max-width:1200px) {
+    .newlaunchCard .cardCont {
+        position: relative !important;
+        right: 0 !important;
+    }
+
+    .newlaunchCard .cardCont .card {
+        padding: 0 10px !important;
+    }
+}
+
+
+
+@media (max-width:768px) {
+    .respNews {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .Newsfilters {
+        padding: 0 !important;
+    }
+
+    .Newsfilters button {
+        padding: 2px !important;
+    }
+
+    .newsCardGrid {
+        /* gap: 0 !important; */
+        padding: 5px !important;
+    }
+
+    .newlaunchCard .cardCont .card {
+        box-shadow: none;
+        border: none !important;
+        text-align: center;
+    }
+
+
+}
+@media (max-width:600px){
+    .NewsletterSwiper h1{
+        font-size:20px !important;
+    }
+}

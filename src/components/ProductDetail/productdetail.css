@@ -1,0 +1,247 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+span {
+  /* color: #0A2647; */
+}
+
+p {
+  font-size: 14px;
+}
+
+i {
+  font-size: 12px;
+}
+
+/* product detail page  */
+.prod_icon {
+  height: 18px;
+  width: 18px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.prod_feat_point ul,
+.notSureLinks ul {
+  padding: 0;
+}
+
+.prod_feat_point ul li i {
+  color: #ca373c;
+}
+
+.notSureLinks ul li p {
+  margin-bottom: 0.2rem;
+}
+
+.pfIcon {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.pfContent p {
+  font-size: 15px;
+}
+
+.Design > tbody > tr {
+  border-bottom: 1px solid #ca373c;
+}
+
+.inspectionBanner {
+  background-color: #0a2647;
+}
+
+.freecallbtn {
+  color: #fff;
+  background: transparent;
+  border: 3px solid #fff;
+  padding: 0 21px;
+  border-radius: 25px;
+  position: relative;
+  /* Needed for positioning the gradient */
+  overflow: hidden;
+}
+
+.freecallbtn:hover {
+  background-color: #ca373c;
+  border: none;
+  -webkit-transition: background 1s;
+  /* For Safari */
+  transition: background 1s;
+}
+
+.propInspec {
+  padding: 0 50px 0 0;
+}
+
+.container-fluid-custom {
+  margin: 0 50px;
+}
+
+.productdetail_slider {
+  /* max-height: 460px; */
+  height: 100%;
+  overflow: hidden;
+}
+
+.prod_name_lg {
+  margin: 0 0 15px 0;
+}
+
+.prod_name_lg span {
+  font-size: 14px;
+}
+
+.prod_feat_point ul li {
+  font-size: 14px;
+}
+
+.prod_feat_point ul li i {
+  font-size: 13px;
+}
+
+.notSureLinks p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.section_heading {
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+.section_heading strong {
+  font-weight: 700;
+}
+
+.owl-nav .owl-next,
+.owl-nav .owl-prev:hover {
+  background: none;
+}
+
+.owl-nav .owl-next {
+  position: absolute;
+  right: -3%;
+  top: 35%;
+}
+
+.owl-nav .owl-prev {
+  position: absolute;
+  left: -3%;
+  top: 35%;
+}
+
+/* product details table section */
+.DescriptionTable p {
+  font-size: 12px;
+}
+
+.brochure_imgdiv {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.MainSLdr .swiper-pagination-bullet {
+  background-color: #ca373c;
+  /* Change to your desired color */
+}
+
+
+/* Owl nav of similar products  */
+.similarprod .owl-nav img {
+  width: 41%;
+  vertical-align: auto;
+}
+
+@media (min-width: 768px) {
+  .detailSpecificationTbl {
+    padding: 10px 0px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .longTxtTiles {
+    /* font-size: 9.8px !important; */
+    padding: 2px 0;
+  }
+
+  .product-data_sec .row {
+    margin: 0 !important;
+  }
+
+  /* Download broc */
+  .downbroch_Sec .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px;
+    color: #ca373c;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 600px) {
+  .prod_name_lg {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .DescriptionTable p {
+    font-size: 10px;
+  }
+
+  .common_sec {
+    margin: 45px 0 0 0;
+  }
+
+  .container-fluid-custom {
+    margin: 0 15px;
+  }
+
+  .pfContent_main {
+    text-align: center;
+    margin: 30px 0;
+    box-shadow: 0 0 9px 1px lightgray;
+    border-radius: 15px;
+    padding: 10px 5px;
+  }
+
+  .pfContent_main img {
+    margin: 10px 0;
+  }
+
+  .inspection_heading {
+    margin: 48px 0;
+    padding: 50px 0;
+  }
+
+  .propInspec {
+    padding: 0 0 10px 0;
+  }
+
+  .freecallbtn {
+    padding: 7px 21px;
+  }
+
+  .section_heading {
+    letter-spacing: 4px;
+    padding: 20px 0;
+  }
+
+  .productdetail_slider {
+    max-height: 650px;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+@media (max-width: 425px) {
+  .PDroomslogo p {
+    font-size: 10px !important;
+  }
+}

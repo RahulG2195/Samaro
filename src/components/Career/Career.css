@@ -1,0 +1,87 @@
+.careerHeading {
+    color: #243D71;
+    font-size: 3rem;
+}
+
+.headingCont {
+    position: relative;
+}
+
+.careerform input{
+    border: none;
+    border-bottom: 2px solid #243D71 !important ;
+    color: #243D71;
+    box-shadow: none !important;
+    border-radius:0 !important ;
+}
+.career input:focus{
+    box-shadow: none !important;
+
+}
+.whyus h4{
+    color: #243D71 !important;
+}
+
+/* .headingCont::before {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 21%;
+    width: 200px;
+    height: 3px;
+    background-color: #CA373C;
+
+} */
+
+
+
+.career_form_lable {
+    color: #243D71;
+    font-size: 12px;
+}
+
+
+.Csubmitbtn {
+    background-color: transparent;
+}
+
+.Csubmitbtn:hover {
+    background-color: #CA373C !important;
+    color: white !important;
+}
+
+.careerCont .react-tel-input .form-control {
+
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .headingCont::before {
+
+        left: 2%;
+    }
+
+}
+@media (max-width:600px) {
+    .careerCont{
+        padding: 0 !important;
+    }
+    .whyus p{
+        font-size: 14px !important;
+        width: 100% !important;
+    }
+}
+@media (max-width:400px) {
+    .careerHeading {
+        font-size: 17px !important;
+        text-align:left !important ;
+    }    
+    .careerHeading{
+        text-align: center !important;
+        font-size: 50px !important;
+
+    }
+    .whyus p{
+        width: 100% !important;
+    }
+}

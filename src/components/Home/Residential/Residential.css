@@ -1,0 +1,94 @@
+/* Commercial -2 */
+
+
+.commercial-2 .carousel-item {
+  height: 70vh;
+}
+
+.commercial-2 .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  overflow:hidden;
+
+}
+
+.commercial-2 {
+  padding-top: 100px;
+  position: relative;
+}
+
+.commercial-2::before {
+  content: "Residential";
+  position: absolute;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #e6e9ec;
+  top: -67px;
+  font-weight: 800;
+  right: 0;
+  color: transparent;
+  z-index: -1;
+  font-size: 160px;
+}
+
+
+.commercial-2 .col-lg-10 {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  overflow: hidden;
+}
+.homepageCarousel{
+  background-color: #C5363B;
+  padding: 14px 18px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* Commercial -2 */
+@media (max-width: 768px) {
+  .commercial-2::before {
+    font-size: 100px ;
+    top: -50px;
+  }
+ 
+}
+
+@media (max-width:600px) {
+  .carousel-inner{
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+    .commercial-2 .carousel-item {
+      height: 50vh;
+  }
+  
+}
+
+@media (max-width: 576px) {
+
+  .homepageCarousel{
+    background-color: #C5363B;
+    padding: 5px 4px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 15px;
+  }
+  .commercial-2::before {
+    font-size: 50px !important;
+    top:0px !important;
+  }
+  .commercial-2{
+    margin: 0 !important;
+  }
+  .commercial-2 .carousel-item img{
+    border-radius: 0 !important;
+  }
+  .commercial-2 {
+    padding-top: 50px;
+    position: relative;
+  }
+  
+}
