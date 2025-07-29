@@ -21,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.09);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,11 +55,10 @@
   background-color: #ddd;
 }
 
-
 .HomebannertextCont {
   top: 55%;
   right: 15%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .HomebannertextCont .txt h2 {
@@ -69,7 +68,7 @@
 .HomebannertextCont .txt h2 a {
   color: inherit !important;
 }
-.prdctmobilebanner{
+.prdctmobilebanner {
   display: none;
 }
 
@@ -82,25 +81,22 @@
     font-size: 12px;
     margin: 0 !important;
   }
-
 }
 
-@media (max-width:600px) {
-  .prdctdeskbanner{
+@media (max-width: 600px) {
+  .prdctdeskbanner {
     display: none !important;
   }
-  .prdctmobilebanner{
+  .prdctmobilebanner {
     display: block !important;
   }
   .HomebannertextCont {
     left: 10% !important;
     top: 60% !important;
   }
-  
 }
-@media (max-width:425px) {
-  .fw-normal{
+@media (max-width: 425px) {
+  .fw-normal {
     font-size: 1rem;
   }
-  
 }
