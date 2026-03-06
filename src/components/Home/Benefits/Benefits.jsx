@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import Link from 'next/link';
+import Image from 'next/image';
 import axios from 'axios';
 
 const Benefits = () => {
@@ -158,7 +159,7 @@ const Benefits = () => {
                                 slidesPerView={3}
                                 loop={true}
                                 autoplay={{
-                                    delay: 1000,
+                                    delay: 3000,
                                     disableOnInteraction: false,
                                 }}
                                 modules={[EffectFade, Autoplay]}
@@ -199,7 +200,7 @@ const Benefits = () => {
                             {sliderImages.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='benifitsSliderImage'>
-                                        <img src={item.url} className="rightside-image" alt={item.alt} />
+                                        <Image src={item.url} className="rightside-image" alt={item.alt} width={600} height={600} loading="lazy" />
                                     </div>
                                 </SwiperSlide>
                             ))}

@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import webpack from 'webpack'; // Uncomment this line
+import webpack from 'webpack';
 import path from 'path';
 
 
@@ -9,9 +9,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-   
 
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: ["localhost", "samamro.in"],
     remotePatterns: [
       {
@@ -30,8 +30,8 @@ const nextConfig = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Provide jQuery globally
   config.resolve.alias["@uploads"] = path.resolve("/var/www/uploads");
- 
-   
+
+
     config.plugins.push(
       new webpack.ProvidePlugin({
         $: 'jquery',

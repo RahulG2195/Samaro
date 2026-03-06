@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import "./FeaturedRanges.css"; // Ensure this file exists
 
 const FeaturedRanges = ({ ranges }) => {
@@ -24,7 +25,7 @@ const FeaturedRanges = ({ ranges }) => {
             >
               {range.image ? (
                 <div className="image">
-                  <img src={`/uploads/${range.image}`} alt="" />
+                  <Image src={`/uploads/${range.image}`} alt={range.name || ""} width={400} height={443} loading="lazy" />
                 </div>
               ) : (
                 <div className="coming-soon text-center">

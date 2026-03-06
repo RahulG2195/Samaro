@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./SPCLVT.css"
 import Link from 'next/link'
+import Image from 'next/image'
 import axios from 'axios';
 
 const Spclvt = () => {
@@ -77,7 +78,7 @@ const Spclvt = () => {
                     <div className="col-lg-6">
                         <div className="images-wrapper">
                             <div className="img">
-                                <img src="/assets/images/home/spc-lvt/1.png" alt="" />
+                                <Image src="/assets/images/home/spc-lvt/1.png" alt="SPC flooring" width={382} height={450} loading="lazy" />
                                 <div className='text-center position-absolute onImgtext text-white'>
                                     <span className=' border-3 border-bottom px-2 fs-2 px-4 fw-semibold'>SPC</span>
                                     <p className='m-0 text-white small'>Click & Lock</p>
@@ -85,7 +86,7 @@ const Spclvt = () => {
                                 </div>
                             </div>
                             <div className="img-2">
-                                <img src="/assets/images/home/spc-lvt/2.png" alt="" />
+                                <Image src="/assets/images/home/spc-lvt/2.png" alt="LVT flooring" width={382} height={450} loading="lazy" />
                                 <div className='text-center position-absolute onImgtext2 text-white'>
                                     <span className=' border-3 border-bottom px-2 fs-2 px-4 fw-semibold'>LVT</span>
                                     <p className='m-0 text-white small'>Glue down</p>

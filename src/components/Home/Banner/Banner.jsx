@@ -190,16 +190,14 @@ const Banner = () => {
                 <div className="carousel-inner">
                     {banners.map((banner, index) => (
                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                            <div className="homepageHeroBanner" style={{height:'100vh'}}>
+                            <div className="homepageHeroBanner" style={{height:'100vh', position: 'relative'}}>
                                 <Image
                                     src={`/uploads/${banner.image}`}
                                     alt={`Desktop Banner Image ${index + 1}`}
-                                    width={100}
-                                    height={100}
-                                    layout="responsive"
-                                    objectFit="cover"
-                                    priority={true}
-                                    loading="eager"
+                                    fill
+                                    sizes="100vw"
+                                    style={{ objectFit: 'cover' }}
+                                    {...(index === 0 ? { priority: true, loading: "eager" } : { loading: "lazy" })}
                                     className="prdctdeskbanner"
                                 />
                                 <div className="overlay">
@@ -229,16 +227,14 @@ const Banner = () => {
                 <div className="carousel-inner">
                     {banners.map((banner, index) => (
                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                            <div className="homepageHeroBanner">
+                            <div className="homepageHeroBanner" style={{ position: 'relative' }}>
                                 <Image
                                     src={`/uploads/${banner.mobileImage}`}
                                     alt={`Mobile Banner Image ${index + 1}`}
-                                    width={100}
-                                    height={100}
-                                    layout="responsive"
-                                    objectFit="contain"
-                                    priority={true}
-                                    loading="eager"
+                                    fill
+                                    sizes="100vw"
+                                    style={{ objectFit: 'contain' }}
+                                    {...(index === 0 ? { priority: true, loading: "eager" } : { loading: "lazy" })}
                                     className="prdctmobilebanner"
                                 />
                                 <div className="overlay">

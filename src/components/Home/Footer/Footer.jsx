@@ -1,39 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import Form from "@/components/InquiryForm/Form";
 import Link from "next/link";
+import Image from "next/image";
 import axios from "axios";
+import { useBasicInfo } from "@/components/BasicInfoContext";
+
 const Footer = () => {
-  const [basicInfo, setBasicInfo] = useState({
-    comp_logo: "",
-    comp_footer_logo: "",
-    email1: "",
-    email2: "",
-    mobile_no_1: "",
-    mobile_no_2: "",
-    address: "",
-    facebook_url: "",
-    insta_url: "",
-    linkedin_url: "",
-    youtube_url: "",
-    map_url: "",
-  });
+  const { basicInfo } = useBasicInfo();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    const fetchBasicInfo = async () => {
-      try {
-        const response = await axios.get("/api/admin/basicInfo");
-        const info = response.data;
-        setBasicInfo(info);
-      } catch (error) {
-        console.error("Error fetching basic info:", error);
-      }
-    };
-
-    fetchBasicInfo();
-  }, []);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -61,11 +37,17 @@ const Footer = () => {
             <div className="line"></div>
           </div>
           <div className="col-6 col-lg-2 col-md-2 logo">
-            <img
-              className=""
-              src={`/uploads/${basicInfo.comp_footer_logo}`}
-              alt="Logo"
-            />
+            {basicInfo.comp_footer_logo ? (
+              <Image
+                src={`/uploads/${basicInfo.comp_footer_logo}`}
+                alt="Logo"
+                width={150}
+                height={38}
+                loading="lazy"
+              />
+            ) : (
+              <span></span>
+            )}
           </div>
           <div className="col-3 col-lg-5 col-md-5">
             <div className="line"></div>
@@ -96,9 +78,6 @@ const Footer = () => {
                     <li>
                       <Link href="/product/All">LVT Flooring</Link>
                     </li>
-                    {/* <li><Link href="/product/All">Ceramic</Link></li> */}
-                    {/* <li><Link href="/product/All">Marbal</Link></li> */}
-                    {/* <li><Link href="/product/All">Stone</Link></li> */}
                   </ul>
                 </div>
               </div>
@@ -106,7 +85,6 @@ const Footer = () => {
             <div className="col-lg-5 ordr3">
               <div className="d-flex gap-3">
                 <address className="d-flex">
-                  {/* <i className="fas fa-map-marker-alt d-block mt-2 px-2"></i> */}
                   <div className="me-2 ">
                     <img
                       src="/assets/images/icons/Group 57.svg"
@@ -127,22 +105,12 @@ const Footer = () => {
                   <a href="tel:">{basicInfo.mobile_no_1}</a>
                 </div>
               </div>
-              {/* <div className="newsletter  justify-content-start gap-2 mt-3">
-                                <form className='d-flex gap-2 align-items-center justify-content-center flex-wrap' onSubmit={handleSubmit}>
-                                    <input type="text" className="border-white border-2 rounded-pill px-5"
-                                        placeholder="Enter your email for Newsletter" style={{ backgroundColor: 'inherit' }}
-                                        onChange={handleEmailChange}
-
-                                    />
-                                    <div className=''><button className='btn border-2 border-white rounded-pill footerSubmitbutton' type="submit">Submit</button></div>
-                                </form>
-                            </div>
-                            {message && <p className='p-2 text-danger' >{message}</p>} */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6 ps-md-5 mt-0  ordr1">
               <img
                 src="/assets/images/home/footer/1000_F_435229236_4nOQpFgQ8bzvj60ff4B5eBcGSEdTyG2s.png"
                 alt=""
+                loading="lazy"
               />
             </div>
           </div>
@@ -179,21 +147,11 @@ const Footer = () => {
         </div>
       </div>
 
-        <div class="icon-bar rounded d-flex text-center">
-          <a href="/contact-us" class="text-white  ">
+        <div className="icon-bar rounded d-flex text-center">
+          <a href="/contact-us" className="text-white  ">
             Contact Us
           </a>
-          {/* <a href="/product/All" class=" text-white border-start">
-            Products
-          </a> */}
-          {/* <a href="/downloadCenter" class=" text-white border-start">
-            Download Center
-          </a> */}
         </div>
-      
-      {/* <div className="dwnldCenter">
-        <a href="" className="text-white fw-bold">DOWNLOAD CENTER </a>
-      </div> */}
     </>
   );
 };

@@ -1,37 +1,9 @@
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './follow.css'
-import axios from 'axios';
+import { useBasicInfo } from "@/components/BasicInfoContext";
 
 const FollowMore = () => {
-    const [basicInfo, setBasicInfo] = useState({
-        email1: "",
-        email2: "",
-        mobile_no_1: "",
-        mobile_no_2: "",
-        address: "",
-        facebook_url: "",
-        insta_url: "",
-        linkedin_url: "",
-        youtube_url: "",
-        twitter_url: "",
-        map_url: "",
-    });
-
-
-    useEffect(() => {
-        const fetchBasicInfo = async () => {
-            try {
-                const response = await axios.get("/api/admin/basicInfo");
-                const info = response.data;
-                setBasicInfo(info);
-            } catch (error) {
-                console.error("Error fetching basic info:", error);
-            }
-        };
-
-        fetchBasicInfo();
-    }, []);
+    const { basicInfo } = useBasicInfo();
 
     return (
         <>

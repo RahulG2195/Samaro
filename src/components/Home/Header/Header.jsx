@@ -1,41 +1,24 @@
 
 "use client"
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Link from "next/link";
 import NavLink from "@/components/helpers/NavLink/NavLink";
 import FollowMore from "../FollowMore/FollowMore";
-import axios from "axios";
+import Image from "next/image";
+import { useBasicInfo } from "@/components/BasicInfoContext";
 
 const Header = () => {
 
-    const [companyLogo, setcompanyLogo] = useState('')
-    const [contatnumber, setContatnumber] = useState('')
-    const [facebook, setFacebook] = useState('');
-    const [insta, setInsta] = useState('');
-    const [linkedin, setLinkedin] = useState('');
-    const [twitter, setTwitter] = useState('');
-    const [youtube, setYoutube] = useState('');
-    useEffect(() => {
-        const fetchBasicInfo = async () => {
-            try {
-                const response = await axios.get("/api/admin/basicInfo");
-                const info = response.data;
-                setcompanyLogo(info.comp_logo);
-                setContatnumber(info.mobile_no_1)
-                setFacebook(info.facebook_url)
-                setInsta(info.insta_url)
-                setLinkedin(info.linkedin_url)
-                setTwitter(info.twitter_url)
-                setYoutube(info.youtube_url)
-            } catch (error) {
-                console.error("Error fetching basic info:", error);
-            }
-        };
-
-        fetchBasicInfo();
-    }, []);
+    const { basicInfo } = useBasicInfo();
+    const companyLogo = basicInfo.comp_logo;
+    const contatnumber = basicInfo.mobile_no_1;
+    const facebook = basicInfo.facebook_url;
+    const insta = basicInfo.insta_url;
+    const linkedin = basicInfo.linkedin_url;
+    const twitter = basicInfo.twitter_url;
+    const youtube = basicInfo.youtube_url;
 
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu open/close
     const toggleMenu = () => {
@@ -51,7 +34,11 @@ const Header = () => {
             <nav className="navbar navbar-expand-lg ">
                 <div className="container">
                     <Link className="navbar-brand" href="/" >
-                        <img src={`/uploads/${companyLogo}`} alt="comapany logo" />
+                        {companyLogo ? (
+                            <Image src={`/uploads/${companyLogo}`} alt="company logo" width={150} height={38} priority />
+                        ) : (
+                            <span></span>
+                        )}
                     </Link>
                     <div className="d-flex gap-3 align-items-center ">
                         <div className="headphoneJack">
